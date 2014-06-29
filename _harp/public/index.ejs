@@ -1,0 +1,32 @@
+<!-- Main Wrapper -->
+<div id="main-wrapper">
+
+	<!-- Main -->
+		<div id="main" class="container">
+			<div class="row">
+			
+				<!-- Content -->
+					<div id="content" class="8u skel-cell-mainContent">
+            <% function excerpt(content) {
+              if(content.indexOf("<!-- more -->") == -1) return content;
+              else return content.split("<!-- more -->")[0]; 
+            } %>
+
+            <% for(var slug in public.posts._data){ %>
+              <article class="is-excerpt">
+                <header>
+                  <h2 class="blog-post-title"><a href="posts/<%= slug %>"><%= public.posts._data[slug].title %></a></h2>
+                  <span class="date post-date"><%= public.posts._data[slug].date %></span>
+                </header>
+                <p><%- excerpt(partial("posts/" + slug)) %></p>
+              </article>
+            <% }; %>
+
+					</div>
+					
+				<!-- Sidebar -->
+				<%- partial("_shared/sidebar") %>
+
+			</div>
+		</div>
+</div>
