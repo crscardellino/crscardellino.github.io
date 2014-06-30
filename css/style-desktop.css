@@ -54,6 +54,14 @@
 			letter-spacing: 2px;
 			padding: 0.85em 2.75em 0.85em 2.75em;
 		}
+    
+  /* Message */
+  
+    .message {
+			font-size: 0.85em;
+			letter-spacing: 2px;
+			padding: 0.85em 1em 0.85em 1em
+    }
 		
 	/* Lists */
 

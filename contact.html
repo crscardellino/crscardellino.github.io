@@ -73,21 +73,25 @@
       						<form method="post" action="#" id="contact-form">
       							<div class="row half">
       								<div class="6u">
-      									<input name="name" placeholder="Name" type="text" class="text" />
+      									<input id="name" name="name" placeholder="Name" type="text" class="text" />
       								</div>
       								<div class="6u">
-      									<input name="email" placeholder="Email" type="text" class="text" />
+      									<input id="email" name="email" placeholder="Email" type="text" class="text" />
       								</div>
       							</div>
       							<div class="row half">
       								<div class="12u">
-      									<textarea name="message" placeholder="Message"></textarea>
+      									<textarea id="message" name="message" placeholder="Message"></textarea>
       								</div>
       							</div>
-      							<div class="row half">
-      								<div class="12u">
+      							<div class="row">
+      								<div class="6u">
       									<a id="submit-contact-form" href="#" class="button button-icon icon icon-envelope">Send Message</a>
       								</div>
+                      <div class="6u">
+                        <span id="respond-message" class="message hide">
+                        </span>
+                      </div>
       							</div>
       						</form>
       					</section>
@@ -138,10 +142,46 @@
       $("#submit-contact-form").click(function(event) {
         event.preventDefault();
 
-        $.post("http://www.cs.famaf.unc.edu.ar/~ccardellino/email.php",
+        $("#name").removeClass("has-error");
+        $("#email").removeClass("has-error");
+        $("#message").removeClass("has-error");
+        $("#respond-message").addClass("hide");
+        $("#respond-message").empty();
+
+        $.post("http://localhost/email.php",
           $("#contact-form").serialize(),
           function (data) {
-            console.log(data);
+            if (data.return == "ERROR") {
+              if (data.value == "INVALID_NAME") {
+                $("#name").addClass("has-error");
+                $("#name").focus();
+                $("#respond-message").addClass("message-error");
+                $("#respond-message").removeClass("hide");
+                $("#respond-message").append("Invalid name");
+              } else if (data.value == "INVALID_EMAIL") {
+                $("#email").addClass("has-error");
+                $("#email").focus();
+                $("#respond-message").addClass("message-error");
+                $("#respond-message").removeClass("hide");
+                $("#respond-message").append("Invalid email address");
+              } else if (data.value == 'INVALID_MESSAGE') {
+                $("#message").addClass("has-error");
+                $("#message").focus();
+                $("#respond-message").addClass("message-error");
+                $("#respond-message").removeClass("hide");
+                $("#respond-message").append("Invalid message");
+              } else if (data.value == 'MAIL_NOT_SEND') {
+                $("#message").addClass("has-error");
+                $("#message").focus();
+                $("#respond-message").addClass("message-error");
+                $("#respond-message").removeClass("hide");
+                $("#respond-message").append("Error sending message");
+              }
+            } else {
+              $("#respond-message").addClass("message-success");
+              $("#respond-message").removeClass("hide");
+              $("#respond-message").append("Message sent");
+            }
           });
       });
     </script>

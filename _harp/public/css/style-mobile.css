@@ -78,6 +78,14 @@
 			padding: 1em 0 1em 0;
 		}
 
+  /* Message */
+  
+  .message {
+		letter-spacing: 2px;
+		display: block;
+		padding: .5em 0 .5em 0;
+  }
+
 	/* Lists */
 
 		ul.links
