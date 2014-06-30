@@ -68,7 +68,7 @@
       			<div class="row">
       				<div class="6u">
       					<section>
-      						<form method="post" action="#">
+      						<form method="post" action="#" id="contact-form">
       							<div class="row half">
       								<div class="6u">
       									<input name="name" placeholder="Name" type="text" class="text" />
@@ -84,7 +84,7 @@
       							</div>
       							<div class="row half">
       								<div class="12u">
-      									<a href="#" class="button button-icon icon icon-envelope">Send Message</a>
+      									<a id="submit-contact-form" href="#" class="button button-icon icon icon-envelope">Send Message</a>
       								</div>
       							</div>
       						</form>
@@ -129,11 +129,21 @@
       			</div>
 					
 					</div>
-					
 			</div>
 		</div>
-</div>
 
+    <script type="text/javascript">
+      $("#submit-contact-form").click(function(event) {
+        event.preventDefault();
+
+        $.post("http://www.cs.famaf.unc.edu.ar/~ccardellino/email.php",
+          $("#contact-form").serialize(),
+          function (data) {
+            console.log(data);
+          });
+      });
+    </script>
+</div>
 
 		<!-- Footer Wrapper -->
 		<div id="footer-wrapper">
