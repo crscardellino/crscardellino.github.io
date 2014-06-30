@@ -1128,7 +1128,7 @@
 			
 					#nav > ul > li:hover > a > span
 					{
-						color: #ED786A;
+						color: #7abefd;
 					}
 
 			#nav > ul > li.active
@@ -1141,13 +1141,13 @@
 
 					#nav > ul > li.active > a:before
 					{
-						background: #ED786A;
+						background: #7abefd;
 						color: #fff;
 					}
 			
 					#nav > ul > li.active > a > span
 					{
-						color: #ED786A;
+						color: #7abefd;
 					}
 
 /*********************************************************************************/
