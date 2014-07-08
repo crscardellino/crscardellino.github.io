@@ -1,14 +1,3 @@
 section#header(style="background-image: url(../images/glen.jpg);")
 section#content
-  div.container
-    h1.typewriter
-      a(href="/") Cristian Cardellino
-    ul#navbar.list-inline.h4.typewriter
-      li.active
-        a(href="/about") Human.
-      li
-        a(href="/blog") Coder.
-      li
-        a(href="http://waitingragnarok.crscardellino.me/", target="_blank") Writer.
-      li
-        a.active(href="/contact") Geek.
+  != partial("_include/navbar", {contact: true})
