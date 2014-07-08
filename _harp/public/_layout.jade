@@ -1,0 +1,51 @@
+doctype
+html(lang="en")
+  head
+    meta(charset="utf-8")
+    meta(http-equiv="X-UA-Compatible", content="IE=edge")
+    meta(name="viewport", content="width=device-width, initial-scale=1")
+    meta(name="title", content="Cristian Cardellino")
+    meta(name="description", content="Cristian Cardellino personal page")
+    meta(name="author", content="Cristian Cardellino")
+    meta(name="viewport", content="width=device-width, initial-scale=1, maximum-scale=1")
+    
+    //  (c) 2014 Cristian Cardellino 
+
+    //  Licensed under MIT license.
+    //  Check http://crscardellino.me/LICENSE for more information. 
+
+    title Cristian Cardellino
+
+    // CSS
+    link(rel="stylesheet" href="/css/bootstrap.min.css")
+    link(rel="stylesheet" href="/css/main.css")
+    link(rel="stylesheet", href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css")
+    link(rel="shortcut icon", href="/images/favicon.ico")
+
+  body
+    section#header
+    section#content
+      != yield
+
+      div.footer
+        div.container
+          div.row
+            div.col-md-9 &nbsp;
+            div.col-md-3
+              h4.typewriter.pull-right
+                a(rel="license", href="http://creativecommons.org/licenses/by-sa/4.0/") &copy; 2014 Cristian Cardellino
+          div.row
+           div.col-md-9 &nbsp;
+           div.col-md-3
+             p.typewriter.pull-right
+               | Powered by 
+               a(href="http://harpjs.com") Harpjs 
+               | &amp; 
+               a(href="http://github.io") GitHub Pages
+
+    // JavaScript 
+    // Placed at the end of the document so the pages load faster 
+    script(src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js", type="text/javascript")
+    script(src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js", type="text/javascript")
+    script(src="/javascript/jquery.stellar.min.js", type="text/javascript")
+    script(src="/javascript/main.js", type="text/javascript")

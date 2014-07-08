@@ -1,0 +1,83 @@
+@font-face {
+  font-family: 'AFL Typewriter Font';
+  src: url('../fonts/aflfont.ttf') format('truetype'); /* Chrome 4+, Firefox 3.5, Opera 10+, Safari 3—5 */
+}
+
+html, body
+{
+  height: 100%;
+  color: #000;
+}
+
+a {
+  color: #000;
+
+  &:hover, &:focus {
+    color: #444;
+    text-decoration: none;
+  }
+}
+
+#header {
+  background-image: url(../images/founder.jpg);
+  background-repeat: no-repeat;
+  height: 50%;
+  position: relative;
+  background-position: top center;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+#content {
+  background-image: url(../images/background.png);
+  background-size: 500px 300px;
+  background-repeat: repeat;
+  min-height: 50%;
+
+  #navbar {
+    a.active {
+      border-bottom: 2px solid black;
+      padding-bottom: 3px;
+      padding-left: 0;
+      padding-right: 0;
+
+      &:hover, &:focus {
+        border-color: #555;
+      }
+    }
+  }
+
+  blockquote.banner {
+    border: none;
+    padding: 0px 50px;
+    margin-top: 50px;
+
+    h3 {
+      font-size: 25px;
+    }
+
+    .small {
+      color: #555;
+    }
+    
+    &:before {
+      content: "\f10d"; 
+      font-family: FontAwesome;
+      float: left;
+      margin-right: 10px;
+      padding-left: 40px;
+      padding-right: 10px;
+      padding-bottom: 20px;
+    }
+  }
+
+  .footer {
+    position: absolute;
+    right: 10%;
+    bottom: 10px;
+  }
+}
+
+.typewriter {
+  font-family: 'AFL Typewriter Font', 'Courier New', courier, monospace;
+}
