@@ -23,25 +23,9 @@ html(lang="en")
     link(rel="shortcut icon", href="/images/favicon.ico")
 
   body
-    section#header
-    section#content
-      != yield
+    != yield
 
-      div.footer
-        div.container
-          div.row
-            div.col-md-9 &nbsp;
-            div.col-md-3
-              h4.typewriter.pull-right
-                a(rel="license", href="http://creativecommons.org/licenses/by-sa/4.0/") &copy; 2014 Cristian Cardellino
-          div.row
-           div.col-md-9 &nbsp;
-           div.col-md-3
-             p.typewriter.pull-right
-               | Powered by 
-               a(href="http://harpjs.com") Harpjs 
-               | &amp; 
-               a(href="http://github.io") GitHub Pages
+    != partial("_include/footer")
 
     // JavaScript 
     // Placed at the end of the document so the pages load faster 
