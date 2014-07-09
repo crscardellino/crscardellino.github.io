@@ -1,3 +1,67 @@
 section#header(style="background-image: url(../images/glen.jpg);")
 section#content
   != partial("_include/navbar", {contact: true})
+
+  div.container
+    div.row
+      div.col-md-12
+        h2 Contact me
+        
+        div.row
+          div.col-md-6
+            div.row
+              div.col-md-12
+                p.justify
+                  | I currently work at FaMAF, the Faculty of Mathematics, Astronomy and Physics, 
+                  | in the National University of Córdoba, Argentina. If I'm around in the building,
+                  | you'll probably find me the office number 283. The best way to contact me, nevertheless, is by
+                  | the form on the right or via email: <strong>ccardellino AT famaf DOT unc DOT edu DOT ar</strong>
+
+            div.row
+              div.col-md-6
+                div.row.contact-info
+                  div.col-md-2.no-right-padding
+                    i.fa.fa-home.fa-2x
+                  div.col-md-10.info
+                    | Av. Medina Allende s/n
+                    br
+                    | Ciudad Universitaria
+                    br
+                    | X5000HUA Córdoba
+                    br
+                    | Argentina
+              div.col-md-6
+                div.row.contact-info
+                  div.col-md-2.no-right-padding
+                    i.fa.fa-phone.fa-2x
+                  div.col-md-10.info +54 351 4334051 (283)
+                div.row.contact-info
+                  div.col-md-2.no-right-padding
+                    i.fa.fa-linkedin-square.fa-2x
+                  div.col-md-10.info
+                    a(href="http://www.linkedin.com/in/crscardellino/en", target="_blank") LinkedIn Profile
+                div.row.contact-info
+                  div.col-md-2.no-right-padding
+                    i.fa.fa-github.fa-2x
+                  div.col-md-10.info
+                    a(href="http://github.com/crscardellino/", target="_blank") GitHub Profile
+
+          div.col-md-6
+            form#contact-form(action="//forms.brace.io/ccardellino@famaf.unc.edu.ar", role="form")
+              div.row
+                div.col-md-6
+                  div.form-group
+                    input.form-control(name="name", placeholder="Name", type="text")
+                div.col-md-6
+                  div.form-group
+                    input.form-control(name="_replyto", type="email", placeholder="E-mail")
+              div.row
+                div.col-md-12
+                  div.form-group
+                    textarea.form-control(name="body", placeholder="Message", rows="5")
+              div.row
+                div.col-md-6
+                div.col-md-6
+                  button#send-button.btn.btn-lg.btn-block.btn-default(type="submit")
+                    i.fa.fa-envelope-o
+                    | &nbsp;Send Message

@@ -24,9 +24,18 @@ a {
 }
 
 p {
-  margin-bottom: 25px;
+  margin-bottom: 15px;
   font-size: 18px;
   font-weight: 300;
+  
+  a {
+    color: #777;
+    font-style: italic;
+    
+    &:hover, &:focus {
+      color: #A00;
+    }
+  }
 }
 
 .justify {
@@ -48,6 +57,7 @@ p {
   background-repeat: repeat;
   position: relative;
   min-height: 40%;
+  padding-bottom: 30px;
 
   #navbar {
     a.active {
@@ -81,6 +91,31 @@ p {
       padding-right: 10px;
       padding-bottom: 20px;
     }
+  }
+}
+
+.contact-info {
+  padding-bottom: 15px;
+  
+  .no-right-padding {
+    padding-right: 0;
+    text-align: right;
+  }
+  
+  .info {
+    font-size: 16px;
+    font-weight: 300;
+  }
+}
+
+#contact-form {
+  .form-control {
+    font-size: 18px;
+  }
+
+  #send-button {
+    font-size: 18px;
+    text-transform: uppercase;
   }
 }
 
