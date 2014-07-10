@@ -47,7 +47,8 @@ section#content
                     a(href="http://github.com/crscardellino/", target="_blank") GitHub Profile
 
           div.col-md-6
-            form#contact-form(action="//forms.brace.io/ccardellino@famaf.unc.edu.ar", role="form")
+            form#contact-form(action="//forms.brace.io/ccardellino@famaf.unc.edu.ar", role="form", method="post")
+              input(type="hidden", name="_next", value="//crscardellino.me/contact#message-success")
               div.row
                 div.col-md-6
                   div.form-group
@@ -61,6 +62,7 @@ section#content
                     textarea.form-control(name="body", placeholder="Message", rows="5")
               div.row
                 div.col-md-6
+                  span#message-success.btn.btn-lg.btn-block.btn-warning.hide(disabled="disabled") Message Sent
                 div.col-md-6
                   button#send-button.btn.btn-lg.btn-block.btn-default(type="submit")
                     i.fa.fa-envelope-o
