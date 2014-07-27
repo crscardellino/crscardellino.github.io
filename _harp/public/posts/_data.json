@@ -1,10 +1,8 @@
 {
   "hello-world": {
     "title": "Hello World",
-    "date": "Jun 11, 2014"
-  },
-  "hello-world-2": {
-    "title": "Hello World 2",
-    "date": "Jul 22, 2014"
+    "date": "Jun 11, 2014",
+    "year": "2014",
+    "disqus": "0001-11-06-2014"
   }
 }

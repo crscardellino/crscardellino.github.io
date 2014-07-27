@@ -13,13 +13,15 @@ section#content
         h2 Blog
 
     div.row
-      div.col-md-9.text-justify
+      div.col-md-1
+      div.col-md-10.text-justify
         for post, slug in public.posts._data
           div.row
             div.col-md-9
               h3: a(href="/posts/#{ slug }")= post.title
             div.col-md-3  
-              span.date.btn.btn-default.btn-block.btn-default(disabled="disabled"): = post.date
-          != excerpt(partial("posts/" + slug), slug)
-
-      div.col-md-3
+              button.date.btn.btn-default.btn-block.btn-default(disabled="disabled")= post.date
+          div.row
+            div.col-md-12
+              != excerpt(partial("posts/" + slug), slug)
+      div.col-md-1
