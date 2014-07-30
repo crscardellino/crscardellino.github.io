@@ -6,7 +6,31 @@ m=s.getElementsByTagName(o)
 
 ga('create', 'UA-30086759-1', 'auto');
 ga('send', 'pageview');
-</script></head><body><section id="header" style="background-image: url(../images/lamp.jpg);"></section><section id="content"><div class="container"><h1 class="typewriter"><a href="/">Cristian Cardellino</a></h1><ul id="navbar" class="list-inline h4 typewriter"><li><a href="/about">Human.</a></li><li><a href="/blog" class="active">Coder.</a></li><li><a href="/social">Writer.</a></li><li><a href="/contact">Geek.</a></li></ul></div><div class="container"><div class="row"><div class="col-md-12"><h2>Blog</h2></div></div><div class="row"><div class="col-md-1"></div><div class="col-md-10 text-justify"><div class="row"><div class="col-md-9"><h3><a href="/posts/python-to-scala-i">Crash Course: From Python to Scala (I)</a></h3></div><div class="col-md-3"> <button disabled="disabled" class="date btn btn-default btn-block btn-default">Jul 28, 2014</button></div></div><div class="row"><div class="col-md-12"><p>This is the first post in a series in which I&#39;ll try to give a nice insight for
+</script></head><body><section id="header" style="background-image: url(../images/lamp.jpg);"></section><section id="content"><div class="container"><h1 class="typewriter"><a href="/">Cristian Cardellino</a></h1><ul id="navbar" class="list-inline h4 typewriter"><li><a href="/about">Human.</a></li><li><a href="/blog" class="active">Coder.</a></li><li><a href="/social">Writer.</a></li><li><a href="/contact">Geek.</a></li></ul></div><div class="container"><div class="row"><div class="col-md-12"><h2>Blog</h2></div></div><div class="row"><div class="col-md-1"></div><div class="col-md-10 text-justify"><div class="row"><div class="col-md-9"><h3><a href="/posts/python-to-scala-ii">Crash Course: From Python to Scala (II)</a></h3></div><div class="col-md-3"> <button disabled="disabled" class="date btn btn-default btn-block btn-default">Jul 30, 2014</button></div></div><div class="row"><div class="col-md-12"><h4>Scala Types</h4>
+<p>Following my series of tutorial of Scala for Python programmers, I&#39;ll start to
+talk about something most Python programmers don&#39;t usually pay attention to
+because the language doesn&#39;t require it to do so.</p>
+<p>I&#39;m talking about data types. It&#39;s not that Python doesn&#39;t have types for its
+variables, but as it is a dynamically typed programming language, you usually
+don&#39;t care about the type of the variable. At least not unless you try to add a
+number and a letter: you cannot add apple and oranges, naturally you cannot add
+strings and numbers (not at least without conversion first):</p>
+<p>In general terms, however, Python won&#39;t bother about the type you are giving to
+your variables: actually, you won&#39;t be able to declare a type for them as
+Python will infer it. So, this is perfectly normal for a Python program:</p>
+<pre class="prettyprint lang-python">
+  string = "This is a string"
+  print string # Will output "This is a string"
+
+  string + 100 # Invalid. Will result in a TypeError exception.
+
+  string = 100 # Perfectly valid. `string` type will be int from now on.
+  print string # Will output 100
+
+  string + 100 # Valid. Will result in 200.
+</pre>
+
+<a href="posts/python-to-scala-ii" target="_blank">Read more</a></div></div><div class="row"><div class="col-md-9"><h3><a href="/posts/python-to-scala-i">Crash Course: From Python to Scala (I)</a></h3></div><div class="col-md-3"> <button disabled="disabled" class="date btn btn-default btn-block btn-default">Jul 28, 2014</button></div></div><div class="row"><div class="col-md-12"><p>This is the first post in a series in which I&#39;ll try to give a nice insight for
 the Scala Language to a programmer with background in Python. I chose to do
 these posts since, at least when I started this series, the &quot;Scala for people
 coming from Python&quot; tutorial was a work in progress.</p>
@@ -38,4 +62,4 @@ I turn myself into the world of Scala and it has so interesting I&#39;ve
 practically abandoned my old time coding Python skills (of course, with Python,
 is never that hard to return).</p>
 <p>I hope my posts will help you somehow.</p>
-</div></div></div><div class="col-md-1"></div></div></div></section><section id="footer"> <div class="container"><div class="row"><div class="col-md-7">&nbsp;</div><div class="col-md-5"><h4 class="pull-right">Website design & content <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">&copy; 2014 Cristian Cardellino</a></h4></div></div><div class="row"><div class="col-md-8">&nbsp;</div><div class="col-md-4 pull-right"><p class="pull-right">Powered by <a href="http://harpjs.com" target="_blank">Harpjs </a>&amp; <a href="http://github.io" target="_blank">GitHub Pages</a></p></div></div><div class="row"><div class="col-md-8">&nbsp;</div><div class="col-md-4"><a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank" class="pull-right"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/80x15.png"/></a></div></div></div></section><!-- JavaScript --><!-- Placed at the end of the document so the pages load faster --><script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js" type="text/javascript"></script><script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js" type="text/javascript"></script><script src="/javascript/main.js" type="text/javascript"></script></body></html>
+</div></div></div><div class="col-md-1"></div></div></div></section><section id="footer"> <div class="container"><div class="row"><div class="col-md-7">&nbsp;</div><div class="col-md-5"><h4 class="pull-right">Website design & content <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">&copy; 2014 Cristian Cardellino</a></h4></div></div><div class="row"><div class="col-md-8">&nbsp;</div><div class="col-md-4 pull-right"><p class="pull-right">Powered by <a href="http://harpjs.com" target="_blank">Harpjs </a>&amp; <a href="http://github.io" target="_blank">GitHub Pages</a></p></div></div><div class="row"><div class="col-md-8">&nbsp;</div><div class="col-md-4"><a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank" class="pull-right"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/80x15.png"/></a></div></div></div></section><!-- JavaScript --><!-- Placed at the end of the document so the pages load faster --><script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js" type="text/javascript"></script><script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js" type="text/javascript"></script><script src="/javascript/main.js" type="text/javascript"></script><script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js?lang=scala&amp;skin=sons-of-obsidian" type="text/javascript"></script></body></html>

@@ -30,7 +30,7 @@ get running your first "Hello, world!" app (if not, please refer to the [Scala
 Getting Started](http://www.scala-lang.org/documentation/getting-started.html)
 section).
 
-  
+<br/>  
 #### The Scala REPL (The Python Interpreter) ####
 
 As Python, Scala also has an interpreter: the Scala REPL (from Read–eval–print
@@ -72,6 +72,7 @@ As you could notice in the last example, even if you try to get the value of a
 res you'll end up creating another res (look what happens when "res2" is
 created).
 
+<br/>
 #### Scala Strings & Chars ####
 
 One important different when working on Scala, is the strings declaration. In

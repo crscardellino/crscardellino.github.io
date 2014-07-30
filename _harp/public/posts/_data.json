@@ -1,4 +1,10 @@
 {
+  "python-to-scala-ii": {
+    "id": "0003",
+    "title": "Crash Course: From Python to Scala (II)",
+    "date": "Jul 30, 2014",
+    "show": "blog"
+  },
   "python-to-scala-i": {
     "id": "0002",
     "title": "Crash Course: From Python to Scala (I)",
