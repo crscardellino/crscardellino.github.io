@@ -114,13 +114,13 @@ modify that returned value. Stateful (although you probably didn't hear it
 under that name) is more common among imperative languages, and means you have
 a state that can change the final computation.
 
-This is not a tutorial for programming language (not even on Scala) but to
+This is not a tutorial for functional programming (not even on Scala) but to
 understand the basics of Scala. Scala is a multi-paradigm language and can be
 used for imperative programming. Still, if you are learning Scala I would
 recommend you to learn something on functional programming. Otherwise you will
-be wasting the full Scala potential. If you are interested in this matter
-there should be lots of tutorials and resources on the internet, but my
-personal recommendation is to take the [Functional Programming Principles in
+be wasting the full Scala potential. If you are interested in this matter there
+should be lots of tutorials and resources on the internet, but my personal
+recommendation is to take the [Functional Programming Principles in
 Scala](https://www.coursera.org/course/progfun), in
 [Coursera](https://www.coursera.org/), by Martin Odersky (the designer of the
 Scala language).
