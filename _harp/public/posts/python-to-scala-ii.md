@@ -118,7 +118,7 @@ This is not a tutorial for programming language (not even on Scala) but to
 understand the basics of Scala. Scala is a multi-paradigm language and can be
 used for imperative programming. Still, if you are learning Scala I would
 recommend you to learn something on functional programming. Otherwise you will
-be wasting the full Scala potential. If you are interesting in this matter
+be wasting the full Scala potential. If you are interested in this matter
 there should be lots of tutorials and resources on the internet, but my
 personal recommendation is to take the [Functional Programming Principles in
 Scala](https://www.coursera.org/course/progfun), in
