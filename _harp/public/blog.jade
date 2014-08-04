@@ -22,7 +22,7 @@ section#content
                 h3: a(href="/posts/#{ slug }")= post.title
               div.col-md-3  
                 button.date.btn.btn-default.btn-block.btn-default(disabled="disabled")= post.date
-            div.row
+            div.row.post-excerpt
               div.col-md-12
                 != excerpt(partial("posts/" + slug), slug)
       div.col-md-1

@@ -6,7 +6,38 @@ m=s.getElementsByTagName(o)
 
 ga('create', 'UA-30086759-1', 'auto');
 ga('send', 'pageview');
-</script></head><body><section id="header" style="background-image: url(../images/lamp.jpg);"></section><section id="content"><div class="container"><h1 class="typewriter"><a href="/">Cristian Cardellino</a></h1><ul id="navbar" class="list-inline h4 typewriter"><li><a href="/about">Human.</a></li><li><a href="/blog" class="active">Coder.</a></li><li><a href="/social">Writer.</a></li><li><a href="/contact">Geek.</a></li></ul></div><div class="container"><div class="row"><div class="col-md-12"><h2>Blog</h2></div></div><div class="row"><div class="col-md-1"></div><div class="col-md-10 text-justify"><div class="row"><div class="col-md-9"><h3><a href="/posts/python-to-scala-ii">Crash Course: From Python to Scala (II)</a></h3></div><div class="col-md-3"> <button disabled="disabled" class="date btn btn-default btn-block btn-default">Jul 30, 2014</button></div></div><div class="row"><div class="col-md-12"><h4>Scala Types</h4>
+</script></head><body><section id="header" style="background-image: url(../images/lamp.jpg);"></section><section id="content"><div class="container"><h1 class="typewriter"><a href="/">Cristian Cardellino</a></h1><ul id="navbar" class="list-inline h4 typewriter"><li><a href="/about">Human.</a></li><li><a href="/blog" class="active">Coder.</a></li><li><a href="/social">Writer.</a></li><li><a href="/contact">Geek.</a></li></ul></div><div class="container"><div class="row"><div class="col-md-12"><h2>Blog</h2></div></div><div class="row"><div class="col-md-1"></div><div class="col-md-10 text-justify"><div class="row"><div class="col-md-9"><h3><a href="/posts/python-to-scala-iii">Crash Course: From Python to Scala (III)</a></h3></div><div class="col-md-3"> <button disabled="disabled" class="date btn btn-default btn-block btn-default">Aug 5, 2014</button></div></div><div class="row post-excerpt"><div class="col-md-12"><p>Following with the series in this crash course from Python to Scala, today I&#39;ll
+introduce one of the most useful Scala&#39;s data structures and make the
+comparison to Python.</p>
+<h4>Scala Lists</h4>
+<p>Starting off with one of the most used data structures in Scala (and in
+functional languages in general) and also the most common data structure in
+Python as well: the lists.</p>
+<p>A list in Scala is a data structure to represent a collection of values of the
+same type. Lists are very used in Python, and the concept is quite similar in
+Scala, with a couple of exceptions. First, in Python are written as a list of
+comma-separated values between square brackets. The empty list, is represented
+as a pair of empty square brackets:</p>
+<pre class="prettyprint lang-python">
+>>> squares = [1, 4, 9, 16, 25]
+>>> squares
+[1, 4, 9, 16, 25]
+>>> empty = []
+>>> empty
+[]
+</pre>
+
+<p>In Scala, a list is build with the use of a constructor of name <em>List</em> and
+the values passed by parameter to the constructor. The empty list is
+represented by the empty constructor:</p>
+<pre class="prettyprint lang-scala">
+scala> val squares = List(1, 4, 9, 16, 25)
+squares: List[Int] = List(1, 4, 9, 16, 25)
+scala> val empty = List()
+empty: List[Nothing] = List()
+</pre>
+
+<a href="posts/python-to-scala-iii" target="_blank">Read more</a></div></div><div class="row"><div class="col-md-9"><h3><a href="/posts/python-to-scala-ii">Crash Course: From Python to Scala (II)</a></h3></div><div class="col-md-3"> <button disabled="disabled" class="date btn btn-default btn-block btn-default">Jul 30, 2014</button></div></div><div class="row post-excerpt"><div class="col-md-12"><h4>Scala Types</h4>
 <p>Following my series of tutorial of Scala for Python programmers, I&#39;ll start to
 talk about something most Python programmers don&#39;t usually pay attention to
 because the language doesn&#39;t require it to do so.</p>
@@ -19,18 +50,18 @@ strings and numbers (not at least without conversion first):</p>
 your variables: actually, you won&#39;t be able to declare a type for them as
 Python will infer it. So, this is perfectly normal for a Python program:</p>
 <pre class="prettyprint lang-python">
-  string = "This is a string"
-  print string # Will output "This is a string"
+string = "This is a string"
+print string # Will output "This is a string"
 
-  string + 100 # Invalid. Will result in a TypeError exception.
+string + 100 # Invalid. Will result in a TypeError exception.
 
-  string = 100 # Perfectly valid. `string` type will be int from now on.
-  print string # Will output 100
+string = 100 # Perfectly valid. `string` type will be int from now on.
+print string # Will output 100
 
-  string + 100 # Valid. Will result in 200.
+string + 100 # Valid. Will result in 200.
 </pre>
 
-<a href="posts/python-to-scala-ii" target="_blank">Read more</a></div></div><div class="row"><div class="col-md-9"><h3><a href="/posts/python-to-scala-i">Crash Course: From Python to Scala (I)</a></h3></div><div class="col-md-3"> <button disabled="disabled" class="date btn btn-default btn-block btn-default">Jul 28, 2014</button></div></div><div class="row"><div class="col-md-12"><p>This is the first post in a series in which I&#39;ll try to give a nice insight for
+<a href="posts/python-to-scala-ii" target="_blank">Read more</a></div></div><div class="row"><div class="col-md-9"><h3><a href="/posts/python-to-scala-i">Crash Course: From Python to Scala (I)</a></h3></div><div class="col-md-3"> <button disabled="disabled" class="date btn btn-default btn-block btn-default">Jul 28, 2014</button></div></div><div class="row post-excerpt"><div class="col-md-12"><p>This is the first post in a series in which I&#39;ll try to give a nice insight for
 the Scala Language to a programmer with background in Python. I chose to do
 these posts since, at least when I started this series, the &quot;Scala for people
 coming from Python&quot; tutorial was a work in progress.</p>
@@ -48,7 +79,7 @@ Framework, but nothing really impressive. The reason I&#39;m doing this set of
 tutorials is because when I started to learn Scala I didn&#39;t have one and many
 times I end up in Stackoverflow looking for how to do in Scala things I did in
 Python.</p>
-<a href="posts/python-to-scala-i" target="_blank">Read more</a></div></div><div class="row"><div class="col-md-9"><h3><a href="/posts/hello-world">Hello World</a></h3></div><div class="col-md-3"> <button disabled="disabled" class="date btn btn-default btn-block btn-default">Jun 11, 2014</button></div></div><div class="row"><div class="col-md-12"><p>As every programmer trying to learn a new language, I think is suitable for me
+<a href="posts/python-to-scala-i" target="_blank">Read more</a></div></div><div class="row"><div class="col-md-9"><h3><a href="/posts/hello-world">Hello World</a></h3></div><div class="col-md-3"> <button disabled="disabled" class="date btn btn-default btn-block btn-default">Jun 11, 2014</button></div></div><div class="row post-excerpt"><div class="col-md-12"><p>As every programmer trying to learn a new language, I think is suitable for me
 to start this professional blog with a Hello World. So, in this first blog post
 I say Hello World!</p>
 <p>This is the first blog I&#39;ve created that has relation with what I do for a

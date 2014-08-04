@@ -15,15 +15,15 @@ your variables: actually, you won't be able to declare a type for them as
 Python will infer it. So, this is perfectly normal for a Python program:
 
 <pre class="prettyprint lang-python">
-  string = "This is a string"
-  print string # Will output "This is a string"
+string = "This is a string"
+print string # Will output "This is a string"
 
-  string + 100 # Invalid. Will result in a TypeError exception.
-  
-  string = 100 # Perfectly valid. `string` type will be int from now on.
-  print string # Will output 100
-  
-  string + 100 # Valid. Will result in 200.
+string + 100 # Invalid. Will result in a TypeError exception.
+
+string = 100 # Perfectly valid. `string` type will be int from now on.
+print string # Will output 100
+
+string + 100 # Valid. Will result in 200.
 </pre>
 
 <!-- more -->
@@ -36,12 +36,12 @@ Scala will automatically transform the number into a String and result in a
 String concatenation:
 
 <pre class="prettyprint lang-scala">
-  var string = "This is a string"
-  println(string) // Will output "This is a string"
-  
-  string + 100 // Valid. Will result in the string "This is a string100"
-  
-  string = 100 // Invalid. Will result in a "type mismatch" error.
+var string = "This is a string"
+println(string) // Will output "This is a string"
+
+string + 100 // Valid. Will result in the string "This is a string100"
+
+string = 100 // Invalid. Will result in a "type mismatch" error.
 </pre>
 
 Scala, as well as Python, can infer the type of the variables you are using.
@@ -49,8 +49,8 @@ But, it add the possibility to declare the type of the variable (something that
 many times comes in handy as we will see in future tutorials):
 
 <pre class="prettyprint lang-scala">
-  var string: String = "This is a string with declared type"
-  var num: Int = 100 // This is a number with declared type
+var string: String = "This is a string with declared type"
+var num: Int = 100 // This is a number with declared type
 </pre>
 
 Scala has a variety of types (you should check on the [Scala
@@ -87,13 +87,13 @@ another one (even of the same type), the compiler will throw an error. Values
 are declared with the reserved word __val__.
 
 <pre class="prettyprint lang-scala">
-  var variable: Int = 10 // This is a Scala variable.
-  
-  variable = 20 // Valid. "variable" is now set to value 20.
-  
-  val value: Int = 10 // This is a Scala value.
-  
-  value = 20 // Invalid. Will result in a compiler error.
+var variable: Int = 10 // This is a Scala variable.
+
+variable = 20 // Valid. "variable" is now set to value 20.
+
+val value: Int = 10 // This is a Scala value.
+
+value = 20 // Invalid. Will result in a compiler error.
 </pre>
 
 If you are coming from the Python environment (or, more in general from a
