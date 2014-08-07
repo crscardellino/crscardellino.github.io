@@ -30,6 +30,7 @@ represented by the empty constructor:
 <pre class="prettyprint lang-scala">
 scala> val squares = List(1, 4, 9, 16, 25)
 squares: List[Int] = List(1, 4, 9, 16, 25)
+
 scala> val empty = List()
 empty: List[Nothing] = List()
 </pre>

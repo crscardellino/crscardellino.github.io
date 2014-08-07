@@ -6,7 +6,41 @@ m=s.getElementsByTagName(o)
 
 ga('create', 'UA-30086759-1', 'auto');
 ga('send', 'pageview');
-</script></head><body><section id="header" style="background-image: url(../images/lamp.jpg);"></section><section id="content"><div class="container"><h1 class="typewriter"><a href="/">Cristian Cardellino</a></h1><ul id="navbar" class="list-inline h4 typewriter"><li><a href="/about">Human.</a></li><li><a href="/blog" class="active">Coder.</a></li><li><a href="/social">Writer.</a></li><li><a href="/contact">Geek.</a></li></ul></div><div class="container"><div class="row"><div class="col-md-12"><h2>Blog</h2></div></div><div class="row"><div class="col-md-1"></div><div class="col-md-10 text-justify"><div class="row"><div class="col-md-9"><h3><a href="/posts/python-to-scala-iii">Crash Course: From Python to Scala (III)</a></h3></div><div class="col-md-3"> <button disabled="disabled" class="date btn btn-default btn-block btn-default">Aug 5, 2014</button></div></div><div class="row post-excerpt"><div class="col-md-12"><p>Following with the series in this crash course from Python to Scala, today I&#39;ll
+</script></head><body><section id="header" style="background-image: url(../images/lamp.jpg);"></section><section id="content"><div class="container"><h1 class="typewriter"><a href="/">Cristian Cardellino</a></h1><ul id="navbar" class="list-inline h4 typewriter"><li><a href="/about">Human.</a></li><li><a href="/blog" class="active">Coder.</a></li><li><a href="/social">Writer.</a></li><li><a href="/contact">Geek.</a></li></ul></div><div class="container"><div class="row"><div class="col-md-12"><h2>Blog</h2></div></div><div class="row"><div class="col-md-1"></div><div class="col-md-10 text-justify"><div class="row"><div class="col-md-9"><h3><a href="/posts/python-to-scala-iv">Crash Course: From Python to Scala (IV)</a></h3></div><div class="col-md-3"> <button disabled="disabled" class="date btn btn-default btn-block btn-default">Aug 7, 2014</button></div></div><div class="row post-excerpt"><div class="col-md-12"><p>Ok. So, now you&#39;ve learnt about Scala lists. As you could see in the previous
+examples, Scala has a very <em>functional</em> kind of lists, as these are immutable.</p>
+<p>If you are ever to use Scala as a functional programming language this is the
+way to go. I really recommend you to, at least, try to learn this paradigm, as
+it is design purpose and has many advantages. But, then again, even now I
+sometimes go back to imperative programming in Scala myself because is more
+natural to me. Scala as imperative language is pretty similar to Java, so as a
+side effect I ended up learning how to read Java code (I knew some Java but
+only the basics, learning Scala my Java understanding improved a lot).</p>
+<p>But, lets say that functional programming is way too much to deal with now and
+you want to know a type more similar to Python lists, the oldie but goodie
+mutable lists. You have a couple of options of data structures available in
+Scala, I&#39;ll present two of the most commons.</p>
+<h4>Scala Arrays</h4>
+<p>Ok, if my university&#39;s data structure teacher sees me presenting Scala arrays as
+an option for a &quot;mutable&quot; list he probably would take away my degree and force
+me to redo the Computer Sciences career all over again.</p>
+<p>An array <strong>is not</strong> a list and will never be one. But, for someone who comes
+from a Python environment, it&#39;s probably an easy option to replace a immutable
+list for a mutable version.</p>
+<p>Arrays are the simplest and one of the oldest (if not <em>the</em> oldest) data
+structure you&#39;ll ever face with. In fact, most high-level programming languages
+lists are internally implemented as arrays. If you&#39;ve ever deal with a real old
+imperative programming language (I&#39;m looking at you C developer), you are
+familiar to the concept of array. The thing is that Python doesn&#39;t really have
+them (at least not internally, you&#39;ll have to import a module for dealing with
+arrays).</p>
+<p>Arrays have some pros and cons in programming, as every data structure. Among
+the most common pros of an array you&#39;ll find the efficiency they carry in
+comparison to lists. As arrays are represented as collection of elements (of
+the same type) stored in a continuous space of memory. They differ from lists
+in that you&#39;ll have an index for all the elements (which makes the access time
+of a constant order) and in general are faster to make operations than in lists
+which can have chunks of elements sparse in many places.</p>
+<a href="posts/python-to-scala-iv" target="_blank">Read more</a></div></div><div class="row"><div class="col-md-9"><h3><a href="/posts/python-to-scala-iii">Crash Course: From Python to Scala (III)</a></h3></div><div class="col-md-3"> <button disabled="disabled" class="date btn btn-default btn-block btn-default">Aug 5, 2014</button></div></div><div class="row post-excerpt"><div class="col-md-12"><p>Following with the series in this crash course from Python to Scala, today I&#39;ll
 introduce one of the most useful Scala&#39;s data structures and make the
 comparison to Python.</p>
 <h4>Scala Lists</h4>
@@ -33,6 +67,7 @@ represented by the empty constructor:</p>
 <pre class="prettyprint lang-scala">
 scala> val squares = List(1, 4, 9, 16, 25)
 squares: List[Int] = List(1, 4, 9, 16, 25)
+
 scala> val empty = List()
 empty: List[Nothing] = List()
 </pre>
