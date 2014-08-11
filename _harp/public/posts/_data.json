@@ -1,4 +1,10 @@
 {
+  "why-scala": {
+    "id": "0006",
+    "title": "Why did I choose Scala?",
+    "date": "Aug 11, 2014",
+    "show": "blog"
+  },
   "python-to-scala-iv" : {
     "id": "0005",
     "title": "Crash Course: From Python to Scala (IV)",
