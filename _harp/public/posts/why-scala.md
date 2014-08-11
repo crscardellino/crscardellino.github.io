@@ -16,7 +16,7 @@ programmer.
 
 <!-- more -->
 
-##### I got bored #####
+#### I got bored ####
 
 I don't think this counts as a real "advantage", but it's definitely one of the
 main reasons. Before Scala I was a Python programmer for 4 years, and I just
@@ -39,7 +39,7 @@ And of course, with these I'm not saying Scala is better than Python, nor is
 that my intention. Scala and Python are just different, they offer different
 things and provide different ways for programming.
 
-##### Functional Programming #####
+#### Functional Programming ####
 
 Scala is a multi-paradigm language. It can be used with an imperative language
 orientation (much like Java, C++ or Python), but it's designed with the idea of
@@ -85,7 +85,7 @@ go [reactive](http://www.reactivemanifesto.org/), making concurrency and
 distribution easier and giving a nice and elegant way to asynchronous
 programming.
 
-##### Static Types #####
+#### Static Types ####
 
 If there is a thing that Python lacks of are static types. Of course, this is a
 matter of pure perspective, since for some people this is an advantage of
@@ -108,7 +108,7 @@ Let the type system work for you.
 After years of dynamic typing, I come back once again to the good old static
 typing, and I'm happy with it.
 
-##### Compilation to JVM #####
+#### Compilation to JVM ####
 
 Scala compiles over the JVM, that's why it's called a _JVM language_ (just like
 Jython, Clojure, Groovy or JRuby). 
@@ -146,7 +146,7 @@ Java enthusiast, and although I respect the contribution it has given to the
 programming environment, I still prefer the less verbose code of Scala, and
 then again, Java is not a functional programming language.
 
-##### A Cool Kid #####
+#### A Cool Kid ####
 
 Finally, the last reason I choose Scala as new toy to play with. In the last
 years, Scala community has grown a lot, and it's in part because is a new
