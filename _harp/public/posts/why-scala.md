@@ -23,7 +23,7 @@ main reasons. Before Scala I was a Python programmer for 4 years, and I just
 got bored. Programming in Python wasn't fun anymore, wasn't challenging enough.
 Don't take this the wrong way, it's not that I've learnt everything I could in
 Python, that's completely ridiculous, I'm as far as learning or using all that
-Python has to offer as I can get. But, somehow, I wasn't interesting in
+Python has to offer as I can get. But, somehow, I wasn't interested in
 learning new things in Python.
 
 Maybe was the fact that in the Zen of Python "There should be one-- and
@@ -56,7 +56,7 @@ nice features include the always useful pattern matching and the extremely
 powerful high-order functions.
 
 There is a good article called [Functional Programming For The Rest Of
-Us](http://www.defmacro.org/ramblings/fp.html). Take a look at it, is an
+Us](http://www.defmacro.org/ramblings/fp.html). Take a look at it, it's an
 interesting read.
 
 I learned the functional programming paradigm in the university, in my first
