@@ -1,44 +1,23 @@
 {
   "python-to-scala-v": {
-    "id": "0007",
-    "title": "Crash Course: From Python to Scala (V)",
-    "date": "Aug 20, 2014",
-    "show": "blog"
+    "redirect": "/blog/post/2014/08/20/from-python-to-scala-v-control-flow-tools/"
   },
   "why-scala": {
-    "id": "0006",
-    "title": "Why did I choose Scala?",
-    "date": "Aug 11, 2014",
-    "show": "blog"
+    "redirect": "/blog/post/2014/08/11/why-did-i-choose-scala/"
   },
   "python-to-scala-iv" : {
-    "id": "0005",
-    "title": "Crash Course: From Python to Scala (IV)",
-    "date": "Aug 7, 2014",
-    "show": "blog"
+    "redirect": "/blog/post/2014/08/07/from-python-to-scala-iv-arrays-and-listbuffers/"
   },
   "python-to-scala-iii": {
-    "id": "0004",
-    "title": "Crash Course: From Python to Scala (III)",
-    "date": "Aug 5, 2014",
-    "show": "blog"
+    "redirect": "/blog/post/2014/08/05/from-python-to-scala-iii-lists/"
   },
   "python-to-scala-ii": {
-    "id": "0003",
-    "title": "Crash Course: From Python to Scala (II)",
-    "date": "Jul 30, 2014",
-    "show": "blog"
+    "redirect": "/blog/post/2014/07/30/from-python-to-scala-ii-types/"
   },
   "python-to-scala-i": {
-    "id": "0002",
-    "title": "Crash Course: From Python to Scala (I)",
-    "date": "Jul 28, 2014",
-    "show": "blog"
+    "redirect": "/blog/post/2014/07/28/from-python-to-scala-i-the-basics/"
   },
   "hello-world": {
-    "id": "0001",
-    "title": "Hello World",
-    "date": "Jun 11, 2014",
-    "show": "blog"
+    "redirect": "/blog/post/2014/06/11/hello-world/"
   }
 }
