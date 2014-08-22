@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Tutorial | Cristian Cardellino]]></title>
   <link href="http://crscardellino.me/blog/posts/categories/tutorial/atom.xml" rel="self"/>
   <link href="http://crscardellino.me/blog/"/>
-  <updated>2014-08-22T17:07:30+02:00</updated>
+  <updated>2014-08-22T20:13:34+02:00</updated>
   <id>http://crscardellino.me/blog/</id>
   <author>
     <name><![CDATA[Cristian Cardellino]]></name>
@@ -917,6 +917,8 @@ with the 2.X version (started with 2.5 until 2.7). Never even try to learn
 Python 3. Also, there are experts on Scala as well, I&rsquo;m not one of those
 either. In fact, my Scala knowledge is far from deep, I learned Scala at the
 end of last year and been using it since then (along with Python).</p>
+
+<p><blockquote><p>There are people out there who are experts in Python. I&rsquo;m not one of them. [&hellip;]<br/>Also, there are experts on Scala as well, I&rsquo;m not one of those either.</p></blockquote></p>
 
 <p>Once you know this, I&rsquo;ll just say I have enough knowledge of both Scala and
 Python to get by. I&rsquo;ve done some projects in Django and some projects in Play
