@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: http://crscardellino.me/sitemap.xml
