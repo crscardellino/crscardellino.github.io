@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Scala | Cristian Cardellino]]></title>
   <link href="http://crscardellino.me/blog/posts/categories/scala/atom.xml" rel="self"/>
   <link href="http://crscardellino.me/blog/"/>
-  <updated>2014-08-23T22:40:12+02:00</updated>
+  <updated>2014-08-23T22:55:00+02:00</updated>
   <id>http://crscardellino.me/blog/</id>
   <author>
     <name><![CDATA[Cristian Cardellino]]></name>
@@ -228,16 +228,17 @@ function, so, we can rewrite the last function taking advantage of this:</p>
 <span class='line-number'>8</span>
 <span class='line-number'>9</span>
 <span class='line-number'>10</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>def fib(n: Int) = {
-</span><span class='line'>  def fibaux(a: Int, b: Int, n: Int): List[Int] = {
-</span><span class='line'>    if (a > n) Nil
-</span><span class='line'>    else a :: fibaux(b, a+b, n)
-</span><span class='line'>  }&lt;/p>
+</pre></td><td class='code'><pre><code class='scala'><span class='line'><span class="k">def</span> <span class="n">fib</span><span class="o">(</span><span class="n">n</span><span class="k">:</span> <span class="kt">Int</span><span class="o">)</span> <span class="k">=</span> <span class="o">{</span>
+</span><span class='line'>  <span class="k">def</span> <span class="n">fibaux</span><span class="o">(</span><span class="n">a</span><span class="k">:</span> <span class="kt">Int</span><span class="o">,</span> <span class="n">b</span><span class="k">:</span> <span class="kt">Int</span><span class="o">,</span> <span class="n">n</span><span class="k">:</span> <span class="kt">Int</span><span class="o">)</span><span class="k">:</span> <span class="kt">List</span><span class="o">[</span><span class="kt">Int</span><span class="o">]</span> <span class="k">=</span> <span class="o">{</span>
+</span><span class='line'>    <span class="k">if</span> <span class="o">(</span><span class="n">a</span> <span class="o">&gt;</span> <span class="n">n</span><span class="o">)</span> <span class="nc">Nil</span>
+</span><span class='line'>    <span class="k">else</span> <span class="n">a</span> <span class="o">::</span> <span class="n">fibaux</span><span class="o">(</span><span class="n">b</span><span class="o">,</span> <span class="n">a</span><span class="o">+</span><span class="n">b</span><span class="o">,</span> <span class="n">n</span><span class="o">)</span>
+</span><span class='line'>  <span class="o">}&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
 </span><span class='line'>
-</span><span class='line'>&lt;p>  fibaux(0, 1, n)
-</span><span class='line'>}&lt;/p>
+</span><span class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span>  <span class="n">fibaux</span><span class="o">(</span><span class="mi">0</span><span class="o">,</span> <span class="mi">1</span><span class="o">,</span> <span class="n">n</span><span class="o">)</span>
+</span><span class='line'><span class="o">}&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
 </span><span class='line'>
-</span><span class='line'>&lt;p>fib(100) // Will return List(0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89)</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+</span><span class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="n">fib</span><span class="o">(</span><span class="mi">100</span><span class="o">)</span> <span class="c1">// Will return List(0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89)</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
 
 <p>Nice, huh? In this new version we use a locally defined a <em>fibaux</em> which
 result&rsquo;s value we return as the value of the main fib function. Then, we only
