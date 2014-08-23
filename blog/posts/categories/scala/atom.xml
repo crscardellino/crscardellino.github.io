@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Scala | Cristian Cardellino]]></title>
   <link href="http://crscardellino.me/blog/posts/categories/scala/atom.xml" rel="self"/>
   <link href="http://crscardellino.me/blog/"/>
-  <updated>2014-08-22T20:25:49+02:00</updated>
+  <updated>2014-08-23T22:37:27+02:00</updated>
   <id>http://crscardellino.me/blog/</id>
   <author>
     <name><![CDATA[Cristian Cardellino]]></name>
@@ -12,6 +12,260 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[From Python to Scala (VI): Functions]]></title>
+    <link href="http://crscardellino.me/blog/post/2014/08/23/from-python-to-scala-vi-functions/"/>
+    <updated>2014-08-23T20:30:00+02:00</updated>
+    <id>http://crscardellino.me/blog/post/2014/08/23/from-python-to-scala-vi-functions</id>
+    <content type="html"><![CDATA[<p>Welcome to another post on my series of tutorials. As you can see (if you were
+following my tutorials since I started them), I change the environment of my
+blog, using Octopress to facilitate the blog writing (it has very nice features
+such as the automatic categories and blog archive).</p>
+
+<p>This time we will exploring one of the most powerful things Scala offers as a
+functional programming language. That is, of course, the functions, the core
+concept in this paradigm.</p>
+
+<p>This concept is quite important, and I&rsquo;m sure I won&rsquo;t be able to explain the
+full potential of Scala functions as I&rsquo;m not a master in functional programming
+paradigm. Yet, I&rsquo;ll do my best. However, it is important that you take a
+tutorial or course on Scala&rsquo;s functional programming (I deeply recommend Martin Odersky&rsquo;s
+<a href="https://www.coursera.org/course/progfun">Functional Programming Principles in Scala</a>).</p>
+
+<h3>Functions Basics</h3>
+
+<p>Scala functions are declared using the same reserved word that Python uses:
+<strong>def</strong>. Like all Scala&rsquo;s control flow instructions, the scope of the function
+is defined either by the immediate next instruction or by a block closed
+between curly braces: <strong>{</strong> and <strong>}</strong>.</p>
+
+<p><blockquote><p>I won&rsquo;t be able to explain the full potential of Scala functions as I&rsquo;m not a<br/>master in functional programming paradigm. Yet, I&rsquo;ll do my best.</p></blockquote></p>
+
+<p>Functions in Scala are actually values assigned to a symbol (just like a
+<strong>val</strong> or a <strong>var</strong>), so naturally they have a type. The type of a function is
+defined as a list of parameters of some type returning a parameter of some type
+(can be the same, can be different). In basic terms, this means that every
+parameter of a function should have an explicit type (the system cannot infer
+the type on its own and will throw an error if you don&rsquo;t declare it). But, they
+can have an implicit returning type that the system can infer:</p>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class='scala'><span class='line'><span class="k">def</span> <span class="n">add</span><span class="o">(</span><span class="n">x</span><span class="k">:</span> <span class="kt">Int</span><span class="o">,</span> <span class="n">y</span><span class="k">:</span> <span class="kt">Int</span><span class="o">)</span><span class="k">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span> <span class="c1">// All good!&lt;/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="k">def</span> <span class="n">pow2</span><span class="o">(</span><span class="n">x</span><span class="k">:</span> <span class="kt">Int</span><span class="o">)</span> <span class="k">=</span> <span class="n">x</span> <span class="o">*</span> <span class="n">x</span> <span class="c1">// Correct again. The system infer the returning type as Int&lt;/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="k">def</span> <span class="n">substract</span><span class="o">(</span><span class="n">x</span><span class="o">,</span> <span class="n">y</span><span class="o">)</span> <span class="k">=</span> <span class="n">x</span> <span class="o">-</span> <span class="n">y</span> <span class="c1">// Wrong. The system doesn&amp;rsquo;t know the type of x and y</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<!-- more -->
+
+
+<p>Pay attention in my last code. Every function define is followed by an equality
+sign (<strong>=</strong>) and neither of them needed the <strong>return</strong> reserved word.</p>
+
+<p>The equality sign is particularly important, it&rsquo;s the one that states the
+function returns a value. If you forget it, then there are two options: You get
+an error if the block is not marked with braces or the function doesn&rsquo;t have a
+returning value. You&rsquo;ll also get an error if you impose it with a return
+directive or give the function a return type:</p>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+</pre></td><td class='code'><pre><code class='scala'><span class='line'><span class="k">def</span> <span class="n">add</span><span class="o">(</span><span class="n">x</span><span class="k">:</span> <span class="kt">Int</span><span class="o">,</span> <span class="n">y</span><span class="k">:</span> <span class="kt">Int</span><span class="o">)</span><span class="k">:</span> <span class="kt">Int</span> <span class="o">{</span> <span class="kt">x</span> <span class="kt">+</span> <span class="kt">y</span> <span class="o">}</span> <span class="c1">// Wrong&lt;/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="k">def</span> <span class="n">add</span><span class="o">(</span><span class="n">x</span><span class="k">:</span> <span class="kt">Int</span><span class="o">,</span> <span class="n">y</span><span class="k">:</span><span class="kt">Int</span><span class="o">)</span> <span class="o">{</span> <span class="k">return</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span> <span class="o">}</span> <span class="c1">// Wrong&lt;/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="k">def</span> <span class="n">add</span><span class="o">(</span><span class="n">x</span><span class="k">:</span> <span class="kt">Int</span><span class="o">,</span> <span class="n">y</span><span class="k">:</span> <span class="kt">Int</span><span class="o">)</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span> <span class="c1">// Wrong&lt;/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="k">def</span> <span class="n">add</span><span class="o">(</span><span class="n">x</span><span class="k">:</span> <span class="kt">Int</span><span class="o">,</span> <span class="n">y</span><span class="k">:</span> <span class="kt">Int</span><span class="o">)</span> <span class="o">{</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span> <span class="o">}</span> <span class="c1">// It&amp;rsquo;s not an error. But the function doesn&amp;rsquo;t return a value when you apply it.</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<p>Functions that doesn&rsquo;t return a value have a special returning type called
+Unit, but of course, you can just skip it.</p>
+
+<p>Another important thing is that the reserved word <strong>return</strong>, that exists in
+Scala and does the same thing as in Python is not necessary for functions in
+order to return a value. In Scala the evaluation of the last expression or
+instruction is the returned value of the function. Return is only necessary if
+you want to force a return value in the middle of the function (which is not
+very functional programming, but it can be done). Also, return requires to
+explicit the returning value of the function.</p>
+
+<h3>A Little on Recursion</h3>
+
+<p>Ok, this is a major area in functional programming. There are papers, articles
+and books on this subject and I won&rsquo;t be able to do enough justice to it in
+just one blog post. Basically, in real functional programming, all loops are
+written as recursive functions (instead of using imperative instructions like
+<strong>while</strong> or <strong>for</strong>).</p>
+
+<p>A recursive function is a function that in order to give a result, solves a
+simpler version of the same function (it calls itself recursively). Taking in
+consideration the example given in the <a href="https://docs.python.org/2/tutorial">Python Tutorial</a>
+in section 4.6, the Fibonacci function example that takes a integer <em>n</em> and
+returns a list containing the Fibonacci series up to <em>n</em> (the one called fib2):</p>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="o">&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="n">blockquote</span><span class="o">&gt;&lt;</span><span class="n">blockquote</span><span class="o">&gt;&lt;</span><span class="n">blockquote</span><span class="o">&gt;&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="k">def</span> <span class="nf">fib2</span><span class="p">(</span><span class="n">n</span><span class="p">):</span> <span class="c"># return Fibonacci series up to n</span>
+</span><span class='line'><span class="o">&amp;</span><span class="n">hellip</span><span class="p">;</span>     <span class="o">&amp;</span><span class="n">ldquo</span><span class="p">;</span><span class="o">&amp;</span><span class="n">rdquo</span><span class="p">;</span><span class="o">&amp;</span><span class="n">ldquo</span><span class="p">;</span><span class="n">Return</span> <span class="n">a</span> <span class="nb">list</span> <span class="n">containing</span> <span class="n">the</span> <span class="n">Fibonacci</span> <span class="n">series</span> <span class="n">up</span> <span class="n">to</span> <span class="n">n</span><span class="o">.&amp;</span><span class="n">rdquo</span><span class="p">;</span><span class="o">&amp;</span><span class="n">ldquo</span><span class="p">;</span><span class="o">&amp;</span><span class="n">rdquo</span><span class="p">;</span>
+</span><span class='line'><span class="o">&amp;</span><span class="n">hellip</span><span class="p">;</span>     <span class="n">result</span> <span class="o">=</span> <span class="p">[]</span>
+</span><span class='line'><span class="o">&amp;</span><span class="n">hellip</span><span class="p">;</span>     <span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span>
+</span><span class='line'><span class="o">&amp;</span><span class="n">hellip</span><span class="p">;</span>     <span class="k">while</span> <span class="n">a</span> <span class="o">&amp;</span><span class="n">lt</span><span class="p">;</span> <span class="n">n</span><span class="p">:</span>
+</span><span class='line'><span class="o">&amp;</span><span class="n">hellip</span><span class="p">;</span>         <span class="n">result</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>    <span class="c"># see below</span>
+</span><span class='line'><span class="o">&amp;</span><span class="n">hellip</span><span class="p">;</span>         <span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="n">b</span><span class="p">,</span> <span class="n">a</span><span class="o">+</span><span class="n">b</span>
+</span><span class='line'><span class="o">&amp;</span><span class="n">hellip</span><span class="p">;</span>     <span class="k">return</span> <span class="n">result</span>
+</span><span class='line'><span class="o">&amp;</span><span class="n">hellip</span><span class="p">;</span>
+</span><span class='line'><span class="n">f100</span> <span class="o">=</span> <span class="n">fib2</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>    <span class="c"># call it</span>
+</span><span class='line'><span class="n">f100</span>                <span class="c"># write the result</span>
+</span><span class='line'><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">13</span><span class="p">,</span> <span class="mi">21</span><span class="p">,</span> <span class="mi">34</span><span class="p">,</span> <span class="mi">55</span><span class="p">,</span> <span class="mi">89</span><span class="p">]</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div></p></blockquote></blockquote></blockquote>
+
+<p>In Scala you can basically copy-paste the algorithm they show and twitch it a
+little bit to get the same function:</p>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+</pre></td><td class='code'><pre><code class='scala'><span class='line'><span class="k">import</span> <span class="nn">scala.collection.mutable.ListBuffer</span> <span class="c1">// The equivalent to Python&amp;rsquo;s list&lt;/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="k">def</span> <span class="n">fib</span><span class="o">(</span><span class="n">n</span><span class="k">:</span> <span class="kt">Int</span><span class="o">)</span><span class="k">:</span> <span class="kt">List</span><span class="o">[</span><span class="kt">Int</span><span class="o">]</span> <span class="k">=</span> <span class="o">{</span>
+</span><span class='line'>  <span class="k">val</span> <span class="n">result</span><span class="k">:</span> <span class="kt">ListBuffer</span><span class="o">[</span><span class="kt">Int</span><span class="o">]</span> <span class="k">=</span> <span class="nc">ListBuffer</span><span class="o">()</span>
+</span><span class='line'>  <span class="k">var</span> <span class="n">a</span> <span class="k">=</span> <span class="mi">0</span>
+</span><span class='line'>  <span class="k">var</span> <span class="n">b</span> <span class="k">=</span> <span class="mi">1</span>
+</span><span class='line'>  <span class="k">var</span> <span class="n">aux</span> <span class="k">=</span> <span class="mi">0</span> <span class="c1">// Needed. Scala doesn&amp;rsquo;t accept multiple variable assignment</span>
+</span><span class='line'>  <span class="k">while</span> <span class="o">(</span><span class="n">a</span> <span class="o">&amp;</span><span class="n">lt</span><span class="o">;</span> <span class="n">n</span><span class="o">)</span> <span class="o">{</span>
+</span><span class='line'>    <span class="n">result</span> <span class="o">+=</span> <span class="n">a</span>
+</span><span class='line'>    <span class="n">aux</span> <span class="k">=</span> <span class="n">a</span>
+</span><span class='line'>    <span class="n">a</span> <span class="k">=</span> <span class="n">b</span>
+</span><span class='line'>    <span class="n">b</span> <span class="k">=</span> <span class="n">b</span> <span class="o">+</span> <span class="n">aux</span>
+</span><span class='line'>  <span class="o">}&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span>  <span class="n">result</span><span class="o">.</span><span class="n">toList</span>
+</span><span class='line'><span class="o">}&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="n">fib</span><span class="o">(</span><span class="mi">100</span><span class="o">)</span> <span class="c1">// Will return List(0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89)</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<p>Now, as you could see there, there are a couple of difference between this and
+the Python version. The main one resides in the use of a third auxiliary
+variable, <em>aux</em>, as Scala doesn&rsquo;t support multiple assign over existing
+variables, like the instruction: <em>a, b = b, a+b</em>. But on other ways is quite
+similar to the Python algorithm.</p>
+
+<p>However, if we want to make this a recursive function, a first approach to do
+the same (although not an elegant one) can be represented by:</p>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+</pre></td><td class='code'><pre><code class='scala'><span class='line'><span class="k">def</span> <span class="n">fib</span><span class="o">(</span><span class="n">a</span><span class="k">:</span> <span class="kt">Int</span><span class="o">,</span> <span class="n">b</span><span class="k">:</span> <span class="kt">Int</span><span class="o">,</span> <span class="n">n</span><span class="k">:</span> <span class="kt">Int</span><span class="o">)</span><span class="k">:</span> <span class="kt">List</span><span class="o">[</span><span class="kt">Int</span><span class="o">]</span> <span class="k">=</span> <span class="o">{</span> <span class="c1">// The returning value is mandatory for recursive functions</span>
+</span><span class='line'>  <span class="k">if</span> <span class="o">(</span><span class="n">a</span> <span class="o">&gt;</span> <span class="n">n</span><span class="o">)</span> <span class="nc">Nil</span>
+</span><span class='line'>  <span class="k">else</span> <span class="n">a</span> <span class="o">::</span> <span class="n">fib</span><span class="o">(</span><span class="n">b</span><span class="o">,</span> <span class="n">a</span><span class="o">+</span><span class="n">b</span><span class="o">,</span> <span class="n">n</span><span class="o">)</span>
+</span><span class='line'><span class="o">}&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="n">fib</span><span class="o">(</span><span class="mi">0</span><span class="o">,</span> <span class="mi">1</span><span class="o">,</span> <span class="mi">100</span><span class="o">)</span> <span class="c1">// Will return List(0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89)</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<p>Ok, I guess the extra parameters are not really ideal, but you can see that in
+this version we didn&rsquo;t need state, we didn&rsquo;t need to import the ListBuffer, we
+didn&rsquo;t need the auxiliary variable and we even reduce the written code a lot.
+The only sacrifice was to add two extra parameters.</p>
+
+<p>The good thing about Scala (and I think you can also do this in Python as well,
+but I&rsquo;m not sure about it), is that you can define a function inside another
+function, so, we can rewrite the last function taking advantage of this:</p>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>def fib(n: Int) = {
+</span><span class='line'>  def fibaux(a: Int, b: Int, n: Int): List[Int] = {
+</span><span class='line'>    if (a > n) Nil
+</span><span class='line'>    else a :: fibaux(b, a+b, n)
+</span><span class='line'>  }&lt;/p>
+</span><span class='line'>
+</span><span class='line'>&lt;p>  fibaux(0, 1, n)
+</span><span class='line'>}&lt;/p>
+</span><span class='line'>
+</span><span class='line'>&lt;p>fib(100) // Will return List(0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89)</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<p>Nice, huh? In this new version we use a locally defined a <em>fibaux</em> which
+result&rsquo;s value we return as the value of the main fib function. Then, we only
+need to call <em>fib</em> with only one parameter just like in the imperative version
+before and we still manage to save code writing (and avoid state). We can even
+declare <em>fibaux</em> without the <em>n</em> parameter as it will take the <em>n</em> parameter
+from the fib function scope. But I think getting into that is way more than I&rsquo;m
+capable of explain: you should read something on
+<a href="https://en.wikipedia.org/wiki/Scope_%28computer_science%29">scope</a>.</p>
+
+<p>Recursion is a powerful resource. And is not easy to master. As everything in
+programming, if it is correctly used, it will have lots of advantages, if it&rsquo;s
+misused, well, you can guess the results: extreme resource consumption is most
+probably what you&rsquo;ll be dealing with.</p>
+
+<p><blockquote><p>Remember, recursion is a major area in functional programming. There are<br/>papers, articles and books on this subject and I won&rsquo;t be able to do enough<br/>justice to it in just one blog post.</p></blockquote></p>
+
+<p>Well. I think that this is already enough for you to process before moving on
+with a new post. Functions are the way to go in Scala. Don&rsquo;t take them for
+granted, they are a core concept in the Scala world and can easily define how
+good or bad as a Scala programmer you will be. We have some more topics to
+discuss on functions before moving on some other subject, but I think this is
+enough for today. I&rsquo;m trying to keep this tutorials simple and concise.</p>
+
+<p>As always, thank you for reading. All your feedback and comments are welcome
+(even if it&rsquo;s for state a spelling or grammar mistake).</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[From Python to Scala (v): Control Flow Tools]]></title>
@@ -922,164 +1176,6 @@ to Python lists. We will discuss it in the next part of the tutorial.</p>
 
 <p>Thank you again for reading this tutorial. I hope it&rsquo;s becoming more helpful
 with each new post. Please comment if you have anything to add!</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[From Python to Scala (II): Types, Variables &amp; Values]]></title>
-    <link href="http://crscardellino.me/blog/post/2014/07/30/from-python-to-scala-ii-types/"/>
-    <updated>2014-07-30T20:23:39+02:00</updated>
-    <id>http://crscardellino.me/blog/post/2014/07/30/from-python-to-scala-ii-types</id>
-    <content type="html"><![CDATA[<h4>Scala Types</h4>
-
-<p>Following my series of tutorial of Scala for Python programmers, I&rsquo;ll start to
-talk about something most Python programmers don&rsquo;t usually pay attention to
-because the language doesn&rsquo;t require it to do so.</p>
-
-<p>I&rsquo;m talking about data types. It&rsquo;s not that Python doesn&rsquo;t have types for its
-variables, but as it is a dynamically typed programming language, you usually
-don&rsquo;t care about the type of the variable. At least not unless you try to add a
-number and a letter: you cannot add apple and oranges, naturally you cannot add
-strings and numbers (not at least without conversion first):</p>
-
-<p>In general terms, however, Python won&rsquo;t bother about the type you are giving to
-your variables: actually, you won&rsquo;t be able to declare a type for them as
-Python will infer it. So, this is perfectly normal for a Python program:</p>
-
-<p><div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="n">string</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">ldquo</span><span class="p">;</span><span class="n">This</span> <span class="ow">is</span> <span class="n">a</span> <span class="n">string</span><span class="o">&amp;</span><span class="n">rdquo</span><span class="p">;</span>
-</span><span class='line'><span class="k">print</span> <span class="n">string</span> <span class="c"># Will output &amp;ldquo;This is a string&amp;rdquo;&lt;/p&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="n">string</span> <span class="o">+</span> <span class="mi">100</span> <span class="c"># Invalid. Will result in a TypeError exception.&lt;/p&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="n">string</span> <span class="o">=</span> <span class="mi">100</span> <span class="c"># Perfectly valid. &lt;code&gt;string&lt;/code&gt; type will be int from now on.</span>
-</span><span class='line'><span class="k">print</span> <span class="n">string</span> <span class="c"># Will output 100&lt;/p&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="n">string</span> <span class="o">+</span> <span class="mi">100</span> <span class="c"># Valid. Will result in 200.</span>
-</span></code></pre></td></tr></table></div></figure></notextile></div></p>
-
-<!-- more -->
-
-
-<p>In Scala this is not the case. Once a variable is assigned a type, it will have
-it until the end of that variable&rsquo;s scope. Of course, as in Python, some
-operations between variables of different types are not permitted. However, in
-this case, sum is not one of those cases. If you add a string to a number,
-Scala will automatically transform the number into a String and result in a
-String concatenation:</p>
-
-<p><div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-</pre></td><td class='code'><pre><code class='scala'><span class='line'><span class="k">var</span> <span class="n">string</span> <span class="k">=</span> <span class="o">&amp;</span><span class="n">ldquo</span><span class="o">;</span><span class="nc">This</span> <span class="n">is</span> <span class="n">a</span> <span class="n">string</span><span class="o">&amp;</span><span class="n">rdquo</span><span class="o">;</span>
-</span><span class='line'><span class="n">println</span><span class="o">(</span><span class="n">string</span><span class="o">)</span> <span class="c1">// Will output &amp;ldquo;This is a string&amp;rdquo;&lt;/p&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="n">string</span> <span class="o">+</span> <span class="mi">100</span> <span class="c1">// Valid. Will result in the string &amp;ldquo;This is a string100&amp;rdquo;&lt;/p&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="n">string</span> <span class="k">=</span> <span class="mi">100</span> <span class="c1">// Invalid. Will result in a &amp;ldquo;type mismatch&amp;rdquo; error.</span>
-</span></code></pre></td></tr></table></div></figure></notextile></div></p>
-
-<p>Scala, as well as Python, can infer the type of the variables you are using.
-But, it add the possibility to declare the type of the variable (something that
-many times comes in handy as we will see in future tutorials):</p>
-
-<p><div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class='scala'><span class='line'><span class="k">var</span> <span class="n">string</span><span class="k">:</span> <span class="kt">String</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">ldquo</span><span class="o">;</span><span class="nc">This</span> <span class="n">is</span> <span class="n">a</span> <span class="n">string</span> <span class="k">with</span> <span class="n">declared</span> <span class="n">type</span><span class="o">&amp;</span><span class="n">rdquo</span><span class="o">;</span>
-</span><span class='line'><span class="k">var</span> <span class="n">num</span><span class="k">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="mi">100</span> <span class="c1">// This is a number with declared type</span>
-</span></code></pre></td></tr></table></div></figure></notextile></div></p>
-
-<p>Scala has a variety of types (you should check on the
-<a href="http://www.scala-lang.org/documentation/">Scala Documentation</a>
-for more information on it), but the most common are Int (sometimes written as
-Integer), String, Long, Float, Double and Boolean.</p>
-
-<p>Although many Python fans can call this a disadvantage, I personally end up
-having better experience with static data typing, as I feel I have more control
-over the variables of my application. Then again, this is just a matter of
-opinion.</p>
-
-<h4>Variables and Values</h4>
-
-<p>So, now you know that Scala is statically typed, which means once you give
-variable a type (either inferred by the compiler or declared by the programmer)
-you cannot set that variable to a value of another type.</p>
-
-<p>Scala has also two kinds of &ldquo;variables&rdquo;: mutable and immutable. Ok, maybe it
-has only one type of variable, the ones that are mutable, since there is no
-much variation in the immutable type. For making this simpler, let&rsquo;s say Scala
-has to type of storage locations.</p>
-
-<p>Mutable variables, or just variables, are the classic ones and the most near in
-concept to the ones use by Python (with the static type exception). You can
-create them with one value and the change them through the whole scope to
-whatever value of the same type you want. They are declared with the reserved
-word <strong>var</strong>.</p>
-
-<p>Immutable variables, or values, are the ones that will have a constant value
-during the whole scope of the variable. If you try to change the value for
-another one (even of the same type), the compiler will throw an error. Values
-are declared with the reserved word <strong>val</strong>.</p>
-
-<p><div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-</pre></td><td class='code'><pre><code class='scala'><span class='line'><span class="k">var</span> <span class="n">variable</span><span class="k">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="mi">10</span> <span class="c1">// This is a Scala variable.&lt;/p&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="n">variable</span> <span class="k">=</span> <span class="mi">20</span> <span class="c1">// Valid. &amp;ldquo;variable&amp;rdquo; is now set to value 20.&lt;/p&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="k">val</span> <span class="n">value</span><span class="k">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="mi">10</span> <span class="c1">// This is a Scala value.&lt;/p&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="n">value</span> <span class="k">=</span> <span class="mi">20</span> <span class="c1">// Invalid. Will result in a compiler error.</span>
-</span></code></pre></td></tr></table></div></figure></notextile></div></p>
-
-<p>If you are coming from the Python environment (or, more in general from a
-imperative paradigm environment) you would think values don&rsquo;t have any
-usefulness beyond declaring a constant. Nevertheless, in Scala values are quite
-fundamental. This is because Scala has been designed as an object-oriented
-functional language. The word <em>functional</em> is a big deal here, because the
-functional paradigm is quite different from the imperative paradigm which most
-of Python programmers are used to.</p>
-
-<p>If you ever tried something like LISP, Haskell or Earlang (also known as
-<em>academic languages</em>), the concept of <em>stateless</em> is not a stranger to you. For
-most of Python programmers, this is quite unusual though. In the most simple
-terms stateless is defined by math functions: you apply a function to some
-parameters and get a result. For the same parameters you get the same result
-every time, and there will never be an inner state of the function that will
-modify that returned value. Stateful (although you probably didn&rsquo;t hear it
-under that name) is more common among imperative languages, and means you have
-a state that can change the final computation.</p>
-
-<p>This is not a tutorial for functional programming (not even on Scala) but to
-understand the basics of Scala. Scala is a multi-paradigm language and can be
-used for imperative programming. Still, if you are learning Scala I would
-recommend you to learn something on functional programming. Otherwise you will
-be wasting the full Scala potential. If you are interested in this matter there
-should be lots of tutorials and resources on the internet, but my personal
-recommendation is to take the
-<a href="https://www.coursera.org/course/progfun">Functional Programming Principles in Scala</a>,
-in <a href="https://www.coursera.org/">Coursera</a>, by Martin Odersky (the designer of the
-Scala language).</p>
-
-<p>I think is more than enough for this session. As always I appreciate any
-feedback on comments (event to tell me I&rsquo;m having some grammar or spelling
-mistakes). Thank you for reading!</p>
 ]]></content>
   </entry>
   

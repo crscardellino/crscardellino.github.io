@@ -3,6 +3,12 @@
   
   
   <url>
+    <loc>http://crscardellino.me/blog/post/2014/08/23/from-python-to-scala-vi-functions/</loc>
+    <lastmod>2014-08-23T20:30:00+02:00</lastmod>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
     <loc>http://crscardellino.me/blog/post/2014/08/20/from-python-to-scala-v-control-flow-tools/</loc>
     <lastmod>2014-08-20T20:58:48+02:00</lastmod>
     <priority>0.8</priority>
@@ -47,21 +53,21 @@
   
   <url>
     <loc>http://crscardellino.me/blog/</loc>
-    <lastmod>2014-08-22T20:25:49+02:00</lastmod>
+    <lastmod>2014-08-23T22:37:27+02:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   
   <url>
     <loc>http://crscardellino.me/blog/posts/archives/</loc>
-    <lastmod>2014-08-22T20:25:49+02:00</lastmod>
+    <lastmod>2014-08-23T22:37:27+02:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>http://crscardellino.me/blog/from-python-to-scala/</loc>
-    <lastmod>2014-08-22T20:25:49+02:00</lastmod>
+    <lastmod>2014-08-23T22:37:27+02:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>

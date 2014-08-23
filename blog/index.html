@@ -9,8 +9,8 @@
   <meta name="author" content="Cristian Cardellino">
 
   
-  <meta name="description" content="Ok, after a short period of laziness, I come back for more. I warned you about
-my activity, but, to be fair, it&rsquo;s been a busy couple of weeks &hellip;">
+  <meta name="description" content="Welcome to another post on my series of tutorials. As you can see (if you were
+following my tutorials since I started them), I change the environment &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -82,6 +82,86 @@ my activity, but, to be fair, it&rsquo;s been a busy couple of weeks &hellip;">
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/post/2014/08/23/from-python-to-scala-vi-functions/">From Python to Scala (VI): Functions</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2014-08-23T20:30:00+02:00'><span class='date'><span class='date-month'>Aug</span> <span class='date-day'>23</span><span class='date-suffix'>rd</span>, <span class='date-year'>2014</span></span> <span class='time'>8:30 pm</span></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Welcome to another post on my series of tutorials. As you can see (if you were
+following my tutorials since I started them), I change the environment of my
+blog, using Octopress to facilitate the blog writing (it has very nice features
+such as the automatic categories and blog archive).</p>
+
+<p>This time we will exploring one of the most powerful things Scala offers as a
+functional programming language. That is, of course, the functions, the core
+concept in this paradigm.</p>
+
+<p>This concept is quite important, and I&rsquo;m sure I won&rsquo;t be able to explain the
+full potential of Scala functions as I&rsquo;m not a master in functional programming
+paradigm. Yet, I&rsquo;ll do my best. However, it is important that you take a
+tutorial or course on Scala&rsquo;s functional programming (I deeply recommend Martin Odersky&rsquo;s
+<a href="https://www.coursera.org/course/progfun">Functional Programming Principles in Scala</a>).</p>
+
+<h3>Functions Basics</h3>
+
+<p>Scala functions are declared using the same reserved word that Python uses:
+<strong>def</strong>. Like all Scala&rsquo;s control flow instructions, the scope of the function
+is defined either by the immediate next instruction or by a block closed
+between curly braces: <strong>{</strong> and <strong>}</strong>.</p>
+
+<blockquote><p>I won&#8217;t be able to explain the full potential of Scala functions as I&#8217;m not a<br/>master in functional programming paradigm. Yet, I&#8217;ll do my best.</p></blockquote>
+
+
+<p>Functions in Scala are actually values assigned to a symbol (just like a
+<strong>val</strong> or a <strong>var</strong>), so naturally they have a type. The type of a function is
+defined as a list of parameters of some type returning a parameter of some type
+(can be the same, can be different). In basic terms, this means that every
+parameter of a function should have an explicit type (the system cannot infer
+the type on its own and will throw an error if you don&rsquo;t declare it). But, they
+can have an implicit returning type that the system can infer:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class='scala'><span class='line'><span class="k">def</span> <span class="n">add</span><span class="o">(</span><span class="n">x</span><span class="k">:</span> <span class="kt">Int</span><span class="o">,</span> <span class="n">y</span><span class="k">:</span> <span class="kt">Int</span><span class="o">)</span><span class="k">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span> <span class="c1">// All good!</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">def</span> <span class="n">pow2</span><span class="o">(</span><span class="n">x</span><span class="k">:</span> <span class="kt">Int</span><span class="o">)</span> <span class="k">=</span> <span class="n">x</span> <span class="o">*</span> <span class="n">x</span> <span class="c1">// Correct again. The system infer the returning type as Int</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">def</span> <span class="n">substract</span><span class="o">(</span><span class="n">x</span><span class="o">,</span> <span class="n">y</span><span class="o">)</span> <span class="k">=</span> <span class="n">x</span> <span class="o">-</span> <span class="n">y</span> <span class="c1">// Wrong. The system doesn&#39;t know the type of x and y</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+
+
+</div>
+  
+  
+    <footer>
+      <a rel="full-article" href="/blog/post/2014/08/23/from-python-to-scala-vi-functions/">Read more &rarr;</a>
+    </footer>
+  
+
+
+    </article>
   
   
     <article>
@@ -562,6 +642,10 @@ is never that hard to return).</p>
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/post/2014/08/23/from-python-to-scala-vi-functions/">From Python to Scala (VI): Functions</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/post/2014/08/20/from-python-to-scala-v-control-flow-tools/">From Python to Scala (v): Control Flow Tools</a>
       </li>
     
@@ -575,10 +659,6 @@ is never that hard to return).</p>
     
       <li class="post">
         <a href="/blog/post/2014/08/05/from-python-to-scala-iii-lists/">From Python to Scala (III): Lists</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/post/2014/07/30/from-python-to-scala-ii-types/">From Python to Scala (II): Types, Variables &amp; Values</a>
       </li>
     
   </ul>
