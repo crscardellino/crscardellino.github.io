@@ -53,21 +53,21 @@
   
   <url>
     <loc>http://crscardellino.me/blog/</loc>
-    <lastmod>2014-08-23T22:37:27+02:00</lastmod>
+    <lastmod>2014-08-23T22:40:12+02:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   
   <url>
     <loc>http://crscardellino.me/blog/posts/archives/</loc>
-    <lastmod>2014-08-23T22:37:27+02:00</lastmod>
+    <lastmod>2014-08-23T22:40:12+02:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>http://crscardellino.me/blog/from-python-to-scala/</loc>
-    <lastmod>2014-08-23T22:37:27+02:00</lastmod>
+    <lastmod>2014-08-23T22:40:12+02:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
