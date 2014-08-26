@@ -4,7 +4,7 @@
   <title><![CDATA[Cristian Cardellino]]></title>
   <link href="http://crscardellino.me/blog/atom.xml" rel="self"/>
   <link href="http://crscardellino.me/blog/"/>
-  <updated>2014-08-23T22:55:00+02:00</updated>
+  <updated>2014-08-26T20:02:44+02:00</updated>
   <id>http://crscardellino.me/blog/</id>
   <author>
     <name><![CDATA[Cristian Cardellino]]></name>
@@ -12,6 +12,285 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[From Python to Scala (VII): Functions (II)]]></title>
+    <link href="http://crscardellino.me/blog/post/2014/08/26/from-python-to-scala-vii-functions-ii/"/>
+    <updated>2014-08-26T20:05:00+02:00</updated>
+    <id>http://crscardellino.me/blog/post/2014/08/26/from-python-to-scala-vii-functions-ii</id>
+    <content type="html"><![CDATA[<p>Hello again! Nice to see you decided to come back. If you check my
+<a href="http://crscardellino.me/blog/post/2014/08/23/from-python-to-scala-vi-functions/">previous post</a>
+you know that functions are quite an important matter in the Scala
+language.</p>
+
+<p>Last time, talking about recursion, I wasn&rsquo;t able to cover all the topics about
+functions. So I decided to dedicate yet another post to it. You can call it
+&ldquo;advanced functions&rdquo;, but I don&rsquo;t think is so &ldquo;advance&rdquo; what I&rsquo;m going to show
+here.</p>
+
+<p>So, you are welcome to read some more on functions in this new blog post.</p>
+
+<h3>Arguments</h3>
+
+<h4>Default Values</h4>
+
+<p>Ok, following the <a href="https://docs.python.org/2/tutorial/">Python Tutorial</a>, I&rsquo;ll
+talk a little about this.</p>
+
+<p>Default argument values in Scala are very similar to Python&rsquo;s. With the
+difference being in the static types, that is, you&rsquo;ll have to explicit declare
+the type of the argument:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+</pre></td><td class='code'><pre><code class='scala'><span class='line'><span class="k">def</span> <span class="n">foo</span><span class="o">(</span><span class="n">x</span><span class="k">:</span> <span class="kt">Int</span><span class="o">,</span> <span class="n">y</span><span class="k">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="mi">0</span><span class="o">,</span> <span class="n">z</span><span class="k">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="mi">1</span><span class="o">)</span><span class="k">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="o">(</span><span class="n">x</span> <span class="o">+</span> <span class="n">y</span><span class="o">)</span> <span class="o">*</span> <span class="n">z</span>
+</span><span class='line'>
+</span><span class='line'><span class="n">foo</span><span class="o">(</span><span class="mi">10</span><span class="o">)</span> <span class="c1">// Returns 10</span>
+</span><span class='line'>
+</span><span class='line'><span class="n">foo</span><span class="o">(</span><span class="mi">10</span><span class="o">,</span> <span class="mi">10</span><span class="o">)</span> <span class="c1">// Returns 20</span>
+</span><span class='line'>
+</span><span class='line'><span class="n">foo</span><span class="o">(</span><span class="mi">10</span><span class="o">,</span> <span class="mi">10</span><span class="o">,</span> <span class="mi">2</span><span class="o">)</span> <span class="c1">// Returns 40</span>
+</span><span class='line'>
+</span><span class='line'><span class="n">foo</span><span class="o">(</span><span class="mi">10</span><span class="o">,</span> <span class="n">z</span> <span class="k">=</span> <span class="mi">2</span><span class="o">)</span> <span class="c1">// Returns 20</span>
+</span><span class='line'>
+</span><span class='line'><span class="n">foo</span><span class="o">(</span><span class="mi">10</span><span class="o">,</span> <span class="n">z</span> <span class="k">=</span> <span class="mi">2</span><span class="o">,</span> <span class="n">y</span> <span class="k">=</span> <span class="mi">10</span><span class="o">)</span> <span class="c1">// Returns 40</span>
+</span><span class='line'>
+</span><span class='line'><span class="n">foo</span><span class="o">(</span><span class="mi">10</span><span class="o">,</span> <span class="mi">10</span><span class="o">,</span> <span class="n">y</span> <span class="k">=</span> <span class="mi">10</span><span class="o">)</span> <span class="c1">// Error! The parameter `y` has already been specified</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>As you can see, there is no problem in how to send the arguments, but if you
+don&rsquo;t explicitly tell what parameter you are passing, it will use the order to
+define the assignments.</p>
+
+<!-- more -->
+
+
+<p>In Scala you don&rsquo;t even have to declare all the parameters with default
+arguments at the end (like in Python), but it&rsquo;s a good practice as otherwise
+you&rsquo;ll face with problems:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+</pre></td><td class='code'><pre><code class='scala'><span class='line'><span class="k">def</span> <span class="n">foo</span><span class="o">(</span><span class="n">x</span><span class="k">:</span> <span class="kt">Int</span><span class="o">,</span> <span class="n">y</span><span class="k">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="mi">0</span><span class="o">,</span> <span class="n">z</span><span class="k">:</span> <span class="kt">Int</span><span class="o">)</span><span class="k">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="o">(</span><span class="n">x</span> <span class="o">+</span> <span class="n">y</span><span class="o">)</span> <span class="o">*</span> <span class="n">z</span> <span class="c1">// Valid!</span>
+</span><span class='line'>
+</span><span class='line'><span class="n">foo</span><span class="o">(</span><span class="mi">10</span><span class="o">)</span> <span class="c1">// Wrong, `z` has no value</span>
+</span><span class='line'>
+</span><span class='line'><span class="n">foo</span><span class="o">(</span><span class="mi">10</span><span class="o">,</span> <span class="mi">15</span><span class="o">)</span> <span class="c1">// Wrong, 15 is assigned to `y` not `z`. `z` still has no value</span>
+</span><span class='line'>
+</span><span class='line'><span class="n">foo</span><span class="o">(</span><span class="mi">10</span><span class="o">,</span> <span class="n">z</span> <span class="k">=</span> <span class="mi">2</span><span class="o">)</span> <span class="c1">// Returns 20</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>You see? In this version of foo, you have to explicit declare z as a passed
+parameter, otherwise you get an error. That&rsquo;s why it&rsquo;s good practice to keep
+all arguments with default values in the end.</p>
+
+<p>Of course, as parameters have a type, you have to give the a default value of
+that type (or with an implicit conversion to that type), otherwise is an error:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='scala'><span class='line'><span class="k">def</span> <span class="n">foo</span><span class="o">(</span><span class="n">x</span><span class="k">:</span> <span class="kt">Int</span><span class="o">,</span> <span class="n">y</span><span class="k">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="mi">0</span><span class="o">,</span> <span class="n">z</span><span class="k">:</span> <span class="kt">Double</span> <span class="o">=</span> <span class="mi">0</span><span class="o">)</span> <span class="k">=</span> <span class="o">{</span> <span class="o">(</span><span class="n">x</span> <span class="o">+</span> <span class="n">y</span><span class="o">)</span> <span class="o">*</span> <span class="n">z</span><span class="o">}</span> <span class="c1">// Valid. `0` is an Int with implicit conversion to Double</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">def</span> <span class="n">bar</span><span class="o">(</span><span class="n">x</span><span class="k">:</span> <span class="kt">Int</span><span class="o">,</span> <span class="n">y</span><span class="k">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="mi">0</span><span class="o">,</span> <span class="n">z</span><span class="k">:</span> <span class="kt">Double</span> <span class="o">=</span> <span class="kc">null</span><span class="o">)</span> <span class="k">=</span> <span class="o">{</span> <span class="o">(</span><span class="n">x</span> <span class="o">+</span> <span class="n">y</span><span class="o">)</span> <span class="o">*</span> <span class="n">z</span><span class="o">}</span> <span class="c1">// Invalid. `null` has no implicit conversion to Double</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Now, on the last code I introduce a new value I don&rsquo;t think I talked about it
+before: <strong>null</strong>. The value <strong>null</strong> is similar to the value <strong>None</strong> in
+Python. It&rsquo;s specially useful to use it on a variable of a particular class
+when you don&rsquo;t want to instantiate that class just yet (for example a class
+defined by you). You can use on some variables of Scala types such as String or
+List, but not in a primitive type (Int, Double, Char, etc.). We&rsquo;ll talk more
+about it when we start working on classes. For now I just wanted to make a
+quick warning: do not use the (also) reserved word in Scala of <strong>None</strong> as the
+value <strong>null</strong>. It&rsquo;s not the same, None is a value of a special Scala type
+called <strong>Option</strong>, that we&rsquo;ll discuss in further posts.</p>
+
+<blockquote><p>Do not use the (also) reserved word in Scala of `None` as the value `null`.</p></blockquote>
+
+
+<h4>Arbitrary List</h4>
+
+<p>In Scala, as in Python, you can pass an argument representing an arbitrary list
+of arguments. This argument always has to be defined as the last one and is
+treated as a list of elements of the defined type (you cannot have a list of
+types of mixed values):</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+</pre></td><td class='code'><pre><code class='scala'><span class='line'><span class="k">def</span> <span class="n">sum</span><span class="o">(</span><span class="n">args</span><span class="k">:</span> <span class="kt">Int*</span><span class="o">)</span> <span class="k">=</span> <span class="o">{</span>
+</span><span class='line'>  <span class="k">var</span> <span class="n">x</span> <span class="k">=</span> <span class="mi">0</span>
+</span><span class='line'>  <span class="k">for</span><span class="o">(</span><span class="n">arg</span> <span class="k">&lt;-</span> <span class="n">args</span><span class="o">)</span> <span class="n">x</span> <span class="o">+=</span> <span class="n">arg</span>
+</span><span class='line'>  <span class="n">x</span>
+</span><span class='line'><span class="o">}</span> <span class="c1">// Return the sum of all the parameters</span>
+</span><span class='line'>
+</span><span class='line'><span class="n">sum</span><span class="o">(</span><span class="mi">1</span><span class="o">)</span> <span class="c1">// returns 1</span>
+</span><span class='line'>
+</span><span class='line'><span class="n">sum</span><span class="o">(</span><span class="mi">1</span><span class="o">,</span> <span class="mi">2</span><span class="o">)</span> <span class="c1">// return 3</span>
+</span><span class='line'>
+</span><span class='line'><span class="n">sum</span><span class="o">(</span><span class="mi">1</span><span class="o">,</span> <span class="mi">10</span><span class="o">,</span> <span class="mi">100</span><span class="o">,</span> <span class="mi">1000</span><span class="o">)</span> <span class="c1">// returns 1111</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Now, Scala does not have an equivalent to Python&rsquo;s <em>**kwargs</em>. There are some
+workarounds you can do, but I don&rsquo;t think it&rsquo;s useful for me to get deep into
+that.</p>
+
+<h3>Lambda expressions (a.k.a. anonymous functions)</h3>
+
+<p>Well, anonymous functions, such a powerful and useful tool in Scala (when you
+start with them, you end up using them everywhere). Anonymous functions are
+<em>the tool</em> that makes a functional programming language. These are core concept
+in the paradigm, so obviously I won&rsquo;t be able to explain it well enough.
+Instead, I&rsquo;ll take the example in the Python tutorial, and show how it is done
+in Scala. Then again, you&rsquo;ll have to learn more on anonymous functions on your
+own, as it&rsquo;s not the idea of my tutorial to teach more than the basics that
+helps a Python programmer enter in the Scala world.</p>
+
+<blockquote><p>Anonymous functions are the tool that makes a functional programming language.</p></blockquote>
+
+
+<p>Ok, so, let&rsquo;s show you the Python example of use of a lambda expression, they
+create a function which returns a function:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="o">&gt;&gt;&gt;</span> <span class="k">def</span> <span class="nf">make_incrementor</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+</span><span class='line'><span class="o">...</span>     <span class="k">return</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span> <span class="o">+</span> <span class="n">n</span>
+</span><span class='line'><span class="o">...</span>
+</span><span class='line'><span class="o">&gt;&gt;&gt;</span> <span class="n">f</span> <span class="o">=</span> <span class="n">make_incrementor</span><span class="p">(</span><span class="mi">42</span><span class="p">)</span>
+</span><span class='line'><span class="o">&gt;&gt;&gt;</span> <span class="n">f</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+</span><span class='line'><span class="mi">42</span>
+</span><span class='line'><span class="o">&gt;&gt;&gt;</span> <span class="n">f</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+</span><span class='line'><span class="mi">43</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Now, in this example, you create a lambda expression using the <strong>lambda</strong>
+reserved word. In Scala the code is quite similar, but you don&rsquo;t need an extra
+expression:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+</pre></td><td class='code'><pre><code class='scala'><span class='line'><span class="k">def</span> <span class="n">make_incrementor</span><span class="o">(</span><span class="n">n</span><span class="k">:</span> <span class="kt">Int</span><span class="o">)</span> <span class="k">=</span> <span class="o">(</span><span class="n">x</span><span class="k">:</span> <span class="kt">Int</span><span class="o">)</span> <span class="k">=&gt;</span> <span class="n">x</span> <span class="o">+</span> <span class="n">n</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">val</span> <span class="n">f</span> <span class="k">=</span> <span class="n">make_incrementor</span><span class="o">(</span><span class="mi">42</span><span class="o">)</span>
+</span><span class='line'>
+</span><span class='line'><span class="n">f</span><span class="o">(</span><span class="mi">0</span><span class="o">)</span> <span class="c1">// Returns 42</span>
+</span><span class='line'>
+</span><span class='line'><span class="n">f</span><span class="o">(</span><span class="mi">1</span><span class="o">)</span> <span class="c1">// Returns 43</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Pay attention to the returned value by the function <em>make_incrementor</em>:
+<em>(x:Int) => x + n</em>. This is the definition of an anonymous function, basically
+a function with it&rsquo;s parameters, no name and a => operator instead of a =
+operator.</p>
+
+<p>This functions can have as many parameters as you want and you can directly
+apply them without making necessary to assign them to a value or variable:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class='scala'><span class='line'><span class="o">(</span><span class="n">x</span><span class="k">:</span> <span class="kt">Int</span><span class="o">,</span> <span class="n">y</span><span class="k">:</span> <span class="kt">Int</span><span class="o">)</span> <span class="k">=&gt;</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">()</span> <span class="k">=&gt;</span> <span class="n">println</span><span class="o">(</span><span class="s">&quot;Hello, world&quot;</span><span class="o">)</span> <span class="c1">// Anonymous function with zero parameter</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">((</span><span class="n">x</span><span class="k">:</span> <span class="kt">Int</span><span class="o">)</span> <span class="k">=&gt;</span> <span class="n">x</span> <span class="o">*</span> <span class="mi">2</span><span class="o">)(</span><span class="mi">20</span><span class="o">)</span> <span class="c1">// Applies the anonymous function and returns 40</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Now, of course, as everything in Scala, functions have types, and sometimes you
+may need to explicit declare a function type. This can happen, for example, if
+you are declaring a recursive function with a return value of an anonymous
+function; however, the function type declaration is fundamental when having a
+function&rsquo;s parameter taking a function. This is called
+<a href="http://en.wikipedia.org/wiki/Higher-order_programming">higher-order programming</a>
+and is a topic for another post (a whole post in fact), it&rsquo;s another of the
+core features of functional programming.</p>
+
+<p>For now, you only need to now that the type of a function is defined by the
+type of its parameters and the returning type:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+</pre></td><td class='code'><pre><code class='scala'><span class='line'><span class="k">val</span> <span class="n">foo</span><span class="k">:</span> <span class="kt">Int</span> <span class="o">=&gt;</span> <span class="nc">Int</span> <span class="k">=</span> <span class="o">(</span><span class="n">x</span><span class="k">:</span> <span class="kt">Int</span><span class="o">)</span> <span class="k">=&gt;</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">50</span> <span class="c1">// Equivalent to: def foo(x: Int): Int = x + 50</span>
+</span><span class='line'>
+</span><span class='line'><span class="n">foo</span><span class="o">(</span><span class="mi">5</span><span class="o">)</span> <span class="c1">// Returns 50</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">val</span> <span class="n">bar</span><span class="k">:</span> <span class="o">()</span> <span class="o">=&gt;</span> <span class="nc">Int</span> <span class="k">=</span> <span class="o">()</span> <span class="k">=&gt;</span> <span class="mi">20</span> <span class="c1">// Equivalent to def b(): Int = 20</span>
+</span><span class='line'>
+</span><span class='line'><span class="n">bar</span><span class="o">()</span> <span class="c1">// Returns 20</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">val</span> <span class="n">baz</span><span class="k">:</span> <span class="o">(</span><span class="kt">Int</span><span class="o">,</span> <span class="kt">Int</span><span class="o">)</span> <span class="k">=&gt;</span> <span class="nc">Int</span> <span class="k">=</span> <span class="o">(</span><span class="n">x</span><span class="k">:</span> <span class="kt">Int</span><span class="o">,</span> <span class="n">y</span><span class="k">:</span> <span class="kt">Int</span><span class="o">)</span> <span class="k">=&gt;</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span> <span class="c1">// Equivalent to def baz(x: Int, y: Int): Int = x + y</span>
+</span><span class='line'>
+</span><span class='line'><span class="n">baz</span><span class="o">(</span><span class="mi">2</span><span class="o">,</span> <span class="mi">3</span><span class="o">)</span> <span class="c1">// Returns 5</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>As you see, sometimes the parentheses are not mandatory when the function only
+takes one parameter but it is obligatory in any other case.</p>
+
+<p>Of course, this examples are very simple and don&rsquo;t really show the power of
+anonymous functions nor even why sometimes is necessary to explicit the type.
+This, hopefully, will come later and you&rsquo;ll understand the importance of it in
+a functional programming language like Scala.</p>
+
+<p>So, I think is now time to finish this post. As always, I&rsquo;ll be thankful on
+your comments. Best regards and until the next part!</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[From Python to Scala (VI): Functions]]></title>

@@ -9,8 +9,9 @@
   <meta name="author" content="Cristian Cardellino">
 
   
-  <meta name="description" content="Welcome to another post on my series of tutorials. As you can see (if you were
-following my tutorials since I started them), I change the environment &hellip;">
+  <meta name="description" content="Hello again! Nice to see you decided to come back. If you check my
+previous post
+you know that functions are quite an important matter in the Scala &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -82,6 +83,94 @@ following my tutorials since I started them), I change the environment &hellip;"
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/post/2014/08/26/from-python-to-scala-vii-functions-ii/">From Python to Scala (VII): Functions (II)</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2014-08-26T20:05:00+02:00'><span class='date'><span class='date-month'>Aug</span> <span class='date-day'>26</span><span class='date-suffix'>th</span>, <span class='date-year'>2014</span></span> <span class='time'>8:05 pm</span></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Hello again! Nice to see you decided to come back. If you check my
+<a href="/blog/post/2014/08/23/from-python-to-scala-vi-functions/">previous post</a>
+you know that functions are quite an important matter in the Scala
+language.</p>
+
+<p>Last time, talking about recursion, I wasn&rsquo;t able to cover all the topics about
+functions. So I decided to dedicate yet another post to it. You can call it
+&ldquo;advanced functions&rdquo;, but I don&rsquo;t think is so &ldquo;advance&rdquo; what I&rsquo;m going to show
+here.</p>
+
+<p>So, you are welcome to read some more on functions in this new blog post.</p>
+
+<h3>Arguments</h3>
+
+<h4>Default Values</h4>
+
+<p>Ok, following the <a href="https://docs.python.org/2/tutorial/">Python Tutorial</a>, I&rsquo;ll
+talk a little about this.</p>
+
+<p>Default argument values in Scala are very similar to Python&rsquo;s. With the
+difference being in the static types, that is, you&rsquo;ll have to explicit declare
+the type of the argument:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+</pre></td><td class='code'><pre><code class='scala'><span class='line'><span class="k">def</span> <span class="n">foo</span><span class="o">(</span><span class="n">x</span><span class="k">:</span> <span class="kt">Int</span><span class="o">,</span> <span class="n">y</span><span class="k">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="mi">0</span><span class="o">,</span> <span class="n">z</span><span class="k">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="mi">1</span><span class="o">)</span><span class="k">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="o">(</span><span class="n">x</span> <span class="o">+</span> <span class="n">y</span><span class="o">)</span> <span class="o">*</span> <span class="n">z</span>
+</span><span class='line'>
+</span><span class='line'><span class="n">foo</span><span class="o">(</span><span class="mi">10</span><span class="o">)</span> <span class="c1">// Returns 10</span>
+</span><span class='line'>
+</span><span class='line'><span class="n">foo</span><span class="o">(</span><span class="mi">10</span><span class="o">,</span> <span class="mi">10</span><span class="o">)</span> <span class="c1">// Returns 20</span>
+</span><span class='line'>
+</span><span class='line'><span class="n">foo</span><span class="o">(</span><span class="mi">10</span><span class="o">,</span> <span class="mi">10</span><span class="o">,</span> <span class="mi">2</span><span class="o">)</span> <span class="c1">// Returns 40</span>
+</span><span class='line'>
+</span><span class='line'><span class="n">foo</span><span class="o">(</span><span class="mi">10</span><span class="o">,</span> <span class="n">z</span> <span class="k">=</span> <span class="mi">2</span><span class="o">)</span> <span class="c1">// Returns 20</span>
+</span><span class='line'>
+</span><span class='line'><span class="n">foo</span><span class="o">(</span><span class="mi">10</span><span class="o">,</span> <span class="n">z</span> <span class="k">=</span> <span class="mi">2</span><span class="o">,</span> <span class="n">y</span> <span class="k">=</span> <span class="mi">10</span><span class="o">)</span> <span class="c1">// Returns 40</span>
+</span><span class='line'>
+</span><span class='line'><span class="n">foo</span><span class="o">(</span><span class="mi">10</span><span class="o">,</span> <span class="mi">10</span><span class="o">,</span> <span class="n">y</span> <span class="k">=</span> <span class="mi">10</span><span class="o">)</span> <span class="c1">// Error! The parameter `y` has already been specified</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>As you can see, there is no problem in how to send the arguments, but if you
+don&rsquo;t explicitly tell what parameter you are passing, it will use the order to
+define the assignments.</p>
+
+</div>
+  
+  
+    <footer>
+      <a rel="full-article" href="/blog/post/2014/08/26/from-python-to-scala-vii-functions-ii/">Read more &rarr;</a>
+    </footer>
+  
+
+
+    </article>
   
   
     <article>
@@ -642,6 +731,10 @@ is never that hard to return).</p>
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/post/2014/08/26/from-python-to-scala-vii-functions-ii/">From Python to Scala (VII): Functions (II)</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/post/2014/08/23/from-python-to-scala-vi-functions/">From Python to Scala (VI): Functions</a>
       </li>
     
@@ -655,10 +748,6 @@ is never that hard to return).</p>
     
       <li class="post">
         <a href="/blog/post/2014/08/07/from-python-to-scala-iv-arrays-and-listbuffers/">From Python to Scala (IV): Arrays &amp; ListBuffers</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/post/2014/08/05/from-python-to-scala-iii-lists/">From Python to Scala (III): Lists</a>
       </li>
     
   </ul>
