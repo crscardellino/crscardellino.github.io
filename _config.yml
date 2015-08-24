@@ -2,12 +2,12 @@
 #      Main Configs       #
 # ----------------------- #
 
-url: http://yoursite.com
-title: My Octopress Blog
-subtitle: A blogging framework for hackers.
-author: Your Name
+url: http://crscardellino.me
+title: Cristian Cardellino
+subtitle: class Coder extends Human with Geek
+author: Cristian Cardellino
 simple_search: https://www.google.com/search
-description:
+description: Cristian Cardellino's Blog.
 
 # Default date format is "ordinal" (resulting in "July 22nd 2007")
 # You can customize the format as defined in
