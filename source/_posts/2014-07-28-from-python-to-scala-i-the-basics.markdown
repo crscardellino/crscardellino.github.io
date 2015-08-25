@@ -12,7 +12,7 @@ these posts since, at least when I started this series, the "Scala for people
 coming from Python" tutorial was a work in progress.
 
 First of all I'll state some of my background (in case you didn't check my
-[about](http://crscardellino.me/about) page), in a kind of a disclaimer. There
+[about]({{ root_url }}/about) page), in a kind of a disclaimer. There
 are people out there who are experts in Python. I'm not one of them. I only have
 a background of 4 years in this language, and only work with the 2.X version
 (started with 2.5 until 2.7). Never even try to learn Python 3. Also, there are
