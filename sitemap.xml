@@ -1,114 +1,72 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset
-      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
-            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
-<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
-
-<url>
-  <loc>http://crscardellino.me/</loc>
-  <lastmod>2014-08-22T19:17:48+00:00</lastmod>
-  <changefreq>weekly</changefreq>
-</url>
-<url>
-  <loc>http://crscardellino.me/about</loc>
-  <lastmod>2014-08-22T19:17:48+00:00</lastmod>
-  <changefreq>weekly</changefreq>
-</url>
-<url>
-  <loc>http://crscardellino.me/tech</loc>
-  <lastmod>2014-08-22T19:17:48+00:00</lastmod>
-  <changefreq>weekly</changefreq>
-</url>
-<url>
-  <loc>http://crscardellino.me/social</loc>
-  <lastmod>2014-08-22T19:17:48+00:00</lastmod>
-  <changefreq>weekly</changefreq>
-</url>
-<url>
-  <loc>http://crscardellino.me/contact</loc>
-  <lastmod>2014-08-22T19:17:48+00:00</lastmod>
-  <changefreq>weekly</changefreq>
-</url>
-<url>
-  <loc>http://crscardellino.me/blog/</loc>
-  <lastmod>2014-08-22T19:17:48+00:00</lastmod>
-  <changefreq>weekly</changefreq>
-</url>
-<url>
-  <loc>http://crscardellino.me/blog/from-python-to-scala/</loc>
-  <lastmod>2014-08-22T19:17:48+00:00</lastmod>
-  <changefreq>weekly</changefreq>
-</url>
-<url>
-  <loc>http://crscardellino.me/blog/posts/archives/</loc>
-  <lastmod>2014-08-22T19:17:48+00:00</lastmod>
-  <changefreq>weekly</changefreq>
-</url>
-<url>
-  <loc>http://crscardellino.me/blog/post/2014/08/20/from-python-to-scala-v-control-flow-tools/</loc>
-  <lastmod>2014-08-22T19:17:48+00:00</lastmod>
-  <changefreq>weekly</changefreq>
-</url>
-<url>
-  <loc>http://crscardellino.me/blog/post/2014/08/11/why-did-i-choose-scala/</loc>
-  <lastmod>2014-08-22T19:17:48+00:00</lastmod>
-  <changefreq>weekly</changefreq>
-</url>
-<url>
-  <loc>http://crscardellino.me/blog/post/2014/08/07/from-python-to-scala-iv-arrays-and-listbuffers/</loc>
-  <lastmod>2014-08-22T19:17:48+00:00</lastmod>
-  <changefreq>weekly</changefreq>
-</url>
-<url>
-  <loc>http://crscardellino.me/blog/post/2014/08/05/from-python-to-scala-iii-lists/</loc>
-  <lastmod>2014-08-22T19:17:48+00:00</lastmod>
-  <changefreq>weekly</changefreq>
-</url>
-<url>
-  <loc>http://crscardellino.me/blog/post/2014/07/30/from-python-to-scala-ii-types/</loc>
-  <lastmod>2014-08-22T19:17:48+00:00</lastmod>
-  <changefreq>weekly</changefreq>
-</url>
-<url>
-  <loc>http://crscardellino.me/blog/post/2014/07/28/from-python-to-scala-i-the-basics/</loc>
-  <lastmod>2014-08-22T19:17:48+00:00</lastmod>
-  <changefreq>weekly</changefreq>
-</url>
-<url>
-  <loc>http://crscardellino.me/blog/post/2014/06/11/hello-world/</loc>
-  <lastmod>2014-08-22T19:17:48+00:00</lastmod>
-  <changefreq>weekly</changefreq>
-</url>
-<url>
-  <loc>http://crscardellino.me/blog/posts/categories/course/</loc>
-  <lastmod>2014-08-22T19:17:48+00:00</lastmod>
-  <changefreq>weekly</changefreq>
-</url>
-<url>
-  <loc>http://crscardellino.me/blog/posts/categories/python/</loc>
-  <lastmod>2014-08-22T19:17:48+00:00</lastmod>
-  <changefreq>weekly</changefreq>
-</url>
-<url>
-  <loc>http://crscardellino.me/blog/posts/categories/scala/</loc>
-  <lastmod>2014-08-22T19:17:48+00:00</lastmod>
-  <changefreq>weekly</changefreq>
-</url>
-<url>
-  <loc>http://crscardellino.me/blog/posts/categories/tutorial/</loc>
-  <lastmod>2014-08-22T19:17:48+00:00</lastmod>
-  <changefreq>weekly</changefreq>
-</url>
-<url>
-  <loc>http://crscardellino.me/blog/posts/categories/opinion/</loc>
-  <lastmod>2014-08-22T19:17:48+00:00</lastmod>
-  <changefreq>weekly</changefreq>
-</url>
-<url>
-  <loc>http://crscardellino.me/blog/posts/categories/introductory/</loc>
-  <lastmod>2014-08-22T19:17:48+00:00</lastmod>
-  <changefreq>weekly</changefreq>
-</url>
+<urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>http://crscardellino.me/blog/2014/08/26/from-python-to-scala-vii-functions-ii/</loc>
+    <lastmod>2014-08-26T15:05:00-03:00</lastmod>
+  </url>
+  <url>
+    <loc>http://crscardellino.me/blog/2014/08/23/from-python-to-scala-vi-functions/</loc>
+    <lastmod>2014-08-23T15:30:00-03:00</lastmod>
+  </url>
+  <url>
+    <loc>http://crscardellino.me/blog/2014/08/20/from-python-to-scala-v-control-flow-tools/</loc>
+    <lastmod>2014-08-20T15:58:00-03:00</lastmod>
+  </url>
+  <url>
+    <loc>http://crscardellino.me/blog/2014/08/11/why-did-i-choose-scala/</loc>
+    <lastmod>2014-08-11T15:53:00-03:00</lastmod>
+  </url>
+  <url>
+    <loc>http://crscardellino.me/blog/2014/08/07/from-python-to-scala-iv-arrays-and-listbuffers/</loc>
+    <lastmod>2014-08-07T15:48:00-03:00</lastmod>
+  </url>
+  <url>
+    <loc>http://crscardellino.me/blog/2014/08/05/from-python-to-scala-iii-lists/</loc>
+    <lastmod>2014-08-05T15:34:00-03:00</lastmod>
+  </url>
+  <url>
+    <loc>http://crscardellino.me/blog/2014/07/30/from-python-to-scala-ii-types/</loc>
+    <lastmod>2014-07-30T15:23:00-03:00</lastmod>
+  </url>
+  <url>
+    <loc>http://crscardellino.me/blog/2014/07/28/from-python-to-scala-i-the-basics/</loc>
+    <lastmod>2014-07-28T15:15:00-03:00</lastmod>
+  </url>
+  <url>
+    <loc>http://crscardellino.me/blog/2014/06/11/hello-world/</loc>
+    <lastmod>2014-06-11T15:00:00-03:00</lastmod>
+  </url>
+  <url>
+    <loc>http://crscardellino.me/blog/archives/</loc>
+  </url>
+  <url>
+    <loc>http://crscardellino.me/</loc>
+  </url>
+  <url>
+    <loc>http://crscardellino.me/about/</loc>
+  </url>
+  <url>
+    <loc>http://crscardellino.me/from-python-to-scala/</loc>
+  </url>
+  <url>
+    <loc>http://crscardellino.me/contact/</loc>
+  </url>
+  <url>
+    <loc>http://crscardellino.me/blog/categories/introduction/</loc>
+  </url>
+  <url>
+    <loc>http://crscardellino.me/blog/categories/course/</loc>
+  </url>
+  <url>
+    <loc>http://crscardellino.me/blog/categories/python/</loc>
+  </url>
+  <url>
+    <loc>http://crscardellino.me/blog/categories/scala/</loc>
+  </url>
+  <url>
+    <loc>http://crscardellino.me/blog/categories/tutorial/</loc>
+  </url>
+  <url>
+    <loc>http://crscardellino.me/blog/categories/opinion/</loc>
+  </url>
 </urlset>

@@ -1,4 +1,0 @@
-User-agent: *
-Disallow: 
-
-Sitemap: http://crscardellino.me/blog/sitemap.xml 

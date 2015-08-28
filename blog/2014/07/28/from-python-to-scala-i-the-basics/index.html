@@ -1,0 +1,437 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>From Python to Scala (I): The Basics - Cristian Cardellino</title>
+  <meta name="author" content="Cristian Cardellino">
+
+  
+  <meta name="description" content="This is the first post in a series in which I&rsquo;ll try to give a nice insight for
+the Scala Language to a programmer with background in Python. I &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://crscardellino.me/blog/2014/07/28/from-python-to-scala-i-the-basics/">
+  <link href="/favicon.ico" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="Cristian Cardellino" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="/javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="//fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="//fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-30086759-1']);
+    _gaq.push(['_setDomainName', 'github.io']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">Cristian Cardellino</a></h1>
+  
+    <h2 class="subtitle">class Coder extends Human with Geek</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="https://www.google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="sitesearch" value="crscardellino.me">
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/about">About</a></li>
+  <li><a href="/contact">Contact</a></li>
+  <li>
+    <a href="/from-python-to-scala">From Python to Scala</a>
+  </li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">From Python to Scala (I): The Basics</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2014-07-28T15:15:00-03:00'><span class='date'><span class='date-month'>Jul</span> <span class='date-day'>28</span><span class='date-suffix'>th</span>, <span class='date-year'>2014</span></span> <span class='time'>3:15 pm</span></time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p>This is the first post in a series in which I&rsquo;ll try to give a nice insight for
+the Scala Language to a programmer with background in Python. I chose to do
+these posts since, at least when I started this series, the &ldquo;Scala for people
+coming from Python&rdquo; tutorial was a work in progress.</p>
+
+<p>First of all I&rsquo;ll state some of my background (in case you didn&rsquo;t check my
+<a href="/about">about</a> page), in a kind of a disclaimer. There
+are people out there who are experts in Python. I&rsquo;m not one of them. I only have
+a background of 4 years in this language, and only work with the 2.X version
+(started with 2.5 until 2.7). Never even try to learn Python 3. Also, there are
+experts on Scala as well, I&rsquo;m not one of those either. In fact, my Scala
+knowledge is far from deep, I learned Scala at the end of last year and been
+using it since then (along with Python).</p>
+
+<blockquote><p>There are people out there who are experts in Python. I'm not one of them. [...]<br/>Also, there are experts on Scala as well, I'm not one of those either.</p></blockquote>
+
+
+<p>Once you know this, I&rsquo;ll just say I have enough knowledge of both Scala and
+Python to get by. I&rsquo;ve done some projects in Django and some projects in Play
+Framework, but nothing really impressive. The reason I&rsquo;m doing this set of
+tutorials is because when I started to learn Scala I didn&rsquo;t have one and many
+times I end up in Stackoverflow looking for how to do in Scala things I did in
+Python.</p>
+
+<!-- more -->
+
+
+<p>For this task, I&rsquo;ll make use of the examples and general structure of the
+<a href="https://docs.python.org/2/tutorial/index.html">Python Tutorial</a>, and
+demonstrate how to do the same examples in Scala. Trough this tutorial I&rsquo;ll
+assume you have a decent knowledge of Python (at least you read the Python
+Tutorial). I&rsquo;ll also assume you&rsquo;ve already installed Scala on your machine and
+get running your first &ldquo;Hello, world!&rdquo; app (if not, please refer to the <a href="http://www.scala-lang.org/documentation/getting-started.html">Scala Getting Started</a>
+section).</p>
+
+<h4>The Scala REPL (The Python Interpreter)</h4>
+
+<p>As Python, Scala also has an interpreter: the Scala REPL (from Read–eval–print
+loop). In this mode, just as in Python&rsquo;s interpreter, you can test different
+commands of Scala. Just type &ldquo;scala&rdquo; in your shell and voilà, you have your own
+Scala shell:</p>
+
+<pre><code>$ scala
+Welcome to Scala version X.Y.Z (Java HotSpot(TM) 64-Bit Server VM, Java X.Y.Z).
+Type in expressions to have them evaluated.
+Type :help for more information.
+
+scala&gt;
+</code></pre>
+
+<p>You can use it, for example, as a calculator, as shown with Python interpreter
+in <a href="https://docs.python.org/2/tutorial/introduction.html">An Informal Introduction to Python</a>. The main
+difference being in that Scala REPL will create a value (not the same that a
+variable) with the name &ldquo;res&rdquo; plus a number depending on the number of
+operations not assigned to any value or variable you have done so far. This
+value will have an inferred type and won&rsquo;t be changeable for the rest of the
+session.</p>
+
+<pre><code>scala&gt; 2 + 2
+res0: Int = 4
+
+scala&gt; 4 + 4
+res1: Int = 8
+
+scala&gt; res0
+res2: Int = 4
+
+scala&gt; res0 = 5
+&lt;console&gt;:8: error: reassignment to val
+       res0 = 4
+            ^
+</code></pre>
+
+<p>As you could notice in the last example, even if you try to get the value of a
+res you&rsquo;ll end up creating another res (look what happens when &ldquo;res2&rdquo; is
+created).</p>
+
+<h4>Scala Strings &amp; Chars</h4>
+
+<p>One important different when working on Scala, is the strings declaration. In
+Python you can declare a String with single quotes or double quotes, for
+example:</p>
+
+<pre><code>&gt;&gt;&gt; 'spam eggs'  # single quotes
+'spam eggs'
+&gt;&gt;&gt; 'doesn\'t'  # use \' to escape the single quote...
+"doesn't"
+&gt;&gt;&gt; "doesn't"  # ...or use double quotes instead
+"doesn't"
+&gt;&gt;&gt; '"Yes," he said.'
+'"Yes," he said.'
+&gt;&gt;&gt; "\"Yes,\" he said."
+'"Yes," he said.'
+&gt;&gt;&gt; '"Isn\'t," she said.'
+'"Isn\'t," she said.'
+</code></pre>
+
+<p>In Scala, double quotes are for strings and single quotes are for characters.
+The values of type Char are actually numbers, but representative of the
+characters in some codification. However, you should not use them for operations
+that should go for integers, although these operations are permitted.</p>
+
+<pre><code>scala&gt; "This is a string" // Ok
+res3: String = This is a string
+
+scala&gt; 'c' // This is a character
+res4: Char = c
+
+scala&gt; "c" // This is also a string
+res5: String = c
+
+scala&gt; 'This is error' // Wrong
+&lt;console&gt;:1: error: unclosed character literal
+       'This is error'
+                     ^
+
+scala&gt; "This is a " + "concatenation of strings"
+res6: String = "This is a concatenation of strings"
+
+scala&gt; 'A' + 'B' // This will produce a sum of integers of 131 ('A' = 65, 'B' = 66)
+res7: Int = 131
+</code></pre>
+
+<p>Finally, the last for this session, to print, there are two built-in functions:
+print() and println(). The first prints a string passed by parameter and the
+second prints a string and adds an ending &ldquo;\n&rdquo; character (new line). Both of
+these functions take their parameters inside parentheses:</p>
+
+<pre><code>scala&gt; print("Hello, world!")
+Hello, world!
+scala&gt; println("Hello, world!")
+Hello, world!
+
+scala&gt; println "Hello, world!" // Wrong! This is not Python
+&lt;console&gt;:1: error: ';' expected but string literal found.
+       println "Hello, world!"
+               ^
+</code></pre>
+
+<p>Ok, so, this is all for this session, very basic, nothing too complicated. I&rsquo;ll
+be posting more on this crash course during the next weeks. I hope this is
+useful for you and I&rsquo;ll thank all comments for feedback.</p>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Cristian Cardellino</span></span>
+
+      
+
+
+
+
+<time class='entry-date' datetime='2014-07-28T15:15:00-03:00'><span class='date'><span class='date-month'>Jul</span> <span class='date-day'>28</span><span class='date-suffix'>th</span>, <span class='date-year'>2014</span></span> <span class='time'>3:15 pm</span></time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/course/'>course</a>, <a class='category' href='/blog/categories/python/'>python</a>, <a class='category' href='/blog/categories/scala/'>scala</a>, <a class='category' href='/blog/categories/tutorial/'>tutorial</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://crscardellino.me/blog/2014/07/28/from-python-to-scala-i-the-basics/" data-via="neurotikal" data-counturl="http://crscardellino.me/blog/2014/07/28/from-python-to-scala-i-the-basics/" >Tweet</a>
+  
+  
+  
+    <div class="fb-like" data-send="true" data-width="450" data-show-faces="false"></div>
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2014/06/11/hello-world/" title="Previous Post: Hello World!">&laquo; Hello World!</a>
+      
+      
+        <a class="basic-alignment right" href="/blog/2014/07/30/from-python-to-scala-ii-types/" title="Next Post: From Python to Scala (II): Types, Variables & Values">From Python to Scala (II): Types, Variables & Values &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section class="about-me">
+  <h1>About Me</h1>
+  <img src="/images/me.jpg" alt="Me" title="Cristian Cardellino">
+  <p>I'm a computer scientist and researcher in Statistical Natural Language
+    Processing. I'm also a programmer, a geek and a casual gamer. This is my
+    blog about the problems I come across while programming things for my
+    research. I develop in Scala and Python (and the Django Web Framework). I
+    also know a little of C and C++ and sometimes write Bash and Perl scripts.
+    I've been in touch with Java and even done some work in PHP. I hope my
+    experience helps you. Thanks for reading!</p>
+</section>
+<section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2014/08/26/from-python-to-scala-vii-functions-ii/">From Python to Scala (VII): Functions (II)</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/08/23/from-python-to-scala-vi-functions/">From Python to Scala (VI): Functions</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/08/20/from-python-to-scala-v-control-flow-tools/">From Python to Scala (v): Control Flow Tools</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/08/11/why-did-i-choose-scala/">Why Did I Choose Scala?</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/08/07/from-python-to-scala-iv-arrays-and-listbuffers/">From Python to Scala (IV): Arrays &amp; ListBuffers</a>
+      </li>
+    
+  </ul>
+</section>
+<section>
+  <h1>Find Me</h1>
+  <ul>
+    <li>
+      <i class="fa fa-globe fa-lg"></i>
+      <a href="http://crscardellino.me">crscardellino.me</a>
+    </li>
+    <li>
+      <i class="fa fa-twitter fa-lg"></i>
+      <a href="https://twitter.com/neurotikal">@neurotikal</a>
+    </li>
+    <li>
+      <i class="fa fa-github fa-lg"></i>
+      <a href="https://github.com/crscardellino">crscardellino</a>
+    </li>
+    <li>
+      <i class="fa fa-linkedin-square fa-lg"></i>
+      <a href="https://www.linkedin.com/in/crscardellino/en">crscardellino</a>
+    </li>
+  </ul>
+</section>
+
+
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Content <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"
+  target="_blank">&copy; 2015 by Cristian Cardellino</a> - <span
+  class="credit">Powered by <a href="http://octopress.org"
+  target="_blank">Octopress</a> &amp; <a href="http://github.io"
+  target="_blank">GitHub Pages</a></span> - <a rel="license"
+  href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank"><img
+  alt="Creative Commons License" style="border-width:0; vertical-align:middle;"
+  src="/images/ccbysa.png"/></a>
+</p>
+
+</footer>
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'crscardellino';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://crscardellino.me/blog/2014/07/28/from-python-to-scala-i-the-basics/';
+        var disqus_url = 'http://crscardellino.me/blog/2014/07/28/from-python-to-scala-i-the-basics/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) {return;}
+  js = d.createElement(s); js.id = id; js.async = true;
+  js.src = "//connect.facebook.net/en_US/all.js#appId=212934732101925&xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = '//platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

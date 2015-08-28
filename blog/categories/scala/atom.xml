@@ -1,0 +1,978 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Scala | Cristian Cardellino]]></title>
+  <link href="http://crscardellino.me/blog/categories/scala/atom.xml" rel="self"/>
+  <link href="http://crscardellino.me/"/>
+  <updated>2015-08-28T09:54:36-03:00</updated>
+  <id>http://crscardellino.me/</id>
+  <author>
+    <name><![CDATA[Cristian Cardellino]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[From Python to Scala (VII): Functions (II)]]></title>
+    <link href="http://crscardellino.me/blog/2014/08/26/from-python-to-scala-vii-functions-ii/"/>
+    <updated>2014-08-26T15:05:00-03:00</updated>
+    <id>http://crscardellino.me/blog/2014/08/26/from-python-to-scala-vii-functions-ii</id>
+    <content type="html"><![CDATA[<p>Hello again! Nice to see you decided to come back. If you check my <a href="/blog/2014/08/23/from-python-to-scala-vi-functions">previous post</a> you know
+that functions are quite an important matter in the Scala language.</p>
+
+<p>Last time, talking about recursion, I wasn&rsquo;t able to cover all the topics about
+functions. So I decided to dedicate yet another post to it. You can call it
+&ldquo;advanced functions&rdquo;, but I don&rsquo;t think is so &ldquo;advance&rdquo; what I&rsquo;m going to show
+here.</p>
+
+<p>You are welcome to read some more on functions in this new blog post.</p>
+
+<h3>Arguments</h3>
+
+<h4>Default Values</h4>
+
+<p>Following the <a href="https://docs.python.org/2/tutorial/">Python Tutorial</a>, I&rsquo;ll talk
+a little about this.</p>
+
+<p>Default argument values in Scala are very similar to Python&rsquo;s. With the
+difference being in the static types, that is, you&rsquo;ll have to explicit declare
+the type of the argument:</p>
+
+<pre><code class="scala">def foo(x: Int, y: Int = 0, z: Int = 1): Int = (x + y) * z
+
+foo(10) // Returns 10
+
+foo(10, 10) // Returns 20
+
+foo(10, 10, 2) // Returns 40
+
+foo(10, z = 2) // Returns 20
+
+foo(10, z = 2, y = 10) // Returns 40
+
+foo(10, 10, y = 10) // Error! The parameter `y` has already been specified
+</code></pre>
+
+<p>As you can see, there is no problem in how to send the arguments, but if you
+don&rsquo;t explicitly tell what parameter you are passing, it will use the order to
+define the assignments.</p>
+
+<!-- more -->
+
+
+<p>In Scala you don&rsquo;t even have to declare all the parameters with default
+arguments at the end (like in Python), but it&rsquo;s a good practice as otherwise
+you&rsquo;ll face with problems:</p>
+
+<pre><code class="scala">def foo(x: Int, y: Int = 0, z: Int): Int = (x + y) * z // Valid!
+
+foo(10) // Wrong, `z` has no value
+
+foo(10, 15) // Wrong, 15 is assigned to `y` not `z`. `z` still has no value
+
+foo(10, z = 2) // Returns 20
+</code></pre>
+
+<p>You see? In this version of foo, you have to explicit declare z as a passed
+parameter, otherwise you get an error. That&rsquo;s why it&rsquo;s good practice to keep all
+arguments with default values in the end.</p>
+
+<p>Of course, as parameters have a type, you have to give the a default value of
+that type (or with an implicit conversion to that type), otherwise is an error:</p>
+
+<pre><code class="scala">def foo(x: Int, y: Int = 0, z: Double = 0) = { (x + y) * z} // Valid. `0` is an Int with implicit conversion to Double
+
+def bar(x: Int, y: Int = 0, z: Double = null) = { (x + y) * z} // Invalid. `null` has no implicit conversion to Double
+</code></pre>
+
+<p>Now, on the last code I introduce a new value I don&rsquo;t think I talked about it
+before: <strong>null</strong>. The value <strong>null</strong> is similar to the value <strong>None</strong> in Python.
+It&rsquo;s specially useful to use it on a variable of a particular class when you
+don&rsquo;t want to instantiate that class just yet (for example a class defined by
+you). You can use on some variables of Scala types such as String or List, but
+not in a primitive type (Int, Double, Char, etc.). We&rsquo;ll talk more about it when
+we start working on classes. For now I just wanted to make a quick warning: do
+not use the (also) reserved word in Scala of <strong>None</strong> as the value <strong>null</strong>.
+It&rsquo;s not the same, None is a value of a special Scala type called <strong>Option</strong>,
+that we&rsquo;ll discuss in further posts.</p>
+
+<p><blockquote><p>Do not use the (also) reserved word in Scala of <code>None</code> as the value <code>null</code>.</p></blockquote></p>
+
+<h4>Arbitrary List</h4>
+
+<p>In Scala, as in Python, you can pass an argument representing an arbitrary list
+of arguments. This argument always has to be defined as the last one and is
+treated as a list of elements of the defined type (you cannot have a list of
+types of mixed values):</p>
+
+<pre><code class="scala">def sum(args: Int*) = {
+  var x = 0
+  for(arg &lt;- args) x += arg
+  x
+} // Return the sum of all the parameters
+
+sum(1) // returns 1
+
+sum(1, 2) // return 3
+
+sum(1, 10, 100, 1000) // returns 1111
+</code></pre>
+
+<p>Now, Scala does not have an equivalent to Python&rsquo;s **<em>kwargs</em>. There are some
+workarounds you can do, but I don&rsquo;t think it&rsquo;s useful for me to get deep into
+that.</p>
+
+<h3>Lambda expressions (a.k.a. anonymous functions)</h3>
+
+<p>Well, anonymous functions, such a powerful and useful tool in Scala (when you
+start with them, you end up using them everywhere). Anonymous functions are <em>the
+tool</em> that makes a functional programming language. These are core concept in
+the paradigm, so obviously I won&rsquo;t be able to explain it well enough. Instead,
+I&rsquo;ll take the example in the Python tutorial, and show how it is done in Scala.
+Then again, you&rsquo;ll have to learn more on anonymous functions on your own, as
+it&rsquo;s not the idea of my tutorial to teach more than the basics that helps a
+Python programmer enter in the Scala world.</p>
+
+<p><blockquote><p>Anonymous functions are the tool that makes a functional programming language.</p></blockquote></p>
+
+<p>Let&rsquo;s show you the Python example of use of a lambda expression, they create a
+function which returns a function:</p>
+
+<pre><code class="python">&gt;&gt;&gt; def make_incrementor(n):
+...     return lambda x: x + n
+...
+&gt;&gt;&gt; f = make_incrementor(42)
+&gt;&gt;&gt; f(0)
+42
+&gt;&gt;&gt; f(1)
+43
+</code></pre>
+
+<p>Now, in this example, you create a <em>lambda</em> expression using the lambda reserved
+word. In Scala the code is quite similar, but you don&rsquo;t need an extra
+expression:</p>
+
+<pre><code class="scala">def make_incrementor(n: Int) = (x: Int) =&gt; x + n
+
+val f = make_incrementor(42)
+
+f(0) // Returns 42
+
+f(1) // Returns 43
+</code></pre>
+
+<p>Pay attention to the returned value by the function <em>make_incrementor: (x:Int)<br/>
+=> x + n</em>. This is the definition of an anonymous function, basically a function
+with it&rsquo;s parameters, no name and a => operator instead of a = operator.</p>
+
+<p>This functions can have as many parameters as you want and you can directly
+apply them without making necessary to assign them to a value or variable:</p>
+
+<pre><code class="scala">(x: Int, y: Int) =&gt; x + y
+
+() =&gt; println("Hello, world") // Anonymous function with zero parameter
+
+((x: Int) =&gt; x * 2)(20) // Applies the anonymous function and returns 40
+</code></pre>
+
+<p>Now, of course, as everything in Scala, functions have types, and sometimes you
+may need to explicit declare a function type. This can happen, for example, if
+you are declaring a recursive function with a return value of an anonymous
+function; however, the function type declaration is fundamental when having a
+function&rsquo;s parameter taking a function. This is called <a href="http://en.wikipedia.org/wiki/Higher-order_programming">higher-order programming</a> and is a
+topic for another post (a whole post in fact), it&rsquo;s another of the core features
+of functional programming.</p>
+
+<p>For now, you only need to now that the type of a function is defined by the type
+of its parameters and the returning type:</p>
+
+<pre><code class="scala">val foo: Int =&gt; Int = (x: Int) =&gt; x + 50 // Equivalent to: def foo(x: Int): Int = x + 50
+
+foo(5) // Returns 50
+
+val bar: () =&gt; Int = () =&gt; 20 // Equivalent to def b(): Int = 20
+
+bar() // Returns 20
+
+val baz: (Int, Int) =&gt; Int = (x: Int, y: Int) =&gt; x + y // Equivalent to def baz(x: Int, y: Int): Int = x + y
+
+baz(2, 3) // Returns 5
+</code></pre>
+
+<p>As you see, sometimes the parentheses are not mandatory when the function only
+takes one parameter but it is obligatory in any other case.</p>
+
+<p>Of course, this examples are very simple and don&rsquo;t really show the power of
+anonymous functions nor even why sometimes is necessary to explicit the type.
+This, hopefully, will come later and you&rsquo;ll understand the importance of it in a
+functional programming language like Scala.</p>
+
+<p>So, I think is now time to finish this post. As always, I&rsquo;ll be thankful on your
+comments. Best regards and until the next part!</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[From Python to Scala (VI): Functions]]></title>
+    <link href="http://crscardellino.me/blog/2014/08/23/from-python-to-scala-vi-functions/"/>
+    <updated>2014-08-23T15:30:00-03:00</updated>
+    <id>http://crscardellino.me/blog/2014/08/23/from-python-to-scala-vi-functions</id>
+    <content type="html"><![CDATA[<p>Welcome to another post on my series of tutorials. As you can see (if you were
+following my tutorials since I started them), I change the environment of my
+blog, using Octopress to facilitate the blog writing (it has very nice features
+such as the automatic categories and blog archive).</p>
+
+<p>This time we will exploring one of the most powerful things Scala offers as a
+functional programming language. That is, of course, the functions, the core
+concept in this paradigm.</p>
+
+<p>This concept is quite important, and I&rsquo;m sure I won&rsquo;t be able to explain the
+full potential of Scala functions as I&rsquo;m not a master in functional programming
+paradigm. Yet, I&rsquo;ll do my best. However, it is important that you take a
+tutorial or course on Scala&rsquo;s functional programming (I deeply recommend Martin
+Odersky&rsquo;s <a href="https://www.coursera.org/course/progfun">Functional Programming Principles in Scala</a>).</p>
+
+<h3>Functions Basics</h3>
+
+<p>Scala functions are declared using the same reserved word that Python uses:
+<strong>def</strong>. Like all Scala&rsquo;s control flow instructions, the scope of the function
+is defined either by the immediate next instruction or by a block closed between
+curly braces: <strong>{</strong> and <strong>}</strong>.</p>
+
+<p><blockquote><p>I won&rsquo;t be able to explain the full potential of Scala functions as I&rsquo;m not a master in functional programming paradigm. Yet, I&rsquo;ll do my best.</p></blockquote></p>
+
+<p>Functions in Scala are actually values assigned to a symbol (just like a <strong>val</strong>
+or a <strong>var</strong>), so naturally they have a type. The type of a function is defined
+as a list of parameters of some type returning a parameter of some type (can be
+the same, can be different). In basic terms, this means that every parameter of
+a function should have an explicit type (the system cannot infer the type on its
+own and will throw an error if you don&rsquo;t declare it). But, they can have an
+implicit returning type that the system can infer:</p>
+
+<pre><code class="scala">def add(x: Int, y: Int): Int = x + y // All good!
+
+def pow2(x: Int) = x * x // Correct again. The system infer the returning type as Int
+
+def substract(x, y) = x - y // Wrong. The system doesn't know the type of x and y
+</code></pre>
+
+<!-- more -->
+
+
+<p>Pay attention in my last code. Every function define is followed by an equality
+sign (<strong>=</strong>) and neither of them needed the <strong>return</strong> reserved word.</p>
+
+<p>The equality sign is particularly important, it&rsquo;s the one that states the
+function returns a value. If you forget it, then there are two options: You get
+an error if the block is not marked with braces or the function doesn&rsquo;t have a
+returning value. You&rsquo;ll also get an error if you impose it with a return
+directive or give the function a return type:</p>
+
+<pre><code class="scala">def add(x: Int, y: Int): Int { x + y } // Wrong
+
+def add(x: Int, y:Int) { return x + y } // Wrong
+
+def add(x: Int, y: Int) x + y // Wrong
+
+def add(x: Int, y: Int) { x + y } // It's not an error. But the function doesn't return a value when you apply it.
+</code></pre>
+
+<p>Functions that doesn&rsquo;t return a value have a special returning type called Unit,
+but of course, you can just skip it.</p>
+
+<p>Another important thing is that the reserved word <strong>return</strong>, that exists in
+Scala and does the same thing as in Python is not necessary for functions in
+order to return a value. In Scala the evaluation of the last expression or
+instruction is the returned value of the function. Return is only necessary if
+you want to force a return value in the middle of the function (which is not
+very functional programming, but it can be done). Also, return requires to
+explicit the returning value of the function.</p>
+
+<h3>A Little on Recursion</h3>
+
+<p>This is a major area in functional programming. There are papers, articles and
+books on this subject and I won&rsquo;t be able to do enough justice to it in just one
+blog post. Basically, in real functional programming, all loops are written as
+recursive functions (instead of using imperative instructions like <strong>while</strong> or
+<strong>for</strong>).</p>
+
+<p>A recursive function is a function that in order to give a result, solves a
+simpler version of the same function (it calls itself recursively). Taking in
+consideration the example given in the <a href="https://docs.python.org/2/tutorial">Python Tutorial</a> in section 4.6, the Fibonacci
+function example that takes a integer n and returns a list containing the
+Fibonacci series up to <em>n</em> (the one called fib2):</p>
+
+<pre><code class="python">&gt;&gt;&gt; def fib2(n): # return Fibonacci series up to n
+...     """Return a list containing the Fibonacci series up to n."""
+...     result = []
+...     a, b = 0, 1
+...     while a &lt; n:
+...         result.append(a)    # see below
+...         a, b = b, a+b
+...     return result
+...
+&gt;&gt;&gt; f100 = fib2(100)    # call it
+&gt;&gt;&gt; f100                # write the result
+[0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89]
+</code></pre>
+
+<p>In Scala you can basically copy-paste the algorithm they show and twitch it a
+little bit to get the same function:</p>
+
+<pre><code class="scala">import scala.collection.mutable.ListBuffer // The equivalent to Python's list
+
+def fib(n: Int): List[Int] = {
+  val result: ListBuffer[Int] = ListBuffer()
+  var a = 0
+  var b = 1
+  var aux = 0 // Needed. Scala doesn't accept multiple variable assignment
+  while (a &lt; n) {
+    result += a
+    aux = a
+    a = b
+    b = b + aux
+  }
+
+  result.toList
+}
+
+fib(100) // Will return List(0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89)
+</code></pre>
+
+<p>Now, as you could see there, there are a couple of difference between this and
+the Python version. The main one resides in the use of a third auxiliary
+variable, <em>aux</em>, as Scala doesn&rsquo;t support multiple assign over existing
+variables, like the instruction: <em>a, b = b, a+b</em>. But on other ways is quite
+similar to the Python algorithm.</p>
+
+<p>However, if we want to make this a recursive function, a first approach to do
+the same (although not an elegant one) can be represented by:</p>
+
+<pre><code class="scala">def fib(a: Int, b: Int, n: Int): List[Int] = { // The returning value is mandatory for recursive functions
+  if (a &gt; n) Nil
+  else a :: fib(b, a+b, n)
+}
+
+fib(0, 1, 100) // Will return List(0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89)
+</code></pre>
+
+<p>I guess the extra parameters are not really ideal, but you can see that in this
+version we didn&rsquo;t need state, we didn&rsquo;t need to import the ListBuffer, we didn&rsquo;t
+need the auxiliary variable and we even reduce the written code a lot. The only
+sacrifice was to add two extra parameters.</p>
+
+<p>The good thing about Scala (and I think you can also do this in Python as well,
+but I&rsquo;m not sure about it), is that you can define a function inside another
+function, so, we can rewrite the last function taking advantage of this:</p>
+
+<pre><code class="scala">def fib(n: Int) = {
+  def fibaux(a: Int, b: Int, n: Int): List[Int] = {
+    if (a &gt; n) Nil
+    else a :: fibaux(b, a+b, n)
+  }
+
+  fibaux(0, 1, n)
+}
+
+fib(100) // Will return List(0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89)
+</code></pre>
+
+<p>Nice, huh? In this new version we use a locally defined a <em>fibaux</em> which
+result&rsquo;s value we return as the value of the main <em>fib</em> function. Then, we only
+need to call fib with only one parameter just like in the imperative version
+before and we still manage to save code writing (and avoid state). We can even
+declare <em>fibaux</em> without the <em>n</em> parameter as it will take the <em>n</em> parameter
+from the fib function scope. But I think getting into that is way more than I&rsquo;m
+capable of explain: you should read something on
+<a href="https://en.wikipedia.org/wiki/Scope_%28computer_science%29">scope</a>.</p>
+
+<p>Recursion is a powerful resource. And is not easy to master. As everything in
+programming, if it is correctly used, it will have lots of advantages, if it&rsquo;s
+misused, well, you can guess the results: extreme resource consumption is most
+probably what you&rsquo;ll be dealing with.</p>
+
+<p><blockquote><p>Remember, recursion is a big deal in functional programming. There are papers, articles and books on this subject and I won&rsquo;t be able to do enough justice to it in just one blog post.</p></blockquote></p>
+
+<p>Well. I think that this is already enough for you to process before moving on
+with a new post. Functions are the way to go in Scala. Don&rsquo;t take them for
+granted, they are a core concept in the Scala world and can easily define how
+good or bad as a Scala programmer you will be. We have some more topics to
+discuss on functions before moving on some other subject, but I think this is
+enough for today. I&rsquo;m trying to keep this tutorials simple and concise.</p>
+
+<p>As always, thank you for reading. All your feedback and comments are welcome.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[From Python to Scala (v): Control Flow Tools]]></title>
+    <link href="http://crscardellino.me/blog/2014/08/20/from-python-to-scala-v-control-flow-tools/"/>
+    <updated>2014-08-20T15:58:00-03:00</updated>
+    <id>http://crscardellino.me/blog/2014/08/20/from-python-to-scala-v-control-flow-tools</id>
+    <content type="html"><![CDATA[<p>Ok, after a short period of laziness, I come back for more. I warned you about
+my activity, but, to be fair, it&rsquo;s been a busy couple of weeks at work.</p>
+
+<p>However, before starting, I wanted you to know that there is an upcoming Course
+for Functional Programming Principles in Scala in 25 days (starts on September
+15th). You can find more information about it (or even enroll in it) at
+<a href="https://www.coursera.org/course/progfun">Coursera</a>. The course is in charge of
+Martin Odersky, the creator of Scala, so you are in good hands.</p>
+
+<p>So, back to business. On this session let&rsquo;s talk about some more real
+programming.</p>
+
+<h3>Control Flow Tools</h3>
+
+<h4>The if statement</h4>
+
+<p>The most basic and probably the most well known statement in programming, the
+conditional control flow:</p>
+
+<pre><code class="scala">val x: Int = 10
+
+if (x &lt; 0)
+  println("x is Negative")
+else if (x &gt; 0)
+  println("x is Positive")
+else
+  println("x is Zero")
+
+// Will return: "x is Positive"
+</code></pre>
+
+<!-- more -->
+
+
+<p>Very basic, right? So, what are the differences with Python&rsquo;s <strong>if</strong>?</p>
+
+<p>For starter, the indentation is not actually necessary, it is used for better
+reading, but you can put everything with the same indent. Actually, it&rsquo;s even
+possible to make an if statement at the same line. But, it is important to
+remark, as it dos not holds a colon to delimit the end of the boolean expression
+to value, it does needs the parentheses to delimit it.</p>
+
+<p>You can also see that there is no <strong>elif</strong> but you just start another <strong>if</strong>
+after the <strong>else</strong>.</p>
+
+<pre><code class="scala">val x = -1
+
+if (x &lt; 0) println("x is Negative") else if (x &gt; 0) println("x is Positive") else println("x is Zero")
+
+// Will return: "x is Negative"
+
+if x &lt; 0 println("x is Negative") // Invalid, will result in error.
+</code></pre>
+
+<p>The blocking delimiter in an if statement can be nothing as long as there is
+only one instruction after the if or the else, or can be the curly braces: <strong>{</strong>
+and <strong>}</strong>:</p>
+
+<pre><code class="scala">val x = -2
+
+if (x &gt; 0) {
+  println("x is Positive.")
+
+  val y = x * 2
+
+  println("The double of x is: " + y)
+}
+</code></pre>
+
+<p>This programs obviously prints nothing. But if it doesn&rsquo;t have the curly braces
+to delimit the if statement, the results would be:</p>
+
+<pre><code class="plain">The double of x is: -4
+</code></pre>
+
+<p>This happens because when and if lacks curly braces it only takes the immediate
+next statement as its body.</p>
+
+<h4>Loop statements</h4>
+
+<p>There are three types of loops in Scala: <strong>while</strong>, <strong>do&hellip;while</strong> and <strong>for</strong>.</p>
+
+<p>The statements <strong>while</strong> and <strong>do&hellip;while</strong> are very similar. The two of them
+execute a set of instructions multiple times until the condition they hold is
+false. Much like Python&rsquo;s <strong>while</strong>.</p>
+
+<p>Still, the same as with the <strong>if</strong> statement, the delimiter is either the
+immediate next instruction or it is delimited by curly braces.</p>
+
+<p>The main difference between <strong>while</strong> and <strong>do&hellip;while</strong>, is that the latter
+executes what is inside the block of instructions at least once after checking
+on the breaking instruction:</p>
+
+<pre><code class="scala">var x = 10
+
+while (x &gt; 0) {
+  println("The value of x is: " + x)
+  x -= 1
+}
+
+// Will print successively the value of x until x equals 0
+
+x = 10
+
+do {
+  println("The value of x is: " + x)
+} while (x &gt; 0)
+
+// Exactly the same
+
+x = 0
+
+while (x &gt; 0) {
+  println("The value of x is: " + x)
+  x -= 1
+}
+
+// Doesn't print anything. The value of x is 0 at the end of the loop.
+
+x = 0
+
+do {
+  println("The value of x is: " + x)
+  x -= 1
+} while (x &gt; 0)
+
+// Prints: "The value of x is: 0" and finish. The value of x is -1 at the end of the loop.
+</code></pre>
+
+<p>The for statement, as much as in Python, is useful for traversing Lists or
+Arrays. It&rsquo;s also useful for list comprehensions. These are a very powerful
+tools in functional programming, that actually Python also supports (check on
+them if you are not familiar with it).</p>
+
+<pre><code class="scala">val xs: List[Int] = List(1, 2, 3, 4, 5)
+
+for (x &lt;- xs) println(x) // Prints the values of xs, from 1 to 5
+
+val ys: List[Int] = for (x &lt;- xs) yield x * x
+
+// The list ys holds the squares of every value in xs: 1, 4, 9, 16, 25
+
+val zs: List[Int] = for (x &lt;- xs if x % 2 == 0) yield x / 2
+
+// The list zs has the half-values of the pairs in xs: 1, 2
+</code></pre>
+
+<p>If you check on the <strong>yield</strong> instruction, this means that it will return the
+result of the next operation as a value. Also, you can use the <strong>if</strong> statement
+inside a <strong>for</strong> to set a filter for the values to go through.</p>
+
+<p>The statement after yield can be anything that returns a value, so it can be a
+function created before, or even a block (that is actually a function, but let&rsquo;s
+not get into that for now) with a returning value at the end:</p>
+
+<pre><code class="scala">val xs = List(1, 2, 3, 4, 5)
+
+val ys = for (x &lt;- xs) yield {
+  // A lot of different operations over x, stored in a variable called "result"
+  result
+}
+</code></pre>
+
+<p>As an ending note on Scala loops, there is no direct control over the loop, I
+mean, there is no <strong>break</strong>, <strong>continue</strong> or (may God have mercy on me for this
+forbidden word) <strong>goto</strong>. When a loop starts there is no easy way to make it
+break or jump on a cycle (you can set an if inside as well as other kinds of
+workarounds).</p>
+
+<p>The thing with Scala is, that if you need to mess with the natural flow of a
+loop, maybe there is another and cleaner way to do it.</p>
+
+<h4>The range equivalent (to and until)</h4>
+
+<p>If you come from Python, you are surely familiar with the <strong>range</strong> function,
+and maybe with the <strong>xrange</strong> function which is a lazy iterator.</p>
+
+<p>In Scala there is a similar way to declare a range, the <strong>to</strong> operator:</p>
+
+<pre><code class="scala">val xs = 0 to 10
+
+// xs now holds a immutable Range object that goes from 0 to 10
+</code></pre>
+
+<p>The main difference with this an Python&rsquo;s <strong>range</strong>, is that with the <strong>to</strong>
+operator you always need the lower boundary: this means there is not equivalent
+to <strong>range(10)</strong> for example. And, the resulting range, holds both boundaries:
+in our example 0 and 10 are part of the resulting Range object, whereas in
+Python, the upper boundary is not in the resulting list. If you want a range
+without taking in consideration the upper boundary, you can have it with the
+<strong>until</strong> operator:</p>
+
+<pre><code class="scala">val xs = 0 until 10
+
+// xs holds a Range that goes from 0 to 9
+
+for (x &lt;- 0 until 10) println(x) // Will print all the numbers from 0 to 9
+</code></pre>
+
+<p>As you could see in the last examples, the <strong>until</strong> (as well as the <strong>to</strong>)
+operator, can be used directly in a for loop to create a range to loop over it.</p>
+
+<h3>The pass equivalent</h3>
+
+<p>For the last of today&rsquo;s post, I&rsquo;ll make a brief reference to Python&rsquo;s <strong>pass</strong>
+Scala equivalent. There is none, as simple as that, in Scala if you don&rsquo;t want
+to do something you just leave a blank space (as long as it is clear that there
+is a blank statement):</p>
+
+<pre><code class="scala">class EmptyClass // Is valid
+
+for (x &lt;- 0 until 10) {} // Will go through the for without doing anything
+
+for (x &lt;- 0 until 10) // Wrong, it's ambiguous where the the blank statement is
+</code></pre>
+
+<p>Ok. I think this is more than enough for today. We learned some of the most
+common control flow structures on Scala. Go and experiment by yourselves now. As
+always, don&rsquo;t hesitate to leave your comments.</p>
+
+<p>Thank you for reading. See you soon!</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Why Did I Choose Scala?]]></title>
+    <link href="http://crscardellino.me/blog/2014/08/11/why-did-i-choose-scala/"/>
+    <updated>2014-08-11T15:53:00-03:00</updated>
+    <id>http://crscardellino.me/blog/2014/08/11/why-did-i-choose-scala</id>
+    <content type="html"><![CDATA[<p>So, on this entry I&rsquo;ll put a halt on the series of tutorials I&rsquo;ve been writing. Instead I think it&rsquo;s time to give a personal opinion in why did I choose <a href="http://scala-lang.org/">Scala</a> as my new main language.</p>
+
+<p>Before keep going on this, I&rsquo;ll just state that this is a complete personal opinion on Scala, is completely subjective. The reason why I chose it is mine and doesn&rsquo;t have to be your reason to choose it, but maybe you&rsquo;ll find some useful insights on what advantages I think the language has.</p>
+
+<p>So, a couple of friends and co-workers asked me &ldquo;Why Scala over Python? (or any
+other language for that matter)&rdquo;, I guess I&rsquo;ve never answered with a full
+justification on why did I do it. Actually, I don&rsquo;t think I have a real or valid
+justification more than &ldquo;because I liked it&rdquo;, but I do want to state some stuff
+that end up with me switching from a Python programmer to a Scala programmer.</p>
+
+<!-- more -->
+
+
+<h4>I got bored</h4>
+
+<p>I don&rsquo;t think this counts as a real &ldquo;advantage&rdquo;, but it&rsquo;s definitely one of the
+main reasons. Before Scala I was a Python programmer for 4 years, and I just got
+bored. Programming in Python wasn&rsquo;t fun anymore, wasn&rsquo;t challenging enough.
+Don&rsquo;t take this the wrong way, it&rsquo;s not that I&rsquo;ve learnt everything I could in
+Python, that&rsquo;s completely ridiculous, I&rsquo;m as far as learning or using all that
+Python has to offer as I can get. But, somehow, I wasn&rsquo;t interested in learning
+new things in Python.</p>
+
+<p>Maybe was the fact that in the Zen of Python &ldquo;There should be one– and
+preferably only one –obvious way to do it&rdquo;, which is a great way but not fun
+enough for me. But probably was the mere fact that 4 years with the same
+language was far more than what I wanted.</p>
+
+<p>Nonetheless, I don&rsquo;t regret knowing Python, is still a wonderful language to
+learn, specially for a starter programmer. Simple and plain, easy to read even
+if you coded it years ago.</p>
+
+<p>And of course, with these I&rsquo;m not saying Scala is better than Python, nor is
+that my intention. Scala and Python are just different, they offer different
+things and provide different ways for programming.</p>
+
+<h4>Functional Programming</h4>
+
+<p>Scala is a multi-paradigm language. It can be used with an imperative language
+orientation (much like Java, C++ or Python), but it&rsquo;s designed with the idea of
+functional programming in it&rsquo;s core.</p>
+
+<p>Functional programming is something very different from imperative programming,
+and probably is not as natural as the latter. Is a paradigm harder to learn and
+even harder to master (at least from my point of view). And in general term has
+always been associated with the academia (with LISP or Haskell as references).
+However, when you start to use this paradigm, is extremely good in dealing with
+many issues, specially nowadays. For example, functional programming languages
+can handle concurrency like no other languages as they are stateless. Other nice
+features include the always useful pattern matching and the extremely powerful
+high-order functions.</p>
+
+<p>There is a good article called <a href="http://www.defmacro.org/ramblings/fp.html">Functional Programming For The Rest Of Us</a>. Take a look at it, it&rsquo;s an
+interesting read.</p>
+
+<p>I learned the functional programming paradigm in the university, in my first
+courses of algorithms and data structures. Back then I used Haskell and to be
+honest I hated it. It wasn&rsquo;t clear for me, it made me have headaches. But, I
+guess that with time I became mature enough to know the advantages of this
+paradigm.</p>
+
+<p>You can tell me, if I like functional programming, why not LISP or Haskell then?
+Real purely functional programming languages. And it&rsquo;s as simple as saying, it&rsquo;s
+still not natural for me to use a purely functional language, it would take me
+too much time to code some functionalities. That&rsquo;s why I prefer Scala, because,
+if I don&rsquo;t know how to do something in the functional way I still can do it in
+the imperative way. It&rsquo;s not the cleanest solution, I know, but when
+experimenting, it&rsquo;s a solution. Then I can try to arrange it so it&rsquo;s either all
+functional or all imperative.</p>
+
+<p>Besides, after years of imperative programming in Python, it&rsquo;s smoother to jump
+to a language that allows me to do things the way I used to do them instead of a
+language that makes me learn new ways for everything. Once I&rsquo;ve mastered Scala I
+can jump to something more pure in the functional paradigm (that is, if Scala
+cannot accomplish it, which I doubt).</p>
+
+<p>Finally, Scala, as a functional language, has been given the tools necessary to
+go <a href="http://www.reactivemanifesto.org/">reactive</a>, making concurrency and
+distribution easier and giving a nice and elegant way to asynchronous
+programming.</p>
+
+<h4>Static Types</h4>
+
+<p>If there is a thing that Python lacks of are static types. Of course, this is a
+matter of pure perspective, since for some people this is an advantage of
+Python. You don&rsquo;t have to deal with variable types so it&rsquo;s a weight you take off
+your back.</p>
+
+<p>This, however, is not the case for me. At the beginning I thought dynamic typing
+was a great feature, you could make reuse of variables without having to deal
+with them being already used. But, as I experienced in some codes I did across
+my time as Python coder, I realized most of the time is good to have a registry
+on what are the variables you are using and the type they have on them.
+Specially when I dealt with experimentations in Natural Language.</p>
+
+<p>Still, the great thing that Scala has over static typed languages (think Java
+for example), is the fact that it packs a type inferrer. This makes the coding
+much easier and far less verbose than a Java application. Like it&rsquo;s presented in
+the <a href="http://scala-lang.org/">Scala Website</a>: Don&rsquo;t work for the type system. Let
+the type system work for you.</p>
+
+<p>After years of dynamic typing, I come back once again to the good old static
+typing, and I&rsquo;m happy with it.</p>
+
+<h4>Compilation to JVM</h4>
+
+<p>Scala compiles over the JVM, that&rsquo;s why it&rsquo;s called a JVM language (just like
+Jython, Clojure, Groovy or JRuby).</p>
+
+<p>This compilation to Java bytecode gives Scala a couple of nice features. The
+very first is speed, as it compiles to something nearer to object code (and thus
+near to machine code), a typical Scala application is only <a href="http://benchmarksgame.alioth.debian.org/u32/which-programs-are-fastest.php">2 or 3 times</a> slower than a C application, whereas a Python application can be up to <a href="http://benchmarksgame.alioth.debian.org/u32/which-programs-are-fastest.php">50 times slower</a> than a C application.</p>
+
+<p>The second great feature resides in its seamless interoperation with Java. As it
+is stated in the <a href="http://scala-lang.org/">Scala Website</a>: &ldquo;Scala classes are
+ultimately JVM classes. You can create Java objects, call their methods and
+inherit from Java classes transparently from Scala. Similarly, Java code can
+reference Scala classes and objects.</p>
+
+<p>In general terms, this is a very big deal. Why? It&rsquo;s simple, because Java has
+been an industrial standard for years now, and that translated in hundred if not
+thousands of useful libraries written for Java that are completely useful for
+building Scala applications.</p>
+
+<p>A programming language is as powerful as the libraries it has to back it up
+(that&rsquo;s precicely why Java and C++ are top choices in the market). The more
+libraries, the less code you have to rewrite (an important principle in
+programming is to never reinvent the wheel). Scala is growing in libraries
+everyday, but the collection probably is not as large as Python&rsquo;s. However, Java
+libraries' collection is as large (and probably even larger) as Python&rsquo;s
+collection, and the fact that this are useful for Scala programs as well give a
+Scala a great advantage over many other new languages.</p>
+
+<p>If you are asking, ok but, why not use Java then? Simple, I&rsquo;ve never been a Java
+enthusiast, and although I respect the contribution it has given to the
+programming environment, I still prefer the less verbose code of Scala, and then
+again, Java is not a functional programming language.</p>
+
+<h4>A Cool Kid</h4>
+
+<p>Finally, the last reason I choose Scala as new toy to play with. In the last
+years, Scala community has grown a lot, and it&rsquo;s in part because is a new
+technology or, a more slang way to say it: &ldquo;it&rsquo;s what cool kids are doing&rdquo;.</p>
+
+<p>Ok, maybe &ldquo;cool kid&rdquo; is way too arrogant to state it. Still, what I mean is that
+a big generation of early adopters in programming languages has been turning
+into one of these two new technologies these last couple of years: JavaScript,
+commonly a client-side language to give web applications a little more
+&ldquo;dynamic&rdquo;, has been increasing in usability since the launch of NodeJS (another
+new tool I&rsquo;m interested in), using the JavaScript V8 engine to build side-server
+JavaScript applications; And the other one is Scala, with the reactive
+programming manifesto and the easiness in coding asynchronous applications.</p>
+
+<p>Personally, I&rsquo;ve never been an early adopter, I&rsquo;ve always preferred a good old
+fashion stable Debian OS over a fancy latest model Ubuntu. But, as I stated
+before, I got bored, and as a result of that, I wanted to learn something new,
+something different, and Scala has been so far a smooth ride.</p>
+
+<p>That&rsquo;s all I had to say about this. I hope you liked my insight on this
+beautiful language and my post leads you to learn it. If you really put yourself
+into it you&rsquo;ll find out the potential of this language is excellent and you
+won&rsquo;t be regretted in adopting Scala.</p>
+
+<p>Thank you for reading.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[From Python to Scala (IV): Arrays &amp; ListBuffers]]></title>
+    <link href="http://crscardellino.me/blog/2014/08/07/from-python-to-scala-iv-arrays-and-listbuffers/"/>
+    <updated>2014-08-07T15:48:00-03:00</updated>
+    <id>http://crscardellino.me/blog/2014/08/07/from-python-to-scala-iv-arrays-and-listbuffers</id>
+    <content type="html"><![CDATA[<p>So, now you&rsquo;ve learnt about Scala lists. As you could see in the previous
+examples, Scala has a very <em>functional</em> kind of lists, as these are immutable.</p>
+
+<p>If you are ever to use Scala as a functional programming language this is the
+way to go. I really recommend you to, at least, try to learn this paradigm, as
+it is design purpose and has many advantages. But, then again, even now I
+sometimes go back to imperative programming in Scala myself because is more
+natural to me. Scala as imperative language is pretty similar to Java, so as a
+side effect I ended up learning how to read Java code (I knew some Java but only
+the basics, learning Scala my Java understanding improved a lot).</p>
+
+<p>But, lets say that functional programming is way too much to deal with now and
+you want to know a type more similar to Python lists, the oldie but goodie
+mutable lists. You have a couple of options of data structures available in
+Scala, I&rsquo;ll present two of the most commons.</p>
+
+<h4>Scala Arrays</h4>
+
+<p>Ok, if my university&rsquo;s data structure teacher sees me presenting Scala arrays as
+an option for a &ldquo;mutable&rdquo; list he probably would take away my degree and force
+me to redo the Computer Sciences career all over again.</p>
+
+<p>An array <strong>is not</strong> a list and will never be one. But, for someone who comes
+from a Python environment, it&rsquo;s probably an easy option to replace a immutable
+list for a mutable version.</p>
+
+<p>Arrays are the simplest and one of the oldest (if not <em>the</em> oldest) data
+structure you&rsquo;ll ever face with. In fact, most high-level programming languages
+lists are internally implemented as arrays. If you&rsquo;ve ever deal with a real old
+imperative programming language (I&rsquo;m looking at you C developer), you are
+familiar to the concept of array. The thing is that Python doesn&rsquo;t really have
+them (at least not internally, you&rsquo;ll have to import a module for dealing with
+arrays).</p>
+
+<p>Arrays have some pros and cons in programming, as every data structure. Among
+the most common pros of an array you&rsquo;ll find the efficiency they carry in
+comparison to lists. As arrays are represented as collection of elements (of the
+same type) stored in a continuous space of memory. They differ from lists in
+that you&rsquo;ll have an index for all the elements (which makes the access time of a
+constant order) and in general are faster to make operations than in lists which
+can have chunks of elements sparse in many places.</p>
+
+<!-- more -->
+
+
+<p>Arrays in Scala are a built-in type (you don&rsquo;t have to import them), and they
+are completely compatible with Java arrays (in fact, are implemented as a
+wrapper of Java arrays). And, as most arrays, they are naturally mutable as they
+are stateful data structure (which makes them perfect for imperative paradigms
+that relies on state), in contrast to stateless data structures like lists (more
+associated to functional paradigm):</p>
+
+<pre><code class="scala">scala&gt; val array: Array[Int] = Array(1, 2, 3)
+array: Array[Int] = Array(1, 2, 3)
+
+scala&gt; array(0)
+res0: Int = 1
+
+scala&gt; array(0) = 5 // This, not valid in lists, is valid in arrays.
+
+scala&gt; array(0)  // Arrays are mutable!
+res1: Int = 5
+</code></pre>
+
+<p>In general terms, you&rsquo;ll be able to do many of the lists' operations in an array
+(like concatenation, traverse, length). However, as I state before, arrays are
+not lists, and cannot replace them in all the occasions. The thing is that
+arrays do not have a functionality to add (append or prepend) elements to them
+(and if they do, usually are very time and resource consuming which is not a
+good idea). You can emulate it with the concatenation, but it&rsquo;s not the same
+thing, and this workaround creates a new structure instead of modifying the
+existing one:</p>
+
+<pre><code class="scala">var array = Array(1, 2) // Pay attention to the "var" instead of "val"
+array(2) // Will throw an exception.
+
+array = array ++ Array(3) // I'm reassigning the array value as "++" creates a new structure.
+array(2) // The new array now has three elements. This will return 3.
+</code></pre>
+
+<p>Ok, so far so good, we now have a workaround and it works. Not the simplest and
+definitely not the prettiest one, but it works. All set? Are we happy? Of course
+we are not happy. It can&rsquo;t be that Scala won&rsquo;t consider a real mutable list in
+its library.</p>
+
+<p>Then again, you are right, the Scala team of course made this consideration. But
+it&rsquo;s not a built-in data structure, but one you&rsquo;ll have to import from the Scala
+collection library.</p>
+
+<h4>Scala ListBuffer</h4>
+
+<p>So we finally meet a real equivalent to the Python list. Or at least the closest
+one I can think of. Scala ListBuffer is a mutable data structure which can mimic
+a Python list&rsquo;s operations.</p>
+
+<p>For this you&rsquo;ll have to import it as it is not in the built-in types of Scala
+(but is included in the Scala library). First, let see a little about module
+imports:</p>
+
+<pre><code class="scala">import scala.collection.mutable.ListBuffer // Self explanatory
+
+import scala.collection.mutable._  // Equivalent to Python: from library.sublibrary import *
+
+import scala.collection.mutable.{ListBuffer =&gt; MutableList} // Rename of the import
+</code></pre>
+
+<p>Very basics, don&rsquo;t think you need too much to be explained. Now lets get to the
+real deal. Listbuffers, as well as arrays, are mutable in its values, which
+means they can be changed. But also, a listbuffer has the classic append and
+prepend operations without the need of creating a new structure out of it:</p>
+
+<pre><code class="scala">scala&gt; val list = ListBuffer(1, 2, 3) // ListBuffer can only store one type values as well as a List. Is a "val".
+list: ListBuffer[Int] = ListBuffer(1, 2, 3)
+
+scala&gt; list(0)
+res0: Int = 1
+
+scala&gt; list(0) = 2  // This is valid in ListBuffer
+
+scala&gt; list(0)
+res1: Int = 2
+
+scala&gt; list.append(4)
+
+scala&gt; list
+res2: ListBuffer[Int] = ListBuffer(2, 2, 3, 4)
+
+scala&gt; list.prepend(1) = ListBuffer(1, 2, 2, 3, 4)
+</code></pre>
+
+<p>Listbuffers also offer an operator to deal with appending elements at the end.
+And finally, they can be easily converted to a Scala list for further working
+(if by any chance you needed the listbuffer for an initial construction but then
+all the operations are regular list operations):</p>
+
+<pre><code class="scala">val list = ListBuffer(1, 2)
+list += 3 // The new value of the list is: ListBuffer(1, 2, 3).
+
+list + 3 // Beware! this make no sense. And in many cases will throw a type mismatch.
+
+list = list + 3 // Wrong. Even if the operation is permitted (not this case) this is a val reassign.
+
+list.toList // Returns a Scala List
+list.result // Same as before
+</code></pre>
+
+<p>There&rsquo;s also a Scala structure that you can import from the same library of the
+ListBuffer, called ArrayBuffer. It provides functionality to append elements
+similar to the one of the ListBuffer, but it returns an Array, which is a better
+structure (more efficient) when you have to deal with large collections and more
+imperative programming. Don&rsquo;t use it if you&rsquo;ll have to prepend many values or
+you need the final result to be a list.</p>
+
+<p>Other common data structures implemented in the Scala library include queues and
+stacks (with internal array and list representations according to what you
+need). I leave it to you to find out and look at the best option for you. The
+Scala documentation is pretty well <a href="http://docs.scala-lang.org/overviews/collections/introduction.html">written regarding the collections</a>, specially the part where it explains the <a href="http://docs.scala-lang.org/overviews/collections/performance-characteristics.html">performance characteristics</a>.</p>
+
+<p>I hope you enjoyed the new chapter on my Python to Scala tutorial. As always,
+thank you for your time and all comments are welcome. Until next time, happy
+coding!</p>
+]]></content>
+  </entry>
+  
+</feed>
