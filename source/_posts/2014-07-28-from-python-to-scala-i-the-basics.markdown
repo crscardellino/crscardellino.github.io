@@ -49,14 +49,12 @@ loop). In this mode, just as in Python's interpreter, you can test different
 commands of Scala. Just type "scala" in your shell and voilà, you have your own
 Scala shell:
 
-```
-$ scala
-Welcome to Scala version X.Y.Z (Java HotSpot(TM) 64-Bit Server VM, Java X.Y.Z).
-Type in expressions to have them evaluated.
-Type :help for more information.
+    $ scala
+    Welcome to Scala version X.Y.Z (Java HotSpot(TM) 64-Bit Server VM, Java X.Y.Z).
+    Type in expressions to have them evaluated.
+    Type :help for more information.
 
-scala>
-```
+    scala>
 
 You can use it, for example, as a calculator, as shown with Python interpreter
 in [An Informal Introduction to Python](https://docs.python.org/2/tutorial/introduction.html). The main
@@ -66,21 +64,19 @@ operations not assigned to any value or variable you have done so far. This
 value will have an inferred type and won't be changeable for the rest of the
 session.
 
-```
-scala> 2 + 2
-res0: Int = 4
+    scala> 2 + 2
+    res0: Int = 4
 
-scala> 4 + 4
-res1: Int = 8
+    scala> 4 + 4
+    res1: Int = 8
 
-scala> res0
-res2: Int = 4
+    scala> res0
+    res2: Int = 4
 
-scala> res0 = 5
-<console>:8: error: reassignment to val
-       res0 = 4
-            ^
-```
+    scala> res0 = 5
+    <console>:8: error: reassignment to val
+           res0 = 4
+                ^
 
 As you could notice in the last example, even if you try to get the value of a
 res you'll end up creating another res (look what happens when "res2" is
@@ -92,64 +88,58 @@ One important different when working on Scala, is the strings declaration. In
 Python you can declare a String with single quotes or double quotes, for
 example:
 
-```
->>> 'spam eggs'  # single quotes
-'spam eggs'
->>> 'doesn\'t'  # use \' to escape the single quote...
-"doesn't"
->>> "doesn't"  # ...or use double quotes instead
-"doesn't"
->>> '"Yes," he said.'
-'"Yes," he said.'
->>> "\"Yes,\" he said."
-'"Yes," he said.'
->>> '"Isn\'t," she said.'
-'"Isn\'t," she said.'
-```
+    >>> 'spam eggs'  # single quotes
+    'spam eggs'
+    >>> 'doesn\'t'  # use \' to escape the single quote...
+    "doesn't"
+    >>> "doesn't"  # ...or use double quotes instead
+    "doesn't"
+    >>> '"Yes," he said.'
+    '"Yes," he said.'
+    >>> "\"Yes,\" he said."
+    '"Yes," he said.'
+    >>> '"Isn\'t," she said.'
+    '"Isn\'t," she said.'
 
 In Scala, double quotes are for strings and single quotes are for characters.
 The values of type Char are actually numbers, but representative of the
 characters in some codification. However, you should not use them for operations
 that should go for integers, although these operations are permitted.
 
-```
-scala> "This is a string" // Ok
-res3: String = This is a string
+    scala> "This is a string" // Ok
+    res3: String = This is a string
 
-scala> 'c' // This is a character
-res4: Char = c
+    scala> 'c' // This is a character
+    res4: Char = c
 
-scala> "c" // This is also a string
-res5: String = c
+    scala> "c" // This is also a string
+    res5: String = c
 
-scala> 'This is error' // Wrong
-<console>:1: error: unclosed character literal
-       'This is error'
-                     ^
+    scala> 'This is error' // Wrong
+    <console>:1: error: unclosed character literal
+           'This is error'
+                         ^
 
-scala> "This is a " + "concatenation of strings"
-res6: String = "This is a concatenation of strings"
+    scala> "This is a " + "concatenation of strings"
+    res6: String = "This is a concatenation of strings"
 
-scala> 'A' + 'B' // This will produce a sum of integers of 131 ('A' = 65, 'B' = 66)
-res7: Int = 131
-```
+    scala> 'A' + 'B' // This will produce a sum of integers of 131 ('A' = 65, 'B' = 66)
+    res7: Int = 131
 
 Finally, the last for this session, to print, there are two built-in functions:
 print() and println(). The first prints a string passed by parameter and the
 second prints a string and adds an ending "\n" character (new line). Both of
 these functions take their parameters inside parentheses:
 
-```
-scala> print("Hello, world!")
-Hello, world!
-scala> println("Hello, world!")
-Hello, world!
+    scala> print("Hello, world!")
+    Hello, world!
+    scala> println("Hello, world!")
+    Hello, world!
 
-scala> println "Hello, world!" // Wrong! This is not Python
-<console>:1: error: ';' expected but string literal found.
-       println "Hello, world!"
-               ^
-```
+    scala> println "Hello, world!" // Wrong! This is not Python
+    <console>:1: error: ';' expected but string literal found.
+           println "Hello, world!"
+                   ^
 
 Ok, so, this is all for this session, very basic, nothing too complicated. I'll
 be posting more on this crash course during the next weeks. I hope this is
