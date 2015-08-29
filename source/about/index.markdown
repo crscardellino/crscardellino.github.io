@@ -24,7 +24,7 @@ enjoy coding for hobby. For the last 4 years I've been a Python developer
 although I also programmed in C or C++ from time to time. Now, however, I've
 been trying new stuffs with Scala and JavaScript, just for a change, and I've
 been abandoning other tools since then. I'm also a regular user of scripting
-languages like BASH, AWH or Perl. I get bored fairly easy, so I try to learn new
+languages like BASH, AWK or Perl. I get bored fairly easy, so I try to learn new
 things and experiment different technologies every time I can.
 
 I have a degree in Computer Sciences which I obtained in 2013. And in the
