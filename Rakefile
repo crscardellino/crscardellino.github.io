@@ -26,6 +26,7 @@ themes_dir      = ".themes"   # directory for blog files
 new_post_ext    = "markdown"  # default new post file extension when using the new_post task
 new_page_ext    = "markdown"  # default new page file extension when using the new_page task
 server_port     = "4000"      # port for preview server eg. localhost:4000
+deploy_extra    = ["SBWCE"]   # jekyll sites to extra deploy
 
 if (/cygwin|mswin|mingw|bccwin|wince|emx/ =~ RUBY_PLATFORM) != nil
   puts '## Set the codepage to 65001 for Windows machines'
@@ -259,6 +260,16 @@ multitask :push do
   Rake::Task[:copydot].invoke(public_dir, deploy_dir)
   puts "\n## Copying #{public_dir} to #{deploy_dir}"
   cp_r "#{public_dir}/.", deploy_dir
+
+  # deploying extra sites
+  deploy_extra.each do |site|
+    puts "\n## Deploying #{site}"
+    cd "#{site}" do
+      system "jekyll build"
+      cp_r "#{site}/_site/.", "#{deploy_dir}/#{site}"
+    end
+  end
+
   cd "#{deploy_dir}" do
     system "git add -A"
     message = "Site updated at #{Time.now.utc}"
