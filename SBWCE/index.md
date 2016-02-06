@@ -5,11 +5,13 @@ layout: default
 Summary
 -------
 
-This report describes the resource of word embeddings created upon a Spanish
-corpus of over a billion words. This resource was created using the [word2vec
-algorithm](https://code.google.com/p/word2vec/), provided by the [gensim
-package](https://radimrehurek.com/gensim/). The corpus was compiled from a set
-of many different corpora and resources from the web. The embeddings were
+This is the Spanish Billion Words Corpus and Embeddings linguistic resource.
+
+This resource consists of an unannotated corpus of the Spanish language of
+nearly 1.5 billion words, compiled from different corpora and resources from the
+web; and a set of word vectors (or embeddings), created from this corpus using
+the [word2vec algorithm](https://code.google.com/p/word2vec/), provided by the
+[gensim package](https://radimrehurek.com/gensim/). These embeddings were
 evaluated with a
 [translation](http://cs.famaf.unc.edu.ar/~ccardellino/SBWCE/questions-words_sp.txt)
 of [word2vec's question
@@ -17,10 +19,26 @@ words](https://code.google.com/p/word2vec/source/browse/trunk/questions-words.tx
 
 The cleaned corpus is publicly available to download as [raw text
 file](http://cs.famaf.unc.edu.ar/~ccardellino/SBWCE/clean_corpus.tar.bz2). The
-word vectors are publicly available to download in [word2vec's binary
+word vectors are also available to download in [word2vec's binary
 format](http://cs.famaf.unc.edu.ar/~ccardellino/SBWCE/SBW-vectors-300-min5.bin.gz)
-and also in [text
+and in [text
 format](http://cs.famaf.unc.edu.ar/~ccardellino/SBWCE/SBW-vectors-300-min5.txt.bz2).
+
+### Disclaimer
+
+I tried to find all the Spanish corpora, from different sources, that were
+available to download freely from the web. No copyright infringement was
+intended and I also tried to acknowledge correctly all the original authors of
+the corpora I borrowed.
+
+If you are an author of one of the resources and feel your work wasn't correctly
+used in this resource please feel free to [contact
+me](mailto:ccardellino@famaf.unc.edu.ar) and I will remove your work from this
+corpus and from the embeddings.
+
+Likewise, if you are author or know of some other resources publicly available
+for the Spanish language (the corpus doesn't need to be annotated) and want to
+contribute, also feel free to [contact me](mailto:ccardellino@famaf.unc.edu.ar).
 
 Corpora
 -------
