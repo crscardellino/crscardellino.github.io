@@ -4,7 +4,7 @@
   <title><![CDATA[Cristian Cardellino]]></title>
   <link href="http://crscardellino.me/atom.xml" rel="self"/>
   <link href="http://crscardellino.me/"/>
-  <updated>2016-02-06T19:38:16-03:00</updated>
+  <updated>2016-02-06T19:47:24-03:00</updated>
   <id>http://crscardellino.me/</id>
   <author>
     <name><![CDATA[Cristian Cardellino]]></name>
@@ -41,9 +41,9 @@ to the world of word embeddings by first releasing a corpus big enough to train
 some decent word embeddings, and then by releasing some embeddings created on my
 own.</p>
 
-<p>This is why I am releasing now the <a href="SBWCE/">Spanish Billion Words Corpus and Embeddings</a>, a resource for the Spanish language that offers a big
-corpus (of nearly 1.5 billion words) and a set of word vectors (or embeddings)
-trained from this corpus.</p>
+<p>This is why I am releasing now the <a href="http://crscardellino.me/SBWCE/">Spanish Billion Words Corpus and Embeddings</a>, a resource for the Spanish language
+that offers a big corpus (of nearly 1.5 billion words) and a set of word vectors
+(or embeddings) trained from this corpus.</p>
 
 <p>Feel free to use it as it is released under a <a href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons BY-SA</a> license.</p>
 ]]></content>
