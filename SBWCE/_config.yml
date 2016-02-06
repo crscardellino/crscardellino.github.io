@@ -10,8 +10,8 @@ title: Spanish Billion Words Corpus and Embeddings
 email: ccardellino@famaf.unc.edu.ar
 description: > # this means to ignore newlines until "baseurl:"
   Unannotated Corpus and Embeddings for Spanish Language.
-baseurl: "/SBWCE" # the subpath of your site, e.g. /blog
-url: "http://crscardellino.me" # the base hostname & protocol for your site
+baseurl: "/SBWCE"
+url: "http://crscardellino.me"
 twitter_username: neurotikal
 github_username:  crscardellino
 

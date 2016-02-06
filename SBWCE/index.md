@@ -10,15 +10,17 @@ corpus of over a billion words. This resource was created using the [word2vec
 algorithm](https://code.google.com/p/word2vec/), provided by the [gensim
 package](https://radimrehurek.com/gensim/). The corpus was compiled from a set
 of many different corpora and resources from the web. The embeddings were
-evaluated with a [translation](resources/questions-words_sp.txt) of [word2vec's question
+evaluated with a
+[translation](http://cs.famaf.unc.edu.ar/~ccardellino/SBWCE/questions-words_sp.txt)
+of [word2vec's question
 words](https://code.google.com/p/word2vec/source/browse/trunk/questions-words.txt).
 
 The cleaned corpus is publicly available to download as [raw text
-file](resources/clean_corpus.tar.bz2).
-The word vectors are publicly available to download in [word2vec's binary
-format](resources/SBW-vectors-300-min5.bin.gz)
+file](http://cs.famaf.unc.edu.ar/~ccardellino/SBWCE/clean_corpus.tar.bz2). The
+word vectors are publicly available to download in [word2vec's binary
+format](http://cs.famaf.unc.edu.ar/~ccardellino/SBWCE/SBW-vectors-300-min5.bin.gz)
 and also in [text
-format](resources/SBW-vectors-300-min5.txt.bz2).
+format](http://cs.famaf.unc.edu.ar/~ccardellino/SBWCE/SBW-vectors-300-min5.txt.bz2).
 
 Corpora
 -------

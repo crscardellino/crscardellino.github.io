@@ -266,8 +266,8 @@ multitask :push do
     puts "\n## Deploying #{site}"
     cd "#{site}" do
       system "jekyll build"
-      cp_r "#{site}/_site/.", "#{deploy_dir}/#{site}"
     end
+    cp_r "#{site}/_site/.", "#{deploy_dir}/#{site}"
   end
 
   cd "#{deploy_dir}" do
