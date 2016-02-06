@@ -29,8 +29,8 @@ to the world of word embeddings by first releasing a corpus big enough to train
 some decent word embeddings, and then by releasing some embeddings created on my
 own.
 
-This is why I am releasing now the [Spanish Billion Words Corpus and Embeddings](SBWCE/), a resource for the Spanish language that offers a big
-corpus (of nearly 1.5 billion words) and a set of word vectors (or embeddings)
-trained from this corpus.
+This is why I am releasing now the [Spanish Billion Words Corpus and Embeddings](http://crscardellino.me/SBWCE/), a resource for the Spanish language
+that offers a big corpus (of nearly 1.5 billion words) and a set of word vectors
+(or embeddings) trained from this corpus.
 
 Feel free to use it as it is released under a [Creative Commons BY-SA](http://creativecommons.org/licenses/by-sa/4.0/) license.
