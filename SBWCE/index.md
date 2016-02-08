@@ -12,10 +12,7 @@ nearly 1.5 billion words, compiled from different corpora and resources from the
 web; and a set of word vectors (or embeddings), created from this corpus using
 the [word2vec algorithm](https://code.google.com/p/word2vec/), provided by the
 [gensim package](https://radimrehurek.com/gensim/). These embeddings were
-evaluated with a
-[translation](http://cs.famaf.unc.edu.ar/~ccardellino/SBWCE/questions-words_sp.txt)
-of [word2vec's question
-words](https://code.google.com/p/word2vec/source/browse/trunk/questions-words.txt).
+evaluated by translating to Spanish word2vec's [word relation test set](http://arxiv.org/pdf/1301.3781.pdf).
 
 The cleaned corpus is publicly available to download as [raw text
 file](http://cs.famaf.unc.edu.ar/~ccardellino/SBWCE/clean_corpus.tar.bz2). The
@@ -44,7 +41,7 @@ Corpora
 -------
 
 The corpus was created compiling the following resources of the Spanish
-language (the resources were found publicly available on the internet):
+language:
 
 * Spanish portion of [SenSem](http://grial.uab.es/fproj.php?id=10&idioma=in).
 * Spanish portion of the [Ancora Corpus](http://clic.ub.edu/corpus/en).
@@ -59,9 +56,9 @@ language (the resources were found publicly available on the internet):
     * The [News Commentary](http://opus.lingfil.uu.se/News-Commentary.php)
       corpus.
     * The [United Nations](http://opus.lingfil.uu.se/UN.php) documents compiled
-      by Alexandre Rafalovitch and Robert Dale.
+      by [Alexandre Rafalovitch](http://www.outerthoughts.com/) and [Robert Dale](http://web.science.mq.edu.au/~rdale/).
 * The Spanish portion of the [Europarl](http://statmt.org/europarl/) (European
-  Parliament), compiled by Philipp Koehn.
+  Parliament), compiled by [Philipp Koehn](http://homepages.inf.ed.ac.uk/pkoehn/).
 * Dumps from the Spanish [Wikipedia](https://es.wikipedia.org),
   [Wikisource](https://es.wikisource.org) and
   [Wikibooks](https://es.wikibooks.org) on date 2015-09-01, parsed with the
@@ -113,8 +110,16 @@ The final resource was a corpus of 1000653 word embeddings of dimension 300.
 Evaluation of the Embeddings
 ----------------------------
 
-This corpus was evaluated using a translation of the original word2vec's
-question words. The accuracy results are the following:
+This corpus was evaluated using a
+[translation](http://cs.famaf.unc.edu.ar/~ccardellino/SBWCE/questions-words_sp.txt)
+of word2vec's question
+words.
+Those translations that resulted in an ambiguity not intended in the original
+test set were removed (for example, names of currencies that were homographs
+with the word "crown" when translated to Spanish), resulting in a test set that
+was 25% smaller than the original.
+
+We obtained the following accuracies:
 
 * Capital of common countries: 0.84
 * Capitals of the World: 0.68
