@@ -60,10 +60,7 @@ nearly 1.5 billion words, compiled from different corpora and resources from the
 web; and a set of word vectors (or embeddings), created from this corpus using
 the <a href="https://code.google.com/p/word2vec/">word2vec algorithm</a>, provided by the
 <a href="https://radimrehurek.com/gensim/">gensim package</a>. These embeddings were
-evaluated with a
-<a href="http://cs.famaf.unc.edu.ar/~ccardellino/SBWCE/questions-words_sp.txt">translation</a>
-of <a href="https://code.google.com/p/word2vec/source/browse/trunk/questions-words.txt">word2vec’s question
-words</a>.</p>
+evaluated by translating to Spanish word2vec’s <a href="http://arxiv.org/pdf/1301.3781.pdf">word relation test set</a>.</p>
 
 <p>The cleaned corpus is publicly available to download as <a href="http://cs.famaf.unc.edu.ar/~ccardellino/SBWCE/clean_corpus.tar.bz2">raw text
 file</a>. The
@@ -91,7 +88,7 @@ contribute, also feel free to <a href="&#109;&#097;&#105;&#108;&#116;&#111;:&#09
 <h2 id="corpora">Corpora</h2>
 
 <p>The corpus was created compiling the following resources of the Spanish
-language (the resources were found publicly available on the internet):</p>
+language:</p>
 
 <ul>
   <li>Spanish portion of <a href="http://grial.uab.es/fproj.php?id=10&amp;idioma=in">SenSem</a>.</li>
@@ -108,11 +105,11 @@ legislative text of the European Union.</li>
       <li>The <a href="http://opus.lingfil.uu.se/News-Commentary.php">News Commentary</a>
 corpus.</li>
       <li>The <a href="http://opus.lingfil.uu.se/UN.php">United Nations</a> documents compiled
-by Alexandre Rafalovitch and Robert Dale.</li>
+by <a href="http://www.outerthoughts.com/">Alexandre Rafalovitch</a> and <a href="http://web.science.mq.edu.au/~rdale/">Robert Dale</a>.</li>
     </ul>
   </li>
   <li>The Spanish portion of the <a href="http://statmt.org/europarl/">Europarl</a> (European
-Parliament), compiled by Philipp Koehn.</li>
+Parliament), compiled by <a href="http://homepages.inf.ed.ac.uk/pkoehn/">Philipp Koehn</a>.</li>
   <li>Dumps from the Spanish <a href="https://es.wikipedia.org">Wikipedia</a>,
 <a href="https://es.wikisource.org">Wikisource</a> and
 <a href="https://es.wikibooks.org">Wikibooks</a> on date 2015-09-01, parsed with the
@@ -167,8 +164,16 @@ following values were obtained:</p>
 
 <h2 id="evaluation-of-the-embeddings">Evaluation of the Embeddings</h2>
 
-<p>This corpus was evaluated using a translation of the original word2vec’s
-question words. The accuracy results are the following:</p>
+<p>This corpus was evaluated using a
+<a href="http://cs.famaf.unc.edu.ar/~ccardellino/SBWCE/questions-words_sp.txt">translation</a>
+of word2vec’s question
+words.
+Those translations that resulted in an ambiguity not intended in the original
+test set were removed (for example, names of currencies that were homographs
+with the word “crown” when translated to Spanish), resulting in a test set that
+was 25% smaller than the original.</p>
+
+<p>We obtained the following accuracies:</p>
 
 <ul>
   <li>Capital of common countries: 0.84</li>
