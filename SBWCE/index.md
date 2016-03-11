@@ -134,6 +134,15 @@ We obtained the following accuracies:
 * Plural: 0.51
 * Plural verbs: 0.42
 
+Citation
+--------
+
+To cite this resource in a publication please use the following citation:
+
+> Cristian Cardellino: Spanish Billion Words Corpus and Embeddings (March 2016), http://crscardellino.me/SBWCE/ 
+
+You also have a [bibtex](cite.bib) entry available.
+
 License
 -------
 
