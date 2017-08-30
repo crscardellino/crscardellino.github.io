@@ -30,12 +30,12 @@ the corpora I borrowed.
 
 If you are an author of one of the resources and feel your work wasn't correctly
 used in this resource please feel free to [contact
-me](mailto:ccardellino@famaf.unc.edu.ar) and I will remove your work from this
+me](mailto:ccardellino@unc.edu.ar) and I will remove your work from this
 corpus and from the embeddings.
 
 Likewise, if you are author or know of some other resources publicly available
 for the Spanish language (the corpus doesn't need to be annotated) and want to
-contribute, also feel free to [contact me](mailto:ccardellino@famaf.unc.edu.ar).
+contribute, also feel free to contact me.
 
 Corpora
 -------

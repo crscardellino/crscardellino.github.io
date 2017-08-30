@@ -7,11 +7,11 @@ sharing: false
 footer: false
 ---
 
-I currently work at FaMAF, the Faculty of Mathematics, Astronomy and Physics, in
-the National University of Córdoba, Argentina. If I'm around in the building,
-you'll probably find me the office number 283. The best way to contact me
-however, is by the form below or via email: **ccardellino AT famaf DOT unc
-DOT edu DOT ar**
+I currently work at FaMAF, the Faculty of Mathematics, Astronomy and Physics,
+in the National University of Córdoba, Argentina. If I'm around in the
+building, you'll probably find me the office number 283. The best way to
+contact me however, is by the form below or via email: **ccardellino AT unc DOT
+edu DOT ar**
 
 <div class="signup">
   <form id="contact-form"
