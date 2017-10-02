@@ -1,5 +1,7 @@
 ---
-layout: default
+layout: page
+title: Spanish Billion Word Corpus and Embeddings
+permalink: /SBWCE/
 ---
 
 Summary
@@ -149,7 +151,7 @@ License
 <div style="text-align: center;">
 <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img
 alt="Creative Commons License" style="border-width:0"
-src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a><br />
+src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a>
 <span
 xmlns:dct="http://purl.org/dc/terms/" property="dct:title">Spanish Billion Word
 Corpus and Embeddings</span>
