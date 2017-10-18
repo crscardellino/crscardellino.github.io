@@ -2,7 +2,7 @@
 layout: page
 title: Work
 permalink: /work/
-image: "/assets/images/passage.jpg"
+image: "/assets/images/pinecone.jpg"
 ---
 
 This is where I list my courses, talks and other resources regarding my work:
@@ -22,6 +22,11 @@ Maintainer. Compilation of Spanish Corpora with Word2Vec trained embeddings.
 March 2016.
 
 ### Talks
+
+[Scala](https://docs.google.com/presentation/d/1ouNU1SjRn0sZq3NfBQJa7dPLtgsNCb7lVu5SK3RHTFo/edit?usp=sharing).
+Presenter. _Conceptos Avanzados de Lenguajes de Programación_. Facultad de
+Matemática, Astronomía, Física y Computación.  Universidad Nacional de Córdoba.
+Córdoba, Argentina. October 2017.
 
 [Inteligencia
 Artificial](https://docs.google.com/presentation/d/1wJoSg3DvVgWGPGi15QjTKCO8TZlw93rPr0X7hH9OeDw/edit?usp=sharing).
