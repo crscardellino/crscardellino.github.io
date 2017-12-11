@@ -31,6 +31,11 @@ March 2016.
 
 ### Talks
 
+[Combinando Python Notebooks con R y
+ggplot](https://github.com/crscardellino/MeetupDSCba2017).  Presenter. _4to
+Encuentro Data Science Córdoba 2017_.  Cluster Córdoba Technology. Córdoba,
+Argentina. December 2017.
+
 [Scala](https://docs.google.com/presentation/d/1ouNU1SjRn0sZq3NfBQJa7dPLtgsNCb7lVu5SK3RHTFo/edit?usp=sharing).
 Presenter. _Conceptos Avanzados de Lenguajes de Programación_. Facultad de
 Matemática, Astronomía, Física y Computación.  Universidad Nacional de Córdoba.
