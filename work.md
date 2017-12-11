@@ -8,6 +8,7 @@ image: "/assets/images/pinecone.jpg"
 This is where I list my courses, talks and other resources regarding my work:
 
 ### Courses & Tutorials
+<a name="#courses"></a>
 
 [Train and visualize a model in Tensorflow]({{ "/pydata-tutorial" |
 absolute_url }}). Co-instructor. [_PyData San Luis Argentina
@@ -24,12 +25,14 @@ Nacional. Córdoba, Argentina. September 2017.
 tutorial. 2014.
 
 ### Linguistic resources
+<a name="#resources"></a>
 
 [Spanish Billion Words Corpus and Embeddings]({{ "/SBWCE/" | absolute_url }}).
 Maintainer. Compilation of Spanish Corpora with Word2Vec trained embeddings.
 March 2016.
 
 ### Talks
+<a name="#talks"></a>
 
 [Combinando Python Notebooks con R y
 ggplot](https://github.com/crscardellino/MeetupDSCba2017).  Presenter. _4to
