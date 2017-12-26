@@ -29,7 +29,7 @@ baseurl: ""
 # used to display twitter cards
 twitter_handle: '@neurotikal'
 
-# google_analytics: UA-XXXXX-X
+google_analytics: UA-30086759-1
 
 social:
   - icon: twitter
