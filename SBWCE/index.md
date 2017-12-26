@@ -10,11 +10,12 @@ Summary
 This is the Spanish Billion Words Corpus and Embeddings linguistic resource.
 
 This resource consists of an unannotated corpus of the Spanish language of
-nearly 1.5 billion words, compiled from different corpora and resources from the
-web; and a set of word vectors (or embeddings), created from this corpus using
-the [word2vec algorithm](https://code.google.com/p/word2vec/), provided by the
-[gensim package](https://radimrehurek.com/gensim/). These embeddings were
-evaluated by translating to Spanish word2vec's [word relation test set](http://arxiv.org/pdf/1301.3781.pdf).
+nearly 1.5 billion words, compiled from different corpora and resources from
+the web; and a set of word vectors (or embeddings), created from this corpus
+using the [word2vec algorithm](https://code.google.com/p/word2vec/), provided
+by the [gensim package](https://radimrehurek.com/gensim/). These embeddings
+were evaluated by translating to Spanish word2vec's [word relation test
+set](http://arxiv.org/pdf/1301.3781.pdf).
 
 The cleaned corpus is publicly available to download as [raw text
 file](http://cs.famaf.unc.edu.ar/~ccardellino/SBWCE/clean_corpus.tar.bz2). The
@@ -30,10 +31,10 @@ available to download freely from the web. No copyright infringement was
 intended and I also tried to acknowledge correctly all the original authors of
 the corpora I borrowed.
 
-If you are an author of one of the resources and feel your work wasn't correctly
-used in this resource please feel free to [contact
-me](mailto:ccardellino@unc.edu.ar) and I will remove your work from this
-corpus and from the embeddings.
+If you are an author of one of the resources and feel your work wasn't
+correctly used in this resource please feel free to [contact
+me](mailto:ccardellino@unc.edu.ar) and I will remove your work from this corpus
+and from the embeddings.
 
 Likewise, if you are author or know of some other resources publicly available
 for the Spanish language (the corpus doesn't need to be annotated) and want to
@@ -58,9 +59,11 @@ language:
     * The [News Commentary](http://opus.lingfil.uu.se/News-Commentary.php)
       corpus.
     * The [United Nations](http://opus.lingfil.uu.se/UN.php) documents compiled
-      by [Alexandre Rafalovitch](http://www.outerthoughts.com/) and [Robert Dale](http://web.science.mq.edu.au/~rdale/).
+      by [Alexandre Rafalovitch](http://www.outerthoughts.com/) and [Robert
+      Dale](http://web.science.mq.edu.au/~rdale/).
 * The Spanish portion of the [Europarl](http://statmt.org/europarl/) (European
-  Parliament), compiled by [Philipp Koehn](http://homepages.inf.ed.ac.uk/pkoehn/).
+  Parliament), compiled by [Philipp
+  Koehn](http://homepages.inf.ed.ac.uk/pkoehn/).
 * Dumps from the Spanish [Wikipedia](https://es.wikipedia.org),
   [Wikisource](https://es.wikisource.org) and
   [Wikibooks](https://es.wikibooks.org) on date 2015-09-01, parsed with the
@@ -114,12 +117,10 @@ Evaluation of the Embeddings
 
 This corpus was evaluated using a
 [translation](http://cs.famaf.unc.edu.ar/~ccardellino/SBWCE/questions-words_sp.txt)
-of word2vec's question
-words.
-Those translations that resulted in an ambiguity not intended in the original
-test set were removed (for example, names of currencies that were homographs
-with the word "crown" when translated to Spanish), resulting in a test set that
-was 25% smaller than the original.
+of word2vec's question words.  Those translations that resulted in an ambiguity
+not intended in the original test set were removed (for example, names of
+currencies that were homographs with the word "crown" when translated to
+Spanish), resulting in a test set that was 25% smaller than the original.
 
 We obtained the following accuracies:
 
@@ -141,7 +142,8 @@ Citation
 
 To cite this resource in a publication please use the following citation:
 
-> Cristian Cardellino: Spanish Billion Words Corpus and Embeddings (March 2016), http://crscardellino.me/SBWCE/ 
+> Cristian Cardellino: Spanish Billion Words Corpus and Embeddings (March
+> 2016), http://crscardellino.me/SBWCE/ 
 
 You also have a [bibtex](cite.bib) entry available.
 
@@ -161,3 +163,17 @@ is licensed under a <a
 rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
 Commons Attribution-ShareAlike 4.0 International License</a>.
 </div>
+
+Donations
+---------
+
+If you find SBWCE useful for your work, research or company, please consider
+making a donation to the project. Any amount is helps! The donations will be
+used to fund the development and further improvement on the SBWCE.  Thank you
+for your support!
+
+<div style="text-align:center;">
+<img style="border-width:0; width:15em; height:15em; margin-bottom: 1em;"
+src="{{ "/assets/images/BTCQR.png" | prepend: site.baseurl }}" /><br/>
+<span style="font-family:monospace;font-size:15pt;">BTC Address:
+16gQ7fWciEFfJSZQyVy2ye6roDSNVGKLPG</span></div>
