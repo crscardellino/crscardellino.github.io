@@ -172,8 +172,18 @@ making a donation to the project. Any amount is helps! The donations will be
 used to fund the development and further improvement on the SBWCE.  Thank you
 for your support!
 
+<div style="text-align:center;"> <a
+href="bitcoin:16gQ7fWciEFfJSZQyVy2ye6roDSNVGKLPG"> <img style="border-width:0;
+width:15em; height:15em; margin-bottom: 1em;" src="{{
+"/assets/images/BTCQR.png" | prepend: site.baseurl }}"/></a><br/> <span
+style="font-family:monospace;font-size:15pt;">BTC Address: <a
+href="bitcoin:16gQ7fWciEFfJSZQyVy2ye6roDSNVGKLPG">
+16gQ7fWciEFfJSZQyVy2ye6roDSNVGKLPG</a></span></div>
+
 <div style="text-align:center;">
+<a href="litecoin:LePSXTUhCC62UivwBjkYFGQ8MDSynFqVmN">
 <img style="border-width:0; width:15em; height:15em; margin-bottom: 1em;"
-src="{{ "/assets/images/BTCQR.png" | prepend: site.baseurl }}" /><br/>
-<span style="font-family:monospace;font-size:15pt;">BTC Address:
-16gQ7fWciEFfJSZQyVy2ye6roDSNVGKLPG</span></div>
+src="{{ "/assets/images/LTCQR.png" | prepend: site.baseurl }}"/></a><br/>
+<span style="font-family:monospace;font-size:15pt;">LTC Address: <a
+href="litecoin:LePSXTUhCC62UivwBjkYFGQ8MDSynFqVmN">
+LePSXTUhCC62UivwBjkYFGQ8MDSynFqVmN</a></span></div>
