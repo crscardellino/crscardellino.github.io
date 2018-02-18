@@ -113,6 +113,14 @@ DNNClassifier](https://github.com/PLN-FaMAF/tensorflowTutorial2018/blob/master/t
 notebook. This explore a simpler API offered by the newer versions of
 TensorFlow to create a neural network model.
 
+### Using Tensorboard
+
+This part is covered by the [Part 5: Using
+Tensorboard](https://github.com/PLN-FaMAF/tensorflowTutorial2018/blob/master/tensorflow_tutorial_5.ipynb)
+notebook. It showcases the visualization tool that comes along with TensorFlow,
+named Tensorboard. This part works on how to visualize the progression of a
+neural network training.
+
 ---
 
 # About the authors
