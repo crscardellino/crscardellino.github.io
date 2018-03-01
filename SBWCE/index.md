@@ -21,6 +21,7 @@ The cleaned corpus is publicly available to download as [raw text
 file](http://cs.famaf.unc.edu.ar/~ccardellino/SBWCE/clean_corpus.tar.bz2). The
 word vectors are also available to download in [word2vec's binary
 format](http://cs.famaf.unc.edu.ar/~ccardellino/SBWCE/SBW-vectors-300-min5.bin.gz)
+([mirror](https://drive.google.com/file/d/1rSI0q8J_USo1GpPfzUOa7pNgmLc66svv))
 and in [text
 format](http://cs.famaf.unc.edu.ar/~ccardellino/SBWCE/SBW-vectors-300-min5.txt.bz2).
 
