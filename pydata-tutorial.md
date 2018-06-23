@@ -133,7 +133,7 @@ different kinds (in this case documents).
 > Nacional de Córdoba and Marcelo Luis Errecalde, from the Universidad Nacional
 > de San Luis. 
 
-### [Cristian Cardellino](http://crscardellino.me)
+### [Cristian Cardellino](https://crscardellino.github.io)
 
 > I have a degree in Computer Sciences from Universidad Nacional de Córdoba,
 > Argentina, and I am finishing my PhD. in the area of machine learning applied
