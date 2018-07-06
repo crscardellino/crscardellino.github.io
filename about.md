@@ -15,10 +15,11 @@ wrong. It's still hard nowadays, and there are lots of frameworks to facilitate
 the process of creating videogames. Back then was plainly impossible without a
 big team. Not at least the kind of games I wanted to create.
 
-I went to college and got my degree in Computer Sciences, and right now I am in
-pursue of a PhD in the area of Machine Learning (with focus on semisupervised
+I went to college and got my degree in Computer Sciences in 2013. As I finished
+and wasn't really aware of what to do with my degree I started a PhD. I
+finished my PhD in the area of Machine Learning (with focus on semisupervised
 learning and deep learning) and Natural Language Processing (working on Spanish
-verb sense disambiguation and legal information extraction).
+verb sense disambiguation and legal information extraction) in 2018.
 
 I enjoy coding and learning programming languages in general, and I try new
 tools when I get bored on the ones I am working with. The language I use the
