@@ -27,13 +27,13 @@ url: "https://crscardellino.github.io" # the base hostname & protocol for your s
 baseurl: ""
 
 # used to display twitter cards
-twitter_handle: '@neurotikal'
+twitter_handle: '@crscardellino'
 
 google_analytics: UA-30086759-1
 
 social:
   - icon: twitter
-    url: https://twitter.com/neurotikal
+    url: https://twitter.com/crscardellino
     desc: Follow me on twitter
     share_url: http://twitter.com/share
     share_title: ?text=
