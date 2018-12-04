@@ -10,8 +10,8 @@ This is where I list my courses, talks and other resources regarding my work:
 ### Courses & Tutorials
 <a name="#courses"></a>
 
-[Train and visualize a model in Tensorflow]({{ "/pydata-tutorial" |
-absolute_url }}). Co-instructor. [_PyData San Luis Argentina
+[Train and visualize a model in Tensorflow]({{ "/pydata-tutorial" | absolute_url }}).
+Co-instructor. [_PyData San Luis Argentina
 2017_](https://pydata.org/sanluis2017/). Universidad Nacional de San Luis.
 Argentina. November 2017.
 
