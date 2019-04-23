@@ -34,6 +34,11 @@ March 2016.
 ### Talks
 <a name="#talks"></a>
 
+[Inteligencia
+Artificial](https://docs.google.com/presentation/d/1HmQmdYz_e03ThS6dSkuOpjFhf8cfneSdTSR-CyQYmAI/edit?usp=sharing).
+Presenter. Universidad Católica de Córdoba. Argentina. April 2019.
+
+
 [Combinando Python Notebooks con R y
 ggplot](https://github.com/crscardellino/MeetupDSCba2017).  Presenter. _4to
 Encuentro Data Science Córdoba 2017_.  Cluster Córdoba Technology. Córdoba,
@@ -43,12 +48,6 @@ Argentina. December 2017.
 Presenter. _Conceptos Avanzados de Lenguajes de Programación_. Facultad de
 Matemática, Astronomía, Física y Computación.  Universidad Nacional de Córdoba.
 Córdoba, Argentina. October 2017.
-
-[Inteligencia
-Artificial](https://docs.google.com/presentation/d/1wJoSg3DvVgWGPGi15QjTKCO8TZlw93rPr0X7hH9OeDw/edit?usp=sharing).
-Presenter. _Jornada de Tecnología e Informática Ezpeleta 2017_. Colegio
-Universitario María Justa Moyano de Ezpeleta. Morteros, Córdoba, Argentina.
-October 2017.
 
 [Extracción automática de argumentos en texto
 legal](https://docs.google.com/presentation/d/1k2m4ZhgYlPLN7WbJenN40uzmm-a1UWBdVy_m6VRdz5o/edit?usp=sharing).
