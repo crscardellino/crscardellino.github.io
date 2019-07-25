@@ -10,13 +10,20 @@ This is where I list my courses, talks and other resources regarding my work:
 ### Courses & Tutorials
 <a name="#courses"></a>
 
+[Introducción a Apache Spark y Apache
+Zeppelin](https://docs.google.com/presentation/d/1lsDqZe5voPZ4o3-9pux2DCSedFatiqiJ_MWI39d2uF8).
+Facultad de Ciencias Químicas.  Universidad Nacional de Córdoba. Argentina. July 2019.
+
+[Procesando Datos con
+Spark](https://medium.com/@crscardellino/procesando-datos-con-spark-48539d38e437).
+Online tutorials @ Medium.com. 2018-2019.
+
 [Train and visualize a model in Tensorflow]({{ "/pydata-tutorial" | absolute_url }}).
-Co-instructor. [_PyData San Luis Argentina
-2017_](https://pydata.org/sanluis2017/). Universidad Nacional de San Luis.
-Argentina. November 2017.
+[_PyData San Luis Argentina 2017_](https://pydata.org/sanluis2017/).
+Universidad Nacional de San Luis. Argentina. November 2017.
 
 [Express deep learning with
-Python](https://github.com/PLN-FaMAF/DeepLearningEAIA). Co-instructor.
+Python](https://github.com/PLN-FaMAF/DeepLearningEAIA).
 [_1&deg; Escuela Argentina de Inteligencia
 Artificial_](https://sites.google.com/view/eaia2017/). Universidad Tecnológica
 Nacional. Córdoba, Argentina. September 2017.
