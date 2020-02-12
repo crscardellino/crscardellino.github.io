@@ -10,9 +10,14 @@ This is where I list my courses, talks and other resources regarding my work:
 ### Courses & Tutorials
 <a name="#courses"></a>
 
+Introducción a TensorFlow 2.0
+[slides](https://docs.google.com/presentation/d/1L_X5VFpHsvdsue43GHykYUObvYZk9MPrcrfI-klWIPE/edit#slide=id.g55e1ed11e4_0_159)
+[notebook](https://colab.research.google.com/drive/1l6X1YAC_kzxQdrGswL8DioQNKuYb54O1?authuser=2#scrollTo=kHaZc_YnuZNs).
+Meetup Santex-FAMAF @ Tech Pub. Córdoba. Argentina. February 2020.
+
 [Introducción a Apache Spark y Apache
 Zeppelin](https://docs.google.com/presentation/d/1lsDqZe5voPZ4o3-9pux2DCSedFatiqiJ_MWI39d2uF8).
-Facultad de Ciencias Químicas.  Universidad Nacional de Córdoba. Argentina. July 2019.
+Facultad de Ciencias Químicas. Universidad Nacional de Córdoba. Argentina. July 2019.
 
 [Procesando Datos con
 Spark](https://medium.com/@crscardellino/procesando-datos-con-spark-48539d38e437).
