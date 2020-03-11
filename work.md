@@ -14,6 +14,9 @@ This is where I list my courses, talks and other resources regarding my work:
 [[notebook](https://colab.research.google.com/drive/1l6X1YAC_kzxQdrGswL8DioQNKuYb54O1)].
 Meetup Santex-FAMAF @ Tech Pub. Córdoba. Argentina. February 2020.
 
+[Introducción a Redes Neuronales sobre Grafos](https://github.com/crscardellino/meetup-ds-cba-2019/).
+Meetup Data Science Córdoba @ Mercado Libre. Córdoba. Argentina. December 2020.
+
 [Introducción a Apache Spark y Apache
 Zeppelin](https://docs.google.com/presentation/d/1lsDqZe5voPZ4o3-9pux2DCSedFatiqiJ_MWI39d2uF8).
 Facultad de Ciencias Químicas. Universidad Nacional de Córdoba. Argentina. July 2019.
