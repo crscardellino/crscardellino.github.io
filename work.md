@@ -12,7 +12,8 @@ This is where I list my courses, talks and other resources regarding my work:
 
 [Conversando con Máquinas: Una breve introducción al Procesamiento del Lenguaje
 Natural](https://docs.google.com/presentation/d/1l5Kwxqf-rarM7D-R-LIukZ5qWp0xWHzJfP9sIKs71nw/edit?usp=sharing)
-[[notebook](https://colab.research.google.com/drive/1WiV_UG8sfsgHijThCBNgFOVuOG0MOY1S?usp=sharing)].
+[[notebook](https://colab.research.google.com/drive/1WiV_UG8sfsgHijThCBNgFOVuOG0MOY1S?usp=sharing)]
+[[video](https://www.youtube.com/watch?v=CPaC09_STo4)].
 Presenter. Instituto María Justa Moyano de Ezpeleta. Morteros, Córdoba,
 Argentina. June 2021.
 
