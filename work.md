@@ -10,6 +10,10 @@ This is where I list my courses, talks and other resources regarding my work:
 ### Courses, Talks & Tutorials
 <a name="#courses"></a>
 
+[Desmitificando PLN: De Turing a GPT-3](https://docs.google.com/presentation/d/1aMhYF-3WvDx7hRdqCi7zFJJFeVnZnoZoYqNE2WoHlKc/edit#slide=id.g62fc528f49_1_72)
+[[video](https://www.youtube.com/watch?v=f-uOKtk2tS4)].
+Presenter. Google Developer Group Córdoba.  Argentina. July 2021.
+
 [Conversando con Máquinas: Una breve introducción al Procesamiento del Lenguaje
 Natural](https://docs.google.com/presentation/d/1l5Kwxqf-rarM7D-R-LIukZ5qWp0xWHzJfP9sIKs71nw/edit?usp=sharing)
 [[notebook](https://colab.research.google.com/drive/1WiV_UG8sfsgHijThCBNgFOVuOG0MOY1S?usp=sharing)]
