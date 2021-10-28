@@ -12,7 +12,7 @@ email: ccardellino@unc.edu.ar
 
 # blog logo
 logo: "/assets/images/logo.png"
-float_logo: true 
+float_logo: true
 
 # blog cover
 cover: "/assets/images/cover.jpg"
@@ -49,11 +49,11 @@ social:
 excerpt_separator: <!-- more -->
 
 jekyll-archives:
-  enabled: 
+  enabled:
     - year
     - month
     - tags
-  layouts: 
+  layouts:
     year: year-archive
     month: month-archive
     tag: tag-archive
