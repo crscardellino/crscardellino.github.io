@@ -10,6 +10,10 @@ This is where I list my courses, talks and other resources regarding my work:
 ### Courses, Talks & Tutorials
 <a name="#courses"></a>
 
+[Embeddings 101: ¿Cómo representamos entidades en Machine Learning?](https://docs.google.com/presentation/d/1bGA1W59WeVyzWv7BMpKMALyPui9XDjxUjfy2lk93lDI/edit?usp=sharing)
+[[video](https://www.youtube.com/watch?v=_RvSQsV12fM)].
+Presenter. Nerdearla 2021. Argentina. October 2021.
+
 [Desmitificando PLN: De Turing a GPT-3](https://docs.google.com/presentation/d/1aMhYF-3WvDx7hRdqCi7zFJJFeVnZnoZoYqNE2WoHlKc/edit#slide=id.g62fc528f49_1_72)
 [[video](https://www.youtube.com/watch?v=f-uOKtk2tS4)].
 Presenter. Google Developer Group Córdoba.  Argentina. July 2021.

@@ -1,0 +1,14 @@
+---
+layout: post
+title: "Embeddings 101: ¿Cómo representamos las entidades en machine learning?"
+date: 2021-10-28 14:30:00 -0300
+tags: datascience nlp embeddings word2vec prod2vec
+---
+
+En esta charla que di para el [nerdear.la](https://nerdear.la/) 2021,
+doy una introducción a los embeddings, herramientas fundamentales en el machine
+learning, y explico un poco cómo surgen y para que se utilizan.
+
+La charla cuenta de
+[slides](https://docs.google.com/presentation/d/1bGA1W59WeVyzWv7BMpKMALyPui9XDjxUjfy2lk93lDI/edit?usp=sharing)
+y un [video](https://www.youtube.com/watch?v=_RvSQsV12fM).
