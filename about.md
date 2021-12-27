@@ -10,10 +10,11 @@ with the sole intention to develop a videogame, of course I didn't event know
 what did the word "develop" mean back in those days.
 
 The years went on, I was just a teenager in that time and I really thought at
-some point it would be easy to program my first game, a natural thing. I was
-wrong. It's still hard nowadays, and there are lots of frameworks to facilitate
-the process of creating videogames. Back then was plainly impossible without a
-big team. Not at least the kind of games I wanted to create.
+some point it would be easy to program my first game, like if it was a simple
+thing to do. I was wrong. It's still hard nowadays, and there are lots of
+frameworks to facilitate the process of creating videogames. Back then was
+plainly impossible without a big team. Not at least the kind of games I wanted
+to create.
 
 I went to college and got my degree in Computer Sciences in 2013. As I finished
 and wasn't really aware of what to do with my degree I started a PhD. I
@@ -27,8 +28,8 @@ most is Python, but I also code in C/C++, Scala (I specially like the Spark
 framework), Ruby, BASH (and it suite of tools for text processing like AWK or
 SED), and I can proudly say I have Perl readability.
 
-I am a teaching assistant at the [_Facultad de Matemática, Astronomía, Física,
-y Computación_](http://www.famaf.unc.edu.ar/) in the _Universidad Nacional de
+I am an adjunct professor at the [_Facultad de Matemática, Astronomía, Física, y
+Computación_](http://www.famaf.unc.edu.ar/) in the _Universidad Nacional de
 Córdoba_, where I have been in different courses through the years:
 
 - Computer Networks and Distributed Systems
@@ -36,10 +37,25 @@ Córdoba_, where I have been in different courses through the years:
 - Programming Paradigms
 - Software Engineering
 
-Other areas of interest and research are:
+I've also have taught courses in areas more related to my PhD., I was part of
+the specialization courses on data science and machine learning that is taught
+at the [_Diplomatura en Ciencia de Datos, Aprendizaje Automático y sus
+Aplicaciones_](https://diplodatos.famaf.unc.edu.ar/) (or _DiploDatos_ for
+short), there I was part of the following courses:
 
-- Argumentation mining (as part of the [MIREL
-  project](http://www.mirelproject.eu/)).
+- [Supervised Machine Learning](https://sites.google.com/unc.edu.ar/diplodatos-supervisado)
+- [Introduction to Deep Learning](https://github.com/DiploDatos/AprendizajeProfundo).
+- [Introduction to Receommender Systems](https://github.com/DiploDatos/SistemasDeRecomendacion/)
+
+Right now I am a full time researcher at [Mercado
+Libre](https://www.mercadolibre.com/), the leader platform in e-Commerce in
+Latin America. I am currently working on representation learning for products in
+the e-Commerce platform with special focus on multimodal learning and transfer
+learning scenarios.
+
+Other areas of work, interest and research are:
+
+- Argumentation mining (as part of the [MIREL project](http://www.mirelproject.eu/)).
 - Recommender Systems (designed one to recommend Magic The Gathering Cards for
   [TappedOut.net](http://tappedout.net/)).
 - Unsupervised Word Representations (creator and maintainer of the
@@ -48,7 +64,9 @@ Other areas of interest and research are:
 ### Contact
 <a name="#contact"></a>
 
-I currently work at the *Facultad de Matemática, Astronomía, Física, y
-Computación*, in the *Universidad Nacional de Córdoba*, Argentina. If I'm
-around in the building, you'll probably find me the office number 283. The best
-way to contact me however is by [email](mailto:ccardellino@unc.edu.ar).
+I'm active on [Twitter](https://twitter.com/crscardellino) (although I tweet
+mostly in Spanish), but for work related stuff, probably the best way to contact
+me is through my [LinkedIn Profile](https://www.linkedin.com/in/crscardellino/).
+You can also reach me at my professional e-mail addresses, either via the
+University e-mail (**`ccardellino at unc dot edu dot ar`**) or my Mercado Libre
+e-mail (**`cristian dot cardellino at mercadolibre dot com`**).
