@@ -4,7 +4,7 @@ title: "Aprendizaje automático sin saber informática"
 date: 2022-03-26 16:55:00 -0300
 tags: data-science machine-learning
 mathjax: true
-hidden: true
+published: false
 ---
 
 <span style="text-align:center;">
@@ -35,7 +35,8 @@ un poco todo aquello que hay alrededor.
 
 En sí buscaré explicarlo en dos niveles. En un primer nivel, más inicial, será
 mediante explicaciones más bien generales y en un segundo nivel con algunos
-conceptos matemáticos que, en principio, debieron verse durante el secundario.
+conceptos matemáticos que, en principio, debieron verse durante la escuela
+secundaria (el equivalente argentino a la preparatoria o el bachillerato).
 
 <!-- more -->
 
@@ -210,9 +211,9 @@ puede simplificar a la cantidad de veces que las palabras aparecen en un texto.
 ### Una aproximación sencilla al aprendizaje automático
 
 Para ejemplificar a grandes rasgos cómo "aprenden" las máquinas, podemos
-utilizar algunos conocimientos adquiridos en la secundaria. Supongamos que
-tenemos dos puntos que representan el valor de una casa, dada su superficie en
-metros cuadrados. Supongamos que tenemos 2 puntos en el siguiente gráfico:
+utilizar algunos conocimientos adquiridos en la escuela secundaria. Supongamos
+que tenemos dos puntos que representan el valor de una casa, dada su superficie
+en metros cuadrados. Supongamos que tenemos 2 puntos en el siguiente gráfico:
 
 <span style="text-align:center;">
 ![Precios de una casa (eje y) dada su superficie (eje
@@ -225,7 +226,7 @@ dólares (un poco cara a mi parecer) y otra de 120 metros cuadrados a 80 mil
 10 mil en el caso del eje *y* y por 10 en el caso de eje *x*. Si quisiéramos
 estimar el precio de una casa de, por ejemplo, 70 metros cuadrados, a partir de
 estos dos puntos, una opción sencilla sería tratar de encontrar la función
-lineal (la línea recta) que los une. Recordando matemática del secundario, esto
+lineal (la línea recta) que los une. Recordando matemática de la secundaria, esto
 es relativamente sencillo, debemos calcular la pendiente $m$ y con ello calcular
 la intersección con el eje *y*: $b$. Tenemos los puntos $(x_1, y_1) = (2, 3)$ y
 $(x_2, y_2) = (12, 8)$ (recordemos que estamos usando valores simplificados, esa
@@ -298,7 +299,12 @@ acerca a la mayoría. Esta función es un polinomio (lo que quiere decir que la
 $x$ de la función tiene exponentes). El problema es lo que pasa entre los puntos
 13, 14 y 15 del eje x, donde la función, para pasar por esos puntos empieza a
 bambolear y termina creciendo rápidamente al final, algo que no tiene mucho
-sentido.
+sentido. La curva, en este caso, está calculada con un algoritmo de aprendizaje
+automático real, es decir no el cálculo sencillo que utilizamos para la línea
+recta anterior. Es por eso que no pasa exactamente por sobre todos los puntos y
+a su vez es por eso que sobre el final hace esa variación tan brusca. El
+algoritmo que la calcula no es perfecto y la aproxima de la mejor manera
+posible.
 
 Si vemos cómo quedaría nuestra línea original con estos nuevos datos,
 tenemos lo siguiente:
