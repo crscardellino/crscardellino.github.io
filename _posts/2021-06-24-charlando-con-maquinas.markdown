@@ -2,7 +2,7 @@
 layout: post
 title: "Charlando con máquinas"
 date: 2021-06-24 21:00:00 -0300
-tags: datascience nlp python
+tags: data-science nlp python
 ---
 
 Les dejo una charla que di online para el

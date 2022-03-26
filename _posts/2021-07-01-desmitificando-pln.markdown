@@ -2,7 +2,7 @@
 layout: post
 title: "Desmitificando PLN"
 date: 2021-07-01 21:00:00 -0300
-tags: datascience nlp gpt-3
+tags: data-science nlp gpt-3
 ---
 
 Otra charla online, esta vez para el [Google Developer Group de
