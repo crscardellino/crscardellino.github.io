@@ -1,10 +1,10 @@
 ---
 layout: post
 title: "Aprendizaje automático sin saber informática"
-date: 2022-03-26 16:55:00 -0300
+date: 2022-03-27 08:00:00 -0300
 tags: data-science machine-learning
 mathjax: true
-published: false
+hidden: true
 ---
 
 <span style="text-align:center;">
