@@ -2,7 +2,7 @@
 layout: post
 title: "Embeddings 101: ¿Cómo representamos las entidades en machine learning?"
 date: 2021-10-28 14:30:00 -0300
-tags: datascience nlp embeddings word2vec prod2vec
+tags: data-science nlp embeddings word2vec prod2vec
 ---
 
 En esta charla que di para el [nerdear.la](https://nerdear.la/) 2021,

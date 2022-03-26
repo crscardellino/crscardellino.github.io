@@ -2,7 +2,7 @@
 layout: post
 title: "Python with ggplot"
 date: 2018-12-04 10:00:00 -0300
-tags: datascience visualization python R
+tags: data-science visualization python R
 ---
 
 ### Jupyter Notebooks combining Python and R
