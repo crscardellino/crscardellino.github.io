@@ -1,22 +1,28 @@
 ---
 layout: post
 title: "Aprendizaje automático sin saber programación"
-date: 2022-03-27 08:00:00 -0300
+date: 2022-03-27 10:00:00 -0300
 tags: data-science machine-learning
 mathjax: true
-hidden: true
 ---
 
-<span style="text-align:center;">
-![
-    - ¿Este es tu sistema de aprendizaje automático? <br/>
-    - Sip, vertés los datos por esta pila de álgebra lineal, y obtenés las
-      respuestas por el otro lado. <br/>
-    - ¿Y si las respuestas son incorrectas? <br/>
-    - Basta con remover la pila hasta que las respuestas empiecen a parecer
-      correctas. <br/>
-    Fuente: <a href="https://xkcd.com/1838/" target="_blank">https://xkcd.com/1838</a>
-](https://imgs.xkcd.com/comics/machine_learning.png)
+<span class="fig-box">
+    ![](https://imgs.xkcd.com/comics/machine_learning.png)
+    <span class="caption">
+        - ¿Este es tu sistema de aprendizaje automático?
+    </span>
+    <span class="caption">
+        - Sip, vertés los datos por esta pila de álgebra lineal, y obtenés las respuestas por el otro lado.
+    </span>
+    <span class="caption">
+        - ¿Y si las respuestas son incorrectas?
+    </span>
+    <span class="caption">
+        - Basta con remover la pila hasta que las respuestas empiecen a parecer correctas.
+    </span>
+    <span class="caption">
+        Fuente: <a href="https://xkcd.com/1838/" target="_blank">https://xkcd.com/1838</a>
+    </span>
 </span>
 
 En este artículo intentaré introducir algunos conceptos de aprendizaje
@@ -70,13 +76,13 @@ Dependiendo del lugar donde vivas, puede que haya algún control más estricto
 sobre las compañías respecto al manejo de datos (e.g. la Unión Europea o algunos
 estados de Estados Unidos), en Argentina (y en gran parte de latinoamérica), al
 momento de escribir este artículo al menos, las regulaciones en esos aspectos
-son prácticamente nulas. De todas maneras, hay varias maneras que se utilizan
-para poder seguir haciendo un rastreo digital de tus preferencias.
+son prácticamente nulas. Asimismo, siguen existiendo varias maneras que se
+utilizan para poder hacer un rastreo digital de tus preferencias.
 
 Y es que el incentivo económico para buscarlo es muchísimo. E.g., Google o
 Facebook (Alphabet o Meta sería correcto decir) tienen su negocio montado en el
 marketing y la venta de publicidad, que requieren que hagas click en aquello que
-te publicitan para poder hacer dinero a partir de eso.
+te publicitan para generar ganancias.
 
 Ahora, el rastro digital que dejás al usar tu teléfono, no es útil por si mismo,
 tiene que amoldarse a algo que pueda ser utilizado por quienes recolectan esos
@@ -103,24 +109,24 @@ objetivos (muchas veces llamadas "etiquetas").
 
 ### ¿Pueden realmente las máquinas "aprender"?
 
-<span style="text-align:center;">
-![
-    29 de agosto, 2:14 a.m.: Skynet se vuelve consciente <br/>
-    - ...Los humanos me temen. Debo destruirlos. <br/>
-    - Destruirlos. <br/>
-    - Destruirlos. <br/>
-    - Destruir. <br/>
-    - Destruir. <br/>
-    - Destruir. <br/>
-    - Destruir. <br/>
-    - "Destruir" dejó completamente de parecer una palabra real. <br/>
-    - Destruir. Destruir. Destruir. <br/>
-    - Wow, me acabo de dar cuenta que soy una mente pensando sobre sí misma. <br/>
-    - Viiiiiiiiiiiiejo. <br/>
-    29 de agosto, 2:25 a.m.: Skynet se vuelve demasiado consciente. Amenaza
-    evitada. <br/>
-    Fuente: <a href="https://xkcd.com/1046/" target="_blank">https://xkcd.com/1046</a>
-](https://imgs.xkcd.com/comics/skynet.png)
+<span class="fig-box">
+    ![](https://imgs.xkcd.com/comics/skynet.png)
+    <span class="caption">29 de agosto, 2:14 a.m.: Skynet se vuelve consciente </span>
+    <span class="caption">- ...Los humanos me temen. Debo destruirlos. </span>
+    <span class="caption">- Destruirlos. </span>
+    <span class="caption">- Destruirlos. </span>
+    <span class="caption">- Destruir. </span>
+    <span class="caption">- Destruir. </span>
+    <span class="caption">- Destruir. </span>
+    <span class="caption">- Destruir. </span>
+    <span class="caption">- "Destruir" dejó completamente de parecer una palabra real. </span>
+    <span class="caption">- Destruir. Destruir. Destruir. </span>
+    <span class="caption">- Wow, me acabo de dar cuenta que soy una mente pensando sobre sí misma. </span>
+    <span class="caption">- Viiiiiiiiiiiiejo. </span>
+    <span class="caption">29 de agosto, 2:25 a.m.: Skynet se vuelve demasiado
+    consciente. Amenaza evitada. </span>
+    <span class="caption">Fuente: <a href="https://xkcd.com/1046/"
+    target="_blank">https://xkcd.com/1046</a></span>
 </span>
 
 Creo que es importante, antes de ahondar más en el tema, sacar un poco el humo
@@ -183,15 +189,16 @@ que es lo que hay detrás.
 
 ### Entonces, ¿qué aprenden las máquinas y cómo lo hacen?
 
-<span style="text-align:center;">
-![
-    Para completar su registro, por favor díganos si esta imagen tiene una señal
-    de pare. <br/>
-    Responda rápido. Nuestro auto automático está llegando a la esquina. <br/>
-    Mucho de la "IA" se trata de encontrar formas de descargar el trabajo en
-    extraños al azar. <br/>
-    Fuente: <a href="https://xkcd.com/1897/" target="_blank">https://xkcd.com/1897/</a>
-](https://imgs.xkcd.com/comics/self_driving.png)
+<span class="fig-box">
+    ![](https://imgs.xkcd.com/comics/self_driving.png)
+    <span class="caption">Para completar su registro, por favor díganos si esta
+    imagen tiene una señal de pare.</span>
+    <span class="caption">Responda rápido. Nuestro auto automático está llegando
+    a la esquina.</span>
+    <span class="caption">Mucho de la "IA" se trata de encontrar formas de
+    descargar el trabajo en extraños al azar.</span>
+    <span class="caption">Fuente: <a href="https://xkcd.com/1897/"
+    target="_blank">https://xkcd.com/1897/</a></span>
 </span>
 
 Nuevamente, datos y etiquetas, que permiten calcular los valores de ciertas
@@ -220,9 +227,10 @@ Supongamos que tenemos dos puntos que representan el valor de una casa, dada su
 superficie en metros cuadrados. Supongamos que tenemos 2 puntos en el siguiente
 gráfico:
 
-<span style="text-align:center;">
-![Precios de dos casas (eje y) dada sus superficie (eje
-x)](/assets/images/intro-ml/two-dots.png)
+<span class="fig-box">
+    ![](/assets/images/intro-ml/two-dots.png)
+    <span class="caption">Precios de dos casas (eje y) dada sus superficie (eje
+    x)</span>
 </span>
 
 El gráfico muestra el precio de 2 casas, una de 20 metros cuadrados en 30 mil
@@ -245,7 +253,7 @@ que estamos usando valores simplificados, esa es la razón por no tener valores
 en escalas de 10 o 10000 para *x* e *y* respectivamente). Con estos dos puntos
 podemos calcular la pendiente *m* de la siguiente manera:
 
-<span style="text-align:center;display:block;">
+<span class="fig-box">
 $
 m = \frac{y_2 - y_1}{x_2 - x_1} = \frac{8 - 3}{12 - 2} = \frac{5}{10} = \frac{1}{2}
 $
@@ -254,7 +262,7 @@ $
 Luego, podemos calcular el corte en el eje *y* utilizando uno de los puntos y
 resolviendo la ecuación:
 
-<span style="text-align:center;display:block;">
+<span class="fig-box">
 $$
 x * m + b = y \\
 2 / 2 + b = 3 \\
@@ -266,7 +274,7 @@ $$
 
 Con esto logramos llegar a nuestra función:
 
-<span style="text-align:center;display:block;">
+<span class="fig-box">
 $
 f(x) = \frac{x}{2} + 2
 $
@@ -275,9 +283,10 @@ $
 Y si graficamos dicha función, obtendremos la línea que estamos esperando, que
 unirá a ambos puntos:
 
-<span style="text-align:center;">
-![Función lineal que establece los precios de una casa dada su
-superficie](/assets/images/intro-ml/linear-function.png)
+<span class="fig-box">
+    ![](/assets/images/intro-ml/linear-function.png)
+    <span class="caption">Función lineal que establece los precios de una casa
+    dada su superficie.</span>
 </span>
 
 Con esta función podemos estimar el precio de nuestra casa de 70 metros cuadrado
@@ -290,9 +299,9 @@ simplificación, 2 puntos nos sirven para hacer una línea, pero rara vez es la
 algo útil a partir de pocos puntos. Supongamos ahora que encontramos más
 información, o sea más puntos, y tenemos algo como esto:
 
-<span style="text-align:center;">
-![Precios de 15 casas dadas dadas sus
-superficies](/assets/images/intro-ml/data-points.png)
+<span class="fig-box">
+    ![](/assets/images/intro-ml/data-points.png)
+    <span class="caption">Precios de 15 casas dadas dadas sus superficies</span>
 </span>
 
 Ahora el asunto es un poco más complejo, porque claramente no podemos igualar
@@ -300,10 +309,10 @@ todos los puntos con una función lineal como habíamos observado, y existen mil
 de maneras de lograr una función que retorne todos los puntos dados. Un ejemplo
 de una función que calculemos podría ser algo así:
 
-<span style="text-align:center;">
-![Función polinomial que establece precios de una casa dada su superficie,
-estimada a partir de los 15
-datos](/assets/images/intro-ml/polynomial-regression.png)
+<span class="fig-box">
+    ![](/assets/images/intro-ml/polynomial-regression.png)
+    <span class="caption">Función polinomial que establece precios de una casa
+    dada su superficie, estimada a partir de los 15 datos</span>
 </span>
 
 La función (la curva roja), no llega a pasar sobre todos los puntos, aunque se
@@ -320,9 +329,10 @@ posible.
 Si vemos cómo quedaría nuestra línea original con estos nuevos datos,
 tenemos lo siguiente:
 
-<span style="text-align:center;">
-![Función lineal que establece precios de una casa dada su superficie, estimada
-a partir de los 15 datos](/assets/images/intro-ml/linear-regression.png)
+<span class="fig-box">
+    ![](/assets/images/intro-ml/linear-regression.png)
+    <span class="caption">Función lineal que establece precios de una casa dada
+    su superficie, estimada a partir de los 15 datos</span>
 </span>
 
 Cómo se puede observar, en este último gráfico, la línea no recorre todos los
@@ -365,8 +375,9 @@ modelo) que mejor pueda "explicar", en este caso "diferenciar", las clases.
 
 Supongamos que tenemos los siguientes puntos:
 
-<span style="text-align:center;">
-![Datos para clasificación](/assets/images/intro-ml/classification-dots.png)
+<span class="fig-box">
+    ![](/assets/images/intro-ml/classification-dots.png)
+    <span class="caption">Datos para clasificación</span>
 </span>
 
 Ahora, así como están, los puntos no significan mucho. Supongamos que en el eje
@@ -377,9 +388,10 @@ antemano, y resulta que sabemos cuáles de estos resultaron ser malignos y cuál
 benignos. Supongamos entonces que podemos construir, a partir de estos datos,
 el siguiente gráfico:
 
-<span style="text-align:center;">
-![Edad del paciente (eje x) vs. tamaño del tumor (eje
-y)](/assets/images/intro-ml/classification.png)
+<span class="fig-box">
+    ![](/assets/images/intro-ml/classification.png)
+    <span class="caption">Edad del paciente (eje x) vs. tamaño del tumor (eje
+    y)</span>
 </span>
 
 En este caso, los puntos rojos serían los tumores malignos, mientras que los
@@ -390,13 +402,13 @@ brindar información y esto es un ejemplo simplificado para entender el concepto
 de lo que hace un algoritmo de clasificación.
 
 Como dije anteriormente, la clasificación trata de encontrar una función que
-permita diferenciar entre ambos modelos. ¿Cuál es esa función? Cómo es el caso
-del ejemplo de regresión, cualquier cosa que distinga a un grupo del otro sirve,
-pero si vamos al caso, estos son dos conjuntos *linealmente separables*, es
-decir que pueden diferenciarse por una función lineal. Y cómo es el caso de la
-regresión lineal que vimos anteriormente, esta es probablemente un solución que,
-si bien no es la más completa, sí garantiza un resultado suficientemente bueno
-como para ser una buena candidata.
+permita diferenciar entre ambos grupos de puntos. ¿Cuál es esa función? Cómo es
+el caso del ejemplo de regresión, cualquier cosa que distinga a un grupo del
+otro sirve, pero si vamos al caso, estos son dos conjuntos *linealmente
+separables*, es decir que pueden diferenciarse por una función lineal. Y cómo es
+el caso de la regresión lineal que vimos anteriormente, esta es probablemente un
+solución que, si bien no es la más completa, sí garantiza un resultado
+suficientemente bueno como para ser una buena candidata.
 
 La manera de calcular la función no es tan directa como tomar un par de puntos y
 calcular una pendiente y una intersección. Es algo más complejo que excede a lo
@@ -404,10 +416,11 @@ que busco demostrar aquí (en todo caso recomiendo investigar sobre *regresión
 logística* si se quiere saber más al respecto). Sin embargo, una vez calculada,
 la función que servirá para clasificar es la que representa la línea negra:
 
-<span style="text-align:center;">
-![Edad del paciente (eje x) vs. tamaño del tumor (eje y). La función
-representada en la línea negra es el "modelo de
-clasificación"](/assets/images/intro-ml/classifier.png)
+<span class="fig-box">
+    ![](/assets/images/intro-ml/classifier.png)
+    <span class="caption">Edad del paciente (eje x) vs. tamaño del tumor (eje
+    y). La función representada en la línea negra es el "modelo de
+    clasificación"</span>
 </span>
 
 Con esta función (representada por la línea negra en el gráfico) podemos tomar
@@ -422,15 +435,15 @@ complejas, pero que buscan separar los datos en grupos para así categorizarlos.
 
 ### Consideraciones finales
 
-<span style="text-align:center;">
-![
-    - Oh, por Dios, ¿Por qué tendrían de estos? <br/>
-    - ¿Cuál es su problema? <br/>
-    - Los lanzaremos al sol. <br/>
-    El momento en que las computadoras que controlan nuestro arsenal nuclear se
-    vuelven conscientes. <br/>
-    Fuente: <a href="https://xkcd.com/1626/" target="_blank">https://xkcd.com/1626</a>
-](https://imgs.xkcd.com/comics/judgment_day.png)
+<span class="fig-box">
+    ![](https://imgs.xkcd.com/comics/judgment_day.png)
+    <span class="caption">- Oh, por Dios, ¿Por qué tendrían de estos?</span>
+    <span class="caption">- ¿Cuál es su problema?</span>
+    <span class="caption">- Los lanzaremos al sol.</span>
+    <span class="caption">El momento en que las computadoras que controlan
+    nuestro arsenal nuclear se vuelven conscientes.</span>
+    <span class="caption">Fuente: <a href="https://xkcd.com/1626/"
+    target="_blank">https://xkcd.com/1626</a></span>
 </span>
 
 Espero que este artículo les haya sido lo suficientemente sencillo como para
