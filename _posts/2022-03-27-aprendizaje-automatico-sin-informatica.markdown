@@ -4,7 +4,7 @@ title: "Aprendizaje automático sin saber programación"
 date: 2022-03-27 10:00:00 -0300
 tags: data-science machine-learning
 mathjax: true
-published: false
+hidden: true
 ---
 
 <span class="fig-box">
@@ -26,24 +26,26 @@ published: false
     </span>
 </span>
 
-En este artículo intentaré introducir algunos conceptos de aprendizaje
-automático (conocido en inglés como *machine learning*, literalmente
-"aprendizaje de máquina") de manera que no requiera tener conocimientos de
-programación para entenderlo.
+En este artículo intentaré introducir algunos conceptos de
+**aprendizaje automático**, conocido en inglés como *machine learning*
+(literalmente **aprendizaje de máquina**), de manera que no requiera tener
+conocimientos de programación para entenderlo.
 
-Esto no quiere decir que quienes estén dentro de la informática no puedan hacer
-uso de lo que explicaré aquí, pero no me adentraré en detalles sobre
-implementaciones de algoritmos utilizando código (hay mucho material muy bueno
-en Internet para eso).
+Esto no quiere decir que quienes estén dentro de la informática no puedan
+beneficiarse de lo que explicaré aquí, pero no me adentraré en detalles sobre
+programación de [algoritmos](https://es.wikipedia.org/wiki/Algoritmo) de
+aprendizaje automático.
 
 La idea principal de este artículo es explicar el aprendizaje automático de una
-manera didáctica y que sea entendible por la mayoría de la gente, desmitificando
-un poco todo aquello que hay alrededor.
+manera didáctica y que sea entendible para quién le interese saber algo más del
+asunto, desmitificando un poco todo aquello que hay alrededor.
 
-En sí buscaré explicarlo en dos niveles. En un primer nivel, más inicial, será
-mediante explicaciones más bien generales y en un segundo nivel con algunos
-conceptos matemáticos que, en principio, debieron verse durante la escuela
-secundaria (el equivalente argentino a la preparatoria o el bachillerato).
+Buscaré explicar en dos niveles, al principio iré por algo más general,
+explicando conceptos como **regresión** y **clasificación** desde un punto de
+vista puramente coloquial. Pero además, para quién quiera entender un poco más,
+buscaré dar una explicación un tanto más técnica, tratando de utilizar conceptos
+matemáticos que deberían verse durante la escuela secundaria (el equivalente
+argentino a la preparatoria o el bachillerato).
 
 <!-- more -->
 
@@ -55,7 +57,7 @@ a aparecer publicidades de objetos que quizás, en algún momento, expresaron el
 deseo de comprar. Un teléfono, unas zapatillas, algún otro aparato electrónico o
 accesorio de moda.
 
-A veces incluso aparecen con títulos extravagantes como "Oferta única", o "Esta
+A veces incluso aparecen con títulos extravagantes como "oferta única", o "esta
 promoción es sólo para ti". Más aún, hay veces que efectivamente la promoción
 está, es un descuento especial por sobre el precio de un artículo que viste
 hace unos días en Mercado Libre o Amazon.
@@ -63,50 +65,56 @@ hace unos días en Mercado Libre o Amazon.
 Lo molesto del asunto es que muchas veces te preguntás, ¿cómo se enteraron de
 que quiero esto? Resulta que quizás buscaste el artículo en Amazon y la oferta
 termina apareciendo en Instagram. A veces quizás ni buscaste el artículo pero si
-lo mencionaste en una conversación, incluso por audio de WhatsApp.
+lo mencionaste en una conversación, o incluso por audio en WhatsApp.
 
-Las maneras de dejar rastro de lo que hacemos son varias, algo seguro es que hoy
-en día, con el uso constante de Internet, redes sociales, y sobre todo,
+Las maneras de dejar rastro de lo que hacemos en Internet son varias. Algo
+seguro es que hoy en día, con el uso constante de redes sociales y, sobre todo,
 teléfonos celulares, se vuelve muy difícil no dejar ningún rastro de lo que
-hacemos, lo que queremos, o lo que estamos buscando. No dejar ese rastro es
-posible, pero las maneras son, o tener los conocimientos necesarios para evitar
-rastrearlo, o directamente volver a los teléfonos sin Internet y dejar
-completamente las redes sociales (y prácticamente Internet en general).
+hacemos, lo que queremos, o lo que estamos buscando.
+
+No dejar ese rastro es posible, aunque requiere conocimientos avanzados y uso de
+aplicaciones especiales para evitarlo. O bien volver a los teléfonos sin
+Internet y dejar completamente las redes sociales (y casi todo Internet).
 
 Dependiendo del lugar donde vivas, puede que haya algún control más estricto
-sobre las compañías respecto al manejo de datos (e.g. la Unión Europea o algunos
-estados de Estados Unidos), en Argentina (y en gran parte de latinoamérica), al
-momento de escribir este artículo al menos, las regulaciones en esos aspectos
-son prácticamente nulas. Asimismo, siguen existiendo varias maneras que se
-utilizan para poder hacer un rastreo digital de tus preferencias.
+sobre las compañías respecto al manejo de datos. Ejemplo, la Unión Europea o
+algunos estados de Estados Unidos tienen reglas más estrictas respecto al uso de
+datos personales de los usuarios de las plataformas. En Argentina (y en gran
+parte de latinoamérica), al momento de escribir este artículo al menos, las
+regulaciones en esos aspectos son prácticamente nulas. Asimismo, siguen
+existiendo varias maneras que se utilizan para poder hacer un rastreo digital de
+tus preferencias, incluyendo en lugares como Europa o Estados Unidos.
 
-Y es que el incentivo económico para buscarlo es muchísimo. E.g., Google o
+Y es que el incentivo económico para conseguir esa información es alto. Google o
 Facebook (Alphabet o Meta sería correcto decir) tienen su negocio montado en el
 marketing y la venta de publicidad, que requieren que hagas click en aquello que
 te publicitan para generar ganancias.
 
 Ahora, el rastro digital que dejás al usar tu teléfono, no es útil por si mismo,
 tiene que amoldarse a algo que pueda ser utilizado por quienes recolectan esos
-datos, y es ahí donde entra, entre otras cosas, el aprendizaje automático. Como
+datos. Es ahí donde entra, entre otras cosas, el aprendizaje automático. Como
 los datos que deja una persona pueden ser muchos, esto se vuelve
 exponencialmente mayor cuando lo que se busca analizar son datos de las miles de
 millones de personas que acceden a Internet. Se busca entonces automatizar este
 proceso.
 
 La idea del aprendizaje automático es, dada una cantidad grande de datos, poder
-"aprender" alguna asociación entre estos datos y objetivos que se consideren
-útiles. E.g. puede ser que el dato sea una imagen y el objetivo es tratar de
-etiquetar automáticamente a la gente que está en ella (como hace Facebook);
-puede ser que el dato sea una pregunta y el objetivo es encontrar la respuesta
-(como hace Google); o puede ser que el dato sea la secuencia de acciones,
-búsquedas, o textos que enviamos por WhatsApp o publicamos en redes sociales, y
-el objetivo sea saber que queremos comprar (el último modelo del Samsung Galaxy
-S o las zapatillas Air Jordan).
+**aprender** alguna asociación entre estos datos y los objetivos que se consideren
+útiles.
 
-El aprendizaje automático, en sus diferentes variantes, busca que una
-computadora "aprenda" (recordar que, en inglés, el nombre es "aprendizaje de
-máquina" en lugar de "aprendizaje automático") esa asociación entre datos y
-objetivos (muchas veces llamadas "etiquetas").
+Puede ser que el dato sea una imagen y el objetivo es tratar de etiquetar
+automáticamente a la gente que está en ella. Otro ejemplo es tener una pregunta,
+como dato, y la respuesta como el objetivo. Finalmente, volviendo al ejemplo del
+rastreo, el dato es la secuencia de acciones, búsquedas, o textos que enviamos
+por alguna red social, y el objetivo sea algo que nos interesa comprar.
+
+En todos estos ejemplos hay algo en común, son pares de dato y objetivo. El
+objetivo es comúnmente conocido, en la jerga del aprendizaje automático, como
+**etiqueta**. Es decir, la información que se usa en la gran mayoría de los
+algoritmos de aprendizaje automático son pares de **datos y etiquetas**.
+
+> El aprendizaje automático busca que un programa de computadora aprenda la
+> asociación entre datos y etiquetas.
 
 ### ¿Pueden realmente las máquinas "aprender"?
 
@@ -131,29 +139,29 @@ objetivos (muchas veces llamadas "etiquetas").
 </span>
 
 Creo que es importante, antes de ahondar más en el tema, sacar un poco el humo
-que hay detrás de todo esto. Términos como "machine learning", "redes
-neuronales", o "big data" se utilizan de forma muy propagandística hoy en día.
+que hay detrás de todo esto. Términos como *machine learning*, *redes
+neuronales*, o *big data* se utilizan de forma muy propagandística hoy en día.
 A raíz de esto hay quienes se hacen eco de ello y en una cadena de teléfono
-descompuesto terminan tergiversando la realidad; a veces sin intención, otras
+descompuesto terminan tergiversando la realidad. A veces sin intención, otras
 veces sí, porque el titular "Skynet: La inteligencia artificial de Terminator
 está cada día más cerca" genera ganancias.
 
-¿Pueden las máquinas aprender? La respuesta corta es "no", al menos no con la
-tecnología y métodos actuales. La respuesta más larga depende, como todo, de
-qué se considere "aprender".
+¿Pueden las máquinas aprender? La respuesta corta es **no**, al menos no con la
+tecnología y métodos actuales. La respuesta más larga depende, como todo, de qué
+se considere *aprender*.
 
-Las máquinas pueden aprender ciertos "patrones" en los datos que sirven para
+Las máquinas pueden aprender ciertos **patrones** en los datos que sirven para
 derivar estas asociaciones de las que hablaba anteriormente, entre datos y
-objetivos o etiquetas. La magia que está por detrás no es tal, es simplemente
-ver la manera de encontrar una función matemática que  tome el dato como un
-valor numérico (el desafío está en ver como transformar cualquier dato, imagen,
-texto, etc., a dicho valor numérico) y devuelva la etiqueta en base a algún
-cálculo que hará sobre dichos datos (más detalle de esto en unos párrafos más
-adelante).
+etiquetas. La magia que está por detrás no es tal, es simplemente ver la manera
+de encontrar una función matemática que  tome el dato como un valor numérico y
+devuelva la etiqueta en base a algún cálculo que hará sobre dichos datos. El
+desafío está en ver como transformar cualquier dato sea una imagen, un texto, o
+una secuencia de acciones realizadas por alguien en Internet, a dicho valor
+numérico.
 
 En aprendizaje automático, el término aprender tiene una definición práctica que
 es muy limitada, pero sirve para el propósito de que las máquinas precisamente
-"aprendan". La definición puede resumirse en lo siguiente:
+aprendan. La definición puede resumirse en lo siguiente:
 
 > El campo del aprendizaje automático busca construir programas de computadora
 > que mejoren automáticamente mediante la experiencia. Un programa de
@@ -161,19 +169,20 @@ es muy limitada, pero sirve para el propósito de que las máquinas precisamente
 > respecto a alguna clase de tareas **T** y una medida de desempeño **D**, si
 > su desempeño en las tareas **T**, medida por **D**, mejora a través de **E**.
 
-Bueno, al menos esa es la definición formal que da Tom Mitchell. Pero, ¿cómo se
-adapta eso a lo que vengo diciendo? En este caso, la experiencia está
-representada por los datos y las etiquetas, la tarea es lo que se busca lograr
-(etiquetar una imagen, responder una pregunta, recomendar algo para comprar,
-etc.), y la medida de desempeño es ver que tan bien puede el programa actual
-(también llamado "modelo") asociar correctamente el conjunto de datos a sus
-etiquetas correspondientes (es decir, etiquetar la imagen de forma correcta,
-responder la pregunta, recomendar algo que terminás comprando).
+Bueno, al menos esa es la definición formal que da [Tom Mitchell en su libro
+*Aprendizaje Automático*](http://www.cs.cmu.edu/~tom/mlbook.html). Pero, ¿cómo
+se adapta eso a lo que vengo diciendo?
+
+En este caso, la experiencia está representada por los datos y las etiquetas, la
+tarea es lo que se busca lograr (etiquetar una imagen, responder una pregunta,
+recomendar algo para comprar, etc.), y la medida de desempeño es ver que tan
+bien el programa actual puede asociar el conjunto de datos a sus etiquetas
+correspondientes.
 
 Claramente, las máquinas no podrán aprender fuera del límite de lo que digan sus
-datos, por lo que hablar de "máquinas inteligentes" es bastante errado. Esto no
+datos, por lo que hablar de *máquinas inteligentes* es bastante errado. Esto no
 quiere decir que el aprendizaje automático no sea una realidad, y como tal esté
-sujeto a malos usos. Un ejemplo clásico es el [escándalo Facebook-Cambridge
+sujeto a malos usos. Un ejemplo es el [escándalo Facebook-Cambridge
 Analytica](https://es.wikipedia.org/wiki/Esc%C3%A1ndalo_Facebook-Cambridge_Analytica),
 dónde se utilizó la información para movilizar la opinión pública a favor de
 algunos candidatos políticos o en detrimento de otros; o las razones que
@@ -188,7 +197,7 @@ hacemos hoy en día, desde las ofertas de Amazon, hasta las recomendaciones de
 videos en YouTube (o Instagram), y es por eso que considero importante entender
 que es lo que hay detrás.
 
-### Entonces, ¿qué aprenden las máquinas y cómo lo hacen?
+### Entonces, ¿qué aprenden las máquinas?
 
 <span class="fig-box">
     ![](https://imgs.xkcd.com/comics/self_driving.png)
@@ -202,31 +211,52 @@ que es lo que hay detrás.
     target="_blank">https://xkcd.com/1897/</a></span>
 </span>
 
-Nuevamente, datos y etiquetas, que permiten calcular los valores de ciertas
-funciones matemáticas que terminan de hacer la asociación. Las funciones
-matemáticas, y las formas de calcular las mismas, pueden variar, desde cosas
-relativamente sencillas, hasta modelos extremadamente complejos.
+Las máquinas utilizan los datos y etiquetas de un problema para calcular la
+función matemática que permite la asociación entre los mismos. En este contexto
+la función matemática suele llamarse **modelo**, porque modela un problema a
+partir de sus datos.
 
-Y, como gran parte de la matemática, se reduce a números. Y ahí está quizás lo
-más complicado del asunto, ¿cómo reducir una imagen a números?, ¿cómo hacerlo
-con un texto?. Si bien eso es tema para otra publicación, porque puede dar mucho
-que hablar, se puede pensar la imagen cómo un cuadrado de píxeles de distinta
-intensidad, y esto se representa internamente como números en las computadoras.
-El texto es un poco más complejo, tengo [algunas charlas donde hablo más en
-detalle](/2021/07/01/desmitificando-pln.html) de esto, pero a grandes rasgos se
-puede simplificar a la cantidad de veces que las palabras aparecen en un texto.
+El modelo que se utilice, y la forma de calcularlo, puede variar, desde cosas
+relativamente sencillas hasta algo extremadamente complejo. No obstante, el
+modelo sigue siendo una **aproximación** de un problema de la vida real, en este
+caso utilizando números y operaciones aritméticas.
 
-### Una aproximación sencilla al aprendizaje automático
+Otra cosa importante a tener en cuenta es que en aprendizaje automático existen
+varias tareas distintas. Las dos más importantes hoy en día son **regresión y
+clasificación**.
 
-Para ejemplificar a grandes rasgos cómo "aprenden" las máquinas, podemos
-utilizar algunos conocimientos adquiridos en la escuela secundaria. Intentaré
-ser lo más didáctico posible, sin ahondar en demasiadas fórmulas y con lo básico
-para que se entienda la idea de lo que hacen las máquinas cuando están
-"aprendiendo".
+En regresión, la etiqueta es un valor numérico. Podemos pensar en el precio de
+una casa, o una acción del mercado de valores; en los grados de temperatura que
+hará en un determinado día; o en los milímetros de lluvia que van a caer.  Los
+**modelos de regresión** buscan predecir valores numéricos a partir de los
+datos, es decir, las etiquetas son esos valores numéricos.
+
+Por otro lado, en clasificación, la idea es poder diferenciar entre grupos de
+datos que están caracterizados por pertenecer a una clase determinada. Definir
+si un correo electrónico es basura o no; ver el tema del que habla una noticia;
+etiquetar correctamente la cara de alguien en una foto. En todos estos casos los
+**modelos de clasificación** buscan encontrar la manera de dividir datos en
+clases.
+
+Hasta esta parte llega la versión más sencilla donde explico qué es y para qué
+se usa el aprendizaje automático. Si quieren tener una idea un poco más técnica
+de cómo se calculan estos modelos, les sugiero que sigan leyendo las dos
+secciones siguientes donde haré una explicación algo más técnicas, utilizando
+algunos conceptos básicos de matemáticas, cómo se calcula un modelo de regresión
+y cómo se puede ver un modelo de clasificación. Si la matemática no es lo suyo,
+no hay problemas, pueden saltear directamente a la [sección
+final](#consideraciones-finales) donde llevo a cabo las conclusiones.
+
+### Una aproximación sencilla a la regresión
+
+Para ejemplificar a grandes rasgos cómo aprenden las máquinas, podemos utilizar
+algunos conocimientos adquiridos en la escuela secundaria. Intentaré ser lo más
+didáctico posible, sin ahondar en demasiadas fórmulas y con lo básico para que
+se entienda la idea de lo que hacen las máquinas cuando están
+*aprendiendo*.
 
 Supongamos que tenemos dos puntos que representan el valor de una casa, dada su
-superficie en metros cuadrados. Supongamos que tenemos 2 puntos en el siguiente
-gráfico:
+superficie en metros cuadrados. Son los que se ven en el siguiente gráfico:
 
 <span class="fig-box">
     ![](/assets/images/intro-ml/two-dots.png)
@@ -234,52 +264,41 @@ gráfico:
     x)</span>
 </span>
 
-El gráfico muestra el precio de 2 casas, una de 20 metros cuadrados en 30 mil
-dólares (un poco cara a mi parecer) y otra de 120 metros cuadrados a 80 mil
-(sigue siendo cara). Por simplicidad, los valores se deberían multiplicar, por
-10 mil en el caso del eje *y* y por 10 en el caso de eje *x*. Si quisiéramos
-estimar el precio de una casa de, por ejemplo, 70 metros cuadrados, a partir de
-estos dos puntos, una opción sencilla sería tratar de encontrar la función
-lineal (la línea recta) que los une.
+El gráfico muestra el precio de una casa de 20 metros cuadrados en 30 mil
+dólares y otra de 120 metros cuadrados a 80 mil (algo caras a mi parecer, pero
+este ejemplo es sacado de la galera).
 
-Recordemos matemática del secundario (y prometo no ahondar más en fórmulas y
-números más allá de los siguientes 2 párrafos), las funciones lineales tenían
-esta forma: *f(x) = m * x + b* (en este caso el asterisco es el operador para
-multiplicar).  Si tenemos dos puntos y queremos calcular la recta que los une,
-debemos calcular la pendiente *m* y utilizar eso para calcular la intersección
-con el eje *y*, es decir el valor de *b*.
+Por simplicidad, los valores se deberían multiplicar, por 10 mil en el caso del
+eje *y* y por 10 en el caso de eje *x*.  Si quisiéramos estimar el precio de una
+casa de, por ejemplo, 70 metros cuadrados, a partir de estos dos puntos, una
+opción sencilla sería tratar de encontrar la función lineal, o línea recta, que
+los une.
 
-Tenemos los puntos $(x_1, y_1) = (2, 3)$ y $(x_2, y_2) = (12, 8)$ (recordemos
-que estamos usando valores simplificados, esa es la razón por no tener valores
-en escalas de 10 o 10000 para *x* e *y* respectivamente). Con estos dos puntos
-podemos calcular la pendiente *m* de la siguiente manera:
+Recordemos matemática de la secundaria (y prometo no más fórmulas y números más
+allá de los siguientes 2 párrafos), las funciones lineales tenían esta forma:
+*y = m * x + b* (en este caso el asterisco es el operador para multiplicar).
+Si tenemos dos puntos y queremos calcular la recta que los une, debemos calcular
+la **pendiente** *m* y utilizar eso para calcular la **intersección** con el eje
+*y*, es decir el valor de *b*.
 
-<span class="fig-box">
-$
-m = \frac{y_2 - y_1}{x_2 - x_1} = \frac{8 - 3}{12 - 2} = \frac{5}{10} = \frac{1}{2}
-$
-</span>
+Tenemos los pares, dato y etiqueta, *(2, 3)* y *(12, 8)*; recordemos que estamos
+usando valores simplificados, esa es la razón por no tener valores en escalas de
+10 o 10000 para *x* e *y* respectivamente. Con estos dos pares de puntos podemos
+calcular la pendiente *m* de la siguiente manera:
 
-Luego, podemos calcular el corte en el eje *y* utilizando uno de los puntos y
-resolviendo la ecuación:
+<span class="math">m = (8 - 3)/(12 - 2) = 5/10 = 0.5</span>
 
-<span class="fig-box">
-$$
-x * m + b = y \\
-2 / 2 + b = 3 \\
-1 + b = 3 \\
-b = 3 - 1 \\
-b = 2
-$$
-</span>
+Luego, podemos calcular el corte en el eje *y* utilizando uno de los pares de
+puntos, por ejemplo *x = 2*, *y = 3*, y resolvemos la ecuación:
+
+<span class="math">2 * 0.5 + b = 3</span>
+<span class="math">1 + b = 3</span>
+<span class="math">b = 3 - 1</span>
+<span class="math">b = 2</span>
 
 Con esto logramos llegar a nuestra función:
 
-<span class="fig-box">
-$
-f(x) = \frac{x}{2} + 2
-$
-</span>
+<span class="math">y = x * 0.5 + 2</span>
 
 Y si graficamos dicha función, obtendremos la línea que estamos esperando, que
 unirá a ambos puntos:
@@ -291,9 +310,9 @@ unirá a ambos puntos:
 </span>
 
 Con esta función podemos estimar el precio de nuestra casa de 70 metros cuadrado
-en $\frac{7}{2} + 2 = 5.5$, es decir, 55 mil dólares.
+en *7 * 0.5 + 2 = 5.5*, es decir, 55 mil dólares.
 
-Felicitaciones, ya logramos "aprender" como una máquina, la mejor aproximación a
+Felicitaciones, ya logramos aprender como una máquina la mejor aproximación a
 los dos puntos que representan nuestros datos. Esto por supuesto es una
 simplificación, 2 puntos nos sirven para hacer una línea, pero rara vez es la
 única información de la que se dispone y más extraño aún es lograr encontrar
@@ -318,14 +337,15 @@ de una función que calculemos podría ser algo así:
 
 La función (la curva roja), no llega a pasar sobre todos los puntos, aunque se
 acerca a la mayoría. Esta función es un polinomio (lo que quiere decir que la
-*x* de la función tiene exponentes). El problema es lo que pasa entre los puntos
-13, 14 y 15 del eje *x*, donde la función, para pasar por esos puntos empieza a
-bambolear y termina creciendo rápidamente al final, algo que no tiene mucho
-sentido. La curva, en este caso, está calculada con un algoritmo de aprendizaje
-automático real, es decir no el cálculo sencillo que utilizamos para la línea
-recta anterior. Es por eso que hace esa variación tan brusca sobre el final. El
-algoritmo que la calcula no es perfecto y la aproxima de la mejor manera
-posible.
+*x* de la función está elevado a algún valor, $x^2$, $x^3$, etc.).
+
+El problema es lo que pasa entre los puntos 13, 14 y 15 del eje *x*, donde la
+función, para pasar por esos puntos empieza a bambolear y termina creciendo
+rápidamente al final, algo que no tiene mucho sentido. La curva, en este caso,
+está calculada con un algoritmo de aprendizaje automático real, es decir no el
+cálculo sencillo que utilizamos para la línea recta anterior. Es por eso que
+hace esa variación tan brusca sobre el final. El algoritmo que la calcula no es
+perfecto y la aproxima de la mejor manera posible.
 
 Si vemos cómo quedaría nuestra línea original con estos nuevos datos,
 tenemos lo siguiente:
@@ -353,41 +373,29 @@ decimales) y la idea que está detrás del algoritmo que calcula esa línea, que
 conoce como *regresión lineal*, es a grandes rasgos la misma que utilicé para
 calcular la línea a partir de los dos puntos originales.
 
+Este es un ejemplo de *regresión*, algo que no es exclusivo del aprendizaje
+automático o incluso de la computación o la matemática. Es algo bastante común
+en ciencias económicas por ejemplo, donde se usa para predecir los valores del
+mercado.
+
 ### Una aproximación sencilla a la clasificación
 
-El ejemplo anterior es lo que se conoce como *regresión*, esto no es exclusivo
-del aprendizaje automático o incluso de la computación o la matemática. Es algo
-bastante común en ciencias económicas por ejemplo, donde se busca predecir los
-valores del mercado. Sin embargo, la regresión es sólo una parte del aprendizaje
-automático, otra gran parte es la clasificación.
-
-En la clasificación la etiqueta final es un valor categórico, es decir, una
-clase entre una lista pre-definida de clases. Ejemplos de clasificación puede
-ser algo binario, como definir si un correo electrónico es *spam* o *basura*;
-ver si una imagen tiene o no un gato en ella, o ver casos con más clases, como
-ver qué tipo de vehículo hay en una imagen determinada (auto, barco, avión,
-moto, etc.). Mucho del uso que se le da al aprendizaje automático hoy en día
-puede pensarse como un problema de clasificación (e.g. clasificar los objetos de
-una imagen, o clasificar el tema de un documento).
-
-Tal como es el caso de regresión, la idea acá es encontrar una función (o
-modelo) que mejor pueda "explicar", en este caso "diferenciar", las clases.
-¿Cómo diferencian las clases? Es mejor explicarlo con un ejemplo.
-
-Supongamos que tenemos los siguientes puntos:
+Parecido al caso anterior, la idea es encontrar una función que aproxime los datos.
+La diferencia fundamental está en que acá en lugar de encontrar una línea
+que pase por todos los puntos se busca encontrar algo que pueda diferenciar
+entre las clases del problema. Veamos un ejemplo:
 
 <span class="fig-box">
     ![](/assets/images/intro-ml/classification-dots.png)
     <span class="caption">Datos para clasificación</span>
 </span>
 
-Ahora, así como están, los puntos no significan mucho. Supongamos que en el eje
+Así como están, los puntos no significan nada. Supongamos que en el eje
 *x* tenemos la edad de un paciente con un tumor, el tumor puede ser benigno o
 maligno, en el eje *y* podríamos tener información, por ejemplo, del tamaño en
 milímetros, de dicho tumor. Pero además, estos son datos que conocemos de
 antemano, y resulta que sabemos cuáles de estos resultaron ser malignos y cuáles
-benignos. Supongamos entonces que podemos construir, a partir de estos datos,
-el siguiente gráfico:
+benignos. A partir de estos datos podemos construir el siguiente gráfico:
 
 <span class="fig-box">
     ![](/assets/images/intro-ml/classification.png)
@@ -400,22 +408,18 @@ puntos azules serían los benignos. Es súper simplificado pensar que es tan
 simple diferenciar entre tumores malignos y benignos por dos valores tan
 sencillos como lo son la edad del paciente y el tamaño del tumor, pero sí pueden
 brindar información y esto es un ejemplo simplificado para entender el concepto
-de lo que hace un algoritmo de clasificación.
+de lo que hace un modelo de clasificación.
 
 Como dije anteriormente, la clasificación trata de encontrar una función que
 permita diferenciar entre ambos grupos de puntos. ¿Cuál es esa función? Cómo es
 el caso del ejemplo de regresión, cualquier cosa que distinga a un grupo del
 otro sirve, pero si vamos al caso, estos son dos conjuntos *linealmente
-separables*, es decir que pueden diferenciarse por una función lineal. Y cómo es
-el caso de la regresión lineal que vimos anteriormente, esta es probablemente un
-solución que, si bien no es la más completa, sí garantiza un resultado
-suficientemente bueno como para ser una buena candidata.
+separables*, es decir que pueden diferenciarse por una función lineal.
 
 La manera de calcular la función no es tan directa como tomar un par de puntos y
 calcular una pendiente y una intersección. Es algo más complejo que excede a lo
-que busco demostrar aquí (en todo caso recomiendo investigar sobre *regresión
-logística* si se quiere saber más al respecto). Sin embargo, una vez calculada,
-la función que servirá para clasificar es la que representa la línea negra:
+que busco demostrar aquí. Sin embargo, una vez calculada, la función que servirá
+para clasificar es la que representa la línea negra en el siguiente gráfico:
 
 <span class="fig-box">
     ![](/assets/images/intro-ml/classifier.png)
@@ -424,11 +428,11 @@ la función que servirá para clasificar es la que representa la línea negra:
     clasificación"</span>
 </span>
 
-Con esta función (representada por la línea negra en el gráfico) podemos tomar
-un par de atributos (edad y tamaño) y utilizar eso para ver si el punto final
-cae arriba y a la derecha de la línea, entonces se asume que el tumor es
-maligno, mientras que si el punto cae abajo y a la izquierda de dicha línea el
-tumor es benigno.
+Con este modelo de clasificación, representado por la línea diagonal negra,
+podemos tomar un par de características, edad y tamaño, y utilizar eso para ver
+donde cae el punto final en el gráfico. Si es arriba y a la derecha de la línea
+negra, entonces se asume que el tumor es maligno; mientras que si el punto cae
+abajo y a la izquierda de dicha línea el tumor es benigno.
 
 En esencia esto es lo que hacen los modelos de clasificación de cualquier tipo,
 establecen funciones, a veces sencillas como en el ejemplo, a veces mucho más
@@ -452,11 +456,10 @@ seguirlo, intenté hacerlo lo más general posible, porque considero que es
 importante entender qué es lo que hay detrás de varios de los sistemas que están
 detrás de la tecnología que usamos hoy en día.
 
-Los conceptos vistos acá, si bien simplificados, buscan explicar el modo en que
-las computadoras supuestamente "aprenden". Y es importante tener en cuenta que
-el aprendizaje no es tal, sólo está definido bajo un espectro muy limitado. Las
-máquinas no aprenden en sí, sólo aproximan, mediante funciones matemáticas, que
-en sí misma toman versiones simplificadas (pues deben ser números) de objetos y
+Más allá de todo lo explicado, es importante tener en cuenta que el aprendizaje
+del que se habla no es tal, sino que está definido bajo un espectro muy
+limitado. Las máquinas no aprenden sólo aproximan, mediante funciones
+matemáticas, que a su vez toman versiones simplificadas, llevadas a números, de
 entidades del mundo real.
 
 > Algunas cosas se aproximan mejor, otras peor, pero siempre son aproximaciones,
