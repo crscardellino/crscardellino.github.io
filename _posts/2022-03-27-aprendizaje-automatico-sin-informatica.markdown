@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Aprendizaje automático sin saber informática"
+title: "Aprendizaje automático sin saber programación"
 date: 2022-03-27 08:00:00 -0300
 tags: data-science machine-learning
 mathjax: true
@@ -22,7 +22,7 @@ hidden: true
 En este artículo intentaré introducir algunos conceptos de aprendizaje
 automático (conocido en inglés como *machine learning*, literalmente
 "aprendizaje de máquina") de manera que no requiera tener conocimientos de
-informática para entenderlo.
+programación para entenderlo.
 
 Esto no quiere decir que quienes estén dentro de la informática no puedan hacer
 uso de lo que explicaré aquí, pero no me adentraré en detalles sobre
@@ -70,8 +70,8 @@ Dependiendo del lugar donde vivas, puede que haya algún control más estricto
 sobre las compañías respecto al manejo de datos (e.g. la Unión Europea o algunos
 estados de Estados Unidos), en Argentina (y en gran parte de latinoamérica), al
 momento de escribir este artículo al menos, las regulaciones en esos aspectos
-son prácticamente nulas. De todas maneras, hay varios maneras que se
-utilizan para poder seguir haciendo un rastreo digital de tus preferencias.
+son prácticamente nulas. De todas maneras, hay varias maneras que se utilizan
+para poder seguir haciendo un rastreo digital de tus preferencias.
 
 Y es que el incentivo económico para buscarlo es muchísimo. E.g., Google o
 Facebook (Alphabet o Meta sería correcto decir) tienen su negocio montado en el
@@ -82,9 +82,9 @@ Ahora, el rastro digital que dejás al usar tu teléfono, no es útil por si mis
 tiene que amoldarse a algo que pueda ser utilizado por quienes recolectan esos
 datos, y es ahí donde entra, entre otras cosas, el aprendizaje automático. Como
 los datos que deja una persona pueden ser muchos, esto se vuelve
-exponencialmente mayor cuando lo que se busca analizar y son datos de las miles
-de millones de personas que acceden a Internet. Se busca entonces automatizar
-este proceso.
+exponencialmente mayor cuando lo que se busca analizar son datos de las miles de
+millones de personas que acceden a Internet. Se busca entonces automatizar este
+proceso.
 
 La idea del aprendizaje automático es, dada una cantidad grande de datos, poder
 "aprender" alguna asociación entre estos datos y objetivos que se consideren
@@ -127,8 +127,8 @@ Creo que es importante, antes de ahondar más en el tema, sacar un poco el humo
 que hay detrás de todo esto. Términos como "machine learning", "redes
 neuronales", o "big data" se utilizan de forma muy propagandística hoy en día.
 A raíz de esto hay quienes se hacen eco de ello y en una cadena de teléfono
-descompuesto terminan tergiversando la realidad; a veces sin intención, muchas
-veces sí porque el titular "Skynet: La inteligencia artificial de Terminator
+descompuesto terminan tergiversando la realidad; a veces sin intención, otras
+veces sí, porque el titular "Skynet: La inteligencia artificial de Terminator
 está cada día más cerca" genera ganancias.
 
 ¿Pueden las máquinas aprender? La respuesta corta es "no", al menos no con la
@@ -138,11 +138,11 @@ qué se considere "aprender".
 Las máquinas pueden aprender ciertos "patrones" en los datos que sirven para
 derivar estas asociaciones de las que hablaba anteriormente, entre datos y
 objetivos o etiquetas. La magia que está por detrás no es tal, es simplemente
-ver la manera de encontrar una función matemática (más detalle de esto en unos
-párrafos más adelante) tome el dato como un valor numérico (el desafío está en
-ver como transformar cualquier dato, imagen, texto, etc., a dicho valor
-numérico) y devuelva la etiqueta en base a algún cálculo que hará sobre dichos
-datos.
+ver la manera de encontrar una función matemática que  tome el dato como un
+valor numérico (el desafío está en ver como transformar cualquier dato, imagen,
+texto, etc., a dicho valor numérico) y devuelva la etiqueta en base a algún
+cálculo que hará sobre dichos datos (más detalle de esto en unos párrafos más
+adelante).
 
 En aprendizaje automático, el término aprender tiene una definición práctica que
 es muy limitada, pero sirve para el propósito de que las máquinas precisamente
@@ -158,8 +158,8 @@ Bueno, al menos esa es la definición formal que da Tom Mitchell. Pero, ¿cómo 
 adapta eso a lo que vengo diciendo? En este caso, la experiencia está
 representada por los datos y las etiquetas, la tarea es lo que se busca lograr
 (etiquetar una imagen, responder una pregunta, recomendar algo para comprar,
-etc.), y la medida de desempeño es ver que tanto el programa actual (también
-llamado "modelo") puede asociar correctamente el conjunto de datos a sus
+etc.), y la medida de desempeño es ver que tan bien puede el programa actual
+(también llamado "modelo") asociar correctamente el conjunto de datos a sus
 etiquetas correspondientes (es decir, etiquetar la imagen de forma correcta,
 responder la pregunta, recomendar algo que terminás comprando).
 
@@ -199,7 +199,7 @@ funciones matemáticas que terminan de hacer la asociación. Las funciones
 matemáticas, y las formas de calcular las mismas, pueden variar, desde cosas
 relativamente sencillas, hasta modelos extremadamente complejos.
 
-Y, cómo gran parte de la matemática, se reduce a números. Y ahí está quizás lo
+Y, como gran parte de la matemática, se reduce a números. Y ahí está quizás lo
 más complicado del asunto, ¿cómo reducir una imagen a números?, ¿cómo hacerlo
 con un texto?. Si bien eso es tema para otra publicación, porque puede dar mucho
 que hablar, se puede pensar la imagen cómo un cuadrado de píxeles de distinta
@@ -211,12 +211,17 @@ puede simplificar a la cantidad de veces que las palabras aparecen en un texto.
 ### Una aproximación sencilla al aprendizaje automático
 
 Para ejemplificar a grandes rasgos cómo "aprenden" las máquinas, podemos
-utilizar algunos conocimientos adquiridos en la escuela secundaria. Supongamos
-que tenemos dos puntos que representan el valor de una casa, dada su superficie
-en metros cuadrados. Supongamos que tenemos 2 puntos en el siguiente gráfico:
+utilizar algunos conocimientos adquiridos en la escuela secundaria. Intentaré
+ser lo más didáctico posible, sin ahondar en demasiadas fórmulas y con lo básico
+para que se entienda la idea de lo que hacen las máquinas cuando están
+"aprendiendo".
+
+Supongamos que tenemos dos puntos que representan el valor de una casa, dada su
+superficie en metros cuadrados. Supongamos que tenemos 2 puntos en el siguiente
+gráfico:
 
 <span style="text-align:center;">
-![Precios de una casa (eje y) dada su superficie (eje
+![Precios de dos casas (eje y) dada sus superficie (eje
 x)](/assets/images/intro-ml/two-dots.png)
 </span>
 
@@ -226,17 +231,23 @@ dólares (un poco cara a mi parecer) y otra de 120 metros cuadrados a 80 mil
 10 mil en el caso del eje *y* y por 10 en el caso de eje *x*. Si quisiéramos
 estimar el precio de una casa de, por ejemplo, 70 metros cuadrados, a partir de
 estos dos puntos, una opción sencilla sería tratar de encontrar la función
-lineal (la línea recta) que los une. Recordando matemática de la secundaria, esto
-es relativamente sencillo, debemos calcular la pendiente $m$ y con ello calcular
-la intersección con el eje *y*: $b$. Tenemos los puntos $(x_1, y_1) = (2, 3)$ y
-$(x_2, y_2) = (12, 8)$ (recordemos que estamos usando valores simplificados, esa
-es la razón por no tener valores en escalas de 10 o 10000 para *x* e *y*
-respectivamente). Con estos dos puntos podemos calcular la pendiente de la
-siguiente manera:
+lineal (la línea recta) que los une.
+
+Recordemos matemática del secundario (y prometo no ahondar más en fórmulas y
+números más allá de los siguientes 2 párrafos), las funciones lineales tenían
+esta forma: *f(x) = m * x + b* (en este caso el asterisco es el operador para
+multiplicar).  Si tenemos dos puntos y queremos calcular la recta que los une,
+debemos calcular la pendiente *m* y utilizar eso para calcular la intersección
+con el eje *y*, es decir el valor de *b*.
+
+Tenemos los puntos $(x_1, y_1) = (2, 3)$ y $(x_2, y_2) = (12, 8)$ (recordemos
+que estamos usando valores simplificados, esa es la razón por no tener valores
+en escalas de 10 o 10000 para *x* e *y* respectivamente). Con estos dos puntos
+podemos calcular la pendiente *m* de la siguiente manera:
 
 <span style="text-align:center;display:block;">
 $
-m = \frac{y_2 - y_2}{x_2 - x_1} = \frac{8 - 3}{12 - 2} = \frac{5}{10} = 0.5
+m = \frac{y_2 - y_1}{x_2 - x_1} = \frac{8 - 3}{12 - 2} = \frac{5}{10} = \frac{1}{2}
 $
 </span>
 
@@ -246,7 +257,7 @@ resolviendo la ecuación:
 <span style="text-align:center;display:block;">
 $$
 x * m + b = y \\
-2 * 0.5 + b = 3 \\
+2 / 2 + b = 3 \\
 1 + b = 3 \\
 b = 3 - 1 \\
 b = 2
@@ -265,8 +276,8 @@ Y si graficamos dicha función, obtendremos la línea que estamos esperando, que
 unirá a ambos puntos:
 
 <span style="text-align:center;">
-![Precios de una casa (eje y) dada su superficie (eje
-x)](/assets/images/intro-ml/linear-function.png)
+![Función lineal que establece los precios de una casa dada su
+superficie](/assets/images/intro-ml/linear-function.png)
 </span>
 
 Con esta función podemos estimar el precio de nuestra casa de 70 metros cuadrado
@@ -280,8 +291,8 @@ algo útil a partir de pocos puntos. Supongamos ahora que encontramos más
 información, o sea más puntos, y tenemos algo como esto:
 
 <span style="text-align:center;">
-![Precios de una casa (eje y) dada su superficie (eje
-x)](/assets/images/intro-ml/data-points.png)
+![Precios de 15 casas dadas dadas sus
+superficies](/assets/images/intro-ml/data-points.png)
 </span>
 
 Ahora el asunto es un poco más complejo, porque claramente no podemos igualar
@@ -290,19 +301,19 @@ de maneras de lograr una función que retorne todos los puntos dados. Un ejemplo
 de una función que calculemos podría ser algo así:
 
 <span style="text-align:center;">
-![Precios de una casa (eje y) dada su superficie (eje
-x)](/assets/images/intro-ml/polynomial-regression.png)
+![Función polinomial que establece precios de una casa dada su superficie,
+estimada a partir de los 15
+datos](/assets/images/intro-ml/polynomial-regression.png)
 </span>
 
 La función (la curva roja), no llega a pasar sobre todos los puntos, aunque se
 acerca a la mayoría. Esta función es un polinomio (lo que quiere decir que la
-$x$ de la función tiene exponentes). El problema es lo que pasa entre los puntos
-13, 14 y 15 del eje x, donde la función, para pasar por esos puntos empieza a
+*x* de la función tiene exponentes). El problema es lo que pasa entre los puntos
+13, 14 y 15 del eje *x*, donde la función, para pasar por esos puntos empieza a
 bambolear y termina creciendo rápidamente al final, algo que no tiene mucho
 sentido. La curva, en este caso, está calculada con un algoritmo de aprendizaje
 automático real, es decir no el cálculo sencillo que utilizamos para la línea
-recta anterior. Es por eso que no pasa exactamente por sobre todos los puntos y
-a su vez es por eso que sobre el final hace esa variación tan brusca. El
+recta anterior. Es por eso que hace esa variación tan brusca sobre el final. El
 algoritmo que la calcula no es perfecto y la aproxima de la mejor manera
 posible.
 
@@ -310,8 +321,8 @@ Si vemos cómo quedaría nuestra línea original con estos nuevos datos,
 tenemos lo siguiente:
 
 <span style="text-align:center;">
-![Precios de una casa (eje y) dada su superficie (eje
-x)](/assets/images/intro-ml/linear-regression.png)
+![Función lineal que establece precios de una casa dada su superficie, estimada
+a partir de los 15 datos](/assets/images/intro-ml/linear-regression.png)
 </span>
 
 Cómo se puede observar, en este último gráfico, la línea no recorre todos los
@@ -320,15 +331,16 @@ mayoría de ellos y no está tan lejos de aquellos puntos que están más lejos.
 algo mucho más sencillo de calcular y provee una solución suficientemente buena
 como para considerarla válida. El modelo no es perfecto, pero es lo
 suficientemente simple y general como para obtener resultados aproximadamente
-buenos y uno sufre lo mismo que el caso de la curva anterior, donde al final
+buenos y no sufre lo mismo que el caso de la curva anterior, donde al final
 crece sin control.
 
 La verdadera forma de calcular la línea roja en este último caso no es tan
 sencilla como tomar dos puntos y calcular una pendiente y una intersección en el
 eje *y*. Se deben considerar todos los puntos para estimarla mejor. Sin embargo,
-la idea que está detrás de lo que se conoce como *regresión lineal* es a grandes
-rasgos la misma que utilicé para calcular la línea a partir de los dos puntos
-originales.
+el resultado al que se llega es bastante similar (el cambio se ve en los valores
+decimales) y la idea que está detrás del algoritmo que calcula esa línea, que se
+conoce como *regresión lineal*, es a grandes rasgos la misma que utilicé para
+calcular la línea a partir de los dos puntos originales.
 
 ### Una aproximación sencilla a la clasificación
 
@@ -393,7 +405,7 @@ logística* si se quiere saber más al respecto). Sin embargo, una vez calculada
 la función que servirá para clasificar es la que representa la línea negra:
 
 <span style="text-align:center;">
-![Edad del paciente (eje x) vs. tamaño del tumor (eje y).  La función
+![Edad del paciente (eje x) vs. tamaño del tumor (eje y). La función
 representada en la línea negra es el "modelo de
 clasificación"](/assets/images/intro-ml/classifier.png)
 </span>
