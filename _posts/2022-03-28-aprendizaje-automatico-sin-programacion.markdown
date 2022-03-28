@@ -218,7 +218,7 @@ Un ejemplo, es la función lineal: *y = x * m + b*, donde *x* representaría un
 dato, *y* representaría la etiqueta asociada a ese dato, y *m* y *b* son
 **parámetros** que, con el valor correcto, harán que la función devuelva la
 etiqueta correspondiente a un dato dado. Más detalle sobre esto [más
-adelante](#una-aproximación-sencilla-a-la-regresión)
+adelante](#una-aproximación-sencilla-a-la-regresión).
 
 El modelo que se utilice, y la forma de calcularlo, puede variar, desde cosas
 relativamente sencillas hasta algo extremadamente complejo. No obstante, el
