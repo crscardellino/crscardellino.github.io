@@ -4,7 +4,6 @@ title: "Aprendizaje automático sin saber programación"
 date: 2022-03-27 10:00:00 -0300
 tags: data-science machine-learning
 mathjax: true
-hidden: true
 ---
 
 <span class="fig-box">
