@@ -79,11 +79,11 @@ Internet y dejar completamente las redes sociales (y casi todo Internet).
 Dependiendo del lugar donde vivas, puede que haya algún control más estricto
 sobre las compañías respecto al manejo de datos. Ejemplo, la Unión Europea o
 algunos estados de Estados Unidos tienen reglas más estrictas respecto al uso de
-datos personales de los usuarios de las plataformas. En Argentina (y en gran
-parte de latinoamérica), al momento de escribir este artículo al menos, las
-regulaciones en esos aspectos son prácticamente nulas. Asimismo, siguen
-existiendo varias maneras que se utilizan para poder hacer un rastreo digital de
-tus preferencias, incluyendo en lugares como Europa o Estados Unidos.
+datos personales y el uso que se les da. En Argentina (y en gran parte de
+latinoamérica), al momento de escribir este artículo al menos, las regulaciones
+en esos aspectos son prácticamente nulas. Asimismo, siguen existiendo varias
+maneras para poder hacer un rastreo digital de tus preferencias, incluyendo en
+lugares como Europa o Estados Unidos.
 
 Y es que el incentivo económico para conseguir esa información es alto. Google o
 Facebook (Alphabet o Meta sería correcto decir) tienen su negocio montado en el
@@ -93,10 +93,9 @@ te publicitan para generar ganancias.
 Ahora, el rastro digital que dejás al usar tu teléfono, no es útil por si mismo,
 tiene que amoldarse a algo que pueda ser utilizado por quienes recolectan esos
 datos. Es ahí donde entra, entre otras cosas, el aprendizaje automático. Como
-los datos que deja una persona pueden ser muchos, esto se vuelve
-exponencialmente mayor cuando lo que se busca analizar son datos de las miles de
-millones de personas que acceden a Internet. Se busca entonces automatizar este
-proceso.
+los datos que deja una persona son muchos, esto se vuelve exponencialmente mayor
+cuando se quieren analizar los de miles de millones de personas que acceden a
+Internet. Se busca automatizar este proceso.
 
 La idea del aprendizaje automático es, dada una cantidad grande de datos, poder
 **aprender** alguna asociación entre estos datos y los objetivos que se consideren
@@ -194,7 +193,7 @@ Google](https://elpais.com/tecnologia/2020-12-12/por-que-el-despido-de-una-inves
 
 El aprendizaje automático existe, está presente en prácticamente todo lo que
 hacemos hoy en día, desde las ofertas de Amazon, hasta las recomendaciones de
-videos en YouTube (o Instagram), y es por eso que considero importante entender
+videos en YouTube o Instagram, y es por eso que considero importante entender
 que es lo que hay detrás.
 
 ### Entonces, ¿qué aprenden las máquinas?
@@ -211,10 +210,16 @@ que es lo que hay detrás.
     target="_blank">https://xkcd.com/1897/</a></span>
 </span>
 
-Las máquinas utilizan los datos y etiquetas de un problema para calcular la
-función matemática que permite la asociación entre los mismos. En este contexto
-la función matemática suele llamarse **modelo**, porque modela un problema a
-partir de sus datos.
+Los máquinas aprenden una asociación entre datos y etiquetas, mediante una
+función matemática. Esta función matemática suele llamarse **modelo**, porque
+modela el problema, que en este caso es la asociación entre un dato y su
+etiqueta.
+
+Un ejemplo, es la función lineal: *y = x * m + b*, donde *x* representaría un
+dato, *y* representaría la etiqueta asociada a ese dato, y *m* y *b* son
+**parámetros** que, con el valor correcto, harán que la función devuelva la
+etiqueta correspondiente a un dato dado. Más detalle sobre esto [más
+adelante](#una-aproximación-sencilla-a-la-regresión)
 
 El modelo que se utilice, y la forma de calcularlo, puede variar, desde cosas
 relativamente sencillas hasta algo extremadamente complejo. No obstante, el
@@ -274,8 +279,8 @@ casa de, por ejemplo, 70 metros cuadrados, a partir de estos dos puntos, una
 opción sencilla sería tratar de encontrar la función lineal, o línea recta, que
 los une.
 
-Recordemos matemática de la secundaria (y prometo no más fórmulas y números más
-allá de los siguientes 2 párrafos), las funciones lineales tenían esta forma:
+Volviendo a la fórmula de la función lineal que comenté más arriba, y prometo no
+más fórmulas y números más allá de los siguientes 2 párrafos:
 *y = m * x + b* (en este caso el asterisco es el operador para multiplicar).
 Si tenemos dos puntos y queremos calcular la recta que los une, debemos calcular
 la **pendiente** *m* y utilizar eso para calcular la **intersección** con el eje
@@ -391,24 +396,22 @@ entre las clases del problema. Veamos un ejemplo:
 </span>
 
 Así como están, los puntos no significan nada. Supongamos que en el eje
-*x* tenemos la edad de un paciente con un tumor, el tumor puede ser benigno o
-maligno, en el eje *y* podríamos tener información, por ejemplo, del tamaño en
-milímetros, de dicho tumor. Pero además, estos son datos que conocemos de
-antemano, y resulta que sabemos cuáles de estos resultaron ser malignos y cuáles
-benignos. A partir de estos datos podemos construir el siguiente gráfico:
+*x* tenemos la cantidad de veces que hicimos click para ver un producto
+en Mercado Libre; por otro lado en el eje *y* tenemos la cantidad de preguntas
+que le hicimos al vendedor de ese producto; finalmente, cada punto representará
+si hicimos en verde si compramos el producto, y en rojo si no lo compramos.  A
+partir de estos datos podemos construir el siguiente gráfico:
 
 <span class="fig-box">
     ![](/assets/images/intro-ml/classification.png)
-    <span class="caption">Edad del paciente (eje x) vs. tamaño del tumor (eje
-    y)</span>
+    <span class="caption">Cantidad de clicks hechos sobre un producto (eje *x*)
+    y cantidad de preguntas hechas al vendedor (eje *y*)</span>
 </span>
 
-En este caso, los puntos rojos serían los tumores malignos, mientras que los
-puntos azules serían los benignos. Es súper simplificado pensar que es tan
-simple diferenciar entre tumores malignos y benignos por dos valores tan
-sencillos como lo son la edad del paciente y el tamaño del tumor, pero sí pueden
-brindar información y esto es un ejemplo simplificado para entender el concepto
-de lo que hace un modelo de clasificación.
+Esto es un ejemplo súper simplificado. Claramente no se reduce a entrar a ver un
+objeto o realizar preguntas sobre el mismo lo que nos hace comprar algo, aunque
+suelen ser buenos indicadores. No obstante, es útil como para entender el
+concepto de lo que hace un modelo de clasificación.
 
 Como dije anteriormente, la clasificación trata de encontrar una función que
 permita diferenciar entre ambos grupos de puntos. ¿Cuál es esa función? Cómo es
@@ -419,20 +422,23 @@ separables*, es decir que pueden diferenciarse por una función lineal.
 La manera de calcular la función no es tan directa como tomar un par de puntos y
 calcular una pendiente y una intersección. Es algo más complejo que excede a lo
 que busco demostrar aquí. Sin embargo, una vez calculada, la función que servirá
-para clasificar es la que representa la línea negra en el siguiente gráfico:
+para clasificar es la que está representada por la línea celeste en el siguiente
+gráfico:
 
 <span class="fig-box">
     ![](/assets/images/intro-ml/classifier.png)
-    <span class="caption">Edad del paciente (eje x) vs. tamaño del tumor (eje
-    y). La función representada en la línea negra es el "modelo de
-    clasificación"</span>
+    <span class="caption">Cantidad de clicks hechos sobre un producto (eje *x*)
+    y cantidad de preguntas hechas al vendedor (eje *y*).  La función
+    representada en la línea celeste es el *modelo de clasificación*.</span>
 </span>
 
-Con este modelo de clasificación, representado por la línea diagonal negra,
-podemos tomar un par de características, edad y tamaño, y utilizar eso para ver
-donde cae el punto final en el gráfico. Si es arriba y a la derecha de la línea
-negra, entonces se asume que el tumor es maligno; mientras que si el punto cae
-abajo y a la izquierda de dicha línea el tumor es benigno.
+Con este modelo de clasificación, representado por la línea diagonal celeste,
+podemos tomar un par de características, cantidad de clicks y cantidad de
+preguntas hechas sobre un producto, y utilizar eso para ver donde cae el punto
+final en el gráfico. Si es arriba y a la derecha de la línea, entonces se puede
+pensar que hay intención de compra, y promocionar el producto; mientras que si
+el punto cae abajo y a la izquierda de dicha línea, la intención de compra es
+poca por lo que no conviene promocionar dicho producto.
 
 En esencia esto es lo que hacen los modelos de clasificación de cualquier tipo,
 establecen funciones, a veces sencillas como en el ejemplo, a veces mucho más
@@ -454,7 +460,7 @@ complejas, pero que buscan separar los datos en grupos para así categorizarlos.
 Espero que este artículo les haya sido lo suficientemente sencillo como para
 seguirlo, intenté hacerlo lo más general posible, porque considero que es
 importante entender qué es lo que hay detrás de varios de los sistemas que están
-detrás de la tecnología que usamos hoy en día.
+presentes en la tecnología que usamos hoy en día.
 
 Más allá de todo lo explicado, es importante tener en cuenta que el aprendizaje
 del que se habla no es tal, sino que está definido bajo un espectro muy

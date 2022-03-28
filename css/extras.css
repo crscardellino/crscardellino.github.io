@@ -26,3 +26,11 @@ span.math {
   z-index: 300;
   text-align: center;
 }
+
+.post .post-content h3 {
+  margin-bottom: 20px;
+}
+
+.post .post-content p {
+  text-align: justify;
+}
