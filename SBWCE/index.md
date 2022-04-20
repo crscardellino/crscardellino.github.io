@@ -18,12 +18,14 @@ were evaluated by translating to Spanish word2vec's [word relation test
 set](http://arxiv.org/pdf/1301.3781.pdf).
 
 The cleaned corpus is publicly available to download as [raw text
-file](http://cs.famaf.unc.edu.ar/~ccardellino/SBWCE/clean_corpus.tar.bz2). The
-word vectors are also available to download in [word2vec's binary
-format](http://cs.famaf.unc.edu.ar/~ccardellino/SBWCE/SBW-vectors-300-min5.bin.gz)
+file](https://cs.famaf.unc.edu.ar/~ccardellino/SBWCE/clean_corpus.tar.bz2)
+([mirror](https://drive.google.com/file/d/1vaDG3-0khDVbjnb0aj7dE8DqpJTZY5Qc)).
+The word vectors are also available to download in [word2vec's binary
+format](https://cs.famaf.unc.edu.ar/~ccardellino/SBWCE/SBW-vectors-300-min5.bin.gz)
 ([mirror](https://drive.google.com/file/d/1rSI0q8J_USo1GpPfzUOa7pNgmLc66svv))
 and in [text
-format](http://cs.famaf.unc.edu.ar/~ccardellino/SBWCE/SBW-vectors-300-min5.txt.bz2).
+format](https://cs.famaf.unc.edu.ar/~ccardellino/SBWCE/SBW-vectors-300-min5.txt.bz2)
+([mirror](https://drive.google.com/file/d/1l_seO7fpVhI-hpNJKhbEXUwkFhPwzUGj)).
 
 ### Disclaimer
 
@@ -144,7 +146,7 @@ Citation
 To cite this resource in a publication please use the following citation:
 
 > Cristian Cardellino: Spanish Billion Words Corpus and Embeddings (March
-> 2016), https://crscardellino.github.io/SBWCE/ 
+> 2016), https://crscardellino.github.io/SBWCE/
 
 You also have a [bibtex](cite.bib) entry available.
 
