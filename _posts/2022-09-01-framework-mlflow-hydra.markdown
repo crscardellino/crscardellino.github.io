@@ -14,4 +14,4 @@ de estas herramientas para mi trabajo de investigación.
 La charla cuenta de un
 [repositorio](https://github.com/crscardellino/data-ar-mlflow-hydra) con el
 [notebook](https://github.com/crscardellino/data-ar-mlflow-hydra/blob/main/mlflow-hydra.ipynb)
-y el código de la charla y un [video](https://youtu.be/_fHMlNdp08w?t=5788).
+y el código de la charla y un [video](https://www.youtube.com/watch?v=_fHMlNdp08w&t=5986s).
