@@ -10,6 +10,10 @@ This is where I list my courses, talks and other resources regarding my work:
 ### Courses, Talks & Tutorials
 <a name="#courses"></a>
 
+[Contra la mil cabezas de la Hidra: ¿Cómo llevar registro de experimentos con ayuda de MLFlow y Hydra?](https://github.com/crscardellino/data-ar-mlflow-hydra)
+[[video](https://www.youtube.com/watch?v=_fHMlNdp08w&t=5986s)].
+Presenter. Data Sessions: Chapter 1. [DataAr Community](https://linktr.ee/dataarcommunity). Córdoba. Argentina. August 2022.
+
 [Embeddings 101: ¿Cómo representamos entidades en Machine Learning?](https://docs.google.com/presentation/d/1bGA1W59WeVyzWv7BMpKMALyPui9XDjxUjfy2lk93lDI/edit?usp=sharing)
 [[video](https://www.youtube.com/watch?v=_RvSQsV12fM)].
 Presenter. Nerdearla 2021. Argentina. October 2021.
