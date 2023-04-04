@@ -11,8 +11,6 @@ arbitrario y depende de mis preferencias, no tiene nada que ver con que tan
 usado o no sea el comando (muchos de los comandos más comunes no están).
 Empezamos:
 
-<!-- more -->
-
 **Mención especial**: `awk`, no lo uso tanto como antes (suelo directamente usar
 combinaciones de `cut` y otros comandos más simples), pero `awk` es
 extremadamente poderoso a la hora de manejar flujos de texto.

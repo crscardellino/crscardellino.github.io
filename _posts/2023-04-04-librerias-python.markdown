@@ -10,8 +10,6 @@ especialmente para Jr. (o incluso Ssrs) que estén por hacer una entrevista en
 Python. Estos son sin ningún orden en particular, simplemente son algunas de las
 herramientas que más suelo utilizar:
 
-<!-- more -->
-
 **`collections`**: Una librería con estructuras de datos de colecciones, más allá de
 diccionarios o listas, super útil para muchas cosas (diccionarios ordenados,
 diccionarios con valores por defecto, `Counter`).

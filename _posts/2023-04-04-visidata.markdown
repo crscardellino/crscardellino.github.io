@@ -1,0 +1,45 @@
+---
+layout: post
+title: "Visidata"
+date: 2023-04-04 11:30:00 -0300
+tags: python cli bash console terminal spreadsheet data
+---
+
+En este post haré una recomendación de una herramienta para visualizar datos
+usando directamente la consola: [VisiData](https://visidata.org) es un CLI open
+source para poder visualizar datos mediante un spreadsheet.
+
+A la hora de leer archivos csv (u otros tipos de archivos de datos si vamos al
+caso) es muy común usar librerías como [`pandas`](http://pandas.pydata.org/), o
+a veces tener que recurrir a scripts con comandos de `bash` (como `sed`, `awk`,
+`sort`, `uniq` etc.) para hacer summaries y demás. Visidata viene a dar una
+interfaz ligera por terminal para esto.
+
+Para abrir un csv basta con instalar visidata (`pip install visidata`) y usar el
+comando: `vd path/to/file.csv` (lee otros archivos también, incluso lee
+directamente archivos comprimidos via gzip).
+
+El spreadsheet es por consola, se puede mover con las flechas de dirección o con
+`h`, `j`, `k`, `l` (i.e. Vim style). Se sale con `gq` (o `Ctrl+Q` para hacer
+force quit). Y se puede acceder al help con `Ctrl+H`. Con `Alt+<letra
+subrayada>` se accede al menu superior.
+
+Con `[` y `]` (seleccionando una columna) se hace un ordenamiento de esa columna
+(por defecto las columnas son de texto, se las puede convertir en numéricas con
+`#` o en flotantes con `%`).
+
+Seleccionando una columna y haciendo `Shift+F` se hace una agrupación de dicha
+columna y un conteo de valores únicos, devolviendo un histograma y un
+porcentaje.
+
+Con `Shift+I` se puede hacer un summary de todas las columnas (similar al
+`describe()` de un dataframe de Pandas.
+
+Con `Shift+S` se muestra un listado de todas las hojas (y/o subhojas creadas por
+comandos como el `Shift+F`) abiertas, para moverse entre estas. Para volver a la
+hoja anterior es con `Ctrl+^`.
+
+Estos son algunos de los casos para que uso visidata. Existen muchas más
+opciones para hacer incluso cosas más complejas, pero en esos casos ya derivo a
+pandas directamente. Sin embargo, para un scan rápido, visidata probó ser muy
+efectivo.
