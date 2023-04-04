@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Visidata"
+title: "Visidata: Un CLI para un spreadsheet"
 date: 2023-04-04 11:30:00 -0300
 tags: python cli bash console terminal spreadsheet data
 ---
