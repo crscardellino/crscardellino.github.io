@@ -65,8 +65,10 @@ Other areas of work, interest and research are:
 <a name="#contact"></a>
 
 I'm active on [Twitter](https://twitter.com/crscardellino) (although I tweet
-mostly in Spanish), but for work related stuff, probably the best way to contact
-me is through my [LinkedIn Profile](https://www.linkedin.com/in/crscardellino/).
-You can also reach me at my professional e-mail addresses, either via the
-University e-mail (**`ccardellino at unc dot edu dot ar`**) or my Mercado Libre
-e-mail (**`cristian dot cardellino at mercadolibre dot com`**).
+mostly in Spanish) and now I'm slowly moving to
+[Mastodon](https://mastodon.social/@crscardellino), but for work related stuff,
+probably the best way to contact me is through my [LinkedIn
+Profile](https://www.linkedin.com/in/crscardellino/).  You can also reach me at
+my professional e-mail addresses, either via the University e-mail
+(**`ccardellino at unc dot edu dot ar`**) or my Mercado Libre e-mail
+(**`cristian dot cardellino at mercadolibre dot com`**).

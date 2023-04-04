@@ -38,6 +38,12 @@ social:
     share_url: http://twitter.com/share
     share_title: ?text=
     share_link: "&amp;url="
+  - icon: mastodon
+    url: https://mastodon.social/@crscardellino
+    desc: Follow me on mastodon
+    share_url: https://mastodon.social/share
+    share_title: ?text=
+    share_link: "&amp;url="
   - icon: github
     url: https://github.com/crscardellino
     desc: Fork me on github
