@@ -10,8 +10,10 @@ This is where I list my courses, talks and other resources regarding my work:
 ### Courses, Talks & Tutorials
 <a name="#courses"></a>
 
-[Hugging Face: IA Colaborativa](https://huggingface.co/crscardellino/flisol-cba-martin-fierro).
-Presenter. [FLISoL Córdoba](https://cordoba.flisol.org.ar/). Córdoba. Argentina. April 2023.
+[Hugging Face: IA Colaborativa](https://huggingface.co/crscardellino/flisol-cba-martin-fierro)
+[[notebook](https://huggingface.co/crscardellino/flisol-cba-martin-fierro/blob/main/flisol-cordoba-2023.ipynb)].
+Presenter. [FLISoL Córdoba](https://cordoba.flisol.org.ar/). Córdoba.
+Argentina. April 2023.
 
 [Contra la mil cabezas de la Hidra: ¿Cómo llevar registro de experimentos con ayuda de MLFlow y Hydra?](https://github.com/crscardellino/data-ar-mlflow-hydra)
 [[video](https://www.youtube.com/watch?v=_fHMlNdp08w&t=5986s)].
