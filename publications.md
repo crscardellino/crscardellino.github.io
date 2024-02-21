@@ -10,11 +10,13 @@ Natural Language Processing:
 
 **Cardellino, C.**, and Carrascosa, R. 2022. "A Study on Title Encoding Methods
 for E-Commerce Downstream Tasks". _The International FLAIRS Conference
-Proceedings 35 (May)_. https://doi.org/10.32473/flairs.v35i.130550.
+Proceedings 35 (May)_. https://doi.org/10.32473/flairs.v35i.130550
+[[PDF](https://drive.google.com/file/d/1zDAbQtvYTXMrV9sPYiB6eBN3qR3lUl7_/view)]
 
 **Cardellino, C.**, and Carrascosa, R. 2021. "A Study on Multiple Tasks for
 E-Commerce Marketplaces". _The International FLAIRS Conference Proceedings 34
-(April)_. https://doi.org/10.32473/flairs.v34i1.128469.
+(April)_. https://doi.org/10.32473/flairs.v34i1.128469
+[[PDF](https://drive.google.com/file/d/1jqHRyffKptkmMXWd2pUrSw4RPTm2IXfO/view)]
 
 Furman, D. A., Marro, S., **Cardellino, C**, Popa, D. N., Alonso Alemany, L.
 "You can simply rely on communities for a robust characterization of stances".
