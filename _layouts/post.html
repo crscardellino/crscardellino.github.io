@@ -52,6 +52,13 @@
           {{content}}
         </section>
         <footer class="post-footer">
+          {% if page.tags %}
+            <section class="share">
+              tags: {% for tag in page.tags %}
+                <a href="{{ "/archive/tag/" | prepend: site.baseurl }}{{tag}}">{{ tag }}</a>
+              {% endfor %}
+            </section>
+          {% endif %}
           <section class="share">
             {% for social in site.social %}
               {% if social.share_url != null %}

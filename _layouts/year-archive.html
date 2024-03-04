@@ -1,0 +1,39 @@
+---
+---
+<!DOCTYPE html>
+<html>
+  {% include head.html %}
+  <body itemscope itemtype="http://schema.org/Article">
+    {% include header.html %}
+    <main class="content" role="main">
+      <article class="post">
+        <div class="noarticleimage">
+          <div class="post-meta">
+            <h1 class="post-title">{{ page.date | date: "%Y" }} archive</h1>
+          </div>
+        </div>
+        <section class="post-content">
+          <ul class="posts">
+            {% for post in page.posts %}
+              <li>
+                <span class="post-date">{{ post.date | date: "%b %-d, %Y" }}</span>
+                <a class="post-link" href="{{ post.url | relative_url }}">{{ post.title }}</a>
+              </li>
+            {% endfor %}
+          </ul>
+        </section>
+      </article>
+    </main>
+    <div class="bottom-closer">
+      <div class="background-closer-image" {%if site.cover %} style="background-image: url({{ site.cover | prepend: site.baseurl }})"{% endif %}>
+        Image
+      </div>
+      <div class="inner">
+        <h1 class="blog-title">{{ site.title }}</h1>
+        <h2 class="blog-description">{{ site.description }}</h2>
+        <a href={{ "/" | prepend: site.baseurl }} class="btn">Back to Home</a>
+      </div>
+    </div>
+    {% include javascripts.html %}
+  </body>
+</html>
