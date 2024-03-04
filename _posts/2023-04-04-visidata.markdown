@@ -2,7 +2,7 @@
 layout: post
 title: "Visidata: Un CLI para un spreadsheet"
 date: 2023-04-04 11:30:00 -0300
-tags: python cli bash console terminal spreadsheet data
+tags: python cli bash console terminal spreadsheet data-science tools
 ---
 
 En este post haré una recomendación de una herramienta para visualizar datos

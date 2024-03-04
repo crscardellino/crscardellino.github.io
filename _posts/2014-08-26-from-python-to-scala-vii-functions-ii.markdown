@@ -2,7 +2,7 @@
 layout: post
 title: "From Python to Scala (VII): Functions (II)"
 date: 2014-08-26 20:05:00 +0200
-tags: course python scala tutorial
+tags: scala-course python scala tutorial
 ---
 
 Hello again! Nice to see you decided to come back. If you check my [previous
@@ -155,7 +155,7 @@ f(0) // Returns 42
 f(1) // Returns 43
 {% endhighlight %}
 
-Pay attention to the returned value by the function `make_incrementor: (x:Int)  
+Pay attention to the returned value by the function `make_incrementor: (x:Int)
 => x + n`. This is the definition of an anonymous function, basically a function
 with it's parameters, no name and a => operator instead of a = operator.
 

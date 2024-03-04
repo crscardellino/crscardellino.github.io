@@ -2,7 +2,7 @@
 layout: post
 title: "From Python to Scala (IV): Arrays &amp; ListBuffers"
 date: 2014-08-07 20:48:00 +0200
-tags: course python scala tutorial
+tags: scala-course python scala tutorial
 ---
 
 So, now you've learnt about Scala lists. As you could see in the previous

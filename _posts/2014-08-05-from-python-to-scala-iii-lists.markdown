@@ -2,7 +2,7 @@
 layout: post
 title: "From Python to Scala (III): Lists"
 date: 2014-08-05 20:34:00 +0200
-tags: course python scala tutorial
+tags: scala-course python scala tutorial
 ---
 
 Following with the series in this crash course from Python to Scala, today I'll

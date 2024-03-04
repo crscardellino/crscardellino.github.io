@@ -2,7 +2,7 @@
 layout: post
 title: "Nuevos Horizontes"
 date: 2023-08-05 11:45:00 -0300
-tags: life career work university
+tags: life career misc
 ---
 
 Esta semana se hicieron efectivas mis renuncias a ambos trabajos que estaba

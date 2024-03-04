@@ -2,6 +2,7 @@
 plugins:
   - jemoji
   - jekyll-paginate
+  - jekyll-archives
 
 # Site settings
 title: "Cristian Cardellino"
@@ -52,6 +53,9 @@ social:
     share_link:
 
 excerpt_separator: <!-- more -->
+
+include:
+  - _pages
 
 jekyll-archives:
   enabled:

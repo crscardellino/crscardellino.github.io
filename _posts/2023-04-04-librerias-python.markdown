@@ -2,7 +2,7 @@
 layout: post
 title: "Python: Herramientas útiles"
 date: 2023-04-04 11:30:00 -0300
-tags: python tools libraries
+tags: python tools work
 ---
 
 En este post haré un listado de herramientas útiles para Python. Pensado

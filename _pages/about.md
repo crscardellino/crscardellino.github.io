@@ -25,12 +25,13 @@ verb sense disambiguation and legal information extraction) in 2018.
 I enjoy coding and learning programming languages in general, and I try new
 tools when I get bored on the ones I am working with. The language I use the
 most is Python, but I also code in C/C++, Scala (I specially like the Spark
-framework), Ruby, BASH (and it suite of tools for text processing like AWK or
-SED), and I can proudly say I have Perl readability.
+framework), JavaScript, Ruby, BASH (and it suite of tools for text processing
+like AWK or SED), and I can proudly say I have Perl readability. The last
+language I'm learning is Rust.
 
-I am an adjunct professor at the [_Facultad de Matemática, Astronomía, Física, y
-Computación_](http://www.famaf.unc.edu.ar/) in the _Universidad Nacional de
-Córdoba_, where I have been in different courses through the years:
+I was an adjunct professor at the [_Facultad de Matemática, Astronomía, Física,
+y Computación_](http://www.famaf.unc.edu.ar/) in the _Universidad Nacional de
+Córdoba_ for almost 10 years, where I was part of different courses:
 
 - Computer Networks and Distributed Systems
 - Databases
@@ -45,13 +46,14 @@ short), there I was part of the following courses:
 
 - [Supervised Machine Learning](https://sites.google.com/unc.edu.ar/diplodatos-supervisado)
 - [Introduction to Deep Learning](https://github.com/DiploDatos/AprendizajeProfundo).
-- [Introduction to Receommender Systems](https://github.com/DiploDatos/SistemasDeRecomendacion/)
+- [Introduction to Recommender Systems](https://github.com/DiploDatos/SistemasDeRecomendacion/)
 
-Right now I am a full time researcher at [Mercado
+My last job in Argentina was as a full time researcher at [Mercado
 Libre](https://www.mercadolibre.com/), the leader platform in e-Commerce in
-Latin America. I am currently working on representation learning for products in
-the e-Commerce platform with special focus on multimodal learning and transfer
-learning scenarios.
+Latin America. I worked on representation learning for products in the
+e-Commerce platform with special focus on multimodal learning and transfer
+learning scenarios. Currently I'm doing a postdoc at "Université Côte d'Azur"
+in France, within the Wimmics Team, on Argumentation Mining.
 
 Other areas of work, interest and research are:
 
@@ -60,6 +62,11 @@ Other areas of work, interest and research are:
   [TappedOut.net](http://tappedout.net/)).
 - Unsupervised Word Representations (creator and maintainer of the
   [SBWCE]({{ "/SBWCE" | absolute_url }})).
+
+I also enjoy the work as a machine learning engineer. I like the whole MLOps
+process, particularly the set up of APIs to run machine learning models with the
+corresponding configurations and dockerization of the process. I work as a
+TopTal freelancer mostly doing this kind of projects.
 
 ### Contact
 <a name="#contact"></a>

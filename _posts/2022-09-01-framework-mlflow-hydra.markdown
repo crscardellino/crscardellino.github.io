@@ -2,7 +2,7 @@
 layout: post
 title: "Contra la mil cabezas de la Hidra: ¿Cómo llevar registro de experimentos con ayuda de MLFlow y Hydra?"
 date: 2022-09-01 15:30:00 -0300
-tags: data-science machine-learning tools mlflow hydra
+tags: data-science machine-learning tools mlflow hydra work
 ---
 
 En esta charla para la [primera Data Sessions](https://www.eventbrite.com.ar/e/data-sessions-chapter-1-tickets-406524083477)
