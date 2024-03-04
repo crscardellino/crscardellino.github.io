@@ -2,7 +2,7 @@
 layout: post
 title: "Aprendizaje automático sin saber programación"
 date: 2022-03-28 08:15:00 -0300
-tags: data-science machine-learning
+tags: data-science machine-learning artificial-intelligence
 mathjax: true
 ---
 

@@ -2,7 +2,7 @@
 layout: post
 title: "HuggingFace: IA Colaborativa"
 date: 2023-11-20 07:30:00 +0100
-tags: python pytorch ai artificial-intelligence nlp natural-language-processing deep-learning machine-learning tools hugging-face
+tags: python pytorch artificial-intelligence natural-language-processing machine-learning tools hugging-face
 ---
 
 Esta charla la di 3 veces en el año, pero sólo recientemente pude grabarla. La

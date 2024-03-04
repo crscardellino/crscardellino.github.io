@@ -2,7 +2,7 @@
 layout: post
 title: "From Python to Scala (I): The Basics"
 date: 2014-07-28 20:15:00 +0200
-tags: course python scala tutorial
+tags: scala-course python scala tutorial
 ---
 
 This is the first post in a series in which I'll try to give a nice insight for

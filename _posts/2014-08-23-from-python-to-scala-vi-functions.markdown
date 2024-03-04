@@ -2,7 +2,7 @@
 layout: post
 title: "From Python to Scala (VI): Functions"
 date: 2014-08-23 20:30:00 +0200
-tags: course python scala tutorial
+tags: scala-course python scala tutorial
 ---
 
 Welcome to another post on my series of tutorials. As you can see (if you were

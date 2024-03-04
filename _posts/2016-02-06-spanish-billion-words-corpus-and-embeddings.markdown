@@ -2,8 +2,7 @@
 layout: post
 title: "Spanish Billion Words Corpus and Embeddings"
 date: 2016-02-06 16:12:20 -0300
-categories: resources nlp
-tags: featured
+tags: natural-language-processing data-science artificial-intelligence corpus dataset featured resource
 ---
 
 So, a year and a half since my last post. Even if I kind of update my page to be

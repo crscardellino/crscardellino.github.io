@@ -2,7 +2,7 @@
 layout: post
 title: "BASH: 10 (+1) comandos útiles"
 date: 2023-04-04 11:00:00 -0300
-tags: bash cli text console terminal
+tags: bash cli text console terminal work
 ---
 
 En este post haré un listado de los 10 (+1 mención especial) comandos más

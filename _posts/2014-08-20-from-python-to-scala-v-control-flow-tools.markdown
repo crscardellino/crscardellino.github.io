@@ -2,7 +2,7 @@
 layout: post
 title: "From Python to Scala (V): Control Flow Tools"
 date: 2014-08-20 20:58:00 +0200
-tags: course python scala tutorial
+tags: scala-course python scala tutorial
 ---
 
 Ok, after a short period of laziness, I come back for more. I warned you about

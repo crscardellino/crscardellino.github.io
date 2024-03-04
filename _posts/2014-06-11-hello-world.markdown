@@ -2,7 +2,7 @@
 layout: post
 title: "Hello World!"
 date: 2014-06-11 20:00:00 +0200
-tags: introduction
+tags: misc
 ---
 
 As every programmer trying to learn a new language, I think is suitable for me
