@@ -13,7 +13,7 @@
             Article Image
           </div>
           <div class="post-meta">
-            <h1 class="post-title">{{ page.title }}</h1> 
+            <h1 class="post-title">{{ page.title }}</h1>
             <div class="cf post-meta-text">
               <div class="author-image" style="background-image: url({{ site.author_image | prepend: site.baseurl }})">Blog Logo</div>
               <h4 class="author-name" itemprop="author" itemscope itemtype="http://schema.org/Person">{{ site.author }}</h4>
@@ -39,6 +39,16 @@
         </section>
       </article>
     </main>
+    <footer class="site-footer">
+      <section class="poweredby">Proudly published with <a href="http://jekyllrb.com"> Jekyll</a></section>
+      <a class="subscribe" href="{{ "/feed.xml" | prepend: site.baseurl }}"> <span class="tooltip"> <i class="fa fa-rss"></i> You should subscribe to my feed.</span></a>
+      <div class="inner">
+        <section class="copyright">
+          <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a><br />The content by <a xmlns:cc="http://creativecommons.org/ns#" href="https://crscardellino.github.io/" property="cc:attributionName" rel="cc:attributionURL">Cristian Cardellino</a> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.<br/>
+          <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-nd/4.0/88x31.png" /></a><br />The photos in the headings and footers of the website by <a xmlns:cc="http://creativecommons.org/ns#" href="https://www.instagram.com/vhvalerywister" property="cc:attributionName" rel="cc:attributionURL">Valeria Bongiovanni</a> are licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/">Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License</a>.
+        </section>
+      </div>
+    </footer>
     <div class="bottom-closer">
       <div class="background-closer-image" {%if site.cover %} style="background-image: url({{ site.cover | prepend: site.baseurl }})"{% endif %}>
         Image
