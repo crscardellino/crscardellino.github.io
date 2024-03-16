@@ -2,7 +2,7 @@
 layout: page
 title: Publications
 permalink: /publications/
-image: "/assets/images/passage.jpg"
+image: "/assets/img/passage.jpg"
 ---
 
 These are some of my publications as a researcher in Machine Learning and

@@ -12,15 +12,15 @@ description: > # this means to ignore newlines until "email:"
 email: ccardellino@unc.edu.ar
 
 # blog logo
-logo: "/assets/images/logo.png"
+logo: "/assets/img/logo.png"
 float_logo: true
 
 # blog cover
-cover: "/assets/images/cover.jpg"
+cover: "/assets/img/cover.jpg"
 
 name: 'Cristian Cardellino'
 author: 'Cristian Cardellino'
-author_image: "/assets/images/me.jpg"
+author_image: "/assets/img/me.jpg"
 
 paginate: 5
 

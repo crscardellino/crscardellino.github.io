@@ -2,7 +2,7 @@
 layout: page
 title: Work
 permalink: /work/
-image: "/assets/images/pinecone.jpg"
+image: "/assets/img/pinecone.jpg"
 ---
 
 This is where I list my courses, talks and other resources regarding my work:

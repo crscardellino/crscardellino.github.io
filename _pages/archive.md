@@ -2,7 +2,7 @@
 layout: page
 title: Archive
 permalink: /archive/
-image: "/assets/images/storm.jpg"
+image: "/assets/img/storm.jpg"
 ---
 
 <section class="archive-post-list">

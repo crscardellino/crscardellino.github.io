@@ -2,7 +2,7 @@
 layout: page
 title: About
 permalink: /about/
-image: "/assets/images/statue.jpg"
+image: "/assets/img/statue.jpg"
 ---
 
 It's been quite a while since my days learning programming languages by myself
