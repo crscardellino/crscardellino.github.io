@@ -35,19 +35,25 @@ google_analytics: UA-30086759-1
 social:
   - icon: twitter
     url: https://twitter.com/crscardellino
-    desc: Follow me on twitter
+    desc: Follow me on Twitter
     share_url: http://twitter.com/share
     share_title: ?text=
     share_link: "&amp;url="
   - icon: mastodon
     url: https://mastodon.social/@crscardellino
-    desc: Follow me on mastodon
+    desc: Follow me on Mastodon
     share_url: https://mastodon.social/share
     share_title: ?text=
     share_link: "&amp;url="
   - icon: github
-    url: https://github.com/crscardellino
-    desc: Fork me on github
+    url: https://github.com/crscardellino/
+    desc: Fork me on GitHub
+    share_url:
+    share_title:
+    share_link:
+  - icon: linkedin
+    url: https://linkedin.com/in/crscardellino/
+    desc: Contact me on LinkedIn
     share_url:
     share_title:
     share_link:
