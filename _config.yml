@@ -3,6 +3,7 @@ plugins:
   - jemoji
   - jekyll-paginate
   - jekyll-archives
+  - jekyll-feed
 
 # Site settings
 title: "Cristian Cardellino"
@@ -76,3 +77,8 @@ jekyll-archives:
     year: 'archive/:year/'
     month: 'archive/:year/:month/'
     tag: 'archive/tag/:name/'
+
+# To avoid deprecation warnings until it's resolved (https://github.com/jekyll/minima/issues/815)
+sass:
+  quiet_deps: true
+
