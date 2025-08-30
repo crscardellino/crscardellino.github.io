@@ -10,6 +10,8 @@ This is where I list my courses, talks and other resources regarding my work:
 ### Courses, Talks & Tutorials
 <a name="#courses"></a>
 
+[Prompt Hacking Webinar: Prompt Injection vs. Jailbreaking](https://www.youtube.com/watch?v=jVp4Rnj4wjw). Presenter. [Ekoparty Webinars](https://ekoparty.org/). Argentina. August 2025.
+
 [Hugging Face: IA Colaborativa](https://huggingface.co/crscardellino/flisol-cba-martin-fierro)
 [[notebook](https://huggingface.co/crscardellino/flisol-cba-martin-fierro/blob/main/flisol-cordoba-2023.ipynb)]
 [[video](https://www.youtube.com/watch?v=lOr5nChMi18&t=3s)].

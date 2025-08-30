@@ -26,7 +26,7 @@ I've also taught courses in areas more related to my PhD., I was part of the spe
 - [Introduction to Deep Learning](https://github.com/DiploDatos/AprendizajeProfundo).
 - [Introduction to Recommender Systems](https://github.com/DiploDatos/SistemasDeRecomendacion/)
 
-My last job in Argentina was as a full-time researcher at [Mercado Libre](https://www.mercadolibre.com/), the leading platform in e-Commerce in Latin America. I worked on representation learning for products in the e-Commerce platform with a special focus on multimodal learning and transfer learning scenarios. Currently, I'm doing a postdoc at "Université Côte d'Azur" in France, within the Wimmics Team, on Argumentation Mining.
+I worked as a full-time researcher at [Mercado Libre](https://www.mercadolibre.com/), the leading platform in e-Commerce in Latin America, where I researched on representation learning for products in the e-Commerce platform with a special focus on multimodal learning and transfer learning scenarios. During 2023-2024 I did a postdoc at "Université Côte d'Azur" in France, within the Wimmics Team, on Argumentation Mining on medical and computational social sciences domains as part of the [Antidote](http://antidote.i3s.unice.fr/) and [ORBIS](https://orbis-project.eu/) European Union projects. Right now I'm part of the AI research team at the Cybersecurity company [Eclypsium](https://eclypsium.com/).
 
 Other areas of work, interest and research are:
 
@@ -34,7 +34,7 @@ Other areas of work, interest and research are:
 - Recommender Systems (designed one to recommend Magic The Gathering Cards for [TappedOut.net](http://tappedout.net/)).
 - Unsupervised Word Representations (creator and maintainer of the [SBWCE]({{ "/SBWCE" | absolute_url }})).
 
-I also enjoy the work as a machine learning engineer. I like the whole MLOps process, particularly the setup of APIs to run machine learning models with the corresponding configurations and dockerization of the process. I work as a TopTal freelancer, mostly doing this kind of project.
+I also enjoy the work as a machine learning engineer. I like the whole MLOps process, particularly the setup of APIs to run machine learning models with the corresponding configurations and dockerization of the process. I work as a TopTal freelancer, mostly doing these kind of projects.
 
 ### Contact
 <a name="#contact"></a>
