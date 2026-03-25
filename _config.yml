@@ -34,30 +34,35 @@ twitter_handle: '@crscardellino'
 google_analytics: UA-30086759-1
 
 social:
-  - icon: twitter
-    url: https://twitter.com/crscardellino
-    desc: Follow me on Twitter
-    share_url: http://twitter.com/share
-    share_title: ?text=
-    share_link: "&amp;url="
   - icon: mastodon
     url: https://mastodon.social/@crscardellino
     desc: Follow me on Mastodon
+    rel: me
     share_url: https://mastodon.social/share
     share_title: ?text=
     share_link: "&amp;url="
+    share_desc: "Share on Mastodon"
+  - icon: bluesky
+    url: https://bsky.app/profile/crscardellino.bsky.social
+    desc: Follow me on BlueSky
+    share_url: http://bsky.app/intent/compose
+    share_title: ?text=
+    share_link: "+"
+    share_desc: "Share on BlueSky"
   - icon: github
     url: https://github.com/crscardellino/
     desc: Fork me on GitHub
     share_url:
     share_title:
     share_link:
+    share_desc:
   - icon: linkedin
     url: https://linkedin.com/in/crscardellino/
     desc: Contact me on LinkedIn
     share_url:
     share_title:
     share_link:
+    share_desc:
 
 excerpt_separator: <!-- more -->
 
@@ -81,4 +86,3 @@ jekyll-archives:
 # To avoid deprecation warnings until it's resolved (https://github.com/jekyll/minima/issues/815)
 sass:
   quiet_deps: true
-

@@ -63,6 +63,7 @@
             {% for social in site.social %}
               {% if social.share_url != null %}
                 <a class="icon-{{ social.icon }}" href="{{ social.share_url }}{% if social.share_title %}{{ social.share_title }}{{page.title | cgi_escape}}{% endif %}{{ social.share_link }}{{site.url}}{{site.baseurl}}{{page.id}}"
+                  title="{{ social.share_desc }}"
                   onclick="window.open(this.href, '{{ social.icon }}-share', 'width=550,height=255');return false;">
                 <i class="fa fa-brands fa-{{ social.icon }}"></i><span class="hidden">{{ social.icon }}</span>
                 </a>
