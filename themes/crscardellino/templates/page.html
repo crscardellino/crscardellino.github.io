@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+
+{% block content %}
+<main class="content" role="main">
+  <article class="post">
+    {% if page.image %}
+    <div class="article-image">
+      <div class="post-image-image" style="background-image: url('{{ page.image }}')">
+        Article Image
+      </div>
+      <div class="post-meta">
+        <h1 class="post-title">{{ page.title }}</h1>
+        <div class="cf post-meta-text">
+          <div class="author-image" style="background-image: url('/assets/img/me.jpg')">Blog Logo</div>
+          <h4 class="author-name" itemprop="author" itemscope itemtype="http://schema.org/Person">{{ AUTHOR }}</h4>
+        </div>
+        <div style="text-align:center">
+          <a href="#topofpage" class="topofpage"><i class="fa fa-angle-down"></i></a>
+        </div>
+      </div>
+    </div>
+    {% else %}
+    <div class="noarticleimage">
+      <div class="post-meta">
+        <h1 class="post-title">{{ page.title }}</h1>
+      </div>
+    </div>
+    <br>
+    <br>
+    <br>
+    {% endif %}
+    <section class="post-content">
+      <a name="topofpage"></a>
+      {{ page.content }}
+    </section>
+  </article>
+</main>
+{% endblock %}

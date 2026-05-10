@@ -1,0 +1,111 @@
+{% extends "base.html" %}
+
+{% block content %}
+{% if articles_page is defined %}
+<div class="teaserimage">
+    <div class="teaserimage-image" style="background-image: url('/assets/img/cover.jpg')">
+        Teaser Image
+    </div>
+</div>
+
+<header class="blog-header">
+    {% if AUTHOR_IMAGE %}
+      <span class="blog-logo" style="background-image: url('{{ AUTHOR_IMAGE }}')">{{ SITENAME }}</span>
+    {% endif %}
+    <h1 class="blog-title">{{ SITENAME }}</h1>
+    <h2 class="blog-description">{{ SITEDESCRIPTION }}</h2>
+    <div class="custom-links">
+      {% for name, link in SOCIAL %}
+        <a class="icon-{{ name }}" href="{{ link }}" title="{{ name }}">
+          <i class="fa fa-brands fa-{{ name }}"></i>
+        </a>
+        &nbsp;&nbsp;&middot;&nbsp;&nbsp;
+      {% endfor %}
+      <a href="/about/">About</a>&nbsp;&nbsp;&middot;&nbsp;&nbsp;
+      <a href="/publications/">Publications</a>&nbsp;&nbsp;&middot;&nbsp;&nbsp;
+      <a href="/work/">Work</a>&nbsp;&nbsp;&middot;&nbsp;&nbsp;
+      <a href="/archive/">Archive</a>
+    </div>
+</header>
+
+<main class="content" role="main">
+
+  {% set featured_articles = [] %}
+  {% for article in articles %}
+    {% if 'featured' in article.tags %}
+      {% set _ = featured_articles.append(article) %}
+    {% endif %}
+  {% endfor %}
+  {% if featured_articles %}
+  <h5 class="index-headline featured"><span>Featured</span></h5>
+
+  <div class="container featured">
+    {% for article in featured_articles %}
+      <article class="post" itemscope itemtype="http://schema.org/BlogPosting" role="article">
+        <div class="article-item">
+          <header class="post-header">
+            <h2 class="post-title" itemprop="name"><a href="{{ article.url }}" itemprop="url">{{ article.title }}</a></h2>
+          </header>
+          <section class="post-excerpt" itemprop="description">
+            {{ article.summary }}
+          </section>
+          <div class="post-meta">
+            <time datetime="{{ article.date.isoformat() }}">{{ article.date.strftime('%B %d, %Y') }}</time>
+          </div>
+        </div>
+      </article>
+    {% endfor %}
+  </div>
+
+  <h5 class="index-headline normal"><span>Regular</span></h5>
+  {% endif %}
+
+  <div class="cf frame">
+    {% for article in articles_page.object_list %}
+      {% set is_featured = False %}
+      {% for fa in featured_articles %}
+        {% if fa == article %}
+          {% set is_featured = True %}
+        {% endif %}
+      {% endfor %}
+      {% if not is_featured %}
+      <article class="post" itemscope itemtype="http://schema.org/BlogPosting" role="article">
+        <div class="article-item">
+          <header class="post-header">
+            <h2 class="post-title" itemprop="name"><a href="{{ article.url }}" itemprop="url">{{ article.title }}</a></h2>
+          </header>
+          <section class="post-excerpt" itemprop="description">
+            {{ article.summary }}
+          </section>
+          <div class="post-meta">
+            <time datetime="{{ article.date.isoformat() }}">{{ article.date.strftime('%B %d, %Y') }}</time>
+          </div>
+        </div>
+      </article>
+      {% endif %}
+    {% endfor %}
+  </div>
+
+</main>
+{% else %}
+<main class="content" role="main">
+  <div class="cf frame">
+    {% for article in articles %}
+      <article class="post" itemscope itemtype="http://schema.org/BlogPosting" role="article">
+        <div class="article-item">
+          <header class="post-header">
+            <h2 class="post-title" itemprop="name"><a href="{{ article.url }}" itemprop="url">{{ article.title }}</a></h2>
+          </header>
+          <section class="post-excerpt" itemprop="description">
+            {{ article.summary }}
+          </section>
+          <div class="post-meta">
+            <time datetime="{{ article.date.isoformat() }}">{{ article.date.strftime('%B %d, %Y') }}</time>
+          </div>
+        </div>
+      </article>
+    {% endfor %}
+  </div>
+</main>
+{% endif %}
+{% endblock %}

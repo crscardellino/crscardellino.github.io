@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  {% if article %}
+  <title>{{ article.title }}</title>
+  <meta name="description" content="{{ article.summary | striptags | truncate(200) }}" />
+  {% elif page %}
+  <title>{{ page.title }}</title>
+  <meta name="description" content="{{ SITEDESCRIPTION }}" />
+  {% else %}
+  <title>{{ SITENAME }}</title>
+  <meta name="description" content="{{ SITEDESCRIPTION }}" />
+  {% endif %}
+
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="MobileOptimized" content="320" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+  <meta property="og:site_name" content="{{ SITENAME }}" />
+  <meta property="og:title" content="{% if article %}{{ article.title }}{% elif page %}{{ page.title }}{% else %}{{ SITENAME }}{% endif %}"/>
+  {% if article %}
+  <meta property="og:description" content="{{ article.summary | striptags | truncate(200) }}" />
+  <meta property="og:image" content="{% if article.image %}{{ article.image }}{% else %}{{ SITEURL }}{{ LOGO }}{% endif %}" />
+  <meta property="og:url" content="{{ SITEURL }}{{ article.url }}" >
+  <meta property="og:type" content="blog" />
+  <meta property="article:published_time" content="{{ article.date.isoformat() }}">{% endif %}
+  {% if page %}
+  <meta property="og:url" content="{{ SITEURL }}{{ page.url }}" >
+  <meta property="og:type" content="blog" />
+  {% endif %}
+
+  {% if MASTODON_HANDLE %}
+  <meta name="fediverse:creator" content="{{ MASTODON_HANDLE }}">
+  {% endif %}
+
+  {% if article %}
+  <link rel="canonical" href="{{ SITEURL }}{{ article.url }}" />
+  {% elif page %}
+  <link rel="canonical" href="{{ SITEURL }}{{ page.url }}" />
+  {% else %}
+  <link rel="canonical" href="{{ SITEURL }}/" />
+  {% endif %}
+
+  <link rel="shortcut icon" href="{{ FAVICON }}" />
+  <link rel="stylesheet" href="//brick.a.ssl.fastly.net/Linux+Libertine:400,400i,700,700i/Open+Sans:400,400i,700,700i">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href='https://fonts.googleapis.com/css?family=Gentium+Book+Basic|Merriweather:400,300' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Inconsolata' rel='stylesheet' type='text/css'>
+  <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@300&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" type="text/css" media="screen" href="/assets/css/main.css" />
+  <link rel="stylesheet" type="text/css" media="print" href="/assets/css/print.css" />
+  <link rel="stylesheet" type="text/css" media="screen" href="/assets/css/extras.css" />
+
+  {% if (article and article.mathjax) or (page and page.mathjax) %}
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      TeX: {
+        equationNumbers: {
+          autoNumber: "AMS"
+        }
+      },
+      tex2jax: {
+        inlineMath: [ ['$','$'], ['\\(', '\\)'] ],
+        displayMath: [ ['$$','$$'] ],
+        processEscapes: true,
+      }
+    });
+  </script>
+  <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  {% endif %}
+
+  {% block extra_head %}{% endblock %}
+</head>
+<body {% if article or page %}itemscope itemtype="http://schema.org/Article"{% endif %}>
+
+{% if FLOAT_LOGO %}
+  <a href="/" class="logo-readium"><span class="logo" style="background-image: url('{{ LOGO }}')"></span></a>
+{% endif %}
+
+{% block content %}{% endblock %}
+
+{% block footer %}
+{% if not article %}
+<footer class="site-footer">
+  <a class="subscribe" href="/feed.xml"> <span class="tooltip"> <i class="fa fa-rss"></i> Subscribe!</span></a>
+  <div class="inner">
+    <section class="copyright">
+      <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a><br />The content by <a xmlns:cc="http://creativecommons.org/ns#" href="/" property="cc:attributionName" rel="cc:attributionURL">Cristian Cardellino</a> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.<br/>
+      <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-nd/4.0/88x31.png" /></a><br />The photos in the headings and footers of the website by <a xmlns:cc="http://creativecommons.org/ns#" href="https://www.instagram.com/vhvalerywister" property="cc:attributionName" rel="cc:attributionURL">Valeria Bongiovanni</a> are licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/">Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License</a>.
+    </section>
+  </div>
+  <section class="poweredby">Powered by <a href="https://getpelican.com/"> Pelican</a></section>
+</footer>
+{% endif %}
+<div class="bottom-closer">
+  <div class="background-closer-image" style="background-image: url('/assets/img/cover.jpg')">
+    Image
+  </div>
+  <div class="inner">
+    <h1 class="blog-title">{{ SITENAME }}</h1>
+    <h2 class="blog-description">{{ SITEDESCRIPTION }}
+</h2>
+    <a href=/ class="btn">Back to Home</a>
+  </div>
+</div>
+{% endblock %}
+
+{% block javascript %}
+  <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+  <script type="text/javascript" src="/assets/js/jquery.fitvids.js"></script>
+  <script type="text/javascript" src="/assets/js/index.js"></script>
+  <script type="text/javascript" src="/assets/js/readingTime.min.js"></script>
+  <script>
+    (function ($) {
+      "use strict";
+      $(document).ready(function(){
+
+        var $window = $(window),
+        $image = $('.post-image-image, .teaserimage-image');
+
+          $window.on('scroll', function() {
+            var top = $window.scrollTop();
+
+            if (top < 0 || top > 1500) { return; }
+            $image
+              .css('transform', 'translate3d(0px, '+top/3+'px, 0px)')
+              .css('opacity', 1-Math.max(top/700, 0));
+          });
+          $window.trigger('scroll');
+
+          var height = $('.article-image').height();
+          $('.post-content').css('padding-top', height + 'px');
+
+          $('a[href*=#]:not([href=#])').click(function() {
+            if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'')
+            && location.hostname == this.hostname) {
+              var target = $(this.hash);
+              target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+              if (target.length) {
+                $('html,body').animate({ scrollTop: target.offset().top }, 500);
+                return false;
+              }
+            }
+          });
+
+      });
+    }(jQuery));
+  </script>
+
+  {% if GOOGLE_ANALYTICS %}
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    ga('create', '{{ GOOGLE_ANALYTICS }}', 'auto');
+    ga('send', 'pageview');
+  </script>
+  {% endif %}
+{% endblock %}
+
+</body>
+</html>

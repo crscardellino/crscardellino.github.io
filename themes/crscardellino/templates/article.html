@@ -1,0 +1,104 @@
+{% extends "base.html" %}
+
+{% block content %}
+<main class="content" role="main">
+  <article class="post" itemscope itemtype="http://schema.org/Article">
+    {% if article.image %}
+    <div class="article-image">
+      <div class="post-image-image" style="background-image: url('{{ article.image }}')">
+        Article Image
+      </div>
+      <div class="post-meta">
+        <h1 class="post-title" itemprop="name">{{ article.title }}</h1>
+        <div class="cf post-meta-text">
+          <div class="author-image" style="background-image: url('/assets/img/me.jpg')">Blog Logo</div>
+          <h4 class="author-name" itemprop="author" itemscope itemtype="http://schema.org/Person">{{ AUTHOR }}</h4>
+          on
+          <time datetime="{{ article.date.isoformat() }}">{{ article.date.strftime('%B %d, %Y') }}</time>
+        </div>
+        <div style="text-align:center">
+          <a href="#topofpage" class="topofpage"><i class="fa fa-angle-down"></i></a>
+        </div>
+      </div>
+    </div>
+    {% else %}
+    <div class="noarticleimage">
+      <div class="post-meta">
+        <h1 class="post-title">{{ article.title }}</h1>
+        <div class="cf post-meta-text">
+          <div class="author-image" style="background-image: url('/assets/img/me.jpg')">Blog Logo</div>
+          <h4 class="author-name" itemprop="author" itemscope itemtype="http://schema.org/Person">{{ article.author.name if article.author else AUTHOR }}</h4>
+          on
+          <time datetime="{{ article.date.isoformat() }}">{{ article.date.strftime('%B %d, %Y') }}</time>
+        </div>
+      </div>
+    </div>
+    <br>
+    <br>
+    <br>
+    {% endif %}
+    <section class="post-content">
+      <div class="post-reading">
+        <span class="post-reading-time"></span> read
+      </div>
+      <a name="topofpage"></a>
+      {{ article.content }}
+    </section>
+    <footer class="post-footer">
+      {% if article.tags %}
+        <section class="share">
+          tags: {% for tag in article.tags %}
+            <a href="{{ tag.url }}">{{ tag }}</a>
+          {% endfor %}
+        </section>
+      {% endif %}
+      <section class="share">
+        {% set article_url = SITEURL ~ article.url %}
+        {% set article_text = article.title ~ ' - ' ~ article_url %}
+        {% for name, link in SOCIAL %}
+          {% if name != 'github' %}
+          {% if name == 'mastodon' %}
+            {% set share_link = 'https://mastodon.social/share?text=' ~ article_text | urlencode %}
+          {% elif name == 'bluesky' %}
+            {% set share_link = 'https://bsky.app/intent/compose?text=' ~ article_text | urlencode %}
+          {% elif name == 'linkedin' %}
+            {% set share_link = 'https://www.linkedin.com/feed/?shareActive=true&text=' ~ article_text | urlencode %}
+          {% endif %}
+          <a class="icon-{{ name }}" href="{{ share_link }}"
+            title="Share on {{ name }}"
+            target="_blank"
+            rel="noopener">
+            <i class="fa fa-brands fa-{{ name }}"></i><span class="hidden">{{ name }}</span>
+          </a>
+          {% endif %}
+        {% endfor %}
+      </section>
+    </footer>
+    <div class="bottom-teaser cf">
+      <div class="isLeft">
+        <h5 class="index-headline featured"><span>Written by</span></h5>
+        <section class="author">
+          <div class="author-image" style="background-image: url('/assets/img/me.jpg')">Blog Logo</div>
+          <h4>{{ AUTHOR }}</h4>
+          <hr>
+          <p class="published">Published <time datetime="{{ article.date.isoformat() }}">{{ article.date.strftime('%B %d, %Y') }}</time></p>
+        </section>
+      </div>
+      <div class="isRight">
+         <h5 class="index-headline featured"><span>Supported by</span></h5>
+         <footer class="site-footer">
+           <section class="poweredby">Powered by <a href="https://getpelican.com/"> Pelican</a></section>
+           <a class="subscribe" href="/feed.xml"> <span class="tooltip"> <i class="fa fa-rss"></i> Subscribe!</span></a>
+           <div class="inner">
+             <section class="copyright">
+               <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a><br />The content by <a xmlns:cc="http://creativecommons.org/ns#" href="/" property="cc:attributionName" rel="cc:attributionURL">Cristian Cardellino</a> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.<br/>
+               <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-nd/4.0/88x31.png" /></a><br />The photos in the headings and footers of the website by <a xmlns:cc="http://creativecommons.org/ns#" href="https://www.instagram.com/vhvalerywister" property="cc:attributionName" rel="cc:attributionURL">Valeria Bongiovanni</a> are licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/">Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License</a>.
+             </section>
+           </div>
+         </footer>
+       </div>
+    </div>
+  </article>
+</main>
+
+{% endblock %}
