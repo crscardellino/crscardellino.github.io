@@ -9,7 +9,7 @@ tags:
 ---
 
 Hello again! Nice to see you decided to come back. If you check my [previous
-post]({{ root_url }}/blog/2014/08/23/from-python-to-scala-vi-functions) you
+post](/blog/2014/08/23/from-python-to-scala-vi-functions) you
 know that functions are quite an important matter in the Scala language.
 
 Last time, talking about recursion, I wasn't able to cover all the topics about

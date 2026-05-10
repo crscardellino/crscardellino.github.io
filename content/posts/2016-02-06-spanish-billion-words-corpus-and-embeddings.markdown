@@ -35,7 +35,7 @@ some decent word embeddings, and then by releasing some embeddings created on my
 own.
 
 This is why I am releasing now the [Spanish Billion Words Corpus and
-Embeddings](https://crscardellino.github.io/SBWCE/), a resource for the Spanish
+Embeddings](/SBWCE/), a resource for the Spanish
 language that offers a big corpus (of nearly 1.5 billion words) and a set of
 word vectors (or embeddings) trained from this corpus.
 
