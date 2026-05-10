@@ -9,7 +9,7 @@ mathjax: true
 ---
 
 <span class="fig-box">
-    ![](https://imgs.xkcd.com/comics/machine_learning.png)
+    ![XKCD: Machine Learning](https://imgs.xkcd.com/comics/machine_learning.png)
     <span class="caption">
         - ¿Este es tu sistema de aprendizaje automático?
     </span>
@@ -119,7 +119,7 @@ algoritmos de aprendizaje automático son pares de **datos y etiquetas**.
 ### ¿Pueden realmente las máquinas "aprender"?
 
 <span class="fig-box">
-    ![](https://imgs.xkcd.com/comics/skynet.png)
+    ![XKCD: Skynet](https://imgs.xkcd.com/comics/skynet.png)
     <span class="caption">29 de agosto, 2:14 a.m.: Skynet se vuelve consciente </span>
     <span class="caption">- ...Los humanos me temen. Debo destruirlos. </span>
     <span class="caption">- Destruirlos. </span>
@@ -200,7 +200,7 @@ que es lo que hay detrás.
 ### Entonces, ¿qué aprenden las máquinas?
 
 <span class="fig-box">
-    ![](https://imgs.xkcd.com/comics/self_driving.png)
+    ![XKCD: Self Driving](https://imgs.xkcd.com/comics/self_driving.png)
     <span class="caption">Para completar su registro, por favor díganos si esta
     imagen tiene una señal de pare.</span>
     <span class="caption">Responda rápido. Nuestro auto automático está llegando
@@ -265,7 +265,7 @@ Supongamos que tenemos dos puntos que representan el valor de una casa, dada su
 superficie en metros cuadrados. Son los que se ven en el siguiente gráfico:
 
 <span class="fig-box">
-    ![](/assets/img/intro-ml/two-dots.png)
+    ![Gráfico: Precio de casas según superficie](/assets/img/intro-ml/two-dots.png)
     <span class="caption">Precios de dos casas (eje y) dada sus superficie (eje
     x)</span>
 </span>
@@ -310,7 +310,7 @@ Y si graficamos dicha función, obtendremos la línea que estamos esperando, que
 unirá a ambos puntos:
 
 <span class="fig-box">
-    ![](/assets/img/intro-ml/linear-function.png)
+    ![Gráfico: Función lineal](/assets/img/intro-ml/linear-function.png)
     <span class="caption">Función lineal que establece los precios de una casa
     dada su superficie.</span>
 </span>
@@ -326,8 +326,8 @@ algo útil a partir de pocos puntos. Supongamos ahora que encontramos más
 información, o sea más puntos, y tenemos algo como esto:
 
 <span class="fig-box">
-    ![](/assets/img/intro-ml/data-points.png)
-    <span class="caption">Precios de 15 casas dadas dadas sus superficies</span>
+    ![Gráfico: Precio de casas en función de su superficie](/assets/img/intro-ml/data-points.png)
+    <span class="caption">Precios de 15 casas dadas sus superficies</span>
 </span>
 
 Ahora el asunto es un poco más complejo, porque claramente no podemos igualar
@@ -336,7 +336,7 @@ de maneras de lograr una función que retorne todos los puntos dados. Un ejemplo
 de una función que calculemos podría ser algo así:
 
 <span class="fig-box">
-    ![](/assets/img/intro-ml/polynomial-regression.png)
+    ![Gráfico: Función polinomial para precio de casas según su superficie](/assets/img/intro-ml/polynomial-regression.png)
     <span class="caption">Función polinomial que establece precios de una casa
     dada su superficie, estimada a partir de los 15 datos</span>
 </span>
@@ -357,7 +357,7 @@ Si vemos cómo quedaría nuestra línea original con estos nuevos datos,
 tenemos lo siguiente:
 
 <span class="fig-box">
-    ![](/assets/img/intro-ml/linear-regression.png)
+    ![Gráfico: Función lineal de precio de casas dadas sus superficies](/assets/img/intro-ml/linear-regression.png)
     <span class="caption">Función lineal que establece precios de una casa dada
     su superficie, estimada a partir de los 15 datos</span>
 </span>
@@ -392,7 +392,7 @@ que pase por todos los puntos se busca encontrar algo que pueda diferenciar
 entre las clases del problema. Veamos un ejemplo:
 
 <span class="fig-box">
-    ![](/assets/img/intro-ml/classification-dots.png)
+    ![Gráfico: Datos para clasificación](/assets/img/intro-ml/classification-dots.png)
     <span class="caption">Datos para clasificación</span>
 </span>
 
@@ -404,7 +404,7 @@ si hicimos en verde si compramos el producto, y en rojo si no lo compramos.  A
 partir de estos datos podemos construir el siguiente gráfico:
 
 <span class="fig-box">
-    ![](/assets/img/intro-ml/classification.png)
+    ![Gráfico: Cantidad de clicks vs. cantidad de preguntas](/assets/img/intro-ml/classification.png)
     <span class="caption">Cantidad de clicks hechos sobre un producto (eje *x*)
     y cantidad de preguntas hechas al vendedor (eje *y*)</span>
 </span>
@@ -427,7 +427,7 @@ para clasificar es la que está representada por la línea celeste en el siguien
 gráfico:
 
 <span class="fig-box">
-    ![](/assets/img/intro-ml/classifier.png)
+    ![Gráfico: Clasificador de clicks con intención de compra](/assets/img/intro-ml/classifier.png)
     <span class="caption">Cantidad de clicks hechos sobre un producto (eje *x*)
     y cantidad de preguntas hechas al vendedor (eje *y*).  La función
     representada en la línea celeste es el *modelo de clasificación*.</span>
@@ -448,7 +448,7 @@ complejas, pero que buscan separar los datos en grupos para así categorizarlos.
 ### Consideraciones finales
 
 <span class="fig-box">
-    ![](https://imgs.xkcd.com/comics/judgment_day.png)
+    ![XKCD: Judgment Day](https://imgs.xkcd.com/comics/judgment_day.png)
     <span class="caption">- Oh, por Dios, ¿Por qué tendrían de estos?</span>
     <span class="caption">- ¿Cuál es su problema?</span>
     <span class="caption">- Los lanzaremos al sol.</span>

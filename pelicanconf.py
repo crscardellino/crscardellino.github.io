@@ -42,7 +42,7 @@ MARKDOWN = {
 }
 
 # Static files
-STATIC_PATHS = ["assets"]
+STATIC_PATHS = ["assets", "CNAME"]
 
 # Extra page metadata
 # EXTRA_PATH_METADATA = {
@@ -82,3 +82,5 @@ FLOAT_LOGO = True
 SUMMARY_END_MARKER = "<!-- more -->"
 SUMMARY_MAX_LENGTH = None
 SUMMARY_MAX_PARAGRAPHS = 2
+
+TIMEZONE = "America/Argentina/Cordoba"
