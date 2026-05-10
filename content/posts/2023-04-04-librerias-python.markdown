@@ -5,6 +5,7 @@ tags:
   - python
   - tools
   - work
+category: tools
 ---
 
 En este post haré un listado de herramientas útiles para Python. Pensado

@@ -6,6 +6,7 @@ tags:
   - python
   - scala
   - tutorial
+category: scala
 ---
 
 Following with the series in this crash course from Python to Scala, today I'll

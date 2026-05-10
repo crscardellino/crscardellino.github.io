@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block head_title %}Tags{% endblock %}
+
+{% block content %}
+<main class="content" role="main">
+  <article class="post">
+    <div class="noarticleimage">
+      <div class="post-meta">
+        <h1 class="post-title">Tags</h1>
+      </div>
+    </div>
+    <section class="post-content">
+      <ul class="posts">
+        {% for tag, articles in tags %}
+          <li>
+            <a class="post-link" href="/{{ tag.url }}">{{ tag }}</a>
+            <span class="post-date"> ({{ articles | count }})</span>
+          </li>
+        {% endfor %}
+      </ul>
+    </section>
+  </article>
+</main>
+{% endblock %}

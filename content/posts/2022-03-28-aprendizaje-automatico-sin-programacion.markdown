@@ -5,6 +5,7 @@ tags:
   - data science
   - machine learning
   - artificial intelligence
+category: artificial intelligence
 mathjax: true
 ---
 

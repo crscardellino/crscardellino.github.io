@@ -8,6 +8,7 @@ tags:
   - terminal
   - work
   - tools
+category: tools
 ---
 
 En este post haré un listado de los 10 (+1 mención especial) comandos más

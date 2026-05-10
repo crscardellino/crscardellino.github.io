@@ -6,6 +6,7 @@ tags:
   - python
   - scala
   - tutorial
+category: scala
 ---
 
 So, now you've learnt about Scala lists. As you could see in the previous

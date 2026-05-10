@@ -5,6 +5,7 @@ tags:
   - data science
   - natural language processing
   - embeddings
+category: talk
 ---
 
 En esta charla que di para el [nerdear.la](https://nerdear.la/) 2021,

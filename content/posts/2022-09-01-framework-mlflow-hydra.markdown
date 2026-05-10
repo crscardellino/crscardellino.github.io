@@ -8,6 +8,7 @@ tags:
   - mlflow
   - hydra
   - work
+category: talk
 ---
 
 En esta charla para la [primera Data Sessions](https://www.eventbrite.com.ar/e/data-sessions-chapter-1-tickets-406524083477)

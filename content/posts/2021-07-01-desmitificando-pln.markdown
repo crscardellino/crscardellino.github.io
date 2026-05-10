@@ -6,6 +6,7 @@ tags:
   - data science
   - natural language processing
   - gpt-3
+category: talk
 ---
 
 Otra charla online, esta vez para el [Google Developer Group de

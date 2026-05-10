@@ -6,6 +6,7 @@ tags:
   - misc
   - life
   - career
+category: scala
 ---
 
 So, on this entry I'll put a halt on the series of tutorials I've been writing.

@@ -88,7 +88,7 @@
 {% block content %}{% endblock %}
 
 {% block footer %}
-{% if not article %}
+{% if not article and "archive" not in page_name and not period %}
 <footer class="site-footer">
   <a class="subscribe" href="/feed.xml"> <span class="tooltip"> <i class="fa fa-rss"></i> Subscribe!</span></a>
   <div class="inner">

@@ -9,6 +9,7 @@ tags:
   - machine learning
   - tools
   - hugging face
+category: talk
 ---
 
 Esta charla la di 3 veces en el año, pero sólo recientemente pude grabarla. La

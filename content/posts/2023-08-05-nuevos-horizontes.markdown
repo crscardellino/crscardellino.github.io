@@ -5,6 +5,7 @@ tags:
   - life
   - career
   - misc
+category: misc
 ---
 
 Esta semana se hicieron efectivas mis renuncias a ambos trabajos que estaba

@@ -10,6 +10,7 @@ tags:
   - spreadsheet
   - data science
   - tools
+category: tools
 ---
 
 En este post haré una recomendación de una herramienta para visualizar datos

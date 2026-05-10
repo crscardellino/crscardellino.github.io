@@ -7,6 +7,7 @@ tags:
   - python
   - R
   - tutorial
+category: data science
 ---
 
 ### Jupyter Notebooks combining Python and R

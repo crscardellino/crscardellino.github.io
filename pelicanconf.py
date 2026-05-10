@@ -24,9 +24,19 @@ TAG_URL = "archive/tag/{slug}/"
 TAG_SAVE_AS = "archive/tag/{slug}/index.html"
 TAGS_SAVE_AS = "archive/tags/index.html"
 
+CATEGORY_URL = "archive/category/{slug}/"
+CATEGORY_SAVE_AS = "archive/category/{slug}/index.html"
+CATEGORIES_SAVE_AS = "archive/categories/index.html"
+
 ARCHIVES_SAVE_AS = "archive/index.html"
 YEAR_ARCHIVE_SAVE_AS = "archive/{date:%Y}/index.html"
 MONTH_ARCHIVE_SAVE_AS = "archive/{date:%Y}/{date:%m}/index.html"
+
+DIRECT_TEMPLATES = ['index', 'categories', 'archives', 'tags']
+
+AUTHOR_FEED_ATOM = None
+AUTHOR_FEED_RSS = None
+
 
 DATE_FORMATS = {"en": "%b %d, %Y"}
 
@@ -43,14 +53,6 @@ MARKDOWN = {
 
 # Static files
 STATIC_PATHS = ["assets", "CNAME"]
-
-# Extra page metadata
-# EXTRA_PATH_METADATA = {
-#     "pages/404.html": {"path": "404.html"},
-#     "pages/contact.html": {"path": "contact/index.html"},
-#     "CNAME": {"path": "CNAME"},
-#     "images/*.pdf": {"path": "assets/pdf/{name}"},
-# }
 
 # Social links
 SOCIAL = (

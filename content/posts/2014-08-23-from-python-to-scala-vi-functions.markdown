@@ -6,6 +6,7 @@ tags:
   - python
   - scala
   - tutorial
+category: scala
 ---
 
 Welcome to another post on my series of tutorials. As you can see (if you were

@@ -9,6 +9,7 @@ tags:
   - dataset
   - featured
   - resource
+category: artificial intelligence
 ---
 
 So, a year and a half since my last post. Even if I kind of update my page to be
