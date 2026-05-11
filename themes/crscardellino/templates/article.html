@@ -73,6 +73,18 @@
           {% endif %}
         {% endfor %}
       </section>
+      <nav class="article-neighbors">
+        {% if article.prev_article %}
+        <a class="neighbor-link neighbor-prev" href="{{ article.prev_article.url }}">
+          <span class="neighbor-label">← Previous</span>
+        </a>
+        {% endif %}
+        {% if article.next_article %}
+        <a class="neighbor-link neighbor-next" href="{{ article.next_article.url }}">
+          <span class="neighbor-label">Next →</span>
+        </a>
+        {% endif %}
+      </nav>
     </footer>
     <div class="bottom-teaser cf">
       <div class="isLeft">

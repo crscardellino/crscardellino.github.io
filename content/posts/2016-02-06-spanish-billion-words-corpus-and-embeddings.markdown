@@ -5,6 +5,7 @@ tags:
   - natural language processing
   - data science
   - artificial intelligence
+  - featured
 category: artificial intelligence
 ---
 

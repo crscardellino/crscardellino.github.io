@@ -81,13 +81,20 @@ DELETE_OUTPUT_DIRECTORY = True
 # Logo float
 FLOAT_LOGO = True
 
+# Plugins
+PLUGINS = [
+    "minchin.pelican.plugins.summary",
+    "neighbors",
+    "sitemap",
+    "yaml_metadata",
+]
+
 # Summary
 SUMMARY_END_MARKER = "<!-- more -->"
 SUMMARY_MAX_LENGTH = None
 SUMMARY_MAX_PARAGRAPHS = 2
 
-# Sitemap
-PLUGINS = ["sitemap"]
+# Sitemap config
 SITEMAP = {
     "format": "xml",
     "priorities": {

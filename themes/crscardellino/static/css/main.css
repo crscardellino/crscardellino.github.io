@@ -803,6 +803,38 @@ main {
   color: #333;
 }
 
+/* Article neighbors */
+.article-neighbors {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 0 30px;
+}
+
+.neighbor-link {
+  display: inline-flex;
+  align-items: center;
+  background: #000;
+  color: #fff;
+  text-decoration: none;
+  padding: 10px 20px;
+  border-radius: 2px;
+  font-size: 14px;
+  font-weight: 300;
+  transition: opacity 0.2s;
+}
+
+.neighbor-link:hover {
+  opacity: 0.8;
+}
+
+.neighbor-link:hover .neighbor-label {
+  color: #fff;
+}
+
+.neighbor-label {
+  color: #ccc;
+}
+
 /* Bottom closer (homepage footer with cover image) */
 .bottom-closer {
   width: 100%;
