@@ -86,4 +86,20 @@ SUMMARY_END_MARKER = "<!-- more -->"
 SUMMARY_MAX_LENGTH = None
 SUMMARY_MAX_PARAGRAPHS = 2
 
+# Sitemap
+PLUGINS = ["sitemap"]
+SITEMAP = {
+    "format": "xml",
+    "priorities": {
+        "articles": 0.8,
+        "indexes": 0.3,
+        "pages": 0.5,
+    },
+    "changefreqs": {
+        "articles": "monthly",
+        "indexes": "monthly",
+        "pages": "monthly",
+    },
+}
+
 TIMEZONE = "America/Argentina/Cordoba"
