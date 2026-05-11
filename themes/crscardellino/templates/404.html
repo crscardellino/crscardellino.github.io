@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+
+{% block head_title %}404: Not Found{% endblock %}
+
+{% block extra_head %}
+<style type="text/css" media="screen">
+  .container {
+    margin: 10px auto;
+    max-width: 600px;
+    text-align: center;
+  }
+  h1 {
+    margin: 30px 0;
+    font-size: 4em;
+    line-height: 1;
+    letter-spacing: -1px;
+  }
+</style>
+{% endblock %}
+
+
+{% block content %}
+<main class="content" role="main">
+  <article class="post">
+    <div class="noarticleimage">
+      <div class="post-meta">
+        <h1 class="post-title">404</h1>
+      </div>
+    </div>
+    <section class="post-content">
+        <p><strong>Page not found :(</strong></p>
+        <p>The requested page could not be found.</p>
+    </section>
+  </article>
+</main>
+{% endblock %}
+
+{% block creative_commons %}{% endblock %}

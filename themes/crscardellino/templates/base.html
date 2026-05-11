@@ -88,7 +88,7 @@
 {% block content %}{% endblock %}
 
 {% block footer %}
-{% if not article and "archive" not in page_name and not period %}
+{% block creative_commons %}
 <footer class="site-footer">
   <a class="subscribe" href="/feed.xml"> <span class="tooltip"> <i class="fa fa-rss"></i> Subscribe!</span></a>
   <div class="inner">
@@ -99,7 +99,7 @@
   </div>
   <section class="poweredby">Powered by <a href="https://getpelican.com/"> Pelican</a></section>
 </footer>
-{% endif %}
+{% endblock %}
 <div class="bottom-closer">
   <div class="background-closer-image" style="background-image: url('/assets/img/cover.jpg')">
     Image
