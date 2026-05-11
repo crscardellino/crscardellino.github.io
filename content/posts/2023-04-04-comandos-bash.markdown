@@ -3,10 +3,7 @@ title: "BASH: 10 (+1) comandos útiles"
 date: 2023-04-04 11:00:00 -0300
 tags:
   - bash
-  - cli
   - console
-  - terminal
-  - work
   - tools
 category: tools
 ---

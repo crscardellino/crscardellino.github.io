@@ -5,9 +5,6 @@ tags:
   - data science
   - machine learning
   - tools
-  - mlflow
-  - hydra
-  - work
 category: talk
 ---
 

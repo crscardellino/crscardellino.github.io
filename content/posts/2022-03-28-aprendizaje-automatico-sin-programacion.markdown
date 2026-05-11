@@ -2,9 +2,9 @@
 title: "Aprendizaje automático sin saber programación"
 date: 2022-03-28 08:15:00 -0300
 tags:
+  - artificial intelligence
   - data science
   - machine learning
-  - artificial intelligence
 category: artificial intelligence
 mathjax: true
 ---

@@ -5,7 +5,6 @@ tags:
   - artificial intelligence
   - data science
   - natural language processing
-  - gpt-3
 category: talk
 ---
 

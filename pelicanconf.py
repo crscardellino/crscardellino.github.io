@@ -32,7 +32,7 @@ ARCHIVES_SAVE_AS = "archive/index.html"
 YEAR_ARCHIVE_SAVE_AS = "archive/{date:%Y}/index.html"
 MONTH_ARCHIVE_SAVE_AS = "archive/{date:%Y}/{date:%m}/index.html"
 
-DIRECT_TEMPLATES = ['index', 'categories', 'archives', 'tags']
+DIRECT_TEMPLATES = ['index', 'categories', 'archives', 'tags', '404']
 
 AUTHOR_FEED_ATOM = None
 AUTHOR_FEED_RSS = None
@@ -47,12 +47,13 @@ THEME = "themes/crscardellino"
 THEME_STATIC_DIR = "assets"
 
 # Markdown extensions
-MARKDOWN = {
-    "extension_names": ["footnotes", "attr_list", "toc", "codehilite"],
-}
+# MARKDOWN = {
+#     "extension_names": ["footnotes", "attr_list", "toc", "codehilite"],
+# }
 
 # Static files
-STATIC_PATHS = ["assets", "CNAME"]
+STATIC_PATHS = ["assets", "extra/CNAME"]
+EXTRA_PATH_METADATA = {'extra/CNAME': {'path': 'CNAME'},}
 
 # Social links
 SOCIAL = (

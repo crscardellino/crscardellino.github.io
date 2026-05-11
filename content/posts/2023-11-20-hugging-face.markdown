@@ -3,12 +3,10 @@ title: "HuggingFace: IA Colaborativa"
 date: 2023-11-20 07:30:00 +0100
 tags:
   - python
-  - pytorch
   - artificial intelligence
   - natural language processing
   - machine learning
   - tools
-  - hugging face
 category: talk
 ---
 

@@ -5,10 +5,6 @@ tags:
   - natural language processing
   - data science
   - artificial intelligence
-  - corpus
-  - dataset
-  - featured
-  - resource
 category: artificial intelligence
 ---
 

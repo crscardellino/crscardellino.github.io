@@ -4,7 +4,6 @@ date: 2023-04-04 11:30:00 -0300
 tags:
   - python
   - tools
-  - work
 category: tools
 ---
 

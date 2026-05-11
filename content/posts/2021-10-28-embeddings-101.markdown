@@ -2,9 +2,9 @@
 title: "Embeddings 101: ¿Cómo representamos las entidades en machine learning?"
 date: 2021-10-28 14:30:00 -0300
 tags:
+  - artificial intelligence
   - data science
   - natural language processing
-  - embeddings
 category: talk
 ---
 
