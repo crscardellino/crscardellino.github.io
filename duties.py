@@ -4,8 +4,7 @@
 import shutil
 from pathlib import Path
 
-from duty import duty, tools
-from duty.context import Context
+from duty import duty, tools, Context
 from pelican import main as pelican_main
 from pelican.settings import DEFAULT_CONFIG, get_settings_from_file
 
@@ -38,4 +37,24 @@ def devserver(ctx: Context, port: int = 4000) -> None:
     """Start dev server with autoreload"""
     ctx.run(
         run_pelican(["-s", "pelicanconf.py", "-o", OUTPUT_DIRECTORY, "-r", "-l", "-p", f"{port}"])
+    )
+
+
+@duty(capture=False)
+def linter(ctx: Context) -> None:
+    """Run linting commands"""
+    ctx.run(["ruff", "format", "."])
+    ctx.run(["ruff", "check", "--fix", "."])
+
+
+@duty
+def pygments(ctx: Context, style: str = "tango") -> None:
+    """Generates the correct pygments"""
+    with open("./themes/crscardellino/static/css/pygments.css", "wt") as fh:
+        css = ctx.run(["pygmentize", "-S", style, "-f", "html", "-a", ".highlight"])
+        fh.write(css)
+    ctx.run(
+        "sed -i "
+        rf"""'s/"pygments_style":\s*"[^"]*",/"pygments_style": "{style}",/' """
+        "./pelicanconf.py"
     )
