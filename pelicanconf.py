@@ -32,7 +32,7 @@ ARCHIVES_SAVE_AS = "archive/index.html"
 YEAR_ARCHIVE_SAVE_AS = "archive/{date:%Y}/index.html"
 MONTH_ARCHIVE_SAVE_AS = "archive/{date:%Y}/{date:%m}/index.html"
 
-DIRECT_TEMPLATES = ['index', 'categories', 'archives', 'tags', '404']
+DIRECT_TEMPLATES = ["index", "categories", "archives", "tags", "404"]
 
 AUTHOR_FEED_ATOM = None
 AUTHOR_FEED_RSS = None
@@ -47,13 +47,34 @@ THEME = "themes/crscardellino"
 THEME_STATIC_DIR = "assets"
 
 # Markdown extensions
-# MARKDOWN = {
-#     "extension_names": ["footnotes", "attr_list", "toc", "codehilite"],
-# }
+MARKDOWN = {
+    "extension_configs": {
+        "pymdownx.highlight": {
+            "use_pygments": True,
+            "noclasses": False,
+            "pygments_style": "tango",
+        },
+        "pymdownx.superfences": {},
+        "pymdownx.inlinehilite": {},
+        "markdown.extensions.meta": {},
+        "markdown.extensions.tables": {},
+        "markdown.extensions.footnotes": {},
+        "markdown.extensions.attr_list": {},
+    },
+    "extension_names": [
+        "pymdownx.highlight",
+        "pymdownx.inlinehilite",
+        "pymdownx.superfences",
+        "pymdownx.arithmatex",
+    ],
+    "output_format": "html5",
+}
 
 # Static files
 STATIC_PATHS = ["assets", "extra/CNAME"]
-EXTRA_PATH_METADATA = {'extra/CNAME': {'path': 'CNAME'},}
+EXTRA_PATH_METADATA = {
+    "extra/CNAME": {"path": "CNAME"},
+}
 
 # Social links
 SOCIAL = (

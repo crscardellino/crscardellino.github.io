@@ -58,23 +58,27 @@
   <link rel="stylesheet" type="text/css" media="screen" href="/assets/css/main.css" />
   <link rel="stylesheet" type="text/css" media="print" href="/assets/css/print.css" />
   <link rel="stylesheet" type="text/css" media="screen" href="/assets/css/extras.css" />
+  <link rel="stylesheet" type="text/css" media="screen" href="/assets/css/pygments.css" />
 
   {% if (article and article.mathjax) or (page and page.mathjax) %}
-  <script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-      TeX: {
-        equationNumbers: {
-          autoNumber: "AMS"
-        }
-      },
-      tex2jax: {
-        inlineMath: [ ['$','$'], ['\\(', '\\)'] ],
-        displayMath: [ ['$$','$$'] ],
-        processEscapes: true,
+  <script>
+  window.MathJax = {
+    tex: {
+      inlineMath: [['$', '$']],
+      displayMath: [['$$', '$$']],
+      processEscapes: true,
+      processEnvironments: true,
+      equationNumbers: {
+        autoNumber: "AMS"
       }
-    });
+    },
+    options: {
+      skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+      handleFragments: ['scripts', 'anchorLink']
+    }
+  };
   </script>
-  <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" async></script>
   {% endif %}
 
   {% block extra_head %}{% endblock %}
