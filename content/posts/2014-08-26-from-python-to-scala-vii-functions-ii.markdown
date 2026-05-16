@@ -31,7 +31,7 @@ Default argument values in Scala are very similar to Python's. With the
 difference being in the static types, that is, you'll have to explicit declare
 the type of the argument:
 
-{% highlight scala %}
+```scala
 def foo(x: Int, y: Int = 0, z: Int = 1): Int = (x + y) * z
 
 foo(10) // Returns 10
@@ -45,7 +45,7 @@ foo(10, z = 2) // Returns 20
 foo(10, z = 2, y = 10) // Returns 40
 
 foo(10, 10, y = 10) // Error! The parameter `y` has already been specified
-{% endhighlight %}
+```
 
 As you can see, there is no problem in how to send the arguments, but if you
 don't explicitly tell what parameter you are passing, it will use the order to
@@ -57,7 +57,7 @@ In Scala you don't even have to declare all the parameters with default
 arguments at the end (like in Python), but it's a good practice as otherwise
 you'll face with problems:
 
-{% highlight scala %}
+```scala
 def foo(x: Int, y: Int = 0, z: Int): Int = (x + y) * z // Valid!
 
 foo(10) // Wrong, `z` has no value
@@ -65,7 +65,7 @@ foo(10) // Wrong, `z` has no value
 foo(10, 15) // Wrong, 15 is assigned to `y` not `z`. `z` still has no value
 
 foo(10, z = 2) // Returns 20
-{% endhighlight %}
+```
 
 You see? In this version of foo, you have to explicit declare z as a passed
 parameter, otherwise you get an error. That's why it's good practice to keep all
@@ -74,11 +74,11 @@ arguments with default values in the end.
 Of course, as parameters have a type, you have to give the a default value of
 that type (or with an implicit conversion to that type), otherwise is an error:
 
-{% highlight scala %}
+```scala
 def foo(x: Int, y: Int = 0, z: Double = 0) = { (x + y) * z} // Valid. `0` is an Int with implicit conversion to Double
 
 def bar(x: Int, y: Int = 0, z: Double = null) = { (x + y) * z} // Invalid. `null` has no implicit conversion to Double
-{% endhighlight %}
+```
 
 Now, on the last code I introduce a new value I don't think I talked about it
 before: **null**. The value **null** is similar to the value **None** in Python.
@@ -100,7 +100,7 @@ of arguments. This argument always has to be defined as the last one and is
 treated as a list of elements of the defined type (you cannot have a list of
 types of mixed values):
 
-{% highlight scala %}
+```scala
 def sum(args: Int*) = {
   var x = 0
   for(arg <- args) x += arg
@@ -112,7 +112,7 @@ sum(1) // returns 1
 sum(1, 2) // return 3
 
 sum(1, 10, 100, 1000) // returns 1111
-{% endhighlight %}
+```
 
 Now, Scala does not have an equivalent to Python's \*\*_kwargs_. There are some
 workarounds you can do, but I don't think it's useful for me to get deep into
@@ -134,7 +134,7 @@ Python programmer enter in the Scala world.
 Let's show you the Python example of use of a lambda expression, they create a
 function which returns a function:
 
-{% highlight python %}
+```python
 >>> def make_incrementor(n):
 ...     return lambda x: x + n
 ...
@@ -143,13 +143,13 @@ function which returns a function:
 42
 >>> f(1)
 43
-{% endhighlight %}
+```
 
 Now, in this example, you create a *lambda* expression using the lambda reserved
 word. In Scala the code is quite similar, but you don't need an extra
 expression:
 
-{% highlight scala %}
+```scala
 def make_incrementor(n: Int) = (x: Int) => x + n
 
 val f = make_incrementor(42)
@@ -157,7 +157,7 @@ val f = make_incrementor(42)
 f(0) // Returns 42
 
 f(1) // Returns 43
-{% endhighlight %}
+```
 
 Pay attention to the returned value by the function `make_incrementor: (x:Int)
 => x + n`. This is the definition of an anonymous function, basically a function
@@ -166,13 +166,13 @@ with it's parameters, no name and a => operator instead of a = operator.
 This functions can have as many parameters as you want and you can directly
 apply them without making necessary to assign them to a value or variable:
 
-{% highlight scala %}
+```scala
 (x: Int, y: Int) => x + y
 
 () => println("Hello, world") // Anonymous function with zero parameter
 
 ((x: Int) => x * 2)(20) // Applies the anonymous function and returns 40
-{% endhighlight %}
+```
 
 Now, of course, as everything in Scala, functions have types, and sometimes you
 may need to explicit declare a function type. This can happen, for example, if
@@ -186,7 +186,7 @@ features of functional programming.
 For now, you only need to now that the type of a function is defined by the type
 of its parameters and the returning type:
 
-{% highlight scala %}
+```scala
 val foo: Int => Int = (x: Int) => x + 50 // Equivalent to: def foo(x: Int): Int = x + 50
 
 foo(5) // Returns 50
@@ -198,7 +198,7 @@ bar() // Returns 20
 val baz: (Int, Int) => Int = (x: Int, y: Int) => x + y // Equivalent to def baz(x: Int, y: Int): Int = x + y
 
 baz(2, 3) // Returns 5
-{% endhighlight %}
+```
 
 As you see, sometimes the parentheses are not mandatory when the function only
 takes one parameter but it is obligatory in any other case.

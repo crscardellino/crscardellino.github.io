@@ -25,7 +25,7 @@ In general terms, however, Python won't bother about the type you are giving to
 your variables: actually, you won't be able to declare a type for them as Python
 will infer it. So, this is perfectly normal for a Python program:
 
-{% highlight python %}
+```python
 string = "This is a string"
 print(string) # Will output "This is a string"
 
@@ -35,7 +35,7 @@ string = 100 # Perfectly valid. `string` type will be int from now on.
 print(string) # Will output 100
 
 string + 100 # Valid. Will result in 200.
-{% endhighlight %}
+```
 
 <!-- more -->
 
@@ -46,23 +46,23 @@ this case, sum is not one of those cases. If you add a string to a number, Scala
 will automatically transform the number into a String and result in a String
 concatenation:
 
-{% highlight scala %}
+```scala
 var string = "This is a string"
 println(string) // Will output "This is a string"
 
 string + 100 // Valid. Will result in the string "This is a string100"
 
 string = 100 // Invalid. Will result in a "type mismatch" error.
-{% endhighlight %}
+```
 
 Scala, as well as Python, can infer the type of the variables you are using.
 But, it add the possibility to declare the type of the variable (something that
 many times comes in handy as we will see in future tutorials):
 
-{% highlight scala %}
+```scala
 var string: String = "This is a string with declared type"
 var num: Int = 100 // This is a number with declared type
-{% endhighlight %}
+```
 
 Scala has a variety of types (you should check on the [Scala Documentation](http://www.scala-lang.org/documentation/) for more information on
 it), but the most common are Int (sometimes written as Integer), String, Long,
@@ -95,7 +95,7 @@ during the whole scope of the variable. If you try to change the value for
 another one (even of the same type), the compiler will throw an error. Values
 are declared with the reserved word **val**.
 
-{% highlight scala %}
+```scala
 var variable: Int = 10 // This is a Scala variable.
 
 variable = 20 // Valid. "variable" is now set to value 20.
@@ -103,7 +103,7 @@ variable = 20 // Valid. "variable" is now set to value 20.
 val value: Int = 10 // This is a Scala value.
 
 value = 20 // Invalid. Will result in a compiler error.
-{% endhighlight %}
+```
 
 If you are coming from the Python environment (or, more in general from a
 imperative paradigm environment) you would think values don't have any

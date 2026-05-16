@@ -28,7 +28,7 @@ programming.
 The most basic and probably the most well known statement in programming, the
 conditional control flow:
 
-{% highlight scala %}
+```scala
 val x: Int = 10
 
 if (x < 0)
@@ -39,7 +39,7 @@ else
   println("x is Zero")
 
 // Will return: "x is Positive"
-{% endhighlight %}
+```
 
 <!-- more -->
 
@@ -54,7 +54,7 @@ to value, it does needs the parentheses to delimit it.
 You can also see that there is no **elif** but you just start another **if**
 after the **else**.
 
-{% highlight scala %}
+```scala
 val x = -1
 
 if (x < 0) println("x is Negative") else if (x > 0) println("x is Positive") else println("x is Zero")
@@ -62,13 +62,13 @@ if (x < 0) println("x is Negative") else if (x > 0) println("x is Positive") els
 // Will return: "x is Negative"
 
 if x < 0 println("x is Negative") // Invalid, will result in error.
-{% endhighlight %}
+```
 
 The blocking delimiter in an if statement can be nothing as long as there is
 only one instruction after the if or the else, or can be the curly braces: **{**
 and **}**:
 
-{% highlight scala %}
+```scala
 val x = -2
 
 if (x > 0) {
@@ -78,7 +78,7 @@ if (x > 0) {
 
   println("The double of x is: " + y)
 }
-{% endhighlight %}
+```
 
 This programs obviously prints nothing. But if it doesn't have the curly braces
 to delimit the if statement, the results would be:
@@ -103,7 +103,7 @@ The main difference between **while** and **do...while**, is that the latter
 executes what is inside the block of instructions at least once after checking
 on the breaking instruction:
 
-{% highlight scala %}
+```scala
 var x = 10
 
 while (x > 0) {
@@ -138,14 +138,14 @@ do {
 } while (x > 0)
 
 // Prints: "The value of x is: 0" and finish. The value of x is -1 at the end of the loop.
-{% endhighlight %}
+```
 
 The for statement, as much as in Python, is useful for traversing Lists or
 Arrays. It's also useful for list comprehensions. These are a very powerful
 tools in functional programming, that actually Python also supports (check on
 them if you are not familiar with it).
 
-{% highlight scala %}
+```scala
 val xs: List[Int] = List(1, 2, 3, 4, 5)
 
 for (x <- xs) println(x) // Prints the values of xs, from 1 to 5
@@ -157,7 +157,7 @@ val ys: List[Int] = for (x <- xs) yield x * x
 val zs: List[Int] = for (x <- xs if x % 2 == 0) yield x / 2
 
 // The list zs has the half-values of the pairs in xs: 1, 2
-{% endhighlight %}
+```
 
 If you check on the **yield** instruction, this means that it will return the
 result of the next operation as a value. Also, you can use the **if** statement
@@ -167,14 +167,14 @@ The statement after yield can be anything that returns a value, so it can be a
 function created before, or even a block (that is actually a function, but let's
 not get into that for now) with a returning value at the end:
 
-{% highlight scala %}
+```scala
 val xs = List(1, 2, 3, 4, 5)
 
 val ys = for (x <- xs) yield {
   // A lot of different operations over x, stored in a variable called "result"
   result
 }
-{% endhighlight %}
+```
 
 As an ending note on Scala loops, there is no direct control over the loop, I
 mean, there is no **break**, **continue** or (may God have mercy on me for this
@@ -192,11 +192,11 @@ and maybe with the **xrange** function which is a lazy iterator.
 
 In Scala there is a similar way to declare a range, the **to** operator:
 
-{% highlight scala %}
+```scala
 val xs = 0 to 10
 
 // xs now holds a immutable Range object that goes from 0 to 10
-{% endhighlight %}
+```
 
 The main difference with this an Python's **range**, is that with the **to**
 operator you always need the lower boundary: this means there is not equivalent
@@ -206,13 +206,13 @@ Python, the upper boundary is not in the resulting list. If you want a range
 without taking in consideration the upper boundary, you can have it with the
 **until** operator:
 
-{% highlight scala %}
+```scala
 val xs = 0 until 10
 
 // xs holds a Range that goes from 0 to 9
 
 for (x <- 0 until 10) println(x) // Will print all the numbers from 0 to 9
-{% endhighlight %}
+```
 
 As you could see in the last examples, the **until** (as well as the **to**)
 operator, can be used directly in a for loop to create a range to loop over it.
@@ -224,13 +224,13 @@ Scala equivalent. There is none, as simple as that, in Scala if you don't want
 to do something you just leave a blank space (as long as it is clear that there
 is a blank statement):
 
-{% highlight scala %}
+```scala
 class EmptyClass // Is valid
 
 for (x <- 0 until 10) {} // Will go through the for without doing anything
 
 for (x <- 0 until 10) // Wrong, it's ambiguous where the the blank statement is
-{% endhighlight %}
+```
 
 Ok. I think this is more than enough for today. We learned some of the most
 common control flow structures on Scala. Go and experiment by yourselves now. As

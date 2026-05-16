@@ -60,7 +60,7 @@ are stateful data structure (which makes them perfect for imperative paradigms
 that relies on state), in contrast to stateless data structures like lists (more
 associated to functional paradigm):
 
-{% highlight scala %}
+```scala
 scala> val array: Array[Int] = Array(1, 2, 3)
 array: Array[Int] = Array(1, 2, 3)
 
@@ -71,7 +71,7 @@ scala> array(0) = 5 // This, not valid in lists, is valid in arrays.
 
 scala> array(0)  // Arrays are mutable!
 res1: Int = 5
-{% endhighlight %}
+```
 
 In general terms, you'll be able to do many of the lists' operations in an array
 (like concatenation, traverse, length). However, as I state before, arrays are
@@ -82,13 +82,13 @@ good idea). You can emulate it with the concatenation, but it's not the same
 thing, and this workaround creates a new structure instead of modifying the
 existing one:
 
-{% highlight scala %}
+```scala
 var array = Array(1, 2) // Pay attention to the "var" instead of "val"
 array(2) // Will throw an exception.
 
 array = array ++ Array(3) // I'm reassigning the array value as "++" creates a new structure.
 array(2) // The new array now has three elements. This will return 3.
-{% endhighlight %}
+```
 
 Ok, so far so good, we now have a workaround and it works. Not the simplest and
 definitely not the prettiest one, but it works. All set? Are we happy? Of course
@@ -109,20 +109,20 @@ For this you'll have to import it as it is not in the built-in types of Scala
 (but is included in the Scala library). First, let see a little about module
 imports:
 
-{% highlight scala %}
+```scala
 import scala.collection.mutable.ListBuffer // Self explanatory
 
 import scala.collection.mutable._  // Equivalent to Python: from library.sublibrary import *
 
 import scala.collection.mutable.{ListBuffer => MutableList} // Rename of the import
-{% endhighlight %}
+```
 
 Very basics, don't think you need too much to be explained. Now lets get to the
 real deal. Listbuffers, as well as arrays, are mutable in its values, which
 means they can be changed. But also, a listbuffer has the classic append and
 prepend operations without the need of creating a new structure out of it:
 
-{% highlight scala %}
+```scala
 scala> val list = ListBuffer(1, 2, 3) // ListBuffer can only store one type values as well as a List. Is a "val".
 list: ListBuffer[Int] = ListBuffer(1, 2, 3)
 
@@ -140,14 +140,14 @@ scala> list
 res2: ListBuffer[Int] = ListBuffer(2, 2, 3, 4)
 
 scala> list.prepend(1) = ListBuffer(1, 2, 2, 3, 4)
-{% endhighlight %}
+```
 
 Listbuffers also offer an operator to deal with appending elements at the end.
 And finally, they can be easily converted to a Scala list for further working
 (if by any chance you needed the listbuffer for an initial construction but then
 all the operations are regular list operations):
 
-{% highlight scala %}
+```scala
 val list = ListBuffer(1, 2)
 list += 3 // The new value of the list is: ListBuffer(1, 2, 3).
 
@@ -157,7 +157,7 @@ list = list + 3 // Wrong. Even if the operation is permitted (not this case) thi
 
 list.toList // Returns a Scala List
 list.result // Same as before
-{% endhighlight %}
+```
 
 There's also a Scala structure that you can import from the same library of the
 ListBuffer, called ArrayBuffer. It provides functionality to append elements

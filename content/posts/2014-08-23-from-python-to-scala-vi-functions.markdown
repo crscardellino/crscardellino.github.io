@@ -42,13 +42,13 @@ a function should have an explicit type (the system cannot infer the type on its
 own and will throw an error if you don't declare it). But, they can have an
 implicit returning type that the system can infer:
 
-{% highlight scala %}
+```scala
 def add(x: Int, y: Int): Int = x + y // All good!
 
 def pow2(x: Int) = x * x // Correct again. The system infer the returning type as Int
 
 def substract(x, y) = x - y // Wrong. The system doesn't know the type of x and y
-{% endhighlight %}
+```
 
 <!-- more -->
 
@@ -61,7 +61,7 @@ an error if the block is not marked with braces or the function doesn't have a
 returning value. You'll also get an error if you impose it with a return
 directive or give the function a return type:
 
-{% highlight scala %}
+```scala
 def add(x: Int, y: Int): Int { x + y } // Wrong
 
 def add(x: Int, y:Int) { return x + y } // Wrong
@@ -69,7 +69,7 @@ def add(x: Int, y:Int) { return x + y } // Wrong
 def add(x: Int, y: Int) x + y // Wrong
 
 def add(x: Int, y: Int) { x + y } // It's not an error. But the function doesn't return a value when you apply it.
-{% endhighlight %}
+```
 
 Functions that doesn't return a value have a special returning type called Unit,
 but of course, you can just skip it.
@@ -96,7 +96,7 @@ consideration the example given in the [Python Tutorial](https://docs.python.org
 function example that takes a integer n and returns a list containing the
 Fibonacci series up to _n_ (the one called fib2):
 
-{% highlight python %}
+```python
 >>> def fib2(n): # return Fibonacci series up to n
 ...     """Return a list containing the Fibonacci series up to n."""
 ...     result = []
@@ -109,12 +109,12 @@ Fibonacci series up to _n_ (the one called fib2):
 >>> f100 = fib2(100)    # call it
 >>> f100                # write the result
 [0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89]
-{% endhighlight %}
+```
 
 In Scala you can basically copy-paste the algorithm they show and twitch it a
 little bit to get the same function:
 
-{% highlight scala %}
+```scala
 import scala.collection.mutable.ListBuffer // The equivalent to Python's list
 
 def fib(n: Int): List[Int] = {
@@ -133,7 +133,7 @@ def fib(n: Int): List[Int] = {
 }
 
 fib(100) // Will return List(0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89)
-{% endhighlight %}
+```
 
 Now, as you could see there, there are a couple of difference between this and
 the Python version. The main one resides in the use of a third auxiliary
@@ -144,14 +144,14 @@ similar to the Python algorithm.
 However, if we want to make this a recursive function, a first approach to do
 the same (although not an elegant one) can be represented by:
 
-{% highlight scala %}
+```scala
 def fib(a: Int, b: Int, n: Int): List[Int] = { // The returning value is mandatory for recursive functions
   if (a > n) Nil
   else a :: fib(b, a+b, n)
 }
 
 fib(0, 1, 100) // Will return List(0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89)
-{% endhighlight %}
+```
 
 I guess the extra parameters are not really ideal, but you can see that in this
 version we didn't need state, we didn't need to import the ListBuffer, we didn't
@@ -162,7 +162,7 @@ The good thing about Scala (and I think you can also do this in Python as well,
 but I'm not sure about it), is that you can define a function inside another
 function, so, we can rewrite the last function taking advantage of this:
 
-{% highlight scala %}
+```scala
 def fib(n: Int) = {
   def fibaux(a: Int, b: Int, n: Int): List[Int] = {
     if (a > n) Nil
@@ -173,7 +173,7 @@ def fib(n: Int) = {
 }
 
 fib(100) // Will return List(0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89)
-{% endhighlight %}
+```
 
 Nice, huh? In this new version we use a locally defined a _fibaux_ which
 result's value we return as the value of the main _fib_ function. Then, we only

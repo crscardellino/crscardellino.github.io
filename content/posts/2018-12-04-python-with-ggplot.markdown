@@ -96,7 +96,7 @@ dataset](https://www.kaggle.com/c/titanic/)** (which is available in the same
 repository of the code). The first part of the notebooks import the needed
 libraries:
 
-{% highlight python %}
+```python
 import pandas as pd
 import rpy2
 
@@ -110,7 +110,7 @@ pandas2ri.activate()
 
 # load the needed extension for the %%R cell magic
 %load_ext rpy2.ipython
-{% endhighlight %}
+```
 
 There’s nothing too difficult in these lines. We import `pandas` and `rpy2`.
 Then we activate `matplotlib` to see the plots inline (since `rpy2` uses it
@@ -121,12 +121,12 @@ load the extension that gives us the `%%R` cell magic.
 The next cell is also pretty self explanatory, just loading the ggplot library
 to R:
 
-{% highlight R %}
+```R
 %%R
 
 # load the ggplot2 library
 library(ggplot2)
-{% endhighlight %}
+```
 
 Here the `%%R` cell magic needs to be the first line of the cell so Jupyter knows
 how to interpret the code that follows. The `%%R` cell magic has some optional

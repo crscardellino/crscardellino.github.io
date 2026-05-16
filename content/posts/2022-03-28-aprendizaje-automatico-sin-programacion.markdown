@@ -217,8 +217,8 @@ función matemática. Esta función matemática suele llamarse **modelo**, porqu
 modela el problema, que en este caso es la asociación entre un dato y su
 etiqueta.
 
-Un ejemplo, es la función lineal: *y = x * m + b*, donde *x* representaría un
-dato, *y* representaría la etiqueta asociada a ese dato, y *m* y *b* son
+Un ejemplo, es la función lineal: $y = x \cdot m + b$, donde $x$ representaría
+un dato, $y$ representaría la etiqueta asociada a ese dato, y $m$ y $b$ son
 **parámetros** que, con el valor correcto, harán que la función devuelva la
 etiqueta correspondiente a un dato dado. Más detalle sobre esto [más
 adelante](#una-aproximación-sencilla-a-la-regresión).
@@ -276,36 +276,44 @@ dólares y otra de 120 metros cuadrados a 80 mil (algo caras a mi parecer, pero
 este ejemplo es sacado de la galera).
 
 Por simplicidad, los valores se deberían multiplicar, por 10 mil en el caso del
-eje *y* y por 10 en el caso de eje *x*.  Si quisiéramos estimar el precio de una
+eje $y$ y por 10 en el caso de eje $x$.  Si quisiéramos estimar el precio de una
 casa de, por ejemplo, 70 metros cuadrados, a partir de estos dos puntos, una
 opción sencilla sería tratar de encontrar la función lineal, o línea recta, que
 los une.
 
 Volviendo a la fórmula de la función lineal que comenté más arriba, y prometo no
 más fórmulas y números más allá de los siguientes 2 párrafos:
-*y = m * x + b* (en este caso el asterisco es el operador para multiplicar).
+$y = m \cdot x + b$ (en este caso el asterisco es el operador para multiplicar).
 Si tenemos dos puntos y queremos calcular la recta que los une, debemos calcular
-la **pendiente** *m* y utilizar eso para calcular la **intersección** con el eje
-*y*, es decir el valor de *b*.
+la **pendiente** $m$ y utilizar eso para calcular la **intersección** con el eje
+$y$, es decir el valor de $b$.
 
-Tenemos los pares, dato y etiqueta, *(2, 3)* y *(12, 8)*; recordemos que estamos
+Tenemos los pares, dato y etiqueta, $(2, 3)$ y $(12, 8)$; recordemos que estamos
 usando valores simplificados, esa es la razón por no tener valores en escalas de
-10 o 10000 para *x* e *y* respectivamente. Con estos dos pares de puntos podemos
-calcular la pendiente *m* de la siguiente manera:
+10 o 10000 para $x$ e $y$ respectivamente. Con estos dos pares de puntos podemos
+calcular la pendiente $m$ de la siguiente manera:
 
-<span class="math">m = (8 - 3)/(12 - 2) = 5/10 = 0.5</span>
+$$
+m = \frac{8 - 3}{12 - 2} = \frac{5}{10} = \frac{1}{2}
+$$
 
-Luego, podemos calcular el corte en el eje *y* utilizando uno de los pares de
-puntos, por ejemplo *x = 2*, *y = 3*, y resolvemos la ecuación:
+Luego, podemos calcular el corte en el eje $y$ utilizando uno de los pares de
+puntos, por ejemplo $x = 2$, $y = 3$, y resolvemos la ecuación:
 
-<span class="math">2 * 0.5 + b = 3</span>
-<span class="math">1 + b = 3</span>
-<span class="math">b = 3 - 1</span>
-<span class="math">b = 2</span>
+$$
+\begin{aligned}
+2 \cdot \frac{1}{2} + b &= 3 \\\\
+1 + b &= 3 \\\\
+b &= 3 - 1 \\\\
+b &= 2
+\end{aligned}
+$$
 
 Con esto logramos llegar a nuestra función:
 
-<span class="math">y = x * 0.5 + 2</span>
+$$
+y = x \cdot \frac{1}{2} + 2
+$$
 
 Y si graficamos dicha función, obtendremos la línea que estamos esperando, que
 unirá a ambos puntos:
@@ -317,7 +325,7 @@ unirá a ambos puntos:
 </span>
 
 Con esta función podemos estimar el precio de nuestra casa de 70 metros cuadrado
-en *7 * 0.5 + 2 = 5.5*, es decir, 55 mil dólares.
+en $7 \cdot \frac{1}{2} + 2 = 5.5$, es decir, 55 mil dólares.
 
 Felicitaciones, ya logramos aprender como una máquina la mejor aproximación a
 los dos puntos que representan nuestros datos. Esto por supuesto es una
@@ -344,10 +352,10 @@ de una función que calculemos podría ser algo así:
 
 La función (la curva roja), no llega a pasar sobre todos los puntos, aunque se
 acerca a la mayoría. Esta función es un polinomio (lo que quiere decir que la
-*x* de la función está elevado a algún valor, $x^2$, $x^3$, etc.).
+$x$ de la función está elevado a algún valor, $x^2$, $x^3$, etc.).
 
-El problema es lo que pasa entre los puntos 13, 14 y 15 del eje *x*, donde la
-función, para pasar por esos puntos empieza a bambolear y termina creciendo
+El problema es lo que pasa entre los puntos $13$, $14$ y $15$ del eje $x$, donde
+la función, para pasar por esos puntos empieza a bambolear y termina creciendo
 rápidamente al final, algo que no tiene mucho sentido. La curva, en este caso,
 está calculada con un algoritmo de aprendizaje automático real, es decir no el
 cálculo sencillo que utilizamos para la línea recta anterior. Es por eso que
@@ -374,13 +382,13 @@ crece sin control.
 
 La verdadera forma de calcular la línea roja en este último caso no es tan
 sencilla como tomar dos puntos y calcular una pendiente y una intersección en el
-eje *y*. Se deben considerar todos los puntos para estimarla mejor. Sin embargo,
+eje $y$. Se deben considerar todos los puntos para estimarla mejor. Sin embargo,
 el resultado al que se llega es bastante similar (el cambio se ve en los valores
 decimales) y la idea que está detrás del algoritmo que calcula esa línea, que se
-conoce como *regresión lineal*, es a grandes rasgos la misma que utilicé para
+conoce como _regresión lineal_, es a grandes rasgos la misma que utilicé para
 calcular la línea a partir de los dos puntos originales.
 
-Este es un ejemplo de *regresión*, algo que no es exclusivo del aprendizaje
+Este es un ejemplo de _regresión_, algo que no es exclusivo del aprendizaje
 automático o incluso de la computación o la matemática. Es algo bastante común
 en ciencias económicas por ejemplo, donde se usa para predecir los valores del
 mercado.
@@ -398,16 +406,16 @@ entre las clases del problema. Veamos un ejemplo:
 </span>
 
 Así como están, los puntos no significan nada. Supongamos que en el eje
-*x* tenemos la cantidad de veces que hicimos click para ver un producto
-en Mercado Libre; por otro lado en el eje *y* tenemos la cantidad de preguntas
+$x$ tenemos la cantidad de veces que hicimos click para ver un producto
+en Mercado Libre; por otro lado en el eje $y$ tenemos la cantidad de preguntas
 que le hicimos al vendedor de ese producto; finalmente, cada punto representará
 si hicimos en verde si compramos el producto, y en rojo si no lo compramos.  A
 partir de estos datos podemos construir el siguiente gráfico:
 
 <span class="fig-box">
     ![Gráfico: Cantidad de clicks vs. cantidad de preguntas](/assets/img/intro-ml/classification.png)
-    <span class="caption">Cantidad de clicks hechos sobre un producto (eje *x*)
-    y cantidad de preguntas hechas al vendedor (eje *y*)</span>
+    <span class="caption">Cantidad de clicks hechos sobre un producto (eje $x$)
+    y cantidad de preguntas hechas al vendedor (eje $y$)</span>
 </span>
 
 Esto es un ejemplo súper simplificado. Claramente no se reduce a entrar a ver un
@@ -418,8 +426,9 @@ concepto de lo que hace un modelo de clasificación.
 Como dije anteriormente, la clasificación trata de encontrar una función que
 permita diferenciar entre ambos grupos de puntos. ¿Cuál es esa función? Cómo es
 el caso del ejemplo de regresión, cualquier cosa que distinga a un grupo del
-otro sirve, pero si vamos al caso, estos son dos conjuntos *linealmente
-separables*, es decir que pueden diferenciarse por una función lineal.
+otro sirve, pero si vamos al caso, estos son dos conjuntos
+_linealmente separables_, es decir que pueden diferenciarse por una función
+lineal.
 
 La manera de calcular la función no es tan directa como tomar un par de puntos y
 calcular una pendiente y una intersección. Es algo más complejo que excede a lo
@@ -429,8 +438,8 @@ gráfico:
 
 <span class="fig-box">
     ![Gráfico: Clasificador de clicks con intención de compra](/assets/img/intro-ml/classifier.png)
-    <span class="caption">Cantidad de clicks hechos sobre un producto (eje *x*)
-    y cantidad de preguntas hechas al vendedor (eje *y*).  La función
+    <span class="caption">Cantidad de clicks hechos sobre un producto (eje $x$)
+    y cantidad de preguntas hechas al vendedor (eje $y$).  La función
     representada en la línea celeste es el *modelo de clasificación*.</span>
 </span>
 
@@ -482,7 +491,7 @@ entidades del mundo real.
 
 Porque quizás no ocurra como en la película War Games donde una máquina es capaz
 de desencadenar una guerra nuclear; ni tampoco, si las máquinas fueran
-*conscientes*, pasaría lo del cómic de más arriba, pero la verdad es que estos
+_conscientes_, pasaría lo del cómic de más arriba, pero la verdad es que estos
 modelos existen y afectan directamente la [vida de las personas que
 probablemente no tuvieron o pudieron decidir nada sobre dichos
 modelos](https://www.technologyreview.com/2019/01/21/137783/algorithms-criminal-justice-ai/).
