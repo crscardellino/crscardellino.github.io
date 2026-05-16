@@ -48,7 +48,7 @@
       {% if article.tags %}
         <section class="share">
           tags: {% for tag in article.tags %}
-            <a href="{{ tag.url }}">{{ tag }}</a>
+            <a href="/{{ tag.url }}">{{ tag }}</a>
           {% endfor %}
         </section>
       {% endif %}

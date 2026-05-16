@@ -7,15 +7,14 @@
   <article class="post">
     <div class="noarticleimage">
       <div class="post-meta">
-        <h1 class="post-title">Tags</h1>
+        <h1 class="post-title">Tag Cloud</h1>
       </div>
     </div>
     <section class="post-content">
-      <ul class="posts">
-        {% for tag, articles in tags %}
-          <li>
-            <a class="post-link" href="/{{ tag.url }}">{{ tag }}</a>
-            <span class="post-date"> ({{ articles | count }})</span>
+      <ul class="tagcloud">
+        {% for tag in tag_cloud %}
+          <li class="tag-{{ tag.1 }}">
+            <a href="/{{ tag.0.url }}">{{ tag.0 }}</a>
           </li>
         {% endfor %}
       </ul>

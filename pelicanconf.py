@@ -20,27 +20,27 @@ ARTICLE_SAVE_AS = "{date:%Y}/{date:%m}/{date:%d}/{slug}.html"
 PAGE_URL = "/{slug}"
 PAGE_SAVE_AS = "{slug}/index.html"
 
-TAG_URL = "archive/tag/{slug}/"
-TAG_SAVE_AS = "archive/tag/{slug}/index.html"
-TAGS_SAVE_AS = "archive/tags/index.html"
+# Archiving
+ARCHIVES_SAVE_AS = "archive/index.html"
+YEAR_ARCHIVE_SAVE_AS = "archive/{date:%Y}/index.html"
+MONTH_ARCHIVE_SAVE_AS = "archive/{date:%Y}/{date:%m}/index.html"
 
 CATEGORY_URL = "archive/category/{slug}/"
 CATEGORY_SAVE_AS = "archive/category/{slug}/index.html"
 CATEGORIES_SAVE_AS = "archive/categories/index.html"
 
-ARCHIVES_SAVE_AS = "archive/index.html"
-YEAR_ARCHIVE_SAVE_AS = "archive/{date:%Y}/index.html"
-MONTH_ARCHIVE_SAVE_AS = "archive/{date:%Y}/{date:%m}/index.html"
+TAG_URL = "archive/tag/{slug}/"
+TAG_SAVE_AS = "archive/tag/{slug}/index.html"
+TAGS_SAVE_AS = "archive/tags/index.html"
+
 
 DIRECT_TEMPLATES = ["index", "categories", "archives", "tags", "404"]
 
 AUTHOR_FEED_ATOM = None
 AUTHOR_FEED_RSS = None
 
-
 DATE_FORMATS = {"en": "%b %d, %Y"}
-
-# Sorting - default is "reversed-date" (newest first)
+TIMEZONE = "America/Argentina/Cordoba"
 
 # Theme
 THEME = "themes/crscardellino"
@@ -77,6 +77,7 @@ EXTRA_PATH_METADATA = {
 }
 
 # Social links
+MASTODON_HANDLE = "@crscardellino@mastodon.social"
 SOCIAL = (
     ("mastodon", "https://mastodon.social/@crscardellino"),
     ("bluesky", "https://bsky.app/profile/crscardellino.bsky.social"),
@@ -84,16 +85,11 @@ SOCIAL = (
     ("linkedin", "https://linkedin.com/in/crscardellino/"),
 )
 
-MASTODON_HANDLE = "@crscardellino@mastodon.social"
-
 # Author info
 AUTHOR_IMAGE = "/assets/img/me.jpg"
 LOGO = "/assets/img/logo.png"
 COVER = "/assets/img/cover.jpg"
 FAVICON = "/assets/img/favicon.png"
-
-# Google Analytics
-GOOGLE_ANALYTICS = "UA-30086759-1"
 
 # Delete output directory before building
 OUTPUT_DIRECTORY = "output"
@@ -107,6 +103,7 @@ PLUGINS = [
     "minchin.pelican.plugins.summary",
     "neighbors",
     "sitemap",
+    "tag_cloud",
     "yaml_metadata",
 ]
 
@@ -130,4 +127,7 @@ SITEMAP = {
     },
 }
 
-TIMEZONE = "America/Argentina/Cordoba"
+# Tag Cloud
+TAG_CLOUD_STEPS = 4
+TAG_CLOUD_SORTING = "random"
+TAG_CLOUD_BADGE = False

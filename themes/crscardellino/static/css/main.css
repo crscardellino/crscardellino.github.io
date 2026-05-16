@@ -879,3 +879,40 @@ pre > code {
   padding-right: 0;
   padding-left: 0;
 }
+
+/* Tag Cloud */
+ul.tagcloud {
+  list-style: none;
+  padding: 0;
+  text-align: center;
+}
+
+ul.tagcloud li {
+  display: inline-block;
+  margin: 0.3em 0.5em;
+}
+
+.tagcloud li.tag-1 {
+  font-size: 2em;
+}
+
+.tagcloud li.tag-2 {
+  font-size: 1.5em;
+}
+
+.tagcloud li.tag-3 {
+  font-size: 1em;
+}
+
+.tagcloud li.tag-4 {
+  font-size: 0.75em;
+}
+
+ul.tagcloud li a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul.tagcloud li a:hover {
+  text-decoration: underline;
+}

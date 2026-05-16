@@ -54,6 +54,7 @@ dependencies = [
     { name = "pelican", extra = ["markdown"] },
     { name = "pelican-neighbors" },
     { name = "pelican-sitemap" },
+    { name = "pelican-tag-cloud" },
     { name = "pelican-yaml-metadata" },
     { name = "pymdown-extensions" },
 ]
@@ -70,6 +71,7 @@ requires-dist = [
     { name = "pelican", extras = ["markdown"], specifier = ">=4.12.0" },
     { name = "pelican-neighbors", specifier = ">=1.2.0" },
     { name = "pelican-sitemap", specifier = ">=1.2.2" },
+    { name = "pelican-tag-cloud", specifier = ">=1.0.1" },
     { name = "pelican-yaml-metadata", specifier = ">=2.1.2" },
     { name = "pymdown-extensions", specifier = ">=10.21.3" },
 ]
@@ -321,6 +323,18 @@ dependencies = [
 sdist = { url = "https://files.pythonhosted.org/packages/5c/c1/d9e1d539decfba947d711bcb37427ad15914557a728418bd928d56e58a32/pelican_sitemap-1.2.2.tar.gz", hash = "sha256:93f72d035dd0ec2f5cee38b2766bbd7f6a54bf186635ae1261a6deac422dcfb7", size = 8013, upload-time = "2025-10-12T15:24:36.727Z" }
 wheels = [
     { url = "https://files.pythonhosted.org/packages/68/c2/d2f98364b49a40bac9f315f29d8c22322b47bc4ebdec6a8e3a4f657ebc24/pelican_sitemap-1.2.2-py3-none-any.whl", hash = "sha256:09ba150dd1b54ef855f18e7ec920160d7118e932e0dac1c6e8bf3a41e938e682", size = 8046, upload-time = "2025-10-12T15:24:35.678Z" },
+]
+
+[[package]]
+name = "pelican-tag-cloud"
+version = "1.0.1"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "pelican" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/40/48/4777ee6c0cdd919fd607f15b9782f6cb91c1356ebf6dc1e547f71cf64950/pelican-tag-cloud-1.0.1.tar.gz", hash = "sha256:bf29107e7f2cd01f7710ed992dee7e5e67becb63c7de8a24719635d439f51f25", size = 7093, upload-time = "2021-10-02T08:58:52.041Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/36/2d/aaa2a8bb3473774be0dd14616712a9397903b4e652b32d94710d820be1bb/pelican_tag_cloud-1.0.1-py3-none-any.whl", hash = "sha256:0dee042f01821b6142f43907d27e3041b19677483f94cc9bf3162c209dbdd834", size = 6613, upload-time = "2021-10-02T08:58:53.493Z" },
 ]
 
 [[package]]
