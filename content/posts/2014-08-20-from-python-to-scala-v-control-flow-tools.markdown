@@ -21,6 +21,8 @@ Martin Odersky, the creator of Scala, so you are in good hands.
 So, back to business. On this session let's talk about some more real
 programming.
 
+<!-- more -->
+
 ## Control Flow Tools
 
 #### The if statement
@@ -40,8 +42,6 @@ else
 
 // Will return: "x is Positive"
 ```
-
-<!-- more -->
 
 Very basic, right? So, what are the differences with Python's **if**?
 

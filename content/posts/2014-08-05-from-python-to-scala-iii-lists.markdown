@@ -19,6 +19,8 @@ Starting off with one of the most used data structures in Scala (and in
 functional languages in general) and also the most common data structure in
 Python as well: the lists.
 
+<!-- more -->
+
 A list in Scala is a data structure to represent a collection of values of the
 same type. Lists are very used in Python, and the concept is quite similar in
 Scala, with a couple of exceptions. First, in Python are written as a list of
@@ -45,8 +47,6 @@ squares: List[Int] = List(1, 4, 9, 16, 25)
 scala> val empty = List()
 empty: List[Nothing] = List()
 ```
-
-<!-- more -->
 
 One major difference between Python and Scala lists, is in the type. Python
 support lists of different types, however in general (and is a good practice to

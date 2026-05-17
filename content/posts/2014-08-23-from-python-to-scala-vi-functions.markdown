@@ -24,6 +24,8 @@ paradigm. Yet, I'll do my best. However, it is important that you take a
 tutorial or course on Scala's functional programming (I deeply recommend Martin
 Odersky's [Functional Programming Principles in Scala](https://www.coursera.org/course/progfun)).
 
+<!-- more -->
+
 ## Functions Basics
 
 Scala functions are declared using the same reserved word that Python uses:
@@ -49,8 +51,6 @@ def pow2(x: Int) = x * x // Correct again. The system infer the returning type a
 
 def substract(x, y) = x - y // Wrong. The system doesn't know the type of x and y
 ```
-
-<!-- more -->
 
 Pay attention in my last code. Every function define is followed by an equality
 sign (**=**) and neither of them needed the **return** reserved word.

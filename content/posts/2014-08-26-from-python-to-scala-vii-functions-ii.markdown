@@ -20,6 +20,8 @@ here.
 
 You are welcome to read some more on functions in this new blog post.
 
+<!-- more -->
+
 ## Arguments
 
 #### Default Values
@@ -50,8 +52,6 @@ foo(10, 10, y = 10) // Error! The parameter `y` has already been specified
 As you can see, there is no problem in how to send the arguments, but if you
 don't explicitly tell what parameter you are passing, it will use the order to
 define the assignments.
-
-<!-- more -->
 
 In Scala you don't even have to declare all the parameters with default
 arguments at the end (like in Python), but it's a good practice as otherwise

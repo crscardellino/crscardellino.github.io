@@ -25,6 +25,8 @@ you want to know a type more similar to Python lists, the oldie but goodie
 mutable lists. You have a couple of options of data structures available in
 Scala, I'll present two of the most commons.
 
+<!-- more -->
+
 #### Scala Arrays
 
 Ok, if my university's data structure teacher sees me presenting Scala arrays as
@@ -50,8 +52,6 @@ same type) stored in a continuous space of memory. They differ from lists in
 that you'll have an index for all the elements (which makes the access time of a
 constant order) and in general are faster to make operations than in lists which
 can have chunks of elements sparse in many places.
-
-<!-- more -->
 
 Arrays in Scala are a built-in type (you don't have to import them), and they
 are completely compatible with Java arrays (in fact, are implemented as a

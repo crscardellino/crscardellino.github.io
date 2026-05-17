@@ -21,6 +21,8 @@ don't care about the type of the variable. At least not unless you try to add a
 number and a letter: you cannot add apple and oranges, naturally you cannot add
 strings and numbers (not at least without conversion first):
 
+<!-- more -->
+
 In general terms, however, Python won't bother about the type you are giving to
 your variables: actually, you won't be able to declare a type for them as Python
 will infer it. So, this is perfectly normal for a Python program:
@@ -36,8 +38,6 @@ print(string) # Will output 100
 
 string + 100 # Valid. Will result in 200.
 ```
-
-<!-- more -->
 
 In Scala this is not the case. Once a variable is assigned a type, it will have
 it until the end of that variable's scope. Of course, as in Python, some
