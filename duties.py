@@ -1,9 +1,12 @@
-#!/usr/bin/env python
-"""Duty tasks for the project."""
+import sys
 
+from datetime import datetime
 from duty import duty, tools, Context
+from pathlib import Path
 from pelican import main as pelican_main
 from pelican.settings import DEFAULT_CONFIG, get_settings_from_file
+from slugify import slugify
+from zoneinfo import ZoneInfo
 
 SETTINGS = {}
 SETTINGS.update(DEFAULT_CONFIG)
@@ -64,6 +67,35 @@ def devserver(ctx: Context) -> None:
 def lint(ctx: Context) -> None:
     """Run formating and linting for fixing"""
     ctx.run(setup(ctx, True), silent=True)
+
+
+@duty(capture=False)
+def new_post(
+    ctx: Context, title: str, category: str | None = None, tags: str | None = None
+) -> None:
+    now = datetime.now(tz=ZoneInfo(SETTINGS.get("TIMEZONE", "UTC")))
+    post_name = f"{now.strftime('%Y-%m-%d')}-{slugify(title)}.markdown"
+    post_path = Path("./content/drafts") / post_name
+
+    if post_path.exists():
+        print(f"The file {post_path} exists. Refusing to overwrite.", file=sys.stderr)
+        sys.exit(1)
+
+    with open(post_path, "wt") as fh:
+        print("---", file=fh)
+        print(f"title: {title}", file=fh)
+        print(f"date: {now.strftime('%Y-%m-%d %H:%M:%S %z')}", file=fh)
+
+        if category:
+            print(f"category: {category}", file=fh)
+
+        if tags:
+            tags = tags.split(",")
+            print("tags:", file=fh)
+            for tag in tags:
+                print(f"  - {tag.strip()}", file=fh)
+
+        print("---", file=fh)
 
 
 @duty(capture=False)

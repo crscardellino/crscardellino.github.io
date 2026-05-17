@@ -21,6 +21,7 @@ dependencies = [
 [dependency-groups]
 dev = [
     "duty>=1.9.0",
+    "python-slugify>=8.0.4",
     "ruff>=0.15.13",
 ]
 
