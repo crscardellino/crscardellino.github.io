@@ -102,10 +102,14 @@ FLOAT_LOGO = True
 PLUGINS = [
     "minchin.pelican.plugins.summary",
     "neighbors",
+    "readtime",
     "sitemap",
     "tag_cloud",
     "yaml_metadata",
 ]
+
+# Read Time
+READTIME_WPM = 180
 
 # Summary
 SUMMARY_END_MARKER = "<!-- more -->"
@@ -129,5 +133,5 @@ SITEMAP = {
 
 # Tag Cloud
 TAG_CLOUD_STEPS = 4
-TAG_CLOUD_SORTING = "random"
+TAG_CLOUD_SORTING = "alphabetically"
 TAG_CLOUD_BADGE = False
