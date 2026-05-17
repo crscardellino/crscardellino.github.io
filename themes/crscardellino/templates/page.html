@@ -5,13 +5,13 @@
   <article class="post">
     {% if page.image %}
     <div class="article-image">
-      <div class="post-image-image" style="background-image: url('{{ page.image }}')">
+      <div class="post-image-image" style="background-image: url('{{ SITEURL }}{{ page.image }}')">
         Article Image
       </div>
       <div class="post-meta">
         <h1 class="post-title">{{ page.title }}</h1>
         <div class="cf post-meta-text">
-          <div class="author-image" style="background-image: url('/assets/img/me.jpg')">Blog Logo</div>
+          <div class="author-image" style="background-image: url('{{ SITEURL }}{{ AUTHOR_IMAGE }}')">Blog Logo</div>
           <h4 class="author-name" itemprop="author" itemscope itemtype="http://schema.org/Person">{{ AUTHOR }}</h4>
         </div>
         <div style="text-align:center">

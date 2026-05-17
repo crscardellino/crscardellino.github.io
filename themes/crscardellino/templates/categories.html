@@ -6,7 +6,7 @@
 <main class="content" role="main">
   <article class="post">
     <div class="article-image">
-      <div class="post-image-image" style="background-image: url('/assets/img/storm.jpg')">
+      <div class="post-image-image" style="background-image: url('{{ SITEURL }}/assets/img/storm.jpg')">
         Archive Image
       </div>
       <div class="post-meta">
@@ -21,7 +21,7 @@
       <ul class="posts">
         {% for category, articles in categories %}
           <li>
-            <a class="post-link" href="/{{ category.url }}">{{ category }}</a>
+            <a class="post-link" href="{{ SITEURL }}/{{ category.url }}">{{ category }}</a>
             <span class="post-date"> ({{ articles | count }})</span>
           </li>
         {% endfor %}

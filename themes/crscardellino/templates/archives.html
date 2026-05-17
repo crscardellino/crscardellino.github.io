@@ -6,7 +6,7 @@
 <main class="content" role="main">
   <article class="post">
     <div class="article-image">
-      <div class="post-image-image" style="background-image: url('/assets/img/storm.jpg')">
+      <div class="post-image-image" style="background-image: url('{{ SITEURL }}/assets/img/storm.jpg')">
         Article Image
       </div>
       <div class="post-meta">
@@ -19,15 +19,15 @@
     <section class="post-content">
       <a name="topofpage"></a>
       <h1>
-        <a href="/archive/categories">Categories</a>&nbsp;&nbsp;&middot;&nbsp;&nbsp;
-        <a href="/archive/tags">Tag Cloud</a>
+        <a href="{{ SITEURL }}/archive/categories">Categories</a>&nbsp;&nbsp;&middot;&nbsp;&nbsp;
+        <a href="{{ SITEURL }}/archive/tags">Tag Cloud</a>
       </h1>
       <section class="archive-post-list">
         {% for year, articles in dates | groupby('date.year') | reverse %}
           <h2>{{ year }}</h2>
           <ul>
             {% for article in articles %}
-              <li><span>{{ article.date.strftime('%B %-d, %Y') }}</span> - <a href="{{ article.url }}">{{ article.title }}</a></li>
+              <li><span>{{ article.date.strftime('%B %-d, %Y') }}</span> - <a href="{{ SITEURL }}{{ article.url }}">{{ article.title }}</a></li>
             {% endfor %}
           </ul>
         {% endfor %}

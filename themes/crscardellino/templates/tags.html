@@ -6,7 +6,7 @@
 <main class="content" role="main">
   <article class="post">
     <div class="article-image">
-      <div class="post-image-image" style="background-image: url('/assets/img/storm.jpg')">
+      <div class="post-image-image" style="background-image: url('{{ SITEURL }}/assets/img/storm.jpg')">
         Archive Image
       </div>
       <div class="post-meta">
@@ -21,7 +21,7 @@
       <ul class="tagcloud">
         {% for tag in tag_cloud %}
           <li class="tag-{{ tag.1 }}">
-            <a href="/{{ tag.0.url }}">{{ tag.0 }}</a>
+            <a href="{{ SITEURL }}/{{ tag.0.url }}">{{ tag.0 }}</a>
           </li>
         {% endfor %}
       </ul>

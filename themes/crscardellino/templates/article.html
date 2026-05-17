@@ -5,13 +5,13 @@
   <article class="post" itemscope itemtype="http://schema.org/Article">
     {% if article.image %}
     <div class="article-image">
-      <div class="post-image-image" style="background-image: url('{{ article.image }}')">
+      <div class="post-image-image" style="background-image: url('{{ SITEURL }}{{ article.image }}')">
         Article Image
       </div>
       <div class="post-meta">
         <h1 class="post-title" itemprop="name">{{ article.title }}</h1>
         <div class="cf post-meta-text">
-          <div class="author-image" style="background-image: url('/assets/img/me.jpg')">Blog Logo</div>
+          <div class="author-image" style="background-image: url('{{ SITEURL }}{{ AUTHOR_IMAGE }}')">Blog Logo</div>
           <h4 class="author-name" itemprop="author" itemscope itemtype="http://schema.org/Person">{{ AUTHOR }}</h4>
           on
           <time datetime="{{ article.date.isoformat() }}">{{ article.date.strftime('%B %d, %Y') }}</time>
@@ -26,7 +26,7 @@
       <div class="post-meta">
         <h1 class="post-title">{{ article.title }}</h1>
         <div class="cf post-meta-text">
-          <div class="author-image" style="background-image: url('/assets/img/me.jpg')">Blog Logo</div>
+          <div class="author-image" style="background-image: url('{{ SITEURL }}{{ AUTHOR_IMAGE }}')">Blog Logo</div>
           <h4 class="author-name" itemprop="author" itemscope itemtype="http://schema.org/Person">{{ article.author.name if article.author else AUTHOR }}</h4>
           on
           <time datetime="{{ article.date.isoformat() }}">{{ article.date.strftime('%B %d, %Y') }}</time>
@@ -47,7 +47,7 @@
       {% if article.tags %}
         <section class="share">
           tags: {% for tag in article.tags %}
-            <a href="/{{ tag.url }}">{{ tag }}</a>
+            <a href="{{ SITEURL }}/{{ tag.url }}">{{ tag }}</a>
           {% endfor %}
         </section>
       {% endif %}
@@ -74,12 +74,12 @@
       </section>
       <nav class="article-neighbors">
         {% if article.prev_article %}
-        <a class="neighbor-link neighbor-prev" href="{{ article.prev_article.url }}">
+        <a class="neighbor-link neighbor-prev" href="{{ SITEURL }}{{ article.prev_article.url }}">
           <span class="neighbor-label">← Previous</span>
         </a>
         {% endif %}
         {% if article.next_article %}
-        <a class="neighbor-link neighbor-next" href="{{ article.next_article.url }}">
+        <a class="neighbor-link neighbor-next" href="{{ SITEURL }}{{ article.next_article.url }}">
           <span class="neighbor-label">Next →</span>
         </a>
         {% endif %}
@@ -99,10 +99,10 @@
          <h5 class="index-headline featured"><span>Supported by</span></h5>
          <footer class="site-footer">
            <section class="poweredby">Powered by <a href="https://getpelican.com/"> Pelican</a></section>
-           <a class="subscribe" href="/feed.xml"> <span class="tooltip"> <i class="fa fa-rss"></i> Subscribe!</span></a>
+           <a class="subscribe" href="{{ SITEURL }}/feed.xml"> <span class="tooltip"> <i class="fa fa-rss"></i> Subscribe!</span></a>
            <div class="inner">
              <section class="copyright">
-               <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a><br />The content by <a xmlns:cc="http://creativecommons.org/ns#" href="/" property="cc:attributionName" rel="cc:attributionURL">Cristian Cardellino</a> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.<br/>
+               <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a><br />The content by <a xmlns:cc="http://creativecommons.org/ns#" href="{{ SITEURL }}" property="cc:attributionName" rel="cc:attributionURL">Cristian Cardellino</a> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.<br/>
                <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-nd/4.0/88x31.png" /></a><br />The photos in the headings and footers of the website by <a xmlns:cc="http://creativecommons.org/ns#" href="https://www.instagram.com/vhvalerywister" property="cc:attributionName" rel="cc:attributionURL">Valeria Bongiovanni</a> are licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/">Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License</a>.
              </section>
            </div>

@@ -46,13 +46,13 @@
   <link rel="canonical" href="{{ SITEURL }}/" />
   {% endif %}
 
-  <link rel="shortcut icon" href="{{ FAVICON }}" />
+  <link rel="shortcut icon" href="{{ SITEURL }}{{ FAVICON }}" />
 
-  <link rel="stylesheet" type="text/css" media="screen" href="/assets/css/main.css" />
-  <link rel="stylesheet" type="text/css" media="print" href="/assets/css/print.css" />
-  <link rel="stylesheet" type="text/css" media="screen" href="/assets/css/pygments.css" />
-  <link rel="stylesheet" type="text/css" media="screen" href="/assets/css/font-awesome.min.css"/>
-  <link rel="stylesheet" type="text/css" media="screen" href="/assets/css/webfonts.css"/>
+  <link rel="stylesheet" type="text/css" media="screen" href="{{ SITEURL }}/assets/css/main.css" />
+  <link rel="stylesheet" type="text/css" media="screen" href="{{ SITEURL }}/assets/css/pygments.css" />
+  <link rel="stylesheet" type="text/css" media="screen" href="{{ SITEURL }}/assets/css/font-awesome.min.css"/>
+  <link rel="stylesheet" type="text/css" media="screen" href="{{ SITEURL }}/assets/css/webfonts.css"/>
+  <link rel="stylesheet" type="text/css" media="print"  href="{{ SITEURL }}/assets/css/print.css" />
 
   {% if (article and article.mathjax) or (page and page.mathjax) %}
   <script>
@@ -72,7 +72,7 @@
     }
   };
   </script>
-  <script src="/assets/mathjax/tex-chtml.js" async></script>
+  <script src="{{ SITEURL }}/assets/mathjax/tex-chtml.js" async></script>
   {% endif %}
 
   {% block extra_head %}{% endblock %}
@@ -80,7 +80,7 @@
 <body {% if article or page %}itemscope itemtype="http://schema.org/Article"{% endif %}>
 
 {% if FLOAT_LOGO %}
-  <a href="/" class="logo-readium"><span class="logo" style="background-image: url('{{ LOGO }}')"></span></a>
+  <a href="{{ SITEURL }}" class="logo-readium"><span class="logo" style="background-image: url('{{ SITEURL }}{{ LOGO }}')"></span></a>
 {% endif %}
 
 {% block content %}{% endblock %}
@@ -88,10 +88,10 @@
 {% block footer %}
 {% block creative_commons %}
 <footer class="site-footer">
-  <a class="subscribe" href="/feed.xml"> <span class="tooltip"> <i class="fa fa-rss"></i> Subscribe!</span></a>
+  <a class="subscribe" href="{{ SITEURL }}/feed.xml"> <span class="tooltip"> <i class="fa fa-rss"></i> Subscribe!</span></a>
   <div class="inner">
     <section class="copyright">
-      <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a><br />The content by <a xmlns:cc="http://creativecommons.org/ns#" href="/" property="cc:attributionName" rel="cc:attributionURL">Cristian Cardellino</a> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.<br/>
+      <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a><br />The content by <a xmlns:cc="http://creativecommons.org/ns#" href="{{ SITEURL }}" property="cc:attributionName" rel="cc:attributionURL">Cristian Cardellino</a> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.<br/>
       <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-nd/4.0/88x31.png" /></a><br />The photos in the headings and footers of the website by <a xmlns:cc="http://creativecommons.org/ns#" href="https://www.instagram.com/vhvalerywister" property="cc:attributionName" rel="cc:attributionURL">Valeria Bongiovanni</a> are licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/">Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License</a>.
     </section>
   </div>
@@ -99,21 +99,22 @@
 </footer>
 {% endblock %}
 <div class="bottom-closer">
-  <div class="background-closer-image" style="background-image: url('/assets/img/cover.jpg')">
+  <div class="background-closer-image" style="background-image: url('{{ SITEURL }}{{ COVER }}')">
     Image
   </div>
   <div class="inner">
     <h1 class="blog-title">{{ SITENAME }}</h1>
     <h2 class="blog-description">{{ SITEDESCRIPTION }}
 </h2>
-    <a href=/ class="btn">Back to Home</a>
+    <a href="{{ SITEURL }}" class="btn">Back to Home</a>
   </div>
 </div>
 {% endblock %}
 
 {% block javascript %}
-  <script type="text/javascript" src="/assets/js/jquery-1.11.1.min.js"></script>
+  <script type="text/javascript" src="{{ SITEURL }}/assets/js/jquery-1.11.1.min.js"></script>
   <script type="text/javascript">
+    // Parallax and Smooth Scrolling
     (function ($) {
       "use strict";
       $(document).ready(function(){

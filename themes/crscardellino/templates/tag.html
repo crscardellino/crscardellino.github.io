@@ -15,7 +15,7 @@
         {% for article in articles %}
           <li>
             <span class="post-date">{{ article.date.strftime('%b %-d, %Y') }}</span>
-            <a class="post-link" href="{{ article.url }}">{{ article.title }}</a>
+            <a class="post-link" href="{{ SITEURL }}{{ article.url }}">{{ article.title }}</a>
           </li>
         {% endfor %}
       </ul>

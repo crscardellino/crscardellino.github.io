@@ -3,14 +3,14 @@
 {% block content %}
 {% if articles_page is defined %}
 <div class="teaserimage">
-    <div class="teaserimage-image" style="background-image: url('/assets/img/cover.jpg')">
+    <div class="teaserimage-image" style="background-image: url('{{ SITEURL }}{{ COVER }}')">
         Teaser Image
     </div>
 </div>
 
 <header class="blog-header">
     {% if AUTHOR_IMAGE %}
-      <span class="blog-logo" style="background-image: url('{{ AUTHOR_IMAGE }}')">{{ SITENAME }}</span>
+      <span class="blog-logo" style="background-image: url('{{ SITEURL }}{{ AUTHOR_IMAGE }}')">{{ SITENAME }}</span>
     {% endif %}
     <h1 class="blog-title">{{ SITENAME }}</h1>
     <h2 class="blog-description">{{ SITEDESCRIPTION }}</h2>
@@ -21,10 +21,10 @@
         </a>
         &nbsp;&nbsp;&middot;&nbsp;&nbsp;
       {% endfor %}
-      <a href="/about/">About</a>&nbsp;&nbsp;&middot;&nbsp;&nbsp;
-      <a href="/publications/">Publications</a>&nbsp;&nbsp;&middot;&nbsp;&nbsp;
-      <a href="/work/">Work</a>&nbsp;&nbsp;&middot;&nbsp;&nbsp;
-      <a href="/archive/">Archive</a>
+      <a href="{{ SITEURL }}/about/">About</a>&nbsp;&nbsp;&middot;&nbsp;&nbsp;
+      <a href="{{ SITEURL }}/publications/">Publications</a>&nbsp;&nbsp;&middot;&nbsp;&nbsp;
+      <a href="{{ SITEURL }}/work/">Work</a>&nbsp;&nbsp;&middot;&nbsp;&nbsp;
+      <a href="{{ SITEURL }}/archive/">Archive</a>
     </div>
 </header>
 
@@ -44,7 +44,7 @@
       <article class="post" itemscope itemtype="http://schema.org/BlogPosting" role="article">
         <div class="article-item">
           <header class="post-header">
-            <h2 class="post-title" itemprop="name"><a href="{{ article.url }}" itemprop="url">{{ article.title }}</a></h2>
+            <h2 class="post-title" itemprop="name"><a href="{{ SITEURL }}{{ article.url }}" itemprop="url">{{ article.title }}</a></h2>
           </header>
           <section class="post-excerpt" itemprop="description">
             {{ article.summary }}
@@ -72,7 +72,7 @@
       <article class="post" itemscope itemtype="http://schema.org/BlogPosting" role="article">
         <div class="article-item">
           <header class="post-header">
-            <h2 class="post-title" itemprop="name"><a href="{{ article.url }}" itemprop="url">{{ article.title }}</a></h2>
+            <h2 class="post-title" itemprop="name"><a href="{{ SITEURL }}{{ article.url }}" itemprop="url">{{ article.title }}</a></h2>
           </header>
           <section class="post-excerpt" itemprop="description">
             {{ article.summary }}
@@ -94,7 +94,7 @@
       <article class="post" itemscope itemtype="http://schema.org/BlogPosting" role="article">
         <div class="article-item">
           <header class="post-header">
-            <h2 class="post-title" itemprop="name"><a href="{{ article.url }}" itemprop="url">{{ article.title }}</a></h2>
+            <h2 class="post-title" itemprop="name"><a href="{{ SITEURL }}{{ article.url }}" itemprop="url">{{ article.title }}</a></h2>
           </header>
           <section class="post-excerpt" itemprop="description">
             {{ article.summary }}
