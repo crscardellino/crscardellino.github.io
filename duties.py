@@ -42,9 +42,16 @@ def devserver(ctx: Context, port: int = 4000) -> None:
 
 @duty(capture=False)
 def linter(ctx: Context) -> None:
-    """Run linting commands"""
+    """Run linting commands for fixing"""
     ctx.run(["ruff", "format", "."])
     ctx.run(["ruff", "check", "--fix", "."])
+
+
+@duty(capture=False)
+def lint(ctx: Context) -> None:
+    """Run linting commands for checking"""
+    ctx.run(["ruff", "format", "--check", "."])
+    ctx.run(["ruff", "check", "."])
 
 
 @duty

@@ -1,20 +1,48 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
+# =============================================================================
+# Site Specific Configurations
+# =============================================================================
+
+# Site identity
 AUTHOR = "Cristian Cardellino"
 SITENAME = "Cristian Cardellino"
 SITEDESCRIPTION = "Notes of a Computer Scientist"
 SITEURL = "https://crscardellino.net"
 
-PATH = "content"
+# Fediverse
+MASTODON_HANDLE = "@crscardellino@mastodon.social"
 
+# Social media links
+SOCIAL = (
+    ("mastodon", "https://mastodon.social/@crscardellino"),
+    ("bluesky", "https://bsky.app/profile/crscardellino.bsky.social"),
+    ("github", "https://github.com/crscardellino/"),
+    ("linkedin", "https://linkedin.com/in/crscardellino/"),
+)
+
+# Author info
+AUTHOR_IMAGE = "/assets/img/me.jpg"
+LOGO = "/assets/img/logo.png"
+COVER = "/assets/img/cover.jpg"
+FAVICON = "/assets/img/favicon.png"
+
+# =============================================================================
+# Pelican Specific Configuration
+# =============================================================================
+
+# Source and language
+PATH = "content"
 DEFAULT_LANG = "en"
 
 # Feed generation
 FEED_ALL_RSS = "feed.xml"
 RSS_FEED_SUMMARY_ONLY = True
+AUTHOR_FEED_ATOM = None
+AUTHOR_FEED_RSS = None
 
-# URL settings
+# URL patterns
 ARTICLE_URL = "/{date:%Y}/{date:%m}/{date:%d}/{slug}"
 ARTICLE_SAVE_AS = "{date:%Y}/{date:%m}/{date:%d}/{slug}.html"
 PAGE_URL = "/{slug}"
@@ -25,20 +53,20 @@ ARCHIVES_SAVE_AS = "archive/index.html"
 YEAR_ARCHIVE_SAVE_AS = "archive/{date:%Y}/index.html"
 MONTH_ARCHIVE_SAVE_AS = "archive/{date:%Y}/{date:%m}/index.html"
 
+# Categories
 CATEGORY_URL = "archive/category/{slug}/"
 CATEGORY_SAVE_AS = "archive/category/{slug}/index.html"
 CATEGORIES_SAVE_AS = "archive/categories/index.html"
 
+# Tags
 TAG_URL = "archive/tag/{slug}/"
 TAG_SAVE_AS = "archive/tag/{slug}/index.html"
 TAGS_SAVE_AS = "archive/tags/index.html"
 
-
+# Direct templates (pages generated without content files)
 DIRECT_TEMPLATES = ["index", "categories", "archives", "tags", "404"]
 
-AUTHOR_FEED_ATOM = None
-AUTHOR_FEED_RSS = None
-
+# Date formatting
 DATE_FORMATS = {"en": "%b %d, %Y"}
 TIMEZONE = "America/Argentina/Cordoba"
 
@@ -46,7 +74,10 @@ TIMEZONE = "America/Argentina/Cordoba"
 THEME = "themes/crscardellino"
 THEME_STATIC_DIR = "assets"
 
-# Markdown extensions
+# Show floating logo in top-left corner
+FLOAT_LOGO = True
+
+# Markdown processor
 MARKDOWN = {
     "extension_configs": {
         "pymdownx.highlight": {
@@ -83,29 +114,15 @@ EXTRA_PATH_METADATA = {
     "extra/CNAME": {"path": "CNAME"},
 }
 
-# Social links
-MASTODON_HANDLE = "@crscardellino@mastodon.social"
-SOCIAL = (
-    ("mastodon", "https://mastodon.social/@crscardellino"),
-    ("bluesky", "https://bsky.app/profile/crscardellino.bsky.social"),
-    ("github", "https://github.com/crscardellino/"),
-    ("linkedin", "https://linkedin.com/in/crscardellino/"),
-)
-
-# Author info
-AUTHOR_IMAGE = "/assets/img/me.jpg"
-LOGO = "/assets/img/logo.png"
-COVER = "/assets/img/cover.jpg"
-FAVICON = "/assets/img/favicon.png"
-
-# Delete output directory before building
+# Build output
 OUTPUT_DIRECTORY = "output"
 DELETE_OUTPUT_DIRECTORY = True
 
-# Logo float
-FLOAT_LOGO = True
+# =============================================================================
+# Plugin Specific Configuration
+# =============================================================================
 
-# Plugins
+# Active plugins
 PLUGINS = [
     "minchin.pelican.plugins.summary",
     "neighbors",
@@ -115,15 +132,15 @@ PLUGINS = [
     "yaml_metadata",
 ]
 
-# Read Time
-READTIME_WPM = 180
-
-# Summary
+# --- Summary Plugin ---
 SUMMARY_END_MARKER = "<!-- more -->"
 SUMMARY_MAX_LENGTH = None
 SUMMARY_MAX_PARAGRAPHS = 2
 
-# Sitemap config
+# --- Read Time Plugin ---
+READTIME_WPM = 180
+
+# --- Sitemap Plugin ---
 SITEMAP = {
     "format": "xml",
     "priorities": {
@@ -138,7 +155,7 @@ SITEMAP = {
     },
 }
 
-# Tag Cloud
+# --- Tag Cloud Plugin ---
 TAG_CLOUD_STEPS = 4
 TAG_CLOUD_SORTING = "alphabetically"
 TAG_CLOUD_BADGE = False
