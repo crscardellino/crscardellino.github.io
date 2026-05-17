@@ -1,12 +1,12 @@
 ---
 title: "Visidata: Un CLI para un spreadsheet"
 date: 2023-04-04 11:30:00 -0300
+category: tools
 tags:
   - python
   - console
   - data science
   - tools
-category: tools
 ---
 
 En este post haré una recomendación de una herramienta para visualizar datos

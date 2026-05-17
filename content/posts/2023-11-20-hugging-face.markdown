@@ -1,13 +1,13 @@
 ---
 title: "HuggingFace: IA Colaborativa"
 date: 2023-11-20 07:30:00 +0100
+category: talk
 tags:
   - python
   - artificial intelligence
   - natural language processing
   - machine learning
   - tools
-category: talk
 ---
 
 Esta charla la di 3 veces en el año, pero sólo recientemente pude grabarla. La

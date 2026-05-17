@@ -1,12 +1,12 @@
 ---
 title: "Spanish Billion Words Corpus and Embeddings"
 date: 2016-02-06 16:12:20 -0300
+category: artificial intelligence
 tags:
   - natural language processing
   - data science
   - artificial intelligence
   - featured
-category: artificial intelligence
 ---
 
 So, a year and a half since my last post. Even if I kind of update my page to be

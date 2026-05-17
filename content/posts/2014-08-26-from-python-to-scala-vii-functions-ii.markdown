@@ -1,12 +1,12 @@
 ---
 title: "From Python to Scala (VII): Functions (II)"
 date: 2014-08-26 20:05:00 +0200
+category: scala
 tags:
   - scala course
   - python
   - scala
   - tutorial
-category: scala
 ---
 
 Hello again! Nice to see you decided to come back. If you check my [previous

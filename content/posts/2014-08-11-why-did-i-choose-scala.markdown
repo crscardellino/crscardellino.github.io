@@ -1,12 +1,12 @@
 ---
 title: "Why Did I Choose Scala?"
 date: 2014-08-11 20:53:00 +0200
+category: scala
 tags:
   - scala
   - misc
   - life
   - career
-category: scala
 ---
 
 So, on this entry I'll put a halt on the series of tutorials I've been writing.

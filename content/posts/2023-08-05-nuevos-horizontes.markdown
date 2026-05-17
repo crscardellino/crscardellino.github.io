@@ -1,11 +1,11 @@
 ---
 title: "Nuevos Horizontes"
 date: 2023-08-05 11:45:00 -0300
+category: misc
 tags:
   - life
   - career
   - misc
-category: misc
 ---
 
 Esta semana se hicieron efectivas mis renuncias a ambos trabajos que estaba

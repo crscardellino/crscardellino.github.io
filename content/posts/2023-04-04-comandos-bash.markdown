@@ -1,11 +1,11 @@
 ---
 title: "BASH: 10 (+1) comandos útiles"
 date: 2023-04-04 11:00:00 -0300
+category: tools
 tags:
   - bash
   - console
   - tools
-category: tools
 ---
 
 En este post haré un listado de los 10 (+1 mención especial) comandos más

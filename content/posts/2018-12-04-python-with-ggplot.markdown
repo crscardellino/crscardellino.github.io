@@ -1,13 +1,13 @@
 ---
 title: "Python with ggplot"
 date: 2018-12-04 10:00:00 -0300
+category: data science
 tags:
   - data science
   - visualization
   - python
   - R
   - tutorial
-category: data science
 ---
 
 ### Jupyter Notebooks combining Python and R

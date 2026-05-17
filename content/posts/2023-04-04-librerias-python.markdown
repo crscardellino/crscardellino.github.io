@@ -1,10 +1,10 @@
 ---
 title: "Python: Herramientas útiles"
 date: 2023-04-04 11:30:00 -0300
+category: tools
 tags:
   - python
   - tools
-category: tools
 ---
 
 En este post haré un listado de herramientas útiles para Python. Pensado

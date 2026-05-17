@@ -1,11 +1,11 @@
 ---
 title: "Charlando con máquinas"
 date: 2021-06-24 21:00:00 -0300
+category: talk
 tags:
   - natural language processing
   - artificial intelligence
   - data science
-category: talk
 ---
 
 Les dejo una charla que di online para el

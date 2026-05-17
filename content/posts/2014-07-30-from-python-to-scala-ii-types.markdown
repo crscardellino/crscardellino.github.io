@@ -1,12 +1,12 @@
 ---
 title: "From Python to Scala (II): Types, Variables & Values"
 date: 2014-07-30 20:23:00 +0200
+category: scala
 tags:
   - scala course
   - python
   - scala
   - tutorial
-category: scala
 ---
 
 Following my series of tutorial of Scala for Python programmers, I'll start to
