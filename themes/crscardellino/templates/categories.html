@@ -5,12 +5,19 @@
 {% block content %}
 <main class="content" role="main">
   <article class="post">
-    <div class="noarticleimage">
+    <div class="article-image">
+      <div class="post-image-image" style="background-image: url('/assets/img/storm.jpg')">
+        Archive Image
+      </div>
       <div class="post-meta">
-        <h1 class="post-title">Categories</h1>
+        <h1 class="post-title">Archive: Categories</h1>
+        <div style="text-align:center">
+          <a href="#topofpage" class="topofpage"><i class="fa fa-angle-down"></i></a>
+        </div>
       </div>
     </div>
     <section class="post-content">
+      <a name="topofpage"></a>
       <ul class="posts">
         {% for category, articles in categories %}
           <li>
