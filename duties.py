@@ -18,12 +18,6 @@ OUTPUT_DIRECTORY = SETTINGS.get("OUTPUT_DIRECTORY", "_site")
 run_pelican = tools.lazy(pelican_main, name="pelican.main")
 
 
-@duty(capture=False)
-def build(ctx: Context) -> None:
-    """Build the site."""
-    ctx.run(run_pelican(["-s", "pelicanconf.py", "-o", OUTPUT_DIRECTORY]))
-
-
 @duty
 def clean(ctx: Context) -> None:
     """Clean the _site directory."""
@@ -38,13 +32,6 @@ def devserver(ctx: Context, port: int = 4000) -> None:
     ctx.run(
         run_pelican(["-s", "pelicanconf.py", "-o", OUTPUT_DIRECTORY, "-r", "-l", "-p", f"{port}"])
     )
-
-
-@duty(capture=False)
-def linter(ctx: Context) -> None:
-    """Run linting commands for fixing"""
-    ctx.run(["ruff", "format", "."])
-    ctx.run(["ruff", "check", "--fix", "."])
 
 
 @duty(capture=False)
