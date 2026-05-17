@@ -266,7 +266,7 @@ Supongamos que tenemos dos puntos que representan el valor de una casa, dada su
 superficie en metros cuadrados. Son los que se ven en el siguiente gráfico:
 
 <span class="fig-box">
-    ![Gráfico: Precio de casas según superficie](/assets/img/intro-ml/two-dots.png)
+    ![Gráfico: Precio de casas según superficie]({static}/assets/img/intro-ml/two-dots.png)
     <span class="caption">Precios de dos casas (eje y) dada sus superficie (eje
     x)</span>
 </span>
@@ -319,7 +319,7 @@ Y si graficamos dicha función, obtendremos la línea que estamos esperando, que
 unirá a ambos puntos:
 
 <span class="fig-box">
-    ![Gráfico: Función lineal](/assets/img/intro-ml/linear-function.png)
+    ![Gráfico: Función lineal]({static}/assets/img/intro-ml/linear-function.png)
     <span class="caption">Función lineal que establece los precios de una casa
     dada su superficie.</span>
 </span>
@@ -335,7 +335,7 @@ algo útil a partir de pocos puntos. Supongamos ahora que encontramos más
 información, o sea más puntos, y tenemos algo como esto:
 
 <span class="fig-box">
-    ![Gráfico: Precio de casas en función de su superficie](/assets/img/intro-ml/data-points.png)
+    ![Gráfico: Precio de casas en función de su superficie]({static}/assets/img/intro-ml/data-points.png)
     <span class="caption">Precios de 15 casas dadas sus superficies</span>
 </span>
 
@@ -345,7 +345,7 @@ de maneras de lograr una función que retorne todos los puntos dados. Un ejemplo
 de una función que calculemos podría ser algo así:
 
 <span class="fig-box">
-    ![Gráfico: Función polinomial para precio de casas según su superficie](/assets/img/intro-ml/polynomial-regression.png)
+    ![Gráfico: Función polinomial para precio de casas según su superficie]({static}/assets/img/intro-ml/polynomial-regression.png)
     <span class="caption">Función polinomial que establece precios de una casa
     dada su superficie, estimada a partir de los 15 datos</span>
 </span>
@@ -366,7 +366,7 @@ Si vemos cómo quedaría nuestra línea original con estos nuevos datos,
 tenemos lo siguiente:
 
 <span class="fig-box">
-    ![Gráfico: Función lineal de precio de casas dadas sus superficies](/assets/img/intro-ml/linear-regression.png)
+    ![Gráfico: Función lineal de precio de casas dadas sus superficies]({static}/assets/img/intro-ml/linear-regression.png)
     <span class="caption">Función lineal que establece precios de una casa dada
     su superficie, estimada a partir de los 15 datos</span>
 </span>
@@ -401,7 +401,7 @@ que pase por todos los puntos se busca encontrar algo que pueda diferenciar
 entre las clases del problema. Veamos un ejemplo:
 
 <span class="fig-box">
-    ![Gráfico: Datos para clasificación](/assets/img/intro-ml/classification-dots.png)
+    ![Gráfico: Datos para clasificación]({static}/assets/img/intro-ml/classification-dots.png)
     <span class="caption">Datos para clasificación</span>
 </span>
 
@@ -413,7 +413,7 @@ si hicimos en verde si compramos el producto, y en rojo si no lo compramos.  A
 partir de estos datos podemos construir el siguiente gráfico:
 
 <span class="fig-box">
-    ![Gráfico: Cantidad de clicks vs. cantidad de preguntas](/assets/img/intro-ml/classification.png)
+    ![Gráfico: Cantidad de clicks vs. cantidad de preguntas]({static}/assets/img/intro-ml/classification.png)
     <span class="caption">Cantidad de clicks hechos sobre un producto (eje $x$)
     y cantidad de preguntas hechas al vendedor (eje $y$)</span>
 </span>
@@ -437,7 +437,7 @@ para clasificar es la que está representada por la línea celeste en el siguien
 gráfico:
 
 <span class="fig-box">
-    ![Gráfico: Clasificador de clicks con intención de compra](/assets/img/intro-ml/classifier.png)
+    ![Gráfico: Clasificador de clicks con intención de compra]({static}/assets/img/intro-ml/classifier.png)
     <span class="caption">Cantidad de clicks hechos sobre un producto (eje $x$)
     y cantidad de preguntas hechas al vendedor (eje $y$).  La función
     representada en la línea celeste es el *modelo de clasificación*.</span>

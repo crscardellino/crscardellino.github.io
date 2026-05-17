@@ -31,7 +31,7 @@ Other areas of work, interest and research are:
 
 - Argumentation mining (as part of the [MIREL project](http://www.mirelproject.eu/)).
 - Recommender Systems (designed one to recommend Magic The Gathering Cards for [TappedOut.net](http://tappedout.net/)).
-- Unsupervised Word Representations (creator and maintainer of the [SBWCE](/SBWCE)).
+- Unsupervised Word Representations (creator and maintainer of the [SBWCE]({filename}/pages/SBWCE/index.md)).
 
 I also enjoy the work as a machine learning engineer. I like the whole MLOps process, particularly the setup of APIs to run machine learning models with the corresponding configurations and dockerization of the process. I work as a TopTal freelancer, mostly doing these kind of projects.
 

@@ -15,10 +15,10 @@ Remember, and I quote myself,
 
 This page serves as an index for all the posts compounding the tutorial.
 
-* [Part I: The Basics](/2014/07/28/from-python-to-scala-i-the-basics.html)
-* [Part II: Types, Variables & Values](/2014/07/30/from-python-to-scala-ii-types.html)
-* [Part III: Lists](/2014/08/05/from-python-to-scala-iii-lists.html)
-* [Part IV: Arrays & ListBuffers](/2014/08/07/from-python-to-scala-iv-arrays-and-listbuffers.html)
-* [Part V: Control Flow Tools](/2014/08/20/from-python-to-scala-v-control-flow-tools.html)
-* [Part VI: Functions](/2014/08/23/from-python-to-scala-vi-functions.html)
-* [Part VII: Functions (II)](/2014/08/26/from-python-to-scala-vii-functions-ii.html)
+* [Part I: The Basics]({filename}/posts/2014-07-28-from-python-to-scala-i-the-basics.markdown)
+* [Part II: Types, Variables & Values]({filename}/posts/2014-07-30-from-python-to-scala-ii-types.markdown)
+* [Part III: Lists]({filename}/posts/2014-08-05-from-python-to-scala-iii-lists.markdown)
+* [Part IV: Arrays & ListBuffers]({filename}/posts/2014-08-07-from-python-to-scala-iv-arrays-and-listbuffers.markdown)
+* [Part V: Control Flow Tools]({filename}/posts/2014-08-20-from-python-to-scala-v-control-flow-tools.markdown)
+* [Part VI: Functions]({filename}/posts/2014-08-23-from-python-to-scala-vi-functions.markdown)
+* [Part VII: Functions (II)]({filename}/posts/2014-08-26-from-python-to-scala-vii-functions-ii.markdown)

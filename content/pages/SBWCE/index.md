@@ -144,23 +144,21 @@ Citation
 
 To cite this resource in a publication please use the following citation:
 
-> Cristian Cardellino: Spanish Billion Words Corpus and Embeddings (March
-> 2016), https://crscardellino.net/SBWCE/
+> Cristian Cardellino: Spanish Billion Words Corpus and Embeddings
+> (March 2016), https://crscardellino.net/SBWCE/
 
-You also have a [bibtex](/assets/misc/cite.bib) entry available.
+You also have a [bibtex]({static}/assets/misc/cite.bib) entry available.
 
 License
 -------
 
 <div style="text-align: center;">
-<a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img
-alt="Creative Commons License" style="border-width:0"
-src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a>
-<span
-xmlns:dct="http://purl.org/dc/terms/" property="dct:title">Spanish Billion Word
-Corpus and Embeddings</span>
+  <div class="license"><a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">
+    <img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a>
+  </div>
+<span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">Spanish Billion Word Corpus and Embeddings</span>
 by <span xmlns:cc="http://creativecommons.org/ns#"
-property="cc:attributionName">Cristian Cardellino</span><br />
+property="cc:attributionName"><a href="https://crscardellino.net">Cristian Cardellino</a></span><br />
 is licensed under a <a
 rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
 Commons Attribution-ShareAlike 4.0 International License</a>.

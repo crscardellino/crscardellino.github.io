@@ -57,7 +57,7 @@ Presenter. Universidad Católica de Córdoba. Argentina. April 2019.
 Spark](https://medium.com/@crscardellino/procesando-datos-con-spark-48539d38e437).
 Online tutorials @ Medium.com. 2018-2019.
 
-[Train and visualize a model in Tensorflow](/rio-tutorial).
+[Train and visualize a model in Tensorflow]({filename}/pages/rio-tutorial.md).
 _25º Escuela de Verano de Ciencias Informáticas de la Universidad Nacional de Río Cuarto_
 Universidad Nacional de Río Cuarto. Argentina. February 2018.
 
@@ -66,7 +66,7 @@ ggplot](https://github.com/crscardellino/MeetupDSCba2017).  Presenter. _4to
 Encuentro Data Science Córdoba 2017_.  Cluster Córdoba Technology. Córdoba,
 Argentina. December 2017.
 
-[Train and visualize a model in Tensorflow](/pydata-tutorial).
+[Train and visualize a model in Tensorflow]({filename}/pages/pydata-tutorial.md).
 [_PyData San Luis Argentina 2017_](https://pydata.org/sanluis2017/).
 Universidad Nacional de San Luis. Argentina. November 2017.
 
@@ -87,12 +87,12 @@ Co-presenter. _1&deg; Jornadas de Trabajo en Estudios Sobre Procesamiento del
 Lenguaje_. Facultad de Psicología. Universidad Nacional de Córdoba. Córdoba,
 Argentina. September 2017.
 
-[From Python to Scala](/from-python-to-scala). Online
+[From Python to Scala]({filename}/pages/from-python-to-scala.md). Online
 tutorial. 2014.
 
 ### Linguistic resources
 <a name="#resources"></a>
 
-[Spanish Billion Words Corpus and Embeddings](/SBWCE/).
+[Spanish Billion Words Corpus and Embeddings]({filename}/pages/SBWCE/index.md).
 Maintainer. Compilation of Spanish Corpora with Word2Vec trained embeddings.
 March 2016.
