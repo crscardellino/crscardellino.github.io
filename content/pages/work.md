@@ -9,12 +9,14 @@ This is where I list my courses, talks and other resources regarding my work:
 ### Courses, Talks & Tutorials
 <a name="#courses"></a>
 
+[Armando un LLM Homelab con Software Libre](https://github.com/crscardellino/flisol-ai-homelab) [[video](https://www.youtube.com/watch?v=6fHnfZ9qTiM)]. Presenter. [FLISoL Córdoba 2026](https://librebase.org.ar/flisol-cordoba-2026/). Córdoba. Argentina. April 2026.
+
 [Prompt Hacking Webinar: Prompt Injection vs. Jailbreaking](https://www.youtube.com/watch?v=jVp4Rnj4wjw). Presenter. [Ekoparty Webinars](https://ekoparty.org/). Argentina. August 2025.
 
 [Hugging Face: IA Colaborativa](https://huggingface.co/crscardellino/flisol-cba-martin-fierro)
 [[notebook](https://huggingface.co/crscardellino/flisol-cba-martin-fierro/blob/main/flisol-cordoba-2023.ipynb)]
 [[video](https://www.youtube.com/watch?v=lOr5nChMi18&t=3s)].
-Presenter. [FLISoL Córdoba](https://cordoba.flisol.org.ar/) &
+Presenter. [FLISoL Córdoba 2023](https://librebase.org.ar/flisol-cordoba-2023/) &
 [XI CIAI](https://fcefyn.unc.edu.ar/facultad/secretarias/extension/prosecretaria-de-desarrollo-sostenible/xi-congreso-de-innovacion-ambiente-e-ingenieria/) &
 [Mes de la Ciencia 2023, GURI, CEIMAF](https://www.instagram.com/famaf.ceimaf/?hl=en).
 Córdoba. Argentina. April/May/Nov 2023.
