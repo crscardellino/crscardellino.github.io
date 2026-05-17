@@ -30,6 +30,8 @@
           <h4 class="author-name" itemprop="author" itemscope itemtype="http://schema.org/Person">{{ article.author.name if article.author else AUTHOR }}</h4>
           on
           <time datetime="{{ article.date.isoformat() }}">{{ article.date.strftime('%B %d, %Y') }}</time>
+          &nbsp;&nbsp;&middot;&nbsp;&nbsp;
+          <span class="post-reading">{{ article.readtime_string }} read</span>
         </div>
       </div>
     </div>
@@ -38,9 +40,6 @@
     <br>
     {% endif %}
     <section class="post-content">
-      <div class="post-reading">
-        <span class="post-reading-time"></span> read
-      </div>
       <a name="topofpage"></a>
       {{ article.content }}
     </section>

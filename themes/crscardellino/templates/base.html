@@ -47,18 +47,12 @@
   {% endif %}
 
   <link rel="shortcut icon" href="{{ FAVICON }}" />
-  <link rel="stylesheet" href="//brick.a.ssl.fastly.net/Linux+Libertine:400,400i,700,700i/Open+Sans:400,400i,700,700i">
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" rel="stylesheet">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href='https://fonts.googleapis.com/css?family=Gentium+Book+Basic|Merriweather:400,300' rel='stylesheet' type='text/css'>
-  <link href='https://fonts.googleapis.com/css?family=Inconsolata' rel='stylesheet' type='text/css'>
-  <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@300&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" type="text/css" media="screen" href="/assets/css/main.css" />
   <link rel="stylesheet" type="text/css" media="print" href="/assets/css/print.css" />
-  <link rel="stylesheet" type="text/css" media="screen" href="/assets/css/extras.css" />
   <link rel="stylesheet" type="text/css" media="screen" href="/assets/css/pygments.css" />
+  <link rel="stylesheet" type="text/css" media="screen" href="/assets/css/font-awesome.min.css"/>
+  <link rel="stylesheet" type="text/css" media="screen" href="/assets/css/webfonts.css"/>
 
   {% if (article and article.mathjax) or (page and page.mathjax) %}
   <script>
@@ -118,46 +112,8 @@
 {% endblock %}
 
 {% block javascript %}
-  <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
-  <script type="text/javascript" src="/assets/js/jquery.fitvids.js"></script>
+  <script type="text/javascript" src="/assets/js/jquery-1.11.1.min.js"></script>
   <script type="text/javascript" src="/assets/js/index.js"></script>
-  <script type="text/javascript" src="/assets/js/readingTime.min.js"></script>
-  <script>
-    (function ($) {
-      "use strict";
-      $(document).ready(function(){
-
-        var $window = $(window),
-        $image = $('.post-image-image, .teaserimage-image');
-
-          $window.on('scroll', function() {
-            var top = $window.scrollTop();
-
-            if (top < 0 || top > 1500) { return; }
-            $image
-              .css('transform', 'translate3d(0px, '+top/3+'px, 0px)')
-              .css('opacity', 1-Math.max(top/700, 0));
-          });
-          $window.trigger('scroll');
-
-          var height = $('.article-image').height();
-          $('.post-content').css('padding-top', height + 'px');
-
-          $('a[href*=#]:not([href=#])').click(function() {
-            if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'')
-            && location.hostname == this.hostname) {
-              var target = $(this.hash);
-              target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
-              if (target.length) {
-                $('html,body').animate({ scrollTop: target.offset().top }, 500);
-                return false;
-              }
-            }
-          });
-
-      });
-    }(jQuery));
-  </script>
 {% endblock %}
 
 </body>
