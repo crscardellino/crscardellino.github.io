@@ -66,6 +66,13 @@ MARKDOWN = {
         "pymdownx.inlinehilite",
         "pymdownx.superfences",
         "pymdownx.arithmatex",
+        "pymdownx.mark",
+        "pymdownx.smartsymbols",
+        "pymdownx.tilde",
+        "pymdownx.saneheaders",
+        "pymdownx.keys",
+        "pymdownx.emoji",
+        "pymdownx.extra",
     ],
     "output_format": "html5",
 }
