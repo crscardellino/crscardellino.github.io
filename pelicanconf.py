@@ -1,6 +1,3 @@
-#!/usr/bin/env python
-# -*- coding: utf-8 -*-
-
 # =============================================================================
 # Site Specific Configurations
 # =============================================================================
@@ -36,11 +33,14 @@ FAVICON = "/assets/img/favicon.png"
 PATH = "content"
 DEFAULT_LANG = "en"
 
-# Feed generation
-FEED_ALL_RSS = "feed.xml"
+# Feed generation (disabled in development, enabled in publishconf.py)
+FEED_ALL_RSS = None
 RSS_FEED_SUMMARY_ONLY = True
 AUTHOR_FEED_ATOM = None
 AUTHOR_FEED_RSS = None
+
+# Use relative URLs for local development (overridden to False in publishconf.py)
+RELATIVE_URLS = True
 
 # URL patterns
 ARTICLE_URL = "/{date:%Y}/{date:%m}/{date:%d}/{slug}"
@@ -69,6 +69,8 @@ DIRECT_TEMPLATES = ["index", "categories", "archives", "tags", "404"]
 # Date formatting
 DATE_FORMATS = {"en": "%b %d, %Y"}
 TIMEZONE = "America/Argentina/Cordoba"
+
+IGNORE_FILES = ["*.bak"]
 
 # Theme
 THEME = "themes/crscardellino"
@@ -114,20 +116,19 @@ EXTRA_PATH_METADATA = {
     "extra/CNAME": {"path": "CNAME"},
 }
 
-# Build output
+# Build output (False in development to keep output for quick rebuilds)
 OUTPUT_DIRECTORY = "output"
-DELETE_OUTPUT_DIRECTORY = True
+DELETE_OUTPUT_DIRECTORY = False
 
 # =============================================================================
 # Plugin Specific Configuration
 # =============================================================================
 
-# Active plugins
+# Active plugins (sitemap added in publishconf.py for production)
 PLUGINS = [
     "minchin.pelican.plugins.summary",
     "neighbors",
     "readtime",
-    "sitemap",
     "tag_cloud",
     "yaml_metadata",
 ]
@@ -139,21 +140,6 @@ SUMMARY_MAX_PARAGRAPHS = 2
 
 # --- Read Time Plugin ---
 READTIME_WPM = 180
-
-# --- Sitemap Plugin ---
-SITEMAP = {
-    "format": "xml",
-    "priorities": {
-        "articles": 0.8,
-        "indexes": 0.3,
-        "pages": 0.5,
-    },
-    "changefreqs": {
-        "articles": "monthly",
-        "indexes": "monthly",
-        "pages": "monthly",
-    },
-}
 
 # --- Tag Cloud Plugin ---
 TAG_CLOUD_STEPS = 4
