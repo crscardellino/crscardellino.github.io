@@ -220,8 +220,7 @@ __marimo__/
 .streamlit/secrets.toml
 
 # Website
-_drafts/
-_site/
+content/drafts/
 output/
 
 # Opencode
@@ -235,4 +234,3 @@ TODO.md
 .jekyll-metadata/
 vendor/
 .bundle/
-
