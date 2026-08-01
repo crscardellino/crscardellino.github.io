@@ -33,7 +33,7 @@ Other areas of work, interest and research are:
 - Recommender Systems (designed one to recommend Magic The Gathering Cards for [TappedOut.net](http://tappedout.net/)).
 - Unsupervised Word Representations (creator and maintainer of the [SBWCE]({filename}/pages/SBWCE/index.md)).
 
-I also enjoy the work as a machine learning engineer. I like the whole MLOps process, particularly the setup of APIs to run machine learning models with the corresponding configurations and dockerization of the process. I work as a TopTal freelancer, mostly doing these kind of projects.
+I also enjoy the work as a machine learning engineer. I like the whole MLOps process, particularly the setup of APIs to run machine learning models with the corresponding configurations and dockerization of the process. I work as a Toptal freelancer, mostly doing these kind of projects.
 
 ### Contact
 <a name="#contact"></a>

@@ -938,3 +938,11 @@ ul.tagcloud li a {
 ul.tagcloud li a:hover {
   text-decoration: underline;
 }
+
+.toptal-badge {
+  text-align: center;
+}
+
+.post .post-content .toptal-badge a {
+  color: #FFF;
+}
